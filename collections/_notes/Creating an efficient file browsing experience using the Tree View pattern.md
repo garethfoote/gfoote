@@ -10,6 +10,8 @@ This is a case study explaining the context in which the Tree View component was
 ![Choose a file 1.png](Choose%20a%20file%201.png)
 
 
+![attachments/Choose a file 1.png](attachments/Choose%20a%20file%201.png)
+
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
 
@@ -21,7 +23,7 @@ There are positives and negatives to both options to do with accessibility, effi
 ## UX Research
 Both Finder (macOS) and File Explorer (Windows) have been dealing with the UX of file management for a long time. They make multiple options for file exploration available and configurable to the user, including tree, column and single page views. It was useful to assess how the UI design pattern works in an operating system since this is a familiar method for most people to manipulate and explore files and folders. 
 
-![Screenshot 2023-09-12 at 08.54.19.png](Screenshot%202023-09-12%20at%2008.54.19.png)Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
+![attachments/Screenshot 2023-09-12 at 08.54.19.png](attachments/Screenshot%202023-09-12%20at%2008.54.19.png)Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
 
 ## User needs & decisions
 User research led us to believe that users could often be browsing deeply nested folder structures. The 'one page per folder' option would make this challenging for a number of reasons. This narrow window on the files would make it challenging to locate oneself in the hierarchy and individual page refreshes when navigating in and out of deeply nested structures would become onerous. 
