@@ -6,9 +6,10 @@ feed: true
 topics: [Accessibility]
 ---
 
-- [Axess Lab | Disabled buttons suck](https://axesslab.com/disabled-buttons-suck/)
-- [Aria-disabled | Introduction to Accessibility](https://a11y-101.com/development/aria-disabled)
-- [Making Disabled Buttons More Inclusive | CSS-Tricks - CSS-Tricks](https://css-tricks.com/making-disabled-buttons-more-inclusive/)
+
+- [Axess Lab \| Disabled buttons suck](https://axesslab.com/disabled-buttons-suck/)
+- [Aria-disabled \| Introduction to Accessibility](https://a11y-101.com/development/aria-disabled)
+- [Making Disabled Buttons More Inclusive \| CSS-Tricks - CSS-Tricks](https://css-tricks.com/making-disabled-buttons-more-inclusive/)
 
 The general consensus advise is about using `aria-disabled` instead of `disabled` property. This is because `disabled` means the button isn’t a focusable interactive element that can be accessed via tabbing. This means a keyboard only user who is using the tab to navigate won't realise there is any button there. Screen readers do have other keyboard controls that go through each piece of content 1 by 1 (buttons, paragraphs, whatever) and therefore it is still possible to access the button in this way. 
 
