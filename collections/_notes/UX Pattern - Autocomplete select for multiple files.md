@@ -1,5 +1,6 @@
 ---
 share: true
+feed: true
 category: _notes
 topics: [Accessibility]
 date: 2023-09-23
