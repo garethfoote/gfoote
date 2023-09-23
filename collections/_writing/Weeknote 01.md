@@ -1,7 +1,7 @@
 ---
+title: Creating an efficient file browsing experience using the Tree View pattern
 share: true
 category: _writing
-title: Creating an efficient file browsing experience using the Tree View pattern
 ---
 
 Over the last few months I've been introducing concepts and methods from service design into the design process at The National Archives. The day to day responsibilities of my role as a Senior Interaction Designer are often to zoom into the product detail, including user journey definition, accessibility related work, and implementing UI patterns and components to accommodate user needs. Since we're considering new features that open the door to a new set of users it is an opportunity to revisit the user research that goes outside the bounds of the product (e.g. usability testing) and consider the holistic journey in a mini-discovery of sorts. In the case of our service, this involves zooming out to look at the users' context when they are far away from touching our designed digital interfaces, and are in the early stages of  prepare for transferring consignments of digital records to The National Archives. 
