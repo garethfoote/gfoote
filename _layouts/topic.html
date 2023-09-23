@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: default
 ---
 
 <div class="">
@@ -7,7 +7,7 @@ layout: base
   {{ content }}
 
   {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
-  {%- assign posts = site.writing | where_exp: "item", condition -%}
+  {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
   
   {% for post in posts %}
     <ul class="list-feed">
