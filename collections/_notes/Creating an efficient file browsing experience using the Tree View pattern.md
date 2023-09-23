@@ -1,11 +1,16 @@
 ---
 share: true
-category: _notes
 title: Creating an efficient file browsing experience using the Tree View pattern
+feed: show
+homepage: true
+date: 2023-09-21
+topics:
+  - Code
 ---
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
+[[Markdown Rendered]]
 
 ![Choose a file 1.png](Choose%20a%20file%201.png)
 

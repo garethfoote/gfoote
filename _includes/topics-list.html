@@ -1,0 +1,10 @@
+<h3>Topics</h3>
+<ul>
+  {% for topic in site.topics %}
+    {% assign condition = "item.topics contains '" | append: topic.title | append: "'" %}
+    {%- assign postsInTopic = site.writing | where_exp: "item", condition -%}
+    <li>
+      <a href="{{topic|relative_url}}">{{ topic.title }} ({{ postsInTopic.size }})</a>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,19 @@
+---
+layout: base
+---
+
+ <!--- Notes Layout-->
+<div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
+  <div class="note-page-section">
+  {%- if page.format == "list" -%}
+  <style>
+      li {border-bottom: 1px solid var(--color-border-light); list-style: none; padding: 0.4rem 0 0.4rem 0;}
+      .content ul { padding-left: 0px;}
+      h3 {padding-top: 1rem; padding-bottom: 0rem;}
+  </style>                    
+  {%- endif -%}
+  <h1>{{page.title}}</h1>
+  {%- include content.html -%}
+  {%- include backlinks.html -%}
+  </div>
+</div>

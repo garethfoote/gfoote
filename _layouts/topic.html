@@ -1,0 +1,23 @@
+---
+layout: base
+---
+
+<div class="">
+  <div class="jumbo">{{ page.title }}</div>
+  {{ content }}
+
+  {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
+  {%- assign posts = site.writing | where_exp: "item", condition -%}
+  
+  {% for post in posts %}
+    <ul class="list-feed">
+      <li>
+        <a href="{{post.url|relative_url}}">
+          <div class="writinglist-title">{{ post.title }}</div>
+        </a>
+      </li>
+    </ul>
+  {%- endfor -%}
+</div>
+
+{%- include topics-list.html -%}

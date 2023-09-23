@@ -1,0 +1,19 @@
+---
+layout: base
+---
+
+<!--- home -->
+<div class="">
+  {{ content }}
+  {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
+  {%- assign allPosts = site.writing | concat: homepageNotes | sort: "date" | reverse  -%}
+  {% for post in allPosts limit: 5  %}
+    <div class="list-feed">
+      <a href="{{post.url|relative_url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
+        <div class="writinglist-title">{{ post.title }}</div>
+      </a>
+    </div>
+  {%- endfor -%}
+</div>
+
+{%- include topics-list.html -%}
