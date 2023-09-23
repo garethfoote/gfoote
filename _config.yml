@@ -79,7 +79,7 @@ collections:
       permalink: /note/:title
     writing:
       output: true
-      permalink: /:collection/:title
+      permalink: /writing/:title
     topics:
       output: true
       permalink: /topic/:title
