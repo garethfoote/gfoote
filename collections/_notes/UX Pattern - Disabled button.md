@@ -2,6 +2,7 @@
 title: Disabling a button
 category: _notes
 share: true
+feed: true
 topics: [Accessibility]
 ---
 
