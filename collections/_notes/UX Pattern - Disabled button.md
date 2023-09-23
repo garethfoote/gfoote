@@ -2,6 +2,7 @@
 title: Disabling a button
 category: _notes
 share: true
+topics: [Accessibility]
 ---
 
 - [Axess Lab | Disabled buttons suck](https://axesslab.com/disabled-buttons-suck/)

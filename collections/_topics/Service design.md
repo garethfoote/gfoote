@@ -1,7 +1,7 @@
 ---
 share: true
 category: _topics
-title: Service design
+title: Service Design
 ---
 
 Service design...
