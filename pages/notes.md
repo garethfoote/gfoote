@@ -1,5 +1,5 @@
 ---
-layout: static
+layout: note-list
 permalink: /notes
 feedformat: card
 title: Digital Garden
