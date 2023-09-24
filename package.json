@@ -4,7 +4,7 @@
   "description": "A website",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore _site/ --ignore _sass/ --ignore assets/ -e html,ts -x \"npm run build\"",
+    "dev": "nodemon --ignore _site/ --ignore assets/css/ -e html,ts,css -x \"npm run build\"",
     "build": "tsc && vite build"
   },
   "devDependencies": {

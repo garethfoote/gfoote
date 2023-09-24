@@ -9,7 +9,7 @@ module.exports = {
         chunkFileNames: `assets/js/[name].js`,
         // Works for CSS, will be a problem if we start
         // using images. Would export to, e.g., `assets/jpg/`
-        assetFileNames: `_sass/tailwind.css`,
+        assetFileNames: `assets/css/main.css`,
       }
     }
   }
