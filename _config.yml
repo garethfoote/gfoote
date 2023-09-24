@@ -115,3 +115,13 @@ defaults:
     values:
       layout: topic
 
+exclude:
+  - assets/src
+  - node_modules
+  - package.json
+  - package-lock.json
+  - vite.config.cjs
+  - tsconfig.json
+  - tailwind.config.js
+  - postcss.config.js
+

@@ -8,16 +8,13 @@ layout: default
 
   {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
   {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
-  
-  {% for post in posts %}
     <ul class="list-feed">
+    {% for post in posts %}
       <li>
-        <a href="{{post.url|relative_url}}">
-          <div class="writinglist-title">{{ post.title }}</div>
-        </a>
+        <a href="{{post.url|relative_url}}">{{ post.title }}</a>
       </li>
+    {%- endfor -%}
     </ul>
-  {%- endfor -%}
 </div>
 
 {%- include topics-list.html -%}
