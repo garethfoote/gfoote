@@ -2,6 +2,7 @@
 title: Weeknote 02
 share: true
 category: _writing
+date: 2023-09-05
 topics: [Weeknotes, Accessibility]
 ---
 **Studying for IAAP CPACC**
@@ -18,7 +19,7 @@ Myself and a user researcher facilitated a session with some colleagues who have
 
 I found these beautiful maps of the Mississippi from a geologist commissioned by the Army Corp of Engineers on the [Public Domain Review](https://publicdomainreview.org/collection/maps-of-the-lower-mississippi-harold-fisk/). 
 
-![sm_fisk01.jpeg](sm_fisk01.jpeg)
+![attachments/sm_fisk01.jpeg](attachments/sm_fisk01.jpeg)
 
 The highest resolution versions are no longer available on the Army Corp website but you can get [mid-res (96 dpi) versions from here](http://www.radicalcartography.net/index.html?fisk).
 
