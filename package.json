@@ -4,9 +4,8 @@
   "description": "A website",
   "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "nodemon --ignore _site/ --ignore _sass/ --ignore assets/ -e html,ts -x \"npm run build\"",
+    "build": "tsc && vite build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
@@ -20,5 +19,8 @@
     "url": "git+https://github.com/garethfoote/gfoote.git"
   },
   "author": "Gareth Foote",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
