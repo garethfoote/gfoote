@@ -122,4 +122,6 @@ exclude:
   - package-lock.json
   - vite.config.cjs
   - tsconfig.json
+  - tailwind.config.js
+  - postcss.config.js
 
