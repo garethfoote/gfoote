@@ -6,5 +6,5 @@ import { draw } from './squiggle.ts'
 // setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
 
 const canvas = document.getElementById("squiggle") as HTMLCanvasElement;
-draw(canvas);
+draw(canvas, 400, 400);
 

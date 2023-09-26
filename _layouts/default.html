@@ -2,15 +2,17 @@
 <html lang="en">
 
 {%- include head.html -%}
-<body>
-  <header>
-    <a href="{{site.baseurl}}">
-      <span class="sr-only">Home</span>
-      <canvas width="400" height="400" id="squiggle"></canvas>
-    </a>
+<body class="bg-offwhite border-t-2 border-t-aquamarine border-l-2 border-l-aquamarine">
+  <header class="flex max-w-2xl place-content-between">
+    <div class="squiggle">
+      <a href="{{site.baseurl}}/">
+        <span class="sr-only">Home</span>
+        <canvas data-canvas-w="200" data-canvas-h="200" id="squiggle"></canvas>
+      </a>
+    </div>
     {%- include nav.html -%}
   </header>
-  <main id="main" class="section">
+  <main id="main" class="section max-w-2xl pl-16">
       {{content}}
   </main>   
   <footer>

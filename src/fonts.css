@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "EB Garamond";
+  src: url("./fonts/EBGaramond-VariableFont_wght.ttf");
+  font-weight: 125 950;
+  font-stretch: 75% 125%;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-Italic.ttf");
+  font-weight: normal;
+ 
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("./fonts/AtkinsonHyperlegible-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}

@@ -21,13 +21,13 @@ const squiggle = (r: number, l: number): [number, number][] => {
   return points;
 };
 
-export function draw(canvas: HTMLCanvasElement): void {
+export function draw(canvas: HTMLCanvasElement, targetWidth: number=200, targetHeight: number=200): void {
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
 
   console.log(dpr);
-  const width = canvas.width/dpr;
-  const height = canvas.height/dpr;
+  const width = targetWidth/dpr;
+  const height = targetHeight/dpr;
 
   canvas.style.width = width + "px";
   canvas.style.height = height + "px";
