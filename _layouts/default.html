@@ -2,14 +2,20 @@
 <html lang="en">
 
 {%- include head.html -%}
-
 <body>
-    <main class="md:container md:mx-auto font-serif">
+  <header>
+    <a href="{{site.baseurl}}">
+      <span class="sr-only">Home</span>
+      <canvas width="400" height="400" id="squiggle"></canvas>
+    </a>
     {%- include nav.html -%}
-    <section class="section">
-        {{content}}
-    </section>   
-    {%- include footer.html -%}             
-    </main>
-</body>
+  </header>
+  <main id="main" class="section">
+      {{content}}
+  </main>   
+  <footer>
+  {%- include footer.html -%}             
+  </footer>
+  <script src="{{site.baseurl}}/assets/js/main.js"></script>
+  </body>
 </html>

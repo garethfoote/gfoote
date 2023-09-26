@@ -116,7 +116,7 @@ defaults:
       layout: topic
 
 exclude:
-  - assets/src
+  - src
   - node_modules
   - package.json
   - package-lock.json
