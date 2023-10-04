@@ -17,6 +17,8 @@
     <title>{{page.title}} - {{site.title}}</title>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
     <link href="{{ site.baseurl }}/assets/main.css" rel="stylesheet" media="all" class="default" />
-    <base href="{{site.url}}{{ site.baseurl }}/">
-    
+
+    {% if jekyll.environment == "production" and site.baseurl != "" %}
+        <base href="{{site.url}}{{ site.baseurl }}/"> 
+    {% endif %}
 </head>
