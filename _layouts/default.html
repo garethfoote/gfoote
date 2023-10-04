@@ -3,11 +3,11 @@
 
 {%- include head.html -%}
 <body class="bg-offwhite border-t-2 border-t-aquamarine border-l-2 border-l-aquamarine">
-  <header class="flex max-w-3xl pr-4 place-content-between">
-    <div class="squiggle">
+  <header class="flex max-w-3xl pl-4 md:pl-8 lg:pl-16 pr-4 place-content-between">
+    <div class="squiggle squiggle--hidden">
       <a href="{{site.baseurl}}/">
         <span class="sr-only">Home</span>
-        <canvas data-canvas-w="200" data-canvas-h="200" id="squiggle"></canvas>
+        <canvas aria-hidden="true" id="squiggle"></canvas>
       </a>
     </div>
     {%- include nav.html -%}

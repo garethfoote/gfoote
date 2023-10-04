@@ -30,20 +30,11 @@
     @apply mb-8;
   }
 
-  /* .content p a {
-    background-image: url("../assets/img/wiggle-green.svg");
-    background-repeat: repeat-x;
-    background-position: 0 1.15em;
-    background-size: 9px 5px;
-    padding-bottom: 10px;
-  } */
-
   .content p a {
     background-size: 1px 1em;
     box-shadow:
-      inset 0 -2px theme('colors.offwhite'),
-      /* inset 0 -3px theme('colors.purple'); */
-      inset 0 -4px theme('colors.aquamarine.DEFAULT');
+      inset 0 0px theme('colors.offwhite'),
+      inset 0 -2px theme('colors.aquamarine.DEFAULT');
       text-shadow:
         1px 1px theme('colors.offwhite'),
         1px -1px theme('colors.offwhite'),
@@ -53,7 +44,7 @@
   }
 
   .content p a:hover {
-    background-image: url("../assets/img/wiggle-green.svg");
+    background-image: url("../assets/wiggle-green.svg");
     background-repeat: repeat-x;
     background-position: 0 1.15em;
     background-size: 9px 5px;
@@ -71,12 +62,24 @@
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
   }
 
-  .squiggle,
-  .squiggle a {
+  .squiggle--hidden canvas {
+    @apply opacity-0;
+  }
+
+  .squiggle {
+    @apply border border-black;
+    @apply p-1.5 mt-4;
+  }
+  .squiggle canvas {
+    @apply transition-opacity;
     width: 100px;
     height: 100px;
   }
 
+  .squiggle a {
+    @apply block;
+  }
+  
   .site-nav {
     @apply font-serif;
     @apply text-lg;
@@ -88,37 +91,39 @@
   }
   
   .homepage-hero {
-    margin-top: 6rem;
+    @apply mt-14;
   }
 
   .gf-article-card {
     @apply mb-4;
     @apply flex items-end justify-between gap-x-1;
     
-    background-image: linear-gradient(to right, theme('colors.grey.light') 50%, transparent 50%);
+    background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
     background-position-x: 0;
     background-position-y: bottom 3px;
     background-repeat: repeat-x;
-    background-size: 4px 2px;
+    background-size: 10px 2px;
   }
-
   @media screen(sm) {
-    .gf-article-card__metadata {
-      @apply relative top-1.5;
-    }
     .gf-article-card {
       background-position-y: bottom;
     }
   }
-  
   .gf-article-card__title {
     @apply text-lg sm:text-xl;
   }
 
   .gf-article-card__metadata {
-    @apply mb-0 text-sm sm:text-base text-right;
+    @apply mb-0 text-sm text-right;
     @apply relative top-0.5;
-    @apply sm:whitespace-nowrap bg-offwhite;
+    @apply bg-offwhite;
+  }
+  @media screen(sm) {
+    .gf-article-card__metadata {
+      @apply text-base;
+      @apply relative top-2;
+      @apply whitespace-nowrap;
+    }
   }
 
   .gf-article-card time {
@@ -143,6 +148,7 @@
   a.tag:hover {
     text-decoration: underline;
   } 
+
 }
 
 @layer utilities {

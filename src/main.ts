@@ -1,10 +1,12 @@
 import "./index.css"
-// import { setupCounter } from './counter.ts'
-
 import { draw } from './squiggle.ts'
 
-// setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
-
+const canvasContainer = document.querySelector(".squiggle") as HTMLElement;
 const canvas = document.getElementById("squiggle") as HTMLCanvasElement;
-draw(canvas, 400, 400);
 
+window.addEventListener("load", ()=> {
+  const w:number = parseInt(window.getComputedStyle(canvas).getPropertyValue('width'));
+  const h:number = parseInt(window.getComputedStyle(canvas).getPropertyValue('height'));
+  canvasContainer.classList.remove("squiggle--hidden");
+  draw(canvas, w, h);
+})
