@@ -2,21 +2,24 @@
 layout: default
 ---
 
-
 <div class="homepage-hero">
-  <h1 class="mb-6">Gareth Foote. <span class="text-gray-dark">Designing and building interfaces.</span></h1>
+  <h1 class="mb-6"><span class="text-grey">Gareth Foote.</span> Designing and building interfaces.</h1>
 </div>
-<div class="">
+<div class="content">
   {{ content }}
-  {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
-  {%- assign allPosts = site.writing | concat: homepageNotes | sort: "date" | reverse  -%}
-  {% for post in allPosts limit: 5  %}
-    <div class="list-feed">
-      <a href="{{post.url|relative_url}}" style="text-decoration: none;display: flex;justify-content: space-between;flex-direction: row;width: 100%;">
-        <div class="writinglist-title">{{ post.title }}</div>
-      </a>
-    </div>
-  {%- endfor -%}
 </div>
+{%- assign homepageNotes = site.notes | where:"homepage", true  -%}
+{%- assign allPosts = site.writing | concat: homepageNotes | sort: "date" | reverse  -%}
+{% for post in allPosts limit: 5  %}
+  <div class="gf-article-card">
+    <h2 class="gf-article-card__title"><a class="gf-black-underline" href="{{post.url|relative_url}}">{{ post.title }}</a></h2>
+    <div class="gf-article-card__metadata">
+      <time datetime="{{post.date}}">{{ post.date |  date: "%b, %Y" }}</time> 
+      <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="gf-tag">{{post.topics[0]}}</a></span>
+    </div>
+  </div>
+{%- endfor -%}
 
-{%- include topics-list.html -%}
+{% comment %} 
+{%- include topics-list.html -%} #}
+{% endcomment %} 

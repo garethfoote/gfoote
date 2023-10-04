@@ -11,17 +11,21 @@ module.exports = {
         DEFAULT: '#1CFCB2',
         dark: '#12C78B'
       },
-      'grey': '#7e5bef',
-      'offwhite': '#F8F8F6',
-      'gray-dark': '#505A5F',
+      'purple': '#7e5bef', // possibly unused
+      'offwhite': '#FCFCFC',
       'black': '#0B0C0C',
+      'grey':  {
+        light: '#C3C3C3',
+        DEFAULT: '#505A5F',
+        dark: '#505A5F'
+      },
     },
     fontFamily: {
       sans: ['Atkinson Hyperlegible', 'sans-serif'],
       serif: ['EB Garamond', 'serif'],
     },
     fontSize: {
-      sm: ['0.812rem', '1.25rem'],
+      sm: ['0.875rem', '1.25rem'],
       base: ['1rem', '1.625rem'],
       lg: ['1.25rem', '2rem'],
       xl: ['1.562rem', '2rem'],
