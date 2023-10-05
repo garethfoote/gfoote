@@ -29,7 +29,22 @@
     @apply text-base sm:text-lg;
     @apply mb-8;
   }
+  
+  ul {
+    @apply pl-5;
+  }
+  
+  ul li {
+    @apply text-base leading-5 sm:text-lg;
+    @apply list-disc;
+    @apply mb-2;
+  }
 
+  hr {
+    @apply my-6;
+  }
+
+  .content li a,
   .content p a {
     background-size: 1px 1em;
     box-shadow:
