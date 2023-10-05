@@ -2,19 +2,24 @@
 layout: default
 ---
 
-<div class="">
-  <div class="jumbo">{{ page.title }}</div>
-  {{ content }}
-
-  {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
-  {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
-    <ul class="list-feed">
-    {% for post in posts %}
-      <li>
-        <a href="{{post.url|relative_url}}">{{ post.title }}</a>
-      </li>
-    {%- endfor -%}
-    </ul>
+<div class="post-hero">
+  <h1 class="text-2xl mb-3"><span class="text-grey">Topic:</span> {{page.title}}</h1>
+  <div class="post-hero__metadata">
+  </div>
 </div>
+
+{{ content }}
+{% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
+{%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
+{% for post in posts  %}
+  <div class="gf-article-card">
+    <h2 class="gf-article-card__title"><a class="gf-black-underline" href="{{post.url|relative_url}}">{{ post.title }}</a></h2>
+    <div class="gf-article-card__metadata">
+      <time datetime="{{post.date}}">{{ post.date |  date: "%b, %Y" }}</time> 
+      <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="gf-tag">{{post.topics[0]}}</a></span>
+    </div>
+  </div>
+{%- endfor -%}
+
 
 {%- include topics-list.html -%}
