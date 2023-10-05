@@ -42,7 +42,6 @@
         -1px -1px theme('colors.offwhite');
       display: inline;
   }
-
   .content p a:hover {
     background-image: url("../assets/wiggle-green.svg");
     background-repeat: repeat-x;
@@ -50,6 +49,10 @@
     background-size: 9px 5px;
     padding-bottom: 10px;
     box-shadow: none;
+  }
+
+  .content h2 {
+    @apply mb-2;
   }
 
   footer p {
@@ -90,12 +93,28 @@
     @apply flex gap-x-3;
   }
   
+  .post-hero,
   .homepage-hero {
     @apply mt-14;
   }
 
+  .post-hero {
+    @apply mb-12;
+  }
+
+  .post-hero__metadata time {
+    @apply text-grey;
+  }
+  .post-hero__metadata time:after {
+    content: "·";
+    @apply hidden sm:inline;
+    @apply pl-2 pr-1 text-xl text-black;
+    @apply relative top-0.5;
+    @apply leading-none;
+  }
+
   .gf-article-card {
-    @apply mb-4;
+    @apply mb-2 sm:mb-4;
     @apply flex items-end justify-between gap-x-1;
     
     background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
