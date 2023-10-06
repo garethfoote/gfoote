@@ -145,7 +145,7 @@
     @apply leading-none;
   }
 
-  .gf-article-card {
+  .article-card {
     @apply mb-2 sm:mb-4;
     @apply flex items-end justify-between gap-x-1;
     
@@ -156,33 +156,33 @@
     background-size: 10px 2px;
   }
   @media screen(sm) {
-    .gf-article-card {
+    .article-card {
       background-position-y: bottom;
     }
   }
-  .gf-article-card__title {
+  .article-card__title {
     @apply text-lg sm:text-xl;
   }
 
-  .gf-article-card__metadata {
+  .article-card__metadata {
     @apply mb-0 text-sm text-right;
     @apply relative top-0.5;
     @apply bg-offwhite;
   }
   @media screen(sm) {
-    .gf-article-card__metadata {
+    .article-card__metadata {
       @apply text-base;
       @apply relative top-2;
       @apply whitespace-nowrap;
     }
   }
 
-  .gf-article-card time {
+  .article-card time {
     @apply text-grey;
     @apply block sm:inline;
   }
   
-  .gf-article-card time:after {
+  .article-card time:after {
     content: "·";
     @apply hidden sm:inline;
     @apply pl-2 pr-1 text-xl text-black;
@@ -190,7 +190,7 @@
     @apply leading-none;
   }
   
-  .gf-tag {
+  .tag {
     @apply inline-block;
     @apply bg-aquamarine-light rounded-sm;
     @apply py-px px-1;
@@ -203,7 +203,7 @@
 }
 
 @layer utilities {
-  .gf-black-underline {
+  .black-underline {
     background-size: 1px 1em;
     box-shadow:
       inset 0 -2px theme('colors.offwhite'),
@@ -216,7 +216,7 @@
       display: inline;
   }
 
-  .gf-black-underline:hover {
+  .black-underline:hover {
     box-shadow:
     inset 0 -2px theme('colors.offwhite'),
     inset 0 -4px theme('colors.black');

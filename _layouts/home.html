@@ -9,13 +9,13 @@ layout: default
   {{ content }}
 </div>
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
-{%- assign allPosts = site.writing | concat: homepageNotes | sort: "date" | reverse  -%}
-{% for post in allPosts limit: 5  %}
-  <div class="gf-article-card">
-    <h2 class="gf-article-card__title"><a class="gf-black-underline" href="{{post.url|relative_url}}">{{ post.title }}</a></h2>
-    <div class="gf-article-card__metadata">
+{%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse  -%}
+{% for post in posts limit: 5  %}
+  <div class="article-card">
+    <h2 class="article-card__title"><a class="black-underline" href="{{post.url|relative_url}}">{{ post.title }}</a></h2>
+    <div class="article-card__metadata">
       <time datetime="{{post.date}}">{{ post.date |  date: "%b, %Y" }}</time> 
-      <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="gf-tag">{{post.topics[0]}}</a></span>
+      <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="tag">{{post.topics[0]}}</a></span>
     </div>
   </div>
 {%- endfor -%}

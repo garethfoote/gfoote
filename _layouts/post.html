@@ -6,10 +6,12 @@ layout: default
   <h1>{{page.title}}</h1>
   <div class="post-hero__metadata">
     <time datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time> 
-    <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{page.topics[0]}}" class="gf-tag">{{page.topics[0]}}</a></span>
+    <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{page.topics[0]}}" class="tag">{{page.topics[0]}}</a></span>
   </div>
 </div>
 
 {%- include content.html -%}
+
+
 {%- include backlinks.html -%}
 </div>
