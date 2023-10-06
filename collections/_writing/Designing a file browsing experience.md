@@ -9,12 +9,11 @@ topics: [Case Study, Design, Accessibility]
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-[[topic/Accessibility|Accessibility]]
-[[writing/Weeknote 01|Weeknote 01]]
-[[Mini-briefs - Exploring datasets]]
+- [[Accessibility]]
+- [[Weeknote 01]]
+- [[Mini-briefs - Exploring datasets]]
 
-
-![[attachments/Choose a file 1.png]]
+![[attachments/Choose a file 1.png|alt text]]
 
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
