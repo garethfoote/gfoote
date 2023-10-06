@@ -1,8 +1,7 @@
 ---
 share: true
 homepage: true
-topics:
-  - Teaching
+topics: [Teaching]
 ---
 An introductory exercise for Data Visualisation students that involves exploring and understanding simple datasets, then proposing  narratives that could be told through visualisation techniques.  
 
