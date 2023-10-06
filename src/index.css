@@ -42,11 +42,11 @@
   }
 
   .content h1 {
-    @apply mb-8;
+    @apply text-3xl mb-8;
   }
   
   .content h2 {
-    @apply mb-8 font-bold;
+    @apply text-2xl mb-8;
   }
 
   .content h3 {
