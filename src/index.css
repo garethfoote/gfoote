@@ -32,6 +32,7 @@
   
   ul {
     @apply pl-5;
+    @apply mb-8;
   }
   
   hr {
