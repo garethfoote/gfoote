@@ -131,7 +131,7 @@
   }
   
   .post-hero h1 {
-    @apply text-3xl;
+    @apply text-3xl mb-2;
   }
 
   .post-hero__metadata time {

@@ -12,6 +12,23 @@ layout: default
 
 {%- include content.html -%}
 
+<hr>
+
+{% comment %}
+This is not working as a condition for some unknown reason. 
+
+{% assign condition = "" %}
+{% for t in page.topics %}
+  {%- if forloop.index0 > 0 -%}
+    {% assign condition = condition | append: " or " %}
+  {%- endif -%}
+  {% assign condition = condition | append: "item.topics contains '" | append: t | append: "'" %}
+{% endfor  %}
+{% endcomment %}
+
+{% assign condition2 = "item.topics contains '" | append: page.topics[0] | append: "' and item.id != '" | append: page.id | append: "'" %}
+{%- assign posts = site.writing | where_exp: "item", condition2 | sort: date | reverse -%}
+{%- include post-list.html -%}
 
 {%- include backlinks.html -%}
 </div>
