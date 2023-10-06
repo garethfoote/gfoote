@@ -2,14 +2,15 @@
 share: true
 homepage: true
 category: _writing
+date: 2023-03-01
 title: Designing a file browsing experience
 topics: [Case Study, Design, Accessibility]
 ---
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-
-![Choose a file 1.png](Choose%20a%20file%201.png)
+[Accessibility](gfoote.me/topics/Accessibility)
+[Weeknote 01](Weeknote%2001)
 
 
 ![attachments/Choose a file 1.png](attachments/Choose%20a%20file%201.png)
