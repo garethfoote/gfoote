@@ -2,6 +2,7 @@
 share: true
 homepage: true
 category: _writing
+date: 2023-10-06
 topics: [Accessibility]
 ---
 
