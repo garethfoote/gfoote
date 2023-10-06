@@ -1,6 +1,7 @@
 ---
 share: true
 homepage: true
+category: _writing
 topics: [Teaching]
 ---
 
