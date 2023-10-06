@@ -1,7 +1,6 @@
 ---
 share: true
 homepage: true
-date: 2023-08-25
 category: _writing
 title: Designing a file browsing experience
 topics: [Case Study, Design, Accessibility]
