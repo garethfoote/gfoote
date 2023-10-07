@@ -9,7 +9,7 @@ topics: [Case Study, Design, Accessibility]
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-- [[Accessibility|make this text the link itself]]
+- [[Accessibility]]
 - [[Weeknote 01|different text that links to Weeknote 01]]
 - [[Weeknote 02]]
 - [[Mini-briefs - Exploring datasets]]
