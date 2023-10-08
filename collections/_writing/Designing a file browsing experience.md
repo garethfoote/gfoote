@@ -1,119 +1,121 @@
----
-share: true
-homepage: true
-category: _writing
-date: 2023-03-01
-title: Designing a file browsing experience
-topics: [Case Study, Design, Accessibility]
----
-
-This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
-
-- [Accessibility](Accessibility)
-- [different text that links to Weeknote 01](Weeknote%2001)
-- [Weeknote 02](Weeknote%2002)
-- [Mini-briefs - Exploring datasets](Mini-briefs%20-%20Exploring%20datasets)
-
-
-![alt text](Choose%20a%20file%201.png)
-
-  <figcaption>An elephant at sunset</figcaption>
-
-
-## Background and context
-In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
-
-There are many ways to design an interface to accomplish this. During the preparation for this design task we discussed and experimented with two:
-1) Presenting the root directory contents. Then loading a new page each time a user requests/clicks a folder showing only that folders content. Therefore we only ever show the content of one folder at a time. 
-2) Presenting all the files in a nested 'tree view' with collapsible and expandable folders.
-There are positives and negatives to both options to do with accessibility, efficiency, and complexity.  
-
-## UX Research
-Both Finder (macOS) and File Explorer (Windows) have been dealing with the UX of file management for a long time. They make multiple options for file exploration available and configurable to the user, including tree, column and single page views. It was useful to assess how the UI design pattern works in an operating system since this is a familiar method for most people to manipulate and explore files and folders. 
-
-![attachments/Screenshot 2023-09-12 at 08.54.19.png](attachments/Screenshot%202023-09-12%20at%2008.54.19.png)Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
-
-## User needs & decisions
-User research led us to believe that users could often be browsing deeply nested folder structures. The 'one page per folder' option would make this challenging for a number of reasons. This narrow window on the files would make it challenging to locate oneself in the hierarchy and individual page refreshes when navigating in and out of deeply nested structures would become onerous. 
-
-The hierarchical tree view was the UI and interaction pattern that most suited the users' needs, providing a wider or macro view of the folder structure, helping with find-ability and making navigation through directories trivial.
-
-## Design
-
-The [Figma file for this component](https://www.figma.com/file/Q1I8wOlOkKe5biTkXIzgIc/GDS-Tree-View?type=design&node-id=21012%3A12289&mode=design&t=mFYZ8jiYRr3z62yE-1) is open and based on the [GDS Figma community file](https://www.figma.com/community/file/946837271092540314/GOV.UK-Design-System). 
-
-> [!NOTE] Tidy up and publish as Figma component
-> Currently the Figma file could be organised better so will return to this and make the Tree View a proper component.  
-
-The UI design leans on GDS styles and compositing existing components such as radio buttons or checkboxes. The component hover and focus states were adapted, and the visual indicators for focus made much more prominent because of the detailed specifications around keyboard controls.
-
-- [Storybook single-select example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--expand-select-and-display-selected)
-- [Storybook keyboard controls example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--keyboard-navigate-move-up-with-left-arrow)
-
-![attachments/tree-view-zoomed-single-select.png](attachments/tree-view-zoomed-single-select.png)
-
-Other differentiated visual states included showing relationships between the active child and the parent directories and indeterminate checkbox states, for scenarios when multi-select 
-
-- [Storybook multi-select example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--multiple-select-child-sets-parent-to-indeterminate)
-
-![attachments/tree-view-zoomed-multi-select 3.png](attachments/tree-view-zoomed-multi-select%203.png)
-
-More than in most of my previous work the devil was in the details of fine-grained interactions and visual states supporting accessibility. The relevant WCAG rules were [Non-text Contrast (1.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) and [Focus Appearance (2.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html).
-## Implementation
-The common design pattern for this type of display and interaction is conveniently called the 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. 
-
-See my page of [UX research on the Tree View](UX%20Pattern%20-%20Tree%20view).
-
-The simplicity of the 
-
-
-To achieve something like the Finder screenshot above in a web interface we would need to render all files and folders in a set of nested lists, and progressively enhance this to allow collapsing and expanding of folders. 
-
-```html
-<ul>
-	<li class="dir">Cakes
-		<ul>
-			<li class="file">Baking powder 1999.txt</li>
-			<li class="file">Baking powder 2022.txt</li>
-			<li class="dir">Basics techniques</li>
-		</ul>
-	</li>
-	<li class="file">Shopping list.txt</li>
-	<li class="dir">Winter Recipes
-		<ul>
-			...
-		</ul>
-	</li>
-</ul>
-```
-
-## Accessible design patterns
-
-
-
-
-## GDS 
-
-
-<iframe
-  id="inlineFrameExample"
-  title="Inline Frame Example"
-  width="100%"
-  height="400"
-  src="https://nationalarchives.github.io/tdr-components/iframe.html?args=&id=tdr-tree-view--default-multiple&viewMode=story"
->
-</iframe>
-
-
-## Accessibility testing
-
-There is a  provides a 
-
-
-## Our own implementation 
-[ANOTHER PAGE]
-
-## Summary 
-There are some concerns about 
-
-
+@#-@#-@#-@#
+@#s@#h@#a@#r@#e@#:@# @#t@#r@#u@#e@#
+@#h@#o@#m@#e@#p@#a@#g@#e@#:@# @#t@#r@#u@#e@#
+@#c@#a@#t@#e@#g@#o@#r@#y@#:@# @#_@#w@#r@#i@#t@#i@#n@#g@#
+@#d@#a@#t@#e@#:@# @#2@#0@#2@#3@#-@#0@#3@#-@#0@#1@#
+@#t@#i@#t@#l@#e@#:@# @#D@#e@#s@#i@#g@#n@#i@#n@#g@# @#a@# @#f@#i@#l@#e@# @#b@#r@#o@#w@#s@#i@#n@#g@# @#e@#x@#p@#e@#r@#i@#e@#n@#c@#e@#
+@#t@#o@#p@#i@#c@#s@#:@# @#[@#C@#a@#s@#e@# @#S@#t@#u@#d@#y@#,@# @#D@#e@#s@#i@#g@#n@#,@# @#A@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@#]@#
+@#-@#-@#-@#
+@#
+@#T@#h@#i@#s@# @#i@#s@# @#a@# @#c@#a@#s@#e@# @#s@#t@#u@#d@#y@# @#e@#x@#p@#l@#a@#i@#n@#i@#n@#g@# @#t@#h@#e@# @#c@#o@#n@#t@#e@#x@#t@# @#i@#n@# @#w@#h@#i@#c@#h@# @#t@#h@#e@# @#T@#r@#e@#e@# @#V@#i@#e@#w@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@# @#w@#a@#s@# @#d@#e@#s@#i@#g@#n@#e@#d@# @#a@#n@#d@# @#b@#u@#i@#l@#t@#,@# @#w@#h@#i@#l@#s@#t@# @#w@#o@#r@#k@#i@#n@#g@# @#a@#s@# @#a@# @#d@#e@#s@#i@#g@#n@#e@#r@# @#f@#o@#r@# @#T@#h@#e@# @#N@#a@#t@#i@#o@#n@#a@#l@# @#A@#r@#c@#h@#i@#v@#e@#s@#.@#
+@#
+@#
+@#-@# @#[@#[@#W@#e@#e@#k@#n@#o@#t@#e@# @#0@#1@#|@#d@#i@#f@#f@#e@#r@#e@#n@#t@# @#t@#e@#x@#t@# @#t@#h@#a@#t@# @#l@#i@#n@#k@#s@# @#t@#o@# @#W@#e@#e@#k@#n@#o@#t@#e@# @#0@#1@#]@#]@#
+@#-@# @#[@#[@#A@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@#]@#]@#
+@#-@# @#[@#[@#W@#e@#e@#k@#n@#o@#t@#e@# @#0@#2@#]@#]@#
+@#-@# @#[@#[@#M@#i@#n@#i@#-@#b@#r@#i@#e@#f@#s@# @#-@# @#E@#x@#p@#l@#o@#r@#i@#n@#g@# @#d@#a@#t@#a@#s@#e@#t@#s@#]@#]@#
+@#
+@#
+@#!@#[@#[@#C@#h@#o@#o@#s@#e@# @#a@# @#f@#i@#l@#e@# @#1@#.@#p@#n@#g@#|@#a@#l@#t@# @#t@#e@#x@#t@#]@#]@#
+@#
+@# @# @#<@#f@#i@#g@#c@#a@#p@#t@#i@#o@#n@#>@#A@#n@# @#e@#l@#e@#p@#h@#a@#n@#t@# @#a@#t@# @#s@#u@#n@#s@#e@#t@#<@#/@#f@#i@#g@#c@#a@#p@#t@#i@#o@#n@#>@#
+@#
+@#
+@##@##@# @#B@#a@#c@#k@#g@#r@#o@#u@#n@#d@# @#a@#n@#d@# @#c@#o@#n@#t@#e@#x@#t@#
+@#I@#n@# @#d@#i@#g@#i@#t@#a@#l@# @#a@#r@#c@#h@#i@#v@#i@#n@#g@# @#t@#h@#e@#r@#e@# @#a@#r@#e@# @#v@#a@#r@#i@#o@#u@#s@# @#s@#c@#e@#n@#a@#r@#i@#o@#s@# @#t@#h@#a@#t@# @#r@#e@#q@#u@#i@#r@#e@# @#t@#h@#e@# @#p@#r@#e@#s@#e@#n@#t@#a@#t@#i@#o@#n@# @#o@#f@# @#a@# @#h@#i@#e@#r@#a@#r@#c@#h@#i@#c@#a@#l@# @#f@#i@#l@#e@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@# @#t@#o@# @#t@#h@#e@# @#u@#s@#e@#r@#.@# @#F@#o@#r@# @#d@#i@#g@#i@#t@#a@#l@# @#r@#e@#c@#o@#r@#d@#s@# @#t@#h@#e@# @#p@#r@#e@#s@#e@#r@#v@#a@#t@#i@#o@#n@# @#o@#f@# @#t@#h@#e@# @#o@#r@#i@#g@#i@#n@#a@#l@# @#f@#o@#l@#d@#e@#r@# @#a@#n@#d@# @#f@#i@#l@#e@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@# @#i@#s@# @#o@#n@#e@# @#w@#a@#y@# @#t@#h@#e@#y@# @#a@#r@#e@# @#g@#i@#v@#e@#n@# @#m@#e@#a@#n@#i@#n@#g@# @#a@#n@#d@# @#m@#a@#d@#e@# @#a@#c@#c@#e@#s@#s@#i@#b@#l@#e@# @#f@#o@#r@# @#f@#u@#t@#u@#r@#e@# @#u@#s@#e@#.@# @#T@#h@#e@#r@#e@#f@#o@#r@#e@#,@# @#w@#h@#e@#n@# @#a@# @#c@#o@#n@#s@#i@#g@#n@#m@#e@#n@#t@# @#o@#f@# @#r@#e@#c@#o@#r@#d@#s@# @#i@#s@# @#t@#r@#a@#n@#s@#f@#e@#r@#r@#e@#d@# @#t@#o@# @#a@#n@# @#a@#r@#c@#h@#i@#v@#e@# @#o@#r@# @#w@#h@#e@#n@# @#t@#h@#e@#y@# @#a@#r@#e@# @#p@#r@#e@#s@#e@#n@#t@#e@#d@# @#b@#a@#c@#k@# @#t@#o@# @#i@#n@#t@#e@#r@#e@#s@#t@#e@#d@# @#p@#a@#r@#t@#i@#e@#s@#,@# @#s@#h@#o@#w@#i@#n@#g@# @#t@#h@#e@# @#o@#r@#i@#g@#i@#n@#a@#l@# @#f@#o@#l@#d@#e@#r@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@# @#i@#n@# @#a@# @#w@#e@#b@# @#i@#n@#t@#e@#r@#f@#a@#c@#e@# @#i@#s@# @#n@#e@#c@#e@#s@#s@#a@#r@#y@#.@#
+@#
+@#T@#h@#e@#r@#e@# @#a@#r@#e@# @#m@#a@#n@#y@# @#w@#a@#y@#s@# @#t@#o@# @#d@#e@#s@#i@#g@#n@# @#a@#n@# @#i@#n@#t@#e@#r@#f@#a@#c@#e@# @#t@#o@# @#a@#c@#c@#o@#m@#p@#l@#i@#s@#h@# @#t@#h@#i@#s@#.@# @#D@#u@#r@#i@#n@#g@# @#t@#h@#e@# @#p@#r@#e@#p@#a@#r@#a@#t@#i@#o@#n@# @#f@#o@#r@# @#t@#h@#i@#s@# @#d@#e@#s@#i@#g@#n@# @#t@#a@#s@#k@# @#w@#e@# @#d@#i@#s@#c@#u@#s@#s@#e@#d@# @#a@#n@#d@# @#e@#x@#p@#e@#r@#i@#m@#e@#n@#t@#e@#d@# @#w@#i@#t@#h@# @#t@#w@#o@#:@#
+@#1@#)@# @#P@#r@#e@#s@#e@#n@#t@#i@#n@#g@# @#t@#h@#e@# @#r@#o@#o@#t@# @#d@#i@#r@#e@#c@#t@#o@#r@#y@# @#c@#o@#n@#t@#e@#n@#t@#s@#.@# @#T@#h@#e@#n@# @#l@#o@#a@#d@#i@#n@#g@# @#a@# @#n@#e@#w@# @#p@#a@#g@#e@# @#e@#a@#c@#h@# @#t@#i@#m@#e@# @#a@# @#u@#s@#e@#r@# @#r@#e@#q@#u@#e@#s@#t@#s@#/@#c@#l@#i@#c@#k@#s@# @#a@# @#f@#o@#l@#d@#e@#r@# @#s@#h@#o@#w@#i@#n@#g@# @#o@#n@#l@#y@# @#t@#h@#a@#t@# @#f@#o@#l@#d@#e@#r@#s@# @#c@#o@#n@#t@#e@#n@#t@#.@# @#T@#h@#e@#r@#e@#f@#o@#r@#e@# @#w@#e@# @#o@#n@#l@#y@# @#e@#v@#e@#r@# @#s@#h@#o@#w@# @#t@#h@#e@# @#c@#o@#n@#t@#e@#n@#t@# @#o@#f@# @#o@#n@#e@# @#f@#o@#l@#d@#e@#r@# @#a@#t@# @#a@# @#t@#i@#m@#e@#.@# @#
+@#2@#)@# @#P@#r@#e@#s@#e@#n@#t@#i@#n@#g@# @#a@#l@#l@# @#t@#h@#e@# @#f@#i@#l@#e@#s@# @#i@#n@# @#a@# @#n@#e@#s@#t@#e@#d@# @#'@#t@#r@#e@#e@# @#v@#i@#e@#w@#'@# @#w@#i@#t@#h@# @#c@#o@#l@#l@#a@#p@#s@#i@#b@#l@#e@# @#a@#n@#d@# @#e@#x@#p@#a@#n@#d@#a@#b@#l@#e@# @#f@#o@#l@#d@#e@#r@#s@#.@#
+@#T@#h@#e@#r@#e@# @#a@#r@#e@# @#p@#o@#s@#i@#t@#i@#v@#e@#s@# @#a@#n@#d@# @#n@#e@#g@#a@#t@#i@#v@#e@#s@# @#t@#o@# @#b@#o@#t@#h@# @#o@#p@#t@#i@#o@#n@#s@# @#t@#o@# @#d@#o@# @#w@#i@#t@#h@# @#a@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@#,@# @#e@#f@#f@#i@#c@#i@#e@#n@#c@#y@#,@# @#a@#n@#d@# @#c@#o@#m@#p@#l@#e@#x@#i@#t@#y@#.@# @# @#
+@#
+@##@##@# @#U@#X@# @#R@#e@#s@#e@#a@#r@#c@#h@#
+@#B@#o@#t@#h@# @#F@#i@#n@#d@#e@#r@# @#(@#m@#a@#c@#O@#S@#)@# @#a@#n@#d@# @#F@#i@#l@#e@# @#E@#x@#p@#l@#o@#r@#e@#r@# @#(@#W@#i@#n@#d@#o@#w@#s@#)@# @#h@#a@#v@#e@# @#b@#e@#e@#n@# @#d@#e@#a@#l@#i@#n@#g@# @#w@#i@#t@#h@# @#t@#h@#e@# @#U@#X@# @#o@#f@# @#f@#i@#l@#e@# @#m@#a@#n@#a@#g@#e@#m@#e@#n@#t@# @#f@#o@#r@# @#a@# @#l@#o@#n@#g@# @#t@#i@#m@#e@#.@# @#T@#h@#e@#y@# @#m@#a@#k@#e@# @#m@#u@#l@#t@#i@#p@#l@#e@# @#o@#p@#t@#i@#o@#n@#s@# @#f@#o@#r@# @#f@#i@#l@#e@# @#e@#x@#p@#l@#o@#r@#a@#t@#i@#o@#n@# @#a@#v@#a@#i@#l@#a@#b@#l@#e@# @#a@#n@#d@# @#c@#o@#n@#f@#i@#g@#u@#r@#a@#b@#l@#e@# @#t@#o@# @#t@#h@#e@# @#u@#s@#e@#r@#,@# @#i@#n@#c@#l@#u@#d@#i@#n@#g@# @#t@#r@#e@#e@#,@# @#c@#o@#l@#u@#m@#n@# @#a@#n@#d@# @#s@#i@#n@#g@#l@#e@# @#p@#a@#g@#e@# @#v@#i@#e@#w@#s@#.@# @#I@#t@# @#w@#a@#s@# @#u@#s@#e@#f@#u@#l@# @#t@#o@# @#a@#s@#s@#e@#s@#s@# @#h@#o@#w@# @#t@#h@#e@# @#U@#I@# @#d@#e@#s@#i@#g@#n@# @#p@#a@#t@#t@#e@#r@#n@# @#w@#o@#r@#k@#s@# @#i@#n@# @#a@#n@# @#o@#p@#e@#r@#a@#t@#i@#n@#g@# @#s@#y@#s@#t@#e@#m@# @#s@#i@#n@#c@#e@# @#t@#h@#i@#s@# @#i@#s@# @#a@# @#f@#a@#m@#i@#l@#i@#a@#r@# @#m@#e@#t@#h@#o@#d@# @#f@#o@#r@# @#m@#o@#s@#t@# @#p@#e@#o@#p@#l@#e@# @#t@#o@# @#m@#a@#n@#i@#p@#u@#l@#a@#t@#e@# @#a@#n@#d@# @#e@#x@#p@#l@#o@#r@#e@# @#f@#i@#l@#e@#s@# @#a@#n@#d@# @#f@#o@#l@#d@#e@#r@#s@#.@# @#
+@#
+@#!@#[@#[@#a@#t@#t@#a@#c@#h@#m@#e@#n@#t@#s@#/@#S@#c@#r@#e@#e@#n@#s@#h@#o@#t@# @#2@#0@#2@#3@#-@#0@#9@#-@#1@#2@# @#a@#t@# @#0@#8@#.@#5@#4@#.@#1@#9@#.@#p@#n@#g@#]@#]@#O@#t@#h@#e@#r@# @#e@#x@#a@#m@#p@#l@#e@#s@# @#w@#h@#e@#r@#e@# @#w@#o@#r@#k@#i@#n@#g@# @#w@#i@#t@#h@# @#f@#i@#l@#e@#s@# @#i@#s@# @#p@#r@#e@#v@#a@#l@#e@#n@#t@# @#i@#s@# @#c@#l@#o@#u@#d@# @#s@#t@#o@#r@#a@#g@#e@# @#s@#e@#r@#v@#i@#c@#e@#s@#,@# @#s@#u@#c@#h@# @#a@#s@# @#D@#r@#o@#p@#b@#o@#x@# @#a@#n@#d@# @#G@#o@#o@#g@#l@#e@# @#D@#r@#i@#v@#e@#.@# @#I@#n@# @#e@#a@#c@#h@# @#o@#f@# @#t@#h@#e@#m@# @#t@#h@#e@#r@#e@# @#i@#s@# @#a@# @#s@#i@#m@#i@#l@#a@#r@# @#s@#e@#t@# @#o@#f@# @#c@#o@#n@#f@#i@#g@#u@#r@#a@#b@#l@#e@# @#o@#p@#t@#i@#o@#n@#s@# @#b@#e@#t@#w@#e@#e@#n@# @#s@#i@#n@#g@#l@#e@# @#p@#a@#g@#e@# @#a@#n@#d@# @#t@#r@#e@#e@# @#v@#i@#e@#w@# @#p@#r@#e@#s@#e@#n@#t@#a@#t@#i@#o@#n@#s@#.@# @#
+@#
+@##@##@# @#U@#s@#e@#r@# @#n@#e@#e@#d@#s@# @#&@# @#d@#e@#c@#i@#s@#i@#o@#n@#s@#
+@#U@#s@#e@#r@# @#r@#e@#s@#e@#a@#r@#c@#h@# @#l@#e@#d@# @#u@#s@# @#t@#o@# @#b@#e@#l@#i@#e@#v@#e@# @#t@#h@#a@#t@# @#u@#s@#e@#r@#s@# @#c@#o@#u@#l@#d@# @#o@#f@#t@#e@#n@# @#b@#e@# @#b@#r@#o@#w@#s@#i@#n@#g@# @#d@#e@#e@#p@#l@#y@# @#n@#e@#s@#t@#e@#d@# @#f@#o@#l@#d@#e@#r@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@#s@#.@# @#T@#h@#e@# @#'@#o@#n@#e@# @#p@#a@#g@#e@# @#p@#e@#r@# @#f@#o@#l@#d@#e@#r@#'@# @#o@#p@#t@#i@#o@#n@# @#w@#o@#u@#l@#d@# @#m@#a@#k@#e@# @#t@#h@#i@#s@# @#c@#h@#a@#l@#l@#e@#n@#g@#i@#n@#g@# @#f@#o@#r@# @#a@# @#n@#u@#m@#b@#e@#r@# @#o@#f@# @#r@#e@#a@#s@#o@#n@#s@#.@# @#T@#h@#i@#s@# @#n@#a@#r@#r@#o@#w@# @#w@#i@#n@#d@#o@#w@# @#o@#n@# @#t@#h@#e@# @#f@#i@#l@#e@#s@# @#w@#o@#u@#l@#d@# @#m@#a@#k@#e@# @#i@#t@# @#c@#h@#a@#l@#l@#e@#n@#g@#i@#n@#g@# @#t@#o@# @#l@#o@#c@#a@#t@#e@# @#o@#n@#e@#s@#e@#l@#f@# @#i@#n@# @#t@#h@#e@# @#h@#i@#e@#r@#a@#r@#c@#h@#y@# @#a@#n@#d@# @#i@#n@#d@#i@#v@#i@#d@#u@#a@#l@# @#p@#a@#g@#e@# @#r@#e@#f@#r@#e@#s@#h@#e@#s@# @#w@#h@#e@#n@# @#n@#a@#v@#i@#g@#a@#t@#i@#n@#g@# @#i@#n@# @#a@#n@#d@# @#o@#u@#t@# @#o@#f@# @#d@#e@#e@#p@#l@#y@# @#n@#e@#s@#t@#e@#d@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@#s@# @#w@#o@#u@#l@#d@# @#b@#e@#c@#o@#m@#e@# @#o@#n@#e@#r@#o@#u@#s@#.@# @#
+@#
+@#T@#h@#e@# @#h@#i@#e@#r@#a@#r@#c@#h@#i@#c@#a@#l@# @#t@#r@#e@#e@# @#v@#i@#e@#w@# @#w@#a@#s@# @#t@#h@#e@# @#U@#I@# @#a@#n@#d@# @#i@#n@#t@#e@#r@#a@#c@#t@#i@#o@#n@# @#p@#a@#t@#t@#e@#r@#n@# @#t@#h@#a@#t@# @#m@#o@#s@#t@# @#s@#u@#i@#t@#e@#d@# @#t@#h@#e@# @#u@#s@#e@#r@#s@#'@# @#n@#e@#e@#d@#s@#,@# @#p@#r@#o@#v@#i@#d@#i@#n@#g@# @#a@# @#w@#i@#d@#e@#r@# @#o@#r@# @#m@#a@#c@#r@#o@# @#v@#i@#e@#w@# @#o@#f@# @#t@#h@#e@# @#f@#o@#l@#d@#e@#r@# @#s@#t@#r@#u@#c@#t@#u@#r@#e@#,@# @#h@#e@#l@#p@#i@#n@#g@# @#w@#i@#t@#h@# @#f@#i@#n@#d@#-@#a@#b@#i@#l@#i@#t@#y@# @#a@#n@#d@# @#m@#a@#k@#i@#n@#g@# @#n@#a@#v@#i@#g@#a@#t@#i@#o@#n@# @#t@#h@#r@#o@#u@#g@#h@# @#d@#i@#r@#e@#c@#t@#o@#r@#i@#e@#s@# @#t@#r@#i@#v@#i@#a@#l@#.@#
+@#
+@##@##@# @#D@#e@#s@#i@#g@#n@#
+@#
+@#T@#h@#e@# @#[@#F@#i@#g@#m@#a@# @#f@#i@#l@#e@# @#f@#o@#r@# @#t@#h@#i@#s@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#f@#i@#g@#m@#a@#.@#c@#o@#m@#/@#f@#i@#l@#e@#/@#Q@#1@#I@#8@#w@#O@#l@#O@#k@#K@#e@#5@#b@#i@#T@#k@#X@#I@#z@#g@#I@#c@#/@#G@#D@#S@#-@#T@#r@#e@#e@#-@#V@#i@#e@#w@#?@#t@#y@#p@#e@#=@#d@#e@#s@#i@#g@#n@#&@#n@#o@#d@#e@#-@#i@#d@#=@#2@#1@#0@#1@#2@#%@#3@#A@#1@#2@#2@#8@#9@#&@#m@#o@#d@#e@#=@#d@#e@#s@#i@#g@#n@#&@#t@#=@#m@#F@#Y@#Z@#8@#j@#i@#Y@#R@#r@#3@#z@#6@#2@#y@#E@#-@#1@#)@# @#i@#s@# @#o@#p@#e@#n@# @#a@#n@#d@# @#b@#a@#s@#e@#d@# @#o@#n@# @#t@#h@#e@# @#[@#G@#D@#S@# @#F@#i@#g@#m@#a@# @#c@#o@#m@#m@#u@#n@#i@#t@#y@# @#f@#i@#l@#e@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#f@#i@#g@#m@#a@#.@#c@#o@#m@#/@#c@#o@#m@#m@#u@#n@#i@#t@#y@#/@#f@#i@#l@#e@#/@#9@#4@#6@#8@#3@#7@#2@#7@#1@#0@#9@#2@#5@#4@#0@#3@#1@#4@#/@#G@#O@#V@#.@#U@#K@#-@#D@#e@#s@#i@#g@#n@#-@#S@#y@#s@#t@#e@#m@#)@#.@# @#
+@#
+@#>@# @#[@#!@#N@#O@#T@#E@#]@# @#T@#i@#d@#y@# @#u@#p@# @#a@#n@#d@# @#p@#u@#b@#l@#i@#s@#h@# @#a@#s@# @#F@#i@#g@#m@#a@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@#
+@#>@# @#C@#u@#r@#r@#e@#n@#t@#l@#y@# @#t@#h@#e@# @#F@#i@#g@#m@#a@# @#f@#i@#l@#e@# @#c@#o@#u@#l@#d@# @#b@#e@# @#o@#r@#g@#a@#n@#i@#s@#e@#d@# @#b@#e@#t@#t@#e@#r@# @#s@#o@# @#w@#i@#l@#l@# @#r@#e@#t@#u@#r@#n@# @#t@#o@# @#t@#h@#i@#s@# @#a@#n@#d@# @#m@#a@#k@#e@# @#t@#h@#e@# @#T@#r@#e@#e@# @#V@#i@#e@#w@# @#a@# @#p@#r@#o@#p@#e@#r@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@#.@# @# @#
+@#
+@#T@#h@#e@# @#U@#I@# @#d@#e@#s@#i@#g@#n@# @#l@#e@#a@#n@#s@# @#o@#n@# @#G@#D@#S@# @#s@#t@#y@#l@#e@#s@# @#a@#n@#d@# @#c@#o@#m@#p@#o@#s@#i@#t@#i@#n@#g@# @#e@#x@#i@#s@#t@#i@#n@#g@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@#s@# @#s@#u@#c@#h@# @#a@#s@# @#r@#a@#d@#i@#o@# @#b@#u@#t@#t@#o@#n@#s@# @#o@#r@# @#c@#h@#e@#c@#k@#b@#o@#x@#e@#s@#.@# @#T@#h@#e@# @#c@#o@#m@#p@#o@#n@#e@#n@#t@# @#h@#o@#v@#e@#r@# @#a@#n@#d@# @#f@#o@#c@#u@#s@# @#s@#t@#a@#t@#e@#s@# @#w@#e@#r@#e@# @#a@#d@#a@#p@#t@#e@#d@#,@# @#a@#n@#d@# @#t@#h@#e@# @#v@#i@#s@#u@#a@#l@# @#i@#n@#d@#i@#c@#a@#t@#o@#r@#s@# @#f@#o@#r@# @#f@#o@#c@#u@#s@# @#m@#a@#d@#e@# @#m@#u@#c@#h@# @#m@#o@#r@#e@# @#p@#r@#o@#m@#i@#n@#e@#n@#t@# @#b@#e@#c@#a@#u@#s@#e@# @#o@#f@# @#t@#h@#e@# @#d@#e@#t@#a@#i@#l@#e@#d@# @#s@#p@#e@#c@#i@#f@#i@#c@#a@#t@#i@#o@#n@#s@# @#a@#r@#o@#u@#n@#d@# @#k@#e@#y@#b@#o@#a@#r@#d@# @#c@#o@#n@#t@#r@#o@#l@#s@#.@#
+@#
+@#-@# @#[@#S@#t@#o@#r@#y@#b@#o@#o@#k@# @#s@#i@#n@#g@#l@#e@#-@#s@#e@#l@#e@#c@#t@# @#e@#x@#a@#m@#p@#l@#e@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#n@#a@#t@#i@#o@#n@#a@#l@#a@#r@#c@#h@#i@#v@#e@#s@#.@#g@#i@#t@#h@#u@#b@#.@#i@#o@#/@#t@#d@#r@#-@#c@#o@#m@#p@#o@#n@#e@#n@#t@#s@#/@#?@#p@#a@#t@#h@#=@#/@#s@#t@#o@#r@#y@#/@#t@#d@#r@#-@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#-@#e@#x@#p@#a@#n@#d@#-@#s@#e@#l@#e@#c@#t@#-@#a@#n@#d@#-@#d@#i@#s@#p@#l@#a@#y@#-@#s@#e@#l@#e@#c@#t@#e@#d@#)@#
+@#-@# @#[@#S@#t@#o@#r@#y@#b@#o@#o@#k@# @#k@#e@#y@#b@#o@#a@#r@#d@# @#c@#o@#n@#t@#r@#o@#l@#s@# @#e@#x@#a@#m@#p@#l@#e@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#n@#a@#t@#i@#o@#n@#a@#l@#a@#r@#c@#h@#i@#v@#e@#s@#.@#g@#i@#t@#h@#u@#b@#.@#i@#o@#/@#t@#d@#r@#-@#c@#o@#m@#p@#o@#n@#e@#n@#t@#s@#/@#?@#p@#a@#t@#h@#=@#/@#s@#t@#o@#r@#y@#/@#t@#d@#r@#-@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#-@#k@#e@#y@#b@#o@#a@#r@#d@#-@#n@#a@#v@#i@#g@#a@#t@#e@#-@#m@#o@#v@#e@#-@#u@#p@#-@#w@#i@#t@#h@#-@#l@#e@#f@#t@#-@#a@#r@#r@#o@#w@#)@#
+@#
+@#!@#[@#[@#a@#t@#t@#a@#c@#h@#m@#e@#n@#t@#s@#/@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#z@#o@#o@#m@#e@#d@#-@#s@#i@#n@#g@#l@#e@#-@#s@#e@#l@#e@#c@#t@#.@#p@#n@#g@#]@#]@#
+@#
+@#O@#t@#h@#e@#r@# @#d@#i@#f@#f@#e@#r@#e@#n@#t@#i@#a@#t@#e@#d@# @#v@#i@#s@#u@#a@#l@# @#s@#t@#a@#t@#e@#s@# @#i@#n@#c@#l@#u@#d@#e@#d@# @#s@#h@#o@#w@#i@#n@#g@# @#r@#e@#l@#a@#t@#i@#o@#n@#s@#h@#i@#p@#s@# @#b@#e@#t@#w@#e@#e@#n@# @#t@#h@#e@# @#a@#c@#t@#i@#v@#e@# @#c@#h@#i@#l@#d@# @#a@#n@#d@# @#t@#h@#e@# @#p@#a@#r@#e@#n@#t@# @#d@#i@#r@#e@#c@#t@#o@#r@#i@#e@#s@# @#a@#n@#d@# @#i@#n@#d@#e@#t@#e@#r@#m@#i@#n@#a@#t@#e@# @#c@#h@#e@#c@#k@#b@#o@#x@# @#s@#t@#a@#t@#e@#s@#,@# @#f@#o@#r@# @#s@#c@#e@#n@#a@#r@#i@#o@#s@# @#w@#h@#e@#n@# @#m@#u@#l@#t@#i@#-@#s@#e@#l@#e@#c@#t@# @#
+@#
+@#-@# @#[@#S@#t@#o@#r@#y@#b@#o@#o@#k@# @#m@#u@#l@#t@#i@#-@#s@#e@#l@#e@#c@#t@# @#e@#x@#a@#m@#p@#l@#e@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#n@#a@#t@#i@#o@#n@#a@#l@#a@#r@#c@#h@#i@#v@#e@#s@#.@#g@#i@#t@#h@#u@#b@#.@#i@#o@#/@#t@#d@#r@#-@#c@#o@#m@#p@#o@#n@#e@#n@#t@#s@#/@#?@#p@#a@#t@#h@#=@#/@#s@#t@#o@#r@#y@#/@#t@#d@#r@#-@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#-@#m@#u@#l@#t@#i@#p@#l@#e@#-@#s@#e@#l@#e@#c@#t@#-@#c@#h@#i@#l@#d@#-@#s@#e@#t@#s@#-@#p@#a@#r@#e@#n@#t@#-@#t@#o@#-@#i@#n@#d@#e@#t@#e@#r@#m@#i@#n@#a@#t@#e@#)@#
+@#
+@#!@#[@#[@#a@#t@#t@#a@#c@#h@#m@#e@#n@#t@#s@#/@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#z@#o@#o@#m@#e@#d@#-@#m@#u@#l@#t@#i@#-@#s@#e@#l@#e@#c@#t@# @#3@#.@#p@#n@#g@#]@#]@#
+@#
+@#M@#o@#r@#e@# @#t@#h@#a@#n@# @#i@#n@# @#m@#o@#s@#t@# @#o@#f@# @#m@#y@# @#p@#r@#e@#v@#i@#o@#u@#s@# @#w@#o@#r@#k@# @#t@#h@#e@# @#d@#e@#v@#i@#l@# @#w@#a@#s@# @#i@#n@# @#t@#h@#e@# @#d@#e@#t@#a@#i@#l@#s@# @#o@#f@# @#f@#i@#n@#e@#-@#g@#r@#a@#i@#n@#e@#d@# @#i@#n@#t@#e@#r@#a@#c@#t@#i@#o@#n@#s@# @#a@#n@#d@# @#v@#i@#s@#u@#a@#l@# @#s@#t@#a@#t@#e@#s@# @#s@#u@#p@#p@#o@#r@#t@#i@#n@#g@# @#a@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@#.@# @#T@#h@#e@# @#r@#e@#l@#e@#v@#a@#n@#t@# @#W@#C@#A@#G@# @#r@#u@#l@#e@#s@# @#w@#e@#r@#e@# @#[@#N@#o@#n@#-@#t@#e@#x@#t@# @#C@#o@#n@#t@#r@#a@#s@#t@# @#(@#1@#.@#4@#.@#1@#1@#)@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#w@#3@#.@#o@#r@#g@#/@#W@#A@#I@#/@#W@#C@#A@#G@#2@#2@#/@#U@#n@#d@#e@#r@#s@#t@#a@#n@#d@#i@#n@#g@#/@#n@#o@#n@#-@#t@#e@#x@#t@#-@#c@#o@#n@#t@#r@#a@#s@#t@#.@#h@#t@#m@#l@#)@# @#a@#n@#d@# @#[@#F@#o@#c@#u@#s@# @#A@#p@#p@#e@#a@#r@#a@#n@#c@#e@# @#(@#2@#.@#4@#.@#1@#1@#)@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#w@#3@#.@#o@#r@#g@#/@#W@#A@#I@#/@#W@#C@#A@#G@#2@#2@#/@#U@#n@#d@#e@#r@#s@#t@#a@#n@#d@#i@#n@#g@#/@#f@#o@#c@#u@#s@#-@#a@#p@#p@#e@#a@#r@#a@#n@#c@#e@#.@#h@#t@#m@#l@#)@#.@#
+@##@##@# @#I@#m@#p@#l@#e@#m@#e@#n@#t@#a@#t@#i@#o@#n@#
+@#T@#h@#e@# @#c@#o@#m@#m@#o@#n@# @#d@#e@#s@#i@#g@#n@# @#p@#a@#t@#t@#e@#r@#n@# @#f@#o@#r@# @#t@#h@#i@#s@# @#t@#y@#p@#e@# @#o@#f@# @#d@#i@#s@#p@#l@#a@#y@# @#a@#n@#d@# @#i@#n@#t@#e@#r@#a@#c@#t@#i@#o@#n@# @#i@#s@# @#c@#o@#n@#v@#e@#n@#i@#e@#n@#t@#l@#y@# @#c@#a@#l@#l@#e@#d@# @#t@#h@#e@# @#'@#t@#r@#e@#e@# @#v@#i@#e@#w@#'@#.@# @#T@#h@#i@#s@# @#h@#a@#s@# @#a@#n@# @#e@#q@#u@#i@#v@#a@#l@#e@#n@#t@# @#[@#A@#R@#I@#A@# @#r@#o@#l@#e@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#w@#3@#.@#o@#r@#g@#/@#T@#R@#/@#2@#0@#1@#7@#/@#R@#E@#C@#-@#w@#a@#i@#-@#a@#r@#i@#a@#-@#1@#.@#1@#-@#2@#0@#1@#7@#1@#2@#1@#4@#/@##@#t@#r@#e@#e@#)@# @#a@#n@#d@# @#i@#m@#p@#l@#e@#m@#e@#n@#t@#a@#t@#i@#o@#n@# @#g@#u@#i@#d@#a@#n@#c@#e@# @#f@#r@#o@#m@# @#[@#A@#R@#I@#A@# @#A@#u@#t@#h@#o@#r@#i@#n@#g@# @#P@#r@#a@#c@#t@#i@#c@#e@#s@# @#G@#u@#i@#d@#e@# @#(@#A@#P@#G@#)@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#w@#w@#w@#.@#w@#3@#.@#o@#r@#g@#/@#W@#A@#I@#/@#A@#R@#I@#A@#/@#a@#p@#g@#/@#p@#a@#t@#t@#e@#r@#n@#s@#/@#t@#r@#e@#e@#v@#i@#e@#w@#/@#)@#,@# @#[@#M@#o@#z@#i@#l@#l@#a@# @#D@#e@#v@#e@#l@#o@#p@#e@#r@# @#N@#e@#t@#w@#o@#r@#k@# @#(@#M@#D@#N@#)@#]@#(@#h@#t@#t@#p@#s@#:@#/@#/@#d@#e@#v@#e@#l@#o@#p@#e@#r@#.@#m@#o@#z@#i@#l@#l@#a@#.@#o@#r@#g@#/@#e@#n@#-@#U@#S@#/@#d@#o@#c@#s@#/@#W@#e@#b@#/@#A@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@#/@#A@#R@#I@#A@#/@#R@#o@#l@#e@#s@#/@#t@#r@#e@#e@#_@#r@#o@#l@#e@#)@# @#a@#n@#d@# @#v@#a@#r@#i@#o@#u@#s@# @#d@#e@#s@#i@#g@#n@# @#s@#y@#s@#t@#e@#m@#s@#.@# @#
+@#
+@#S@#e@#e@# @#m@#y@# @#p@#a@#g@#e@# @#o@#f@# @#[@#[@#U@#X@# @#P@#a@#t@#t@#e@#r@#n@# @#-@# @#T@#r@#e@#e@# @#v@#i@#e@#w@#|@#U@#X@# @#r@#e@#s@#e@#a@#r@#c@#h@# @#o@#n@# @#t@#h@#e@# @#T@#r@#e@#e@# @#V@#i@#e@#w@#]@#]@#.@#
+@#
+@#T@#h@#e@# @#s@#i@#m@#p@#l@#i@#c@#i@#t@#y@# @#o@#f@# @#t@#h@#e@# @#
+@#
+@#
+@#T@#o@# @#a@#c@#h@#i@#e@#v@#e@# @#s@#o@#m@#e@#t@#h@#i@#n@#g@# @#l@#i@#k@#e@# @#t@#h@#e@# @#F@#i@#n@#d@#e@#r@# @#s@#c@#r@#e@#e@#n@#s@#h@#o@#t@# @#a@#b@#o@#v@#e@# @#i@#n@# @#a@# @#w@#e@#b@# @#i@#n@#t@#e@#r@#f@#a@#c@#e@# @#w@#e@# @#w@#o@#u@#l@#d@# @#n@#e@#e@#d@# @#t@#o@# @#r@#e@#n@#d@#e@#r@# @#a@#l@#l@# @#f@#i@#l@#e@#s@# @#a@#n@#d@# @#f@#o@#l@#d@#e@#r@#s@# @#i@#n@# @#a@# @#s@#e@#t@# @#o@#f@# @#n@#e@#s@#t@#e@#d@# @#l@#i@#s@#t@#s@#,@# @#a@#n@#d@# @#p@#r@#o@#g@#r@#e@#s@#s@#i@#v@#e@#l@#y@# @#e@#n@#h@#a@#n@#c@#e@# @#t@#h@#i@#s@# @#t@#o@# @#a@#l@#l@#o@#w@# @#c@#o@#l@#l@#a@#p@#s@#i@#n@#g@# @#a@#n@#d@# @#e@#x@#p@#a@#n@#d@#i@#n@#g@# @#o@#f@# @#f@#o@#l@#d@#e@#r@#s@#.@# @#
+@#
+@#`@#`@#`@#h@#t@#m@#l@#
+@#<@#u@#l@#>@#
+@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#d@#i@#r@#"@#>@#C@#a@#k@#e@#s@#
+@#	@#	@#<@#u@#l@#>@#
+@#	@#	@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#f@#i@#l@#e@#"@#>@#B@#a@#k@#i@#n@#g@# @#p@#o@#w@#d@#e@#r@# @#1@#9@#9@#9@#.@#t@#x@#t@#<@#/@#l@#i@#>@#
+@#	@#	@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#f@#i@#l@#e@#"@#>@#B@#a@#k@#i@#n@#g@# @#p@#o@#w@#d@#e@#r@# @#2@#0@#2@#2@#.@#t@#x@#t@#<@#/@#l@#i@#>@#
+@#	@#	@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#d@#i@#r@#"@#>@#B@#a@#s@#i@#c@#s@# @#t@#e@#c@#h@#n@#i@#q@#u@#e@#s@#<@#/@#l@#i@#>@#
+@#	@#	@#<@#/@#u@#l@#>@#
+@#	@#<@#/@#l@#i@#>@#
+@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#f@#i@#l@#e@#"@#>@#S@#h@#o@#p@#p@#i@#n@#g@# @#l@#i@#s@#t@#.@#t@#x@#t@#<@#/@#l@#i@#>@#
+@#	@#<@#l@#i@# @#c@#l@#a@#s@#s@#=@#"@#d@#i@#r@#"@#>@#W@#i@#n@#t@#e@#r@# @#R@#e@#c@#i@#p@#e@#s@#
+@#	@#	@#<@#u@#l@#>@#
+@#	@#	@#	@#.@#.@#.@#
+@#	@#	@#<@#/@#u@#l@#>@#
+@#	@#<@#/@#l@#i@#>@#
+@#<@#/@#u@#l@#>@#
+@#`@#`@#`@#
+@#
+@##@##@# @#A@#c@#c@#e@#s@#s@#i@#b@#l@#e@# @#d@#e@#s@#i@#g@#n@# @#p@#a@#t@#t@#e@#r@#n@#s@#
+@#
+@#
+@#
+@#
+@##@##@# @#G@#D@#S@# @#
+@#
+@#
+@#<@#i@#f@#r@#a@#m@#e@#
+@# @# @#i@#d@#=@#"@#i@#n@#l@#i@#n@#e@#F@#r@#a@#m@#e@#E@#x@#a@#m@#p@#l@#e@#"@#
+@# @# @#t@#i@#t@#l@#e@#=@#"@#I@#n@#l@#i@#n@#e@# @#F@#r@#a@#m@#e@# @#E@#x@#a@#m@#p@#l@#e@#"@#
+@# @# @#w@#i@#d@#t@#h@#=@#"@#1@#0@#0@#%@#"@#
+@# @# @#h@#e@#i@#g@#h@#t@#=@#"@#4@#0@#0@#"@#
+@# @# @#s@#r@#c@#=@#"@#h@#t@#t@#p@#s@#:@#/@#/@#n@#a@#t@#i@#o@#n@#a@#l@#a@#r@#c@#h@#i@#v@#e@#s@#.@#g@#i@#t@#h@#u@#b@#.@#i@#o@#/@#t@#d@#r@#-@#c@#o@#m@#p@#o@#n@#e@#n@#t@#s@#/@#i@#f@#r@#a@#m@#e@#.@#h@#t@#m@#l@#?@#a@#r@#g@#s@#=@#&@#i@#d@#=@#t@#d@#r@#-@#t@#r@#e@#e@#-@#v@#i@#e@#w@#-@#-@#d@#e@#f@#a@#u@#l@#t@#-@#m@#u@#l@#t@#i@#p@#l@#e@#&@#v@#i@#e@#w@#M@#o@#d@#e@#=@#s@#t@#o@#r@#y@#"@#
+@#>@#
+@#<@#/@#i@#f@#r@#a@#m@#e@#>@#
+@#
+@#
+@##@##@# @#A@#c@#c@#e@#s@#s@#i@#b@#i@#l@#i@#t@#y@# @#t@#e@#s@#t@#i@#n@#g@#
+@#
+@#T@#h@#e@#r@#e@# @#i@#s@# @#a@# @# @#p@#r@#o@#v@#i@#d@#e@#s@# @#a@# @#
+@#
+@#
+@##@##@# @#O@#u@#r@# @#o@#w@#n@# @#i@#m@#p@#l@#e@#m@#e@#n@#t@#a@#t@#i@#o@#n@# @#
+@#[@#A@#N@#O@#T@#H@#E@#R@# @#P@#A@#G@#E@#]@#
+@#
+@##@##@# @#S@#u@#m@#m@#a@#r@#y@# @#
+@#T@#h@#e@#r@#e@# @#a@#r@#e@# @#s@#o@#m@#e@# @#c@#o@#n@#c@#e@#r@#n@#s@# @#a@#b@#o@#u@#t@# @#
+@#
+@#
+@#
