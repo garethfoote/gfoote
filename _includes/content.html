@@ -29,80 +29,97 @@
 *
 {%- endcomment -%}
 
-
 <!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly -->
+{%- assign alt_text_delimiter = '@#' -%}
 {%- assign link_joiner_delimiter = '$@' -%}
+
+{% assign image_titles = "" | split: ',' %}
+{% assign image_urls = "" | split: ',' %}
+{% assign image_alts = "" | split: ',' %}
 {%- assign image_array = content | split:'![[' -%}
 {%- for item in image_array -%}
     {%- if forloop.index > 1 -%}
-        {%- assign itemparts = item | split:']]' -%}
-        {%- assign wikiimage_title = itemparts[0] -%}
-        {%- assign file = "" -%}  
-        {% for f in site.static_files %} 
+        {%- assign wikilink_content = item | split:']]' -%}
+        {%- assign wikilink_content = wikilink_content[0] | split: alt_text_delimiter -%}
+        {%- assign wikiimage_title = wikilink_content[0]  -%} 
+        {% assign image_alts = image_alts | push: wikilink_content[1] %}
+        {% assign image_titles = image_titles | push: wikiimage_title %}
+        {% comment %}{{wikiimage_title}} - {{alt_text}}<br> {% endcomment %}
+        {%- assign file = "" -%}
+        {% for f in site.static_files %}
           {% if f.name == wikiimage_title or f.path contains wikiimage_title %}
-          {%- assign file = f  -%}  
+          {%- assign file = f  -%}
+          {% assign image_urls = image_urls | push: file.path %}
           {% endif %}
         {% endfor %}
-        {%- assign wikiimage_titles = wikiimage_titles | append: link_joiner_delimiter | append: wikiimage_title -%}
-        {%- assign wikiimage_urls = wikiimage_urls | append: link_joiner_delimiter | append: file.path -%}
-
     {%- endif -%}
 {%- endfor -%}
 
-{%- assign image_titles_array = wikiimage_titles | split:link_joiner_delimiter -%}
-{%- assign image_url_array = wikiimage_urls | split:link_joiner_delimiter -%}
-
 {%- assign replaced_content = content -%}
-{%- for image_title in image_titles_array -%}
-  {%- assign image_url = image_url_array[forloop.index0] -%}
+{%- for image_title in image_titles -%}
+  {%- assign image_url = image_urls[forloop.index0] -%}
+  {%- assign image_alt = image_alts[forloop.index0] -%}
+  {%- assign bracket_link = '![[' | append: image_title -%}
 
   {%- if image_url != nil and url != empty -%}
-    {%- assign link_text = '<img src="'| append: site.baseurl | append: image_url | append: '" />' -%}
-    {%- assign bracket_link = '![[' | append: image_title | append: ']]' -%}
+    {%- assign bracket_link = '![[' | append: image_title -%}
+    {%- assign link_text = '<img src="'| append: site.baseurl | append: image_url | append: '"' -%}
+    {%- if image_alt %}
+      {%- assign link_text = link_text | append: 'alt="' | append: image_alt | append: '"' -%}
+      {%- assign bracket_link = bracket_link | append: alt_text_delimiter | append: image_alt -%}
+    {% endif %}
+    {%- assign link_text = link_text | append: ' />' -%}
+    {%- assign bracket_link = bracket_link | append: ']]' -%}
     {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
   {%- endif -%}
 {%- endfor -%}
 
+{% assign wikilink_titles = "" | split: ',' %}
+{% assign wikilink_urls = "" | split: ',' %}
+{% assign wikilink_alts = "" | split: ',' %}
 
-{%- assign links_array = content | split:'[[' -%}
-{%- for item in links_array -%}
+{%- assign link_pieces = replaced_content | split:'[[' -%}
+{%- for item in link_pieces -%}
     {%- if forloop.index > 1 -%}
-        {%- assign itemparts = item | split:']]' -%}
-        {%- assign wikilink_title = itemparts[0] -%}
+        {%- assign wikilink_content = item | split:']]' -%}
+        {%- assign wikilink_content = wikilink_content[0] | split: alt_text_delimiter -%}
+        {%- assign wikilink_title = wikilink_content[0]  -%} 
+        {%- assign wikilink_alts = wikilink_alts | push: wikilink_content[1] -%}
+
+        {% assign topics = site.topics | where: 'title', itemparts[0] -%}  
+        {% if topics.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: topics[0].url  -%}{% endif %}
+        {% assign writing = site.writing | where: 'title', itemparts[0] -%}  
+        {% if writing.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: writing[0].url -%}{% endif %}
+        {% assign posts = site.posts | where: 'title', itemparts[0] -%}  
+        {% if posts.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: posts[0].url -%}{% endif %}
+        {% assign pages = site.pages | where: 'title', itemparts[0] -%}  
+        {% if pages.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: pages[0].url -%}{% endif %}
+        {% assign wikilink_titles = wikilink_titles | push: wikilink_title %}
 
         {%- comment -%}
-        {% for file in  site.static_files %} 
-            {% if file.name == itemparts[0] %}
-            {%- assign attachment = file  -%}  
-            {% endif %}
-        {% endfor %}
+        {% assign wikilink_urls = wikilink_urls | push:  site.writing | where: 'title',itemparts[0] -%}  
+        {% assign wikilink_urls = wikilink_urls | push: site.posts | where: 'title',itemparts[0] -%}  
+        {% assign wikilink_urls = wikilink_urls | push: site.notes | where: 'title',itemparts[0] -%}
+        {% assign wikilink_urls = wikilink_urls | push: site.pages | where: 'title',itemparts[0] -%}
         {%- endcomment -%}
-
-        {%- assign result_topics = site.topics | where: 'title',itemparts[0] -%}  
-        {%- assign result_writing = site.writing | where: 'title',itemparts[0] -%}  
-        {%- assign result_posts = site.posts | where: 'title',itemparts[0] -%}  
-        {%- assign result_notes = site.notes | where: 'title',itemparts[0] -%}
-        {%- assign result_pages = site.pages | where: 'title',itemparts[0] -%}
-        {%- assign wikilink_titles = wikilink_titles | append: link_joiner_delimiter | append: wikilink_title -%}
-        {%- assign wikilink_urls = wikilink_urls | append: link_joiner_delimiter | append: result_posts[0].url | append: result_pages[0].url | append: result_notes[0].url | append: result_writing[0].url  | append: result_topics[0].url -%}
-
     {%- endif -%}
 {%- endfor -%}
 
-{%- assign internal_url_array = wikilink_urls | split:link_joiner_delimiter -%}
-{%- assign internal_link_array = wikilink_titles | split:link_joiner_delimiter -%}
-
-{%- for title in internal_link_array -%}
-    {%- assign url = internal_url_array[forloop.index0] -%}
+{%- for title in wikilink_titles -%}
+    {%- assign url = wikilink_urls[forloop.index0] -%}
+    {%- assign alt = wikilink_alts[forloop.index0] -%}
     {%- if url == nil or url == empty -%}
-        {%- assign link_text = '<span class="tooltip"><a class="stale-link" href="' | append: 'javascript:void(0)' | append: '">' | append: title | append: '</a> <span class="right bottom"> <span class="tooltip-title">' | append: {{site.privatelinks.title}} | append: '</span><br/><span class="tooltip-excerpt">' | append: {{site.privatelinks.msg}} | append : ' <br/></span> </span></span>' -%}
+        {%- assign link_text = '<span>' | append: {{site.privatelinks.msg}} | append : '</span>' -%}
     {%- else -%}
-
+      {% if alt %}
+      {%- assign bracket_link = '[[' | append: title | append: alt_text_delimiter | append: alt | append: ']]' -%}
+      {%- assign link_text = '<a href="'| append: site.baseurl | append: url | append: '">' | append: alt | append: '</a>' -%}
+      {% else %}
+      {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
       {%- assign link_text = '<a href="'| append: site.baseurl | append: url | append: '">' | append: title | append: '</a>' -%}
+      {% endif %}
     {%- endif -%}
-    {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
     {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
 {%- endfor -%}
 
 {{ replaced_content }}
-
