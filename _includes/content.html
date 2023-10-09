@@ -84,16 +84,22 @@
         {%- assign wikilink_content = item | split:']]' -%}
         {%- assign wikilink_content = wikilink_content[0] | split: alt_text_delimiter -%}
         {%- assign wikilink_title = wikilink_content[0]  -%} 
+        {%- assign wikilink_title_decoded = wikilink_content[0] |replace: "&amp;", "&"  -%} 
         {%- assign wikilink_alts = wikilink_alts | push: wikilink_content[1] -%}
 
-        {% assign topics = site.topics | where: 'title', itemparts[0] -%}  
-        {% if topics.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: topics[0].url  -%}{% endif %}
-        {% assign writing = site.writing | where: 'title', itemparts[0] -%}  
-        {% if writing.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: writing[0].url -%}{% endif %}
-        {% assign posts = site.posts | where: 'title', itemparts[0] -%}  
-        {% if posts.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: posts[0].url -%}{% endif %}
-        {% assign pages = site.pages | where: 'title', itemparts[0] -%}  
-        {% if pages.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: pages[0].url -%}{% endif %}
+        {% assign topics = site.topics | where: 'slug', wikilink_title_decoded -%}  
+        {% assign writing = site.writing | where: 'slug', wikilink_title_decoded -%}  
+        {% assign posts = site.posts | where: 'slug', wikilink_title_decoded -%}  
+        {% assign pages = site.pages | where: 'slug', wikilink_title_decoded -%}    
+        {% assign notes = site.notes | where: 'slug', wikilink_title_decoded -%}
+        
+        {% if topics.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: topics[0].url  -%}
+        {% elsif writing.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: writing[0].url -%}
+        {% elsif posts.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: posts[0].url -%}
+        {% elsif pages.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: pages[0].url -%}
+        {% elsif notes.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: notes[0].url -%}
+        {% else %}{% assign wikilink_urls = wikilink_urls | push: "" -%}{% endif %}
+        
         {% assign wikilink_titles = wikilink_titles | push: wikilink_title %}
 
         {%- comment -%}
@@ -108,8 +114,9 @@
 {%- for title in wikilink_titles -%}
     {%- assign url = wikilink_urls[forloop.index0] -%}
     {%- assign alt = wikilink_alts[forloop.index0] -%}
-    {%- if url == nil or url == empty -%}
-        {%- assign link_text = '<span>' | append: {{site.privatelinks.msg}} | append : '</span>' -%}
+    {%- if url == "" -%}
+        {%- assign bracket_link = '[[' | append: title | append: ']]' -%}
+        {%- assign link_text = '<span class="missing-link">' | append: title | append: '</span> - ' | append:  '<span class="tooltip">' | append: {{site.privatelinks.msg}} | append : '</span>' -%}
     {%- else -%}
       {% if alt %}
       {%- assign bracket_link = '[[' | append: title | append: alt_text_delimiter | append: alt | append: ']]' -%}
@@ -119,7 +126,7 @@
       {%- assign link_text = '<a href="'| append: site.baseurl | append: url | append: '">' | append: title | append: '</a>' -%}
       {% endif %}
     {%- endif -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
+    {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
 {%- endfor -%}
 
 {{ replaced_content }}
