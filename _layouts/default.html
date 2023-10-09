@@ -3,19 +3,21 @@
 
 {%- include head.html -%}
 <body class="bg-offwhite border-t-2 border-t-aquamarine">
-  <header class="flex max-w-3xl pl-4 md:pl-8 lg:pl-16 pr-4 place-content-between 2xl:mx-auto 2xl:max-w-4xl">
-    <div class="squiggle squiggle--hidden">
-      <a href="{{site.baseurl}}/">
-        <span class="sr-only">Home</span>
-        <canvas aria-hidden="true" id="squiggle"></canvas>
-      </a>
-    </div>
-    {%- include nav.html -%}
-  </header>
-  <main id="main" class="section max-w-3xl pl-4 md:pl-8 lg:pl-16 pr-4 2xl:mx-auto 2xl:max-w-4xl">
-    {{content}}
-  </main>   
-  <footer>
+  <div>
+    <header class="flex main-col place-content-between">
+      <div class="squiggle squiggle--hidden">
+        <a href="{{site.baseurl}}/">
+          <span class="sr-only">Home</span>
+          <canvas aria-hidden="true" id="squiggle"></canvas>
+        </a>
+      </div>
+      {%- include nav.html -%}
+    </header>
+    <main id="main" class="section main-col">
+      {{content}}
+    </main>   
+  </div>
+  <footer class="main-col">
   {%- include footer.html -%}             
   </footer>
   <script src="{{site.baseurl}}/assets/js/main.js"></script>

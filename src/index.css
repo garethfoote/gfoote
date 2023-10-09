@@ -10,9 +10,13 @@
   }
   
   body {
-    min-height: 100%;
+    @apply  flex flex-col min-h-screen;
     @apply font-sans;
     @apply text-black;
+  }
+
+   body > div {
+    @apply grow;
   }
   
   h1 {
@@ -210,6 +214,11 @@
 }
 
 @layer utilities {
+
+  .main-col {
+    @apply max-w-3xl 2xl:mx-auto 2xl:max-w-4xl;
+    @apply pl-4 md:pl-8 lg:pl-16 pr-4;
+  }
   .black-underline {
     background-size: 1px 1em;
     box-shadow:
