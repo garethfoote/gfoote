@@ -77,6 +77,8 @@
         -1px -1px theme('colors.offwhite');
       display: inline;
   }
+
+  .content li a:hover,
   .content p a:hover {
     background-image: url("../assets/wiggle-green.svg");
     background-repeat: repeat-x;
@@ -203,8 +205,8 @@
   
   .tag {
     @apply inline-block;
-    @apply bg-aquamarine-light rounded-sm;
-    @apply py-px px-1;
+    @apply text-black bg-aquamarine-light rounded-sm;
+    @apply py-0 px-1;
   }
 
   a.tag:hover {
