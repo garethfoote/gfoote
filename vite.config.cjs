@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/gfoote/",
+  base: "",
   build: {
     outDir: '.',
     emptyOutDir: false,
