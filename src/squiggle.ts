@@ -8,7 +8,6 @@ const squiggle = (r: number, l: number): [number, number][] => {
 
   let points: [number, number][] = [];
 
-  console.log(randomNumber(0, 0.07));
   while (currentLength <= l) {
 
     const newX = r * Math.cos(currentAngle * (Math.PI / 180));
