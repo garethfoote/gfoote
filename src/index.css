@@ -169,8 +169,8 @@
     @apply w-full h-full;
     @apply absolute inset-0;
     @apply opacity-0;
-    transition: opacity 0.2s ease-in-out;
-    background-image: linear-gradient(to right, theme('colors.aquamarine.dark') 2px, transparent 2px);
+    transition: opacity 0.1s ease-in-out;
+    background-image: linear-gradient(to right, theme('colors.black') 2px, transparent 2px);
     background-position-x: 0;
     background-position-y: bottom;
     background-repeat: repeat-x;
