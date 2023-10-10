@@ -1,12 +1,12 @@
 {% for post in posts %}
-  <div class="article-card">
+  <article class="article-card">
     <h2 class="article-card__title">
     <a href="{{post.url|relative_url}}">
       <span class="black-underline">{{ post.title }}</span>
     </a></h2>
-    <div class="article-card__metadata">
+    <footer class="article-card__metadata">
       <time datetime="{{post.date}}">{{ post.date |  date: "%b, %Y" }}</time> 
       <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="tag">{{post.topics[0]}}</a></span>
-    </div>
-  </div>
+    </footer>
+  </article>
 {%- endfor -%}
