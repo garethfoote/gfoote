@@ -9,7 +9,7 @@ module.exports = {
       'aquamarine': {
         light: '#B8FEE7',
         DEFAULT: '#1CFCB2',
-        dark: '#12C78B'
+        dark: '#17E29F'
       },
       'purple': '#7e5bef', // possibly unused
       'offwhite': '#FCFCFC',
