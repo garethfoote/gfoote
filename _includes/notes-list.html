@@ -1,0 +1,19 @@
+{% for note in notes %}
+<article class="note-card">
+  <a href="{{note.url|relative_url}}">
+    <h2 class="black-underline" class="article-card__title">
+      {{note.title}}
+    </h2>
+    <div class="note-card__metadata">
+      <time datetime="{{note.date}}">{{ note.date |  date: "%b, %Y" }}</time> 
+
+      {% if note.topics.size > 0 %}
+        <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{note.topics[0]}}" class="tag">{{note.topics[0]}}</a></span>
+      {% endif %}
+    </div>
+    <p class="text-base note-card__excerpt">
+      {{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 }}
+    </p>
+  </a>
+</article>
+{%- endfor -%}
