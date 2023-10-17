@@ -6,7 +6,7 @@ layout: default
   <h1><span class="text-grey">Gareth Foote.</span> Designing and building interfaces.</h1>
 </div>
 <div class="content">
-  {{ content }}
+  {% include content.html %}
 </div>
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
 {%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 5  -%}
