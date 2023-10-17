@@ -90,9 +90,18 @@
         {% assign topics = site.topics | where: 'slug', wikilink_title_decoded -%}  
         {% assign writing = site.writing | where: 'slug', wikilink_title_decoded -%}  
         {% assign posts = site.posts | where: 'slug', wikilink_title_decoded -%}  
-        {% assign pages = site.pages | where: 'slug', wikilink_title_decoded -%}    
         {% assign notes = site.notes | where: 'slug', wikilink_title_decoded -%}
         
+        {% comment %}You cannot query a page{% endcomment %}
+        {% assign pages = "" | split: ',' %}
+        {% assign pagename_md = wikilink_title_decoded | append: ".md"|downcase %}
+        {%- for item in site.pages -%}
+          {% assign lc = item.name | downcase %}
+          {% if lc == pagename_md %}
+            {% assign pages = pages | push: item -%}
+          {% endif %}
+        {%- endfor -%}
+
         {% if topics.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: topics[0].url  -%}
         {% elsif writing.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: writing[0].url -%}
         {% elsif posts.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: posts[0].url -%}
