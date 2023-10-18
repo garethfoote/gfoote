@@ -30,7 +30,7 @@
   }
 
   p {
-    @apply text-base sm:text-lg;
+    @apply text-base sm:text-md;
     @apply mb-8;
   }
   
@@ -63,7 +63,7 @@
   }
 
   .content ul li {
-    @apply text-base leading-5;
+    @apply text-base leading-5 sm:text-md;
     @apply list-disc;
     @apply mb-2;
   }
