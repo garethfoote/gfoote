@@ -5,8 +5,10 @@
       <span class="grey-underline bg-offwhite-bottom">{{ post.title }}</span>
     </a></h2>
     <footer class="article-card__metadata">
-      <time datetime="{{post.date}}">{{ post.date |  date: "%b, %Y" }}</time> 
-      <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="tag">{{post.topics[0]}}</a></span>
+      <time datetime="{{post.date}}">{{ post.date |  date: "%b" }}, <span class="hidden sm:inline">20</span>{{ post.date |  date: "%y" }}</time> 
+      <span class="whitespace-nowrap">
+        <a href="{{site.baseurl}}/topic/{{post.topics[0]}}" class="tag">{{post.topics[0]}}</a>
+      </span>
     </footer>
   </article>
 {%- endfor -%}

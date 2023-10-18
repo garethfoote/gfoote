@@ -245,7 +245,7 @@
   .article-card__metadata time:after {
     content: "·";
     @apply inline;
-    @apply pl-2 pr-1 text-xl text-black;
+    @apply pl-0.5 pr-0 sm:pl-2 sm:pr-1 text-xl text-black;
     @apply relative top-0.5;
     @apply leading-none;
   }
@@ -262,7 +262,7 @@
   .tag {
     @apply inline-block;
     @apply text-black bg-aquamarine-light rounded-sm;
-    @apply py-0 px-1;
+    @apply py-0 px-0.5 sm:px-1;
   }
 
   a.tag:hover {
