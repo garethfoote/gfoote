@@ -12,9 +12,12 @@ const squiggle = (r: number, l: number): [number, number][] => {
 
     const newX = r * Math.cos(currentAngle * (Math.PI / 180));
     const newY = r * Math.sin(currentAngle * (Math.PI / 180));
+    if(points.find(([x, y]) => ( Math.round(x)===Math.round(newX) && Math.round(y)===Math.round(newY) ) )){
+      r += 3;
+    }  
     points.push([newX, newY]);
     currentLength = points.length;
-    currentAngle += Math.ceil(Math.random() * 5);
+    currentAngle += Math.ceil(randomNumber(4, 7));
     r += randomNumber(-3, 3);
   }
   return points;
@@ -36,7 +39,7 @@ export function draw(canvas: HTMLCanvasElement, targetWidth: number=200, targetH
     
     // r = starting radius/magnitude
     // l = amount of increments of the angle/theta.
-    const points = squiggle(50, 1500);
+    const points = squiggle(20, 1500);
     
     ctx.translate((targetWidth) / 2, (targetHeight ) / 2);
   
