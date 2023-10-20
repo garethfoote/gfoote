@@ -1,7 +1,7 @@
 ---
 share: true
 category: _notes
-topics: [trivia]
+topics: [Trivia]
 date: 2023-09-26
 ---
 
