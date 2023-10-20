@@ -116,9 +116,9 @@
     @apply p-1.5 mt-4;
   }
   .squiggle canvas {
-    @apply transition-opacity;
-    width: 100px;
-    height: 100px;
+    @apply transition-opacity ease-out duration-500;
+    width: 75px !important;
+    height: 75px !important;
   }
 
   .squiggle a {

@@ -2,6 +2,14 @@ const randomNumber = (min: number, max: number): number => {
   return Math.random() * (max - min) + min;
 };
 
+function euclideanDistance(v1:[x: number, y: number], v2:[x: number, y: number]):number {
+  let sumOfSquares = 0;
+  for (let i = 0; i < v1.length; i++) {
+    sumOfSquares += Math.pow(v2[i] - v1[i], 2);
+  }
+  return Math.sqrt(sumOfSquares);
+}
+
 const squiggle = (r: number, l: number): [number, number][] => {
   let currentLength = 0;
   let currentAngle = 0;
@@ -12,9 +20,12 @@ const squiggle = (r: number, l: number): [number, number][] => {
 
     const newX = r * Math.cos(currentAngle * (Math.PI / 180));
     const newY = r * Math.sin(currentAngle * (Math.PI / 180));
-    if(points.find(([x, y]) => ( Math.round(x)===Math.round(newX) && Math.round(y)===Math.round(newY) ) )){
-      r += 3;
-    }  
+    // if(points.find(([x, y]) => ( Math.round(x)===Math.round(newX) && Math.round(y)===Math.round(newY) ) )){
+    //   r += 3;
+    // }  
+    if(points.find(([x, y]) => (euclideanDistance([x, y], [newX, newY]) < 1.5))){
+      r += 2;
+    }
     points.push([newX, newY]);
     currentLength = points.length;
     currentAngle += Math.ceil(randomNumber(4, 7));
@@ -35,7 +46,7 @@ export function draw(canvas: HTMLCanvasElement, targetWidth: number=200, targetH
   if (ctx) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.scale(dpr, dpr);
-    // ctx.scale(0.5, 0.5);
+    // ctx.scale(0.8, 0.8);
     
     // r = starting radius/magnitude
     // l = amount of increments of the angle/theta.
