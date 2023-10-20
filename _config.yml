@@ -72,6 +72,9 @@ collections:
     topics:
       output: true
       permalink: /topic/:title
+    supersets:
+      output: true
+      permalink: /type/:title
 
 markdown: kramdown
 
@@ -105,6 +108,11 @@ defaults:
   - scope:
       path: ""
       type: topics
+    values:
+      layout: topic
+  - scope:
+      path: ""
+      type: supersets
     values:
       layout: topic
 

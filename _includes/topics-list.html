@@ -1,10 +1,32 @@
 <h3>Topics</h3>
 <ul>
-  {% for topic in site.topics %}
+  {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
+
+  {% for topic in topics %}
     {% assign condition = "item.topics contains '" | append: topic.title | append: "'" %}
     {%- assign postsInTopic = site.writing | where_exp: "item", condition -%}
     <li>
       <a href="{{topic|relative_url}}">{{ topic.title }} ({{ postsInTopic.size }})</a>
     </li>
+  {% endfor %}
+</ul>
+
+<h3>Types</h3>
+<ul>
+  {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
+
+    <li>
+      <a href="{{site.baseurl}}writing">Writing ({{ site.writing.size }})</a>
+    </li>
+    <li>
+      <a href="{{site.baseurl}}notes">Notes ({{ site.notes.size }})</a>
+    </li>
+  {% for type in types %}
+    {% assign condition = "item.topics contains '" | append: type.title | append: "'" %}
+    {%- assign postsInType = site.writing | where_exp: "item", condition -%}
+    <li>
+      <a href="{{type|relative_url}}">{{ type.title }} ({{ postsInType.size }})</a>
+    </li>
+
   {% endfor %}
 </ul>
