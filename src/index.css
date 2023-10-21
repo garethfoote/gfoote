@@ -269,6 +269,40 @@
     text-decoration: underline;
   } 
 
+  .tabs__list {
+    @apply flex gap-1;
+    @apply pl-0 mb-2;
+  }
+
+  .tabs__list-item {
+    @apply min-w-[4rem];
+    @apply px-4 py-1 text-center font-bold tracking-wide;
+    @apply bg-grey-lightest;
+  }
+
+  .tabs__list-item.tabs__list-item--selected {
+    @apply bg-aquamarine border-b border-b-2 border-b-black;
+  }
+
+  .topics-list {
+    @apply p-0;
+  }
+
+  .topics-list__item {
+    @apply flex gap-1;
+    @apply text-base leading-8;
+  }
+
+  .topics-list__item:after {
+    content: "";
+    @apply grow;
+    background-image: linear-gradient(to right, theme('colors.grey.dark') 2px, transparent 2px);
+    background-position-x: 0;
+    background-position-y: bottom 7px;
+    background-repeat: repeat-x;
+    background-size: 10px 2px;
+  }
+
 }
 
 @layer utilities {

@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     colors: {
       'aquamarine': {
+        lightest: '#F2F2F2',
         light: '#B8FEE7',
         DEFAULT: '#1CFCB2',
         dark: '#40484C',

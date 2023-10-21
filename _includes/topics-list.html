@@ -1,32 +1,42 @@
-<h3>Topics</h3>
-<ul>
-  {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
+<div class="tabs">
 
-  {% for topic in topics %}
-    {% assign condition = "item.topics contains '" | append: topic.title | append: "'" %}
-    {%- assign postsInTopic = site.writing | where_exp: "item", condition -%}
-    <li>
-      <a href="{{topic|relative_url}}">{{ topic.title }} ({{ postsInTopic.size }})</a>
-    </li>
-  {% endfor %}
-</ul>
+  <ul class="tabs__list" role="tablist">
+    <li class="tabs__list-item tabs__list-item--selected" role="presentation"><a role="tab" href="#topics">Topics</a></li>
+    <li class="tabs__list-item" role="presentation"><a role="tab" href="#types">Types</a></li>
+  </ul>
 
-<h3>Types</h3>
-<ul>
-  {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
+  <div id="topics" role="tabpanel">
+    <ul class="topics-list">
+      {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
 
-    <li>
-      <a href="{{site.baseurl}}writing">Writing ({{ site.writing.size }})</a>
-    </li>
-    <li>
-      <a href="{{site.baseurl}}notes">Notes ({{ site.notes.size }})</a>
-    </li>
-  {% for type in types %}
-    {% assign condition = "item.topics contains '" | append: type.title | append: "'" %}
-    {%- assign postsInType = site.writing | where_exp: "item", condition -%}
-    <li>
-      <a href="{{type|relative_url}}">{{ type.title }} ({{ postsInType.size }})</a>
-    </li>
+      {% for topic in topics %}
+        {% assign condition = "item.topics contains '" | append: topic.title | append: "'" %}
+        {%- assign postsInTopic = site.writing | where_exp: "item", condition -%}
+        <li class="topics-list__item">
+          <a href="{{topic|relative_url}}">{{ topic.title }} ({{ postsInTopic.size }})</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 
-  {% endfor %}
-</ul>
+  <div id="types" role="tabpanel">
+    <ul class="topics-list">
+      {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
+
+        <li class="topics-list__item">
+          <a href="{{site.baseurl}}writing">Writing ({{ site.writing.size }})</a>
+        </li>
+        <li class="topics-list__item">
+          <a href="{{site.baseurl}}notes">Notes ({{ site.notes.size }})</a>
+        </li>
+      {% for type in types %}
+        {% assign condition = "item.topics contains '" | append: type.title | append: "'" %}
+        {%- assign postsInType = site.writing | where_exp: "item", condition -%}
+        <li class="topics-list__item">
+          <a href="{{type|relative_url}}">{{ type.title }} ({{ postsInType.size }})</a>
+        </li>
+
+      {% endfor %}
+    </ul>
+  </div>
+</div>
