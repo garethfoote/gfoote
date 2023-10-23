@@ -7,7 +7,14 @@ layout: default
     <h1>{{page.title}}</h1>
     <div class="post-hero__metadata">
       <time datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time> 
+      {%- assign hasTopic = false -%}
+      {% if page.topics.size > 0 %}
+      {%- assign hasTopic = true -%}
       <span class="whitespace-nowrap">in&nbsp;<a href="{{site.baseurl}}/topic/{{page.topics[0]}}" class="tag">{{page.topics[0]}}</a></span>
+      {%- endif -%}
+      {%- if page.types.size > 0 -%}
+      <span class="whitespace-nowrap">{% if hasTopic %}&nbsp;&amp;{% else %}in{% endif %}&nbsp;<a href="{{site.baseurl}}/type/{{page.types[0]}}" class="tag">{{page.types[0]}}</a></span>
+      {% endif %}
     </div>
   </header>
   <div class="content">
