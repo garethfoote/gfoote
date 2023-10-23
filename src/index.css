@@ -40,10 +40,11 @@
   }
   
   hr {
-    @apply my-10;
+    @apply my-10 mx-auto;
     height: 6px;
     background: url("../assets/wiggle-grey.svg") repeat-x 0 0;
     border: 0;
+    width: 90%;
   }
 
   .content h1 {
@@ -187,7 +188,7 @@
   }
   
   .article-card__title {
-    @apply text-grey-dark text-lg sm:text-xl leading-6 sm:leading-6;
+    @apply text-grey-dark text-lg sm:text-xl leading-6;
     @apply grow z-10;
     @apply relative;
   }
@@ -298,7 +299,7 @@
     @apply grow;
     background-image: linear-gradient(to right, theme('colors.grey.DEFAULT') 2px, transparent 2px);
     background-position-x: 0;
-    background-position-y: bottom 7px;
+    background-position-y: 21px;
     background-repeat: repeat-x;
     background-size: 10px 2px;
   }
@@ -363,6 +364,7 @@
   }
 
   .bg-offwhite-bottom {
-    background: linear-gradient(to top, theme('colors.offwhite') 8px, transparent);
+    background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
   }
 }
+
