@@ -3,7 +3,8 @@ title: Weeknote 01
 share: true
 category: _writing
 date: 2023-08-25
-topics: [Weeknotes, Service Design]
+topics: [Service Design]
+types: [Weeknotes]
 ---
 
 Over the last few months I've been introducing concepts and methods from service design into the design process at The National Archives. The day to day responsibilities of my role as a Senior Interaction Designer are often to zoom into the product detail, including user journey definition, accessibility related work, and implementing UI patterns and components to accommodate user needs. Since we're considering new features that open the door to a new set of users it is an opportunity to revisit the user research that goes outside the bounds of the product (e.g. usability testing) and consider the holistic journey in a mini-discovery of sorts. In the case of our service, this involves zooming out to look at the users' context when they are far away from touching our designed digital interfaces, and are in the early stages of  prepare for transferring consignments of digital records to The National Archives. 
@@ -15,7 +16,7 @@ So, I've been continuing to read about and experiment with different mapping met
 I'm interested in knowing how they are defined and what the histories are but also what a design practice brings to them. One of the seemingly obvious competencies offered by designers is visualising unstructured, mostly qualitative information collected throughout discovery or user research. Creating a more finessed version of the raw data, qualitative insights, and system sketches in a form that tells a narrative, or allows one to be explored.     
 However, I think considering this as a visual design task alone would be a missing the point. The storytelling is as much about the content choices (what is included, left out, emphasised) as it is the decisions on colour, shape and composition. Also, often the process of co-creating the artefact can be the most resonant for everyone involved. Learning about the complexity of the system being mapped happens whilst people are creatively engaged in the task at hand. It's a generative research process. Therefore, it is equally important how we create, discover or generate that information as how it is eventually rendered in a graphical form. 
 
-![1_0LYGulojrK2SnHo209uJkQ.webp](1_0LYGulojrK2SnHo209uJkQ.webp)
+![[1_0LYGulojrK2SnHo209uJkQ.webp]]
 *Image from Convivial Toolbox: Generative Research for the Front End of Design by Liz Sanders and Pieter Jan Stappers*
 
 As the next few months progress I'm going to be writing more about the softer skills of service design, for example, facilitation and co-design. 
