@@ -23,7 +23,7 @@ const squiggle = (r: number, l: number): [number, number][] => {
     // if(points.find(([x, y]) => ( Math.round(x)===Math.round(newX) && Math.round(y)===Math.round(newY) ) )){
     //   r += 3;
     // }  
-    if(points.find(([x, y]) => (euclideanDistance([x, y], [newX, newY]) < 1.5))){
+    if(points.find(([x, y]) => (euclideanDistance([x, y], [newX, newY]) < 2))){
       r += 2;
     }
     points.push([newX, newY]);
@@ -50,10 +50,11 @@ export function draw(canvas: HTMLCanvasElement, targetWidth: number=200, targetH
     
     // r = starting radius/magnitude
     // l = amount of increments of the angle/theta.
-    const points = squiggle(20, 1500);
+    const points = squiggle(0, 1500);
     
     ctx.translate((targetWidth) / 2, (targetHeight ) / 2);
-  
+    
+    ctx.lineWidth = 2;
     ctx.beginPath();
       points.forEach((p) => {
       ctx.strokeStyle = "#0B0C0C";
