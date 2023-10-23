@@ -3,7 +3,8 @@ title: Weeknote 02
 share: true
 category: _writing
 date: 2023-09-05
-topics: [Weeknotes, Accessibility]
+topics: [Accessibility]
+types: [Weeknotes]
 ---
 
 ## Studying for IAAP CPACC
