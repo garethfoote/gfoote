@@ -34,7 +34,7 @@ const squiggle = (r: number, l: number): [number, number][] => {
   return points;
 };
 
-export function draw(canvas: HTMLCanvasElement, targetWidth: number=200, targetHeight: number=200): void {
+export function drawSquiggle(canvas: HTMLCanvasElement, targetWidth: number=200, targetHeight: number=200): void {
   const ctx = canvas.getContext("2d");
   const dpr = Math.max(window.devicePixelRatio, 2);
 
