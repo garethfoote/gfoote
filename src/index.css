@@ -29,6 +29,12 @@
     @apply text-xl;
   }
 
+  h3 {
+    @apply font-sans;
+    @apply text-lg;
+    @apply mb-6
+  }
+
   p {
     @apply text-base sm:text-md;
     @apply mb-8;
@@ -93,11 +99,7 @@
     padding-bottom: 10px;
     box-shadow: none;
   }
-  footer > div {
-    @apply border-t-grey-light border-t;
-    @apply pt-4;
-  }
-
+  
   footer p {
     @apply text-grey text-sm;
   }
@@ -176,14 +178,14 @@
 
     background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
     background-position-x: 0;
-    background-position-y: bottom -1px;
+    background-position-y: bottom;
     background-repeat: repeat-x;
     background-size: 10px 2px;
   }
 
   @media screen(sm) {
     .article-card {
-      background-position-y: bottom;
+      /* background-position-y: bottom; */
     }
   }
   
@@ -271,19 +273,51 @@
   } 
 
   .tabs__list {
-    @apply flex gap-1;
+    @apply relative;
+    @apply flex gap-0;
     @apply pl-0 mb-2;
+  }
+
+  .tabs__list:before {
+    content: "";
+    @apply w-2;
+    @apply border-b border-grey-light;
+  }
+
+  .tabs__list:after {
+    content: "";
+    @apply absolute bottom-0 z-0;
+    @apply h-px w-full;
+    @apply bg-grey-lightest;
   }
 
   .tabs__list-item {
     @apply min-w-[4rem];
-    @apply px-4 py-1 text-center font-bold tracking-wide;
-    @apply bg-grey-lightest;
+    @apply text-center font-bold tracking-wide;
+    @apply border-b border-grey-light;
+    @apply rounded-t;
+    @apply text-grey;
+    @apply relative z-10;
+  }
+  .tabs__list-item button {
+    @apply block px-4 py-1;
   }
 
   .tabs__list-item.tabs__list-item--selected {
-    @apply bg-aquamarine border-b border-b-2 border-b-black;
+    @apply bg-aquamarine-light border-b-0;
+    @apply border-r border-grey-light;
+    @apply border-l border-grey-light;
+    @apply border-t border-grey-light;
+    @apply text-black;
   }
+
+  .tabs__list-item:hover:not(.tabs__list-item--selected) {
+    @apply text-black;
+    box-shadow:
+      inset 0 1px theme('colors.offwhite'),
+      inset 0 -2px theme('colors.black');
+  }
+
 
   .topics-list {
     @apply p-0;

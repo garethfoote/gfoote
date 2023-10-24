@@ -1,11 +1,19 @@
 <div class="tabs">
 
   <ul class="tabs__list" role="tablist">
-    <li class="tabs__list-item tabs__list-item--selected" role="presentation"><a role="tab" href="#topics">Topics</a></li>
-    <li class="tabs__list-item" role="presentation"><a role="tab" href="#types">Types</a></li>
+    <li class="tabs__list-item" role="presentation">
+      <button id="tab-topics" type="button" role="tab" aria-selected="true" aria-controls="topics">
+        Topics
+      </button>
+    </li>
+    <li class="tabs__list-item tabs__list-item--selected" role="presentation">
+      <button id="tab-types" type="button" role="tab" aria-selected="true" aria-controls="types">
+        Types
+      </button>
+    </li>
   </ul>
 
-  <div id="topics" role="tabpanel">
+  <div id="topics" role="tabpanel" tabindex="0" aria-labelledby="tab-topics">
     <ul class="topics-list">
       {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
 
@@ -19,7 +27,7 @@
     </ul>
   </div>
 
-  <div id="types" role="tabpanel">
+  <div id="types" role="tabpanel" tabindex="0" aria-labelledby="tab-types">
     <ul class="topics-list">
       {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
 
