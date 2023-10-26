@@ -9,12 +9,6 @@
     background-repeat: repeat-x;
     background-size: 10px 2px;
   }
-
-  @media screen(sm) {
-    .article-card {
-      /* background-position-y: bottom; */
-    }
-  }
   
   .article-card__title {
     @apply text-grey-dark text-lg sm:text-xl leading-6;
