@@ -125,7 +125,7 @@ a.tag:hover {
 }
 
 .section-header {
-  @apply mt-16 mb-10 mx-auto;
+  @apply text-lg sm:text-xl mt-16 mb-10 mx-auto;
   @apply relative;
   @apply text-center;
 	width: 90%;
