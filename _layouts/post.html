@@ -21,15 +21,16 @@ layout: default
     {%- include content.html -%}
   </div>
 </article>
-<hr>
 
 {% comment %}
 {% assign conditionTopic = "item.topics contains '" | append: page.topics[0] | append: "'" %}
 {% assign conditionNotThisPage = "item.id != '" | append: page.id | append: "'"%}
 {% assign posts = site.writing | where_exp: "item", conditionTopic | where_exp: "item", conditionNotThisPage %}
 {%- include post-list.html -%}
-<h3>Linked writing</h3>
 {% endcomment %}
 
 {%- include backlinks.html -%}
-</div>
+
+<section class="mt-16">
+  {%- include topics-list.html -%}
+</section>

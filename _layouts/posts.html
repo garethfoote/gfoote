@@ -8,7 +8,12 @@ layout: default
   </div>
 </div>
 
-{{content}}
-
+<section>
+{{ content }}
 {%- assign posts = site.writing | sort: "date" | reverse  -%}
 {%- include post-list.html -%}
+</section>
+
+<section class="mt-16">
+  {%- include topics-list.html -%}
+</section>

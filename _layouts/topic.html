@@ -8,11 +8,13 @@ layout: default
   </div>
 </div>
 
+<section>
 {{ content }}
 {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
 {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
 {%- include post-list.html -%}
+</section>
 
-
-
-{%- include topics-list.html -%}
+<section class="mt-16">
+  {%- include topics-list.html -%}
+</section>

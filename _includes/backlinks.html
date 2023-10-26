@@ -32,6 +32,9 @@
 <!-- Add backlinks to the current page --> 
 {%- assign link_count = 0 -%}
 {%- assign wiki_link_title = '[' | append: page.slug | append: ']' -%}
+
+
+{%- comment -%}
 {%- for note in site.notes -%}
 	{%- if note.url != page.url -%}
 		{%- if note.content contains wiki_link_title -%}
@@ -39,6 +42,8 @@
 		{%- endif -%}
 	{%- endif -%}
 {%- endfor -%}
+{%- endcomment -%}
+
 {%- for writing in site.writing -%}
 	{%- if writing.url != page.url -%}
 		{%- if writing.content contains wiki_link_title -%}
@@ -48,8 +53,10 @@
 {%- endfor -%}
 
 {%- if link_count > 0 -%}
-{%- endif -%}
-
+<section>
+  <h2 class="section-header">
+    <span>Posts linked to this article</span>
+  </h2>
 {%- assign wiki_link_title = '[[' | append: page.slug -%}
   {%- for post in site.writing -%}
     {%- if post.url != page.url -%}
@@ -58,6 +65,8 @@
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
+</section>
+{%- endif -%}
 
 
 {% comment %}
