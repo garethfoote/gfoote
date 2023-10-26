@@ -10,7 +10,7 @@ module.exports = {
         lightest: '#F2F2F2',
         light: '#B8FEE7',
         DEFAULT: '#1CFCB2',
-        dark: '#40484C',
+        dark: '#12C78B',
         darkest: '#0CAD78'
       },
       'purple': '#7e5bef', // possibly unused
