@@ -1,7 +1,6 @@
 export class Tabs {
   private tabs: HTMLElement[];
   private panels: HTMLElement[];
-  private currIndex: number = 0; 
 
   constructor(root: HTMLElement) {
     this.tabs = Array.from(root.querySelectorAll("[role=tablist] [role=tab]"));
@@ -49,20 +48,15 @@ export class Tabs {
     if(setFocus == true){
       tab.focus();
     }
-
-    // this.currIndex = newIndex
-    console.log(this.currIndex)
-
   }
 
   onClick: (e: MouseEvent) => void = (e) => {
-    console.log(e.currentTarget)
     this.setSelectedTab(e.currentTarget as HTMLElement)
-
+    e.preventDefault();
   }
 
   onKeydown: (e: KeyboardEvent) => void = (e) => {
-    console.log(e.key);
+    console.log(e.key,  e.currentTarget);
 
     switch (e.key) {
       case 'ArrowLeft':
