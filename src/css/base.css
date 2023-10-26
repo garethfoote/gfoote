@@ -1,0 +1,99 @@
+html {
+	height: 100%;
+}
+
+body {
+	@apply  flex flex-col min-h-screen;
+	@apply font-sans;
+	@apply text-black;
+}
+
+	body > div {
+	@apply grow;
+}
+
+h1 {
+	@apply text-2xl sm:text-3xl;
+	@apply font-serif;
+}
+
+h2 {
+	@apply font-serif;
+	@apply text-xl;
+}
+
+h3 {
+	@apply font-sans;
+	@apply text-lg;
+	@apply mb-6
+}
+
+p {
+	@apply text-base sm:text-md;
+	@apply mb-8;
+}
+
+ul {
+	@apply pl-5;
+	@apply mb-8;
+}
+
+hr {
+	@apply my-10 mx-auto;
+	height: 6px;
+	background: url("../assets/wiggle-grey.svg") repeat-x 0 0;
+	border: 0;
+	width: 90%;
+}
+
+.content h1 {
+	@apply text-2xl mb-8;
+}
+
+.content h2 {
+	@apply text-xl mb-8;
+}
+
+.content h3 {
+	@apply text-lg font-serif mb-8;
+}
+
+.content h4 {
+	@apply text-md font-serif mb-6;
+}
+
+.content ul li {
+	@apply text-base leading-5 sm:text-md;
+	@apply list-disc;
+	@apply mb-2;
+}
+
+.content li a,
+.content p a {
+	background-size: 1px 1em;
+	box-shadow:
+		inset 0 0px theme('colors.offwhite'),
+		inset 0 -1px theme('colors.aquamarine.dark');
+		text-shadow:
+			1px 1px theme('colors.offwhite'),
+			1px -1px theme('colors.offwhite'),
+			-1px 1px theme('colors.offwhite'),
+			-1px -1px theme('colors.offwhite');
+		display: inline;
+}
+
+.content li a:hover,
+.content p a:hover {
+	@apply text-aquamarine-dark;
+	background-image: url("../assets/wiggle-green-dark.svg");
+	background-repeat: repeat-x;
+	background-position: 0 1.15em;
+	background-size: 9px 5px;
+	padding-bottom: 10px;
+	box-shadow: none;
+}
+
+footer p {
+	@apply text-grey text-sm;
+}
+
