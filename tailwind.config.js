@@ -22,7 +22,7 @@ module.exports = {
   theme: {
     colors: {
       'accent': aquamarine,
-      'purple': '#7e5bef', // possibly unused
+      'yellow': '#FFFF00', // possibly unused
       'offwhite': '#FCFCFC',
       'black': '#0B0C0C',
       'grey':  {

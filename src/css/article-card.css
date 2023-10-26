@@ -19,10 +19,27 @@
   .article-card__title:hover {
     @apply text-black; 
   }
+  
+  .article-card__title a:focus {
+    @apply outline-none;
+  }
+  
+  .article-card__title a:focus span {
+    @apply bg-yellow;
+    box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+    text-shadow: none;
+  }
+
+  .article-card__title a:focus ~ *:after {
+    background-image: none;
+  }
 
   .article-card__title > a {
     @apply inline-block w-full;
     @apply z-10 relative;
+  }
+  .article-card__title > a > span {
+    background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
   }
 
   .article-card__title:after {

@@ -8,7 +8,7 @@ body {
 	@apply text-black;
 }
 
-	body > div {
+body > div {
 	@apply grow;
 }
 
@@ -91,6 +91,14 @@ hr {
 	background-size: 9px 5px;
 	padding-bottom: 10px;
 	box-shadow: none;
+}
+
+.content li a:focus,
+.content p a:focus {
+	@apply outline-none;
+	@apply bg-yellow;
+	box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+	text-shadow: none;
 }
 
 footer p {
