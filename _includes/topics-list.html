@@ -1,19 +1,19 @@
-<div class="tabs">
+<div class="tabs" data-module="tabs">
 
   <ul class="tabs__list" role="tablist">
     <li class="tabs__list-item" role="presentation">
-      <button id="tab-topics" type="button" role="tab" aria-selected="true" aria-controls="topics">
+      <a href="#topics" id="tab-topics" type="button" role="tab" aria-selected="true" aria-controls="topics">
         Topics
-      </button>
+      </a>
     </li>
     <li class="tabs__list-item tabs__list-item--selected" role="presentation">
-      <button id="tab-types" type="button" role="tab" aria-selected="true" aria-controls="types">
+      <a href="#types" id="tab-types" type="button" role="tab" aria-selected="true" aria-controls="types">
         Types
-      </button>
+      </a>
     </li>
   </ul>
 
-  <div id="topics" role="tabpanel" tabindex="0" aria-labelledby="tab-topics">
+  <div class="tabs__panel" id="topics" role="tabpanel" tabindex="0" aria-labelledby="tab-topics">
     <ul class="topics-list">
       {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
 
@@ -27,7 +27,7 @@
     </ul>
   </div>
 
-  <div id="types" role="tabpanel" tabindex="0" aria-labelledby="tab-types">
+  <div class="tabs__panel tabs__panel--hidden" id="types" role="tabpanel" tabindex="0" aria-labelledby="tab-types">
     <ul class="topics-list">
       {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
 
