@@ -1,3 +1,18 @@
+const orangeflame = {
+  lightest: '#FD9C72',
+  light: '#FC804A',
+  DEFAULT: '#FC5F1C',
+  dark: '#F14B04',
+  darkest: '#C93E03'
+}
+const aquamarine = {
+  lightest: '#F2F2F2',
+  light: '#B8FEE7',
+  DEFAULT: '#1CFCB2',
+  dark: '#12C78B',
+  darkest: '#0CAD78'
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,13 +21,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'aquamarine': {
-        lightest: '#F2F2F2',
-        light: '#B8FEE7',
-        DEFAULT: '#1CFCB2',
-        dark: '#12C78B',
-        darkest: '#0CAD78'
-      },
+      'accent': aquamarine,
       'purple': '#7e5bef', // possibly unused
       'offwhite': '#FCFCFC',
       'black': '#0B0C0C',

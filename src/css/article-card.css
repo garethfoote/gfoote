@@ -62,7 +62,7 @@
   }
 
   .article-card__metadata time {
-    @apply text-grey;
+    @apply text-grey-dark;
     @apply inline;
   }
   

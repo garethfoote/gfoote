@@ -21,7 +21,8 @@
         {% assign condition = "item.topics contains '" | append: topic.title | append: "'" %}
         {%- assign postsInTopic = site.writing | where_exp: "item", condition -%}
         <li class="topics-list__item">
-          <a href="{{topic|relative_url}}">{{ topic.title }} ({{ postsInTopic.size }})</a>
+          <a href="{{topic|relative_url}}">{{ topic.title }}</a>
+          <span class="topics-list__item-count"> x {{ postsInTopic.size }}</span>
         </li>
       {% endfor %}
     </ul>
@@ -32,16 +33,19 @@
       {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
 
         <li class="topics-list__item">
-          <a href="{{site.baseurl}}writing">Writing ({{ site.writing.size }})</a>
+          <a href="{{site.baseurl}}writing">Writing</a>
+          <span class="topics-list__item-count">x {{ site.writing.size }}</span>
         </li>
         <li class="topics-list__item">
-          <a href="{{site.baseurl}}notes">Notes ({{ site.notes.size }})</a>
+          <a href="{{site.baseurl}}notes">Notes</a>
+          <span class="topics-list__item-count">x {{  site.notes.size }}</span>
         </li>
       {% for type in types %}
         {% assign condition = "item.topics contains '" | append: type.title | append: "'" %}
         {%- assign postsInType = site.writing | where_exp: "item", condition -%}
         <li class="topics-list__item">
-          <a href="{{type|relative_url}}">{{ type.title }} ({{ postsInType.size }})</a>
+          <a href="{{type|relative_url}}">{{ type.title }}</a>
+          <span class="topics-list__item-count">x {{ postsInType.size }}</span>
         </li>
 
       {% endfor %}

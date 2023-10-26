@@ -31,7 +31,7 @@
   }
 
   .tabs__list-item.tabs__list-item--selected {
-    @apply bg-aquamarine-light border-b-0;
+    @apply bg-offwhite border-b-0;
     @apply border-r border-grey-light;
     @apply border-l border-grey-light;
     @apply border-t border-grey-light;
@@ -42,7 +42,7 @@
     @apply text-black;
     box-shadow:
       inset 0 1px theme('colors.offwhite'),
-      inset 0 -2px theme('colors.black');
+      inset 0 -2px theme('colors.accent.dark');
   }
   
   .tabs__panel--hidden {

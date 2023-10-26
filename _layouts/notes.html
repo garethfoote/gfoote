@@ -18,5 +18,7 @@ layout: default
 <script src="{{ site.baseurl }}/assets/js/Search.js"></script>
 {%- endif -%}
 
+<section>
 {% assign notes = site.notes | sort: "date" | reverse %}
 {%- include notes-list.html -%}
+</section>
