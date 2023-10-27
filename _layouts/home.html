@@ -8,7 +8,7 @@ layout: default
   {% include content.html %}
 </div>
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
-{%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 5  -%}
+{%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
 <div class="mb-6">
 {%- include post-list.html -%}
 </div>
