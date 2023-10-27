@@ -41,7 +41,7 @@
           <span class="topics-list__item-count">x {{  site.notes.size }}</span>
         </li>
       {% for type in types %}
-        {% assign condition = "item.topics contains '" | append: type.title | append: "'" %}
+        {% assign condition = "item.types contains '" | append: type.title | append: "'" %}
         {%- assign postsInType = site.writing | where_exp: "item", condition -%}
         <li class="topics-list__item">
           <a href="{{type|relative_url}}">{{ type.title }}</a>

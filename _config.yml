@@ -114,7 +114,7 @@ defaults:
       path: ""
       type: supersets
     values:
-      layout: topic
+      layout: type
 
 exclude:
   - src
