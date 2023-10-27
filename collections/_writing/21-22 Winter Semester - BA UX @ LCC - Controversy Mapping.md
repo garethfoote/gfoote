@@ -1,5 +1,5 @@
 ---
-title: Controversy Mapping
+title: 21-22 Winter Semester - BA UX @ LCC - Controversy Mapping
 share: true
 homepage: true
 category: _writing
