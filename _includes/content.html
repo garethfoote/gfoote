@@ -29,19 +29,28 @@
 *
 {%- endcomment -%}
 
-<!-- Parse internal links, external links, transclusions etc and manipuate the content to reflect it accordingly -->
 {%- assign alt_text_delimiter = '@#' -%}
 {%- assign link_joiner_delimiter = '$@' -%}
+
+
+{%- comment -%}
+<!-- Images and attachments -->
+{%- endcomment -%}
 
 {% assign image_titles = "" | split: ',' %}
 {% assign image_urls = "" | split: ',' %}
 {% assign image_alts = "" | split: ',' %}
+{% assign image_exts = "" | split: ',' %}
 {%- assign image_array = content | split:'![[' -%}
 {%- for item in image_array -%}
     {%- if forloop.index > 1 -%}
         {%- assign wikilink_content = item | split:']]' -%}
         {%- assign wikilink_content = wikilink_content[0] | split: alt_text_delimiter -%}
         {%- assign wikiimage_title = wikilink_content[0]  -%} 
+        {%- assign wikiimage_title_ext = wikilink_content[0] | split:'.'  -%} 
+        {%- assign lastindex = wikiimage_title_ext.size | minus: 1 -%} 
+        {% assign image_exts = image_exts | push: wikiimage_title_ext[lastindex] %}
+
         {% assign image_alts = image_alts | push: wikilink_content[1] %}
         {% assign image_titles = image_titles | push: wikiimage_title %}
         {% comment %}{{wikiimage_title}} - {{alt_text}}<br> {% endcomment %}
@@ -59,19 +68,27 @@
 {%- for image_title in image_titles -%}
   {%- assign image_url = image_urls[forloop.index0] -%}
   {%- assign image_alt = image_alts[forloop.index0] -%}
+  {%- assign image_ext = image_exts[forloop.index0] -%}
   {%- assign bracket_link = '![[' | append: image_title -%}
 
   {%- if image_url != nil and url != empty -%}
     {%- assign bracket_link = '![[' | append: image_title -%}
-    {%- assign link_text = '<img src="'| append: site.baseurl | append: image_url | append: '"' -%}
-    {%- if image_alt %}
-      {%- assign link_text = link_text | append: 'alt="' | append: image_alt | append: '"' -%}
-      {%- assign bracket_link = bracket_link | append: alt_text_delimiter | append: image_alt -%}
-    {% endif %}
-    {%- assign link_text = link_text | append: ' />' -%}
-    {%- assign bracket_link = bracket_link | append: ']]' -%}
-    {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
-  {%- endif -%}
+    {%- if image_ext == "pdf"-%}
+      {%- assign link_text = '<a href="'| append: site.baseurl | append: image_url | append: '" >' | append: image_title | append: '</a>'  -%}
+      {%- assign bracket_link = bracket_link | append: ']]' -%}
+      {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
+    {% else %}
+
+      {%- assign link_text = '<img src="'| append: site.baseurl | append: image_url | append: '"' -%}
+      {%- if image_alt %}
+        {%- assign link_text = link_text | append: 'alt="' | append: image_alt | append: '"' -%}
+        {%- assign bracket_link = bracket_link | append: alt_text_delimiter | append: image_alt -%}
+      {% endif %}
+      {%- assign link_text = link_text | append: ' />' -%}
+      {%- assign bracket_link = bracket_link | append: ']]' -%}
+      {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
+      {%- endif -%}
+    {%- endif -%}
 {%- endfor -%}
 
 {% assign wikilink_titles = "" | split: ',' %}
