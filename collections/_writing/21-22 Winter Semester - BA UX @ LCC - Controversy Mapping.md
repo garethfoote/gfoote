@@ -18,5 +18,4 @@ For the 21/22 winter semester on BA UXD I designed and taught a unit on Interact
 
 At the core is a method created by Bruno Latour called Controversy Mapping as way to help students understand, observe and describe socio-technical debates. It has since been used, mostly in Science and Technology Studies as a framework for exploring and visualising complexity. 
 
-[[Venturinietal.-2015-DesigningControversiesandtheirPublics.pdf@#Designing Controversies and their Publics]]
-
+[[Venturinietal.-2015-DesigningControversiesandtheirPublics.pdf]]
