@@ -98,6 +98,8 @@ hr {
 .content li a:focus,
 .content p a:focus {
 	@apply outline-none;
+	@apply bg-none;
+  @apply pb-0;
 	@apply bg-yellow;
 	box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
 	text-shadow: none;
