@@ -1,7 +1,7 @@
 .tabs__list {
     @apply relative;
     @apply flex gap-0;
-    @apply pl-0 mb-2;
+    @apply pl-0 mb-3;
   }
 
   .tabs__list:before {
@@ -19,7 +19,7 @@
 
   .tabs__list-item {
     @apply min-w-[4rem];
-    @apply text-center font-bold tracking-wide;
+    @apply text-center tracking-wide;
     @apply border-b border-grey-light;
     @apply rounded-t;
     @apply text-grey;

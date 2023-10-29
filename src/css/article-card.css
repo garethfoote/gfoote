@@ -11,7 +11,7 @@
 }
 
 .article-card__title {
-  @apply text-grey-dark text-lg sm:text-xl leading-6;
+  @apply text-grey-dark text-lg leading-6;
   @apply grow z-10;
   @apply relative;
 }
@@ -70,7 +70,7 @@
 }
 
 .article-card__metadata {
-  @apply mb-0 text-sm sm:text-base text-right;
+  @apply mb-0 text-sm sm:text-base text-right bg-offwhite;
   @apply max-h-5 sm:max-h-none;
   @apply relative bottom-5 sm:bottom-auto sm:top-2;
   @apply whitespace-nowrap;

@@ -53,7 +53,7 @@
 }
 
 .post-hero h1 {
-  @apply text-2xl;
+  @apply text-xl;
 }
 
 .post-hero__metadata time {
@@ -98,7 +98,7 @@ a.tag:hover {
 
 .topics-list__item {
   @apply flex gap-1 mb-1;
-  @apply text-md leading-8;
+  @apply text-base leading-4 sm:text-md sm:leading-8;
 }
 
 .topics-list__item a {

@@ -13,7 +13,7 @@ body > div {
 }
 
 h1 {
-	@apply text-2xl sm:text-3xl;
+	@apply text-xl;
 	@apply font-serif;
 }
 
@@ -47,15 +47,15 @@ hr {
 }
 
 .content h1 {
-	@apply text-2xl mb-8;
-}
-
-.content h2 {
 	@apply text-xl mb-8;
 }
 
+.content h2 {
+	@apply text-lg mb-8;
+}
+
 .content h3 {
-	@apply text-lg font-serif mb-8;
+	@apply text-md font-serif mb-8;
 }
 
 .content h4 {
