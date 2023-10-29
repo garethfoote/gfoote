@@ -73,8 +73,9 @@
 
   {%- if image_url != nil and url != empty -%}
     {%- assign bracket_link = '![[' | append: image_title -%}
+    
     {%- if image_ext == "pdf" -%}
-      {%- assign link_text = link_text | append: '<span class="pdf-download"><a download href="'| append: site.baseurl | append: image_url | append: '" >'  -%}
+      {%- assign link_text = '<span class="pdf-download"><a download href="'| append: site.baseurl | append: image_url | append: '" >'  -%}
       {%- if image_alt %}
         {%- assign link_text = link_text | append: image_alt  | append: '</a>'  -%}
         {%- assign bracket_link = bracket_link | append: alt_text_delimiter | append: image_alt | append: ']]' -%}
@@ -83,7 +84,7 @@
         {%- assign bracket_link = bracket_link | append: ']]' -%}
       {% endif %}
       {%- assign link_text = link_text | append: '</span>' -%}
-      {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
+      {%- assign replaced_content = replaced_content | replace: bracket_link, link_text -%}
     {% else %}
 
       {%- assign link_text = '<img src="'| append: site.baseurl | append: image_url | append: '"' -%}

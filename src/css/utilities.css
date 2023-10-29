@@ -60,19 +60,23 @@
 
 
 .pdf-download {
-  @apply block w-full flex;
+  @apply w-full flex gap-1 sm:gap-2;
   @apply rounded border border-grey-dark;
   @apply px-4 py-3;
 }
 
 .pdf-download a {
-  @apply flex-[3_1_0%];
+  @apply flex-[2_1_0%] sm:flex-[3_1_0%];
   @apply !pb-2;
+  @apply text-base;
+  min-width: 3rem;
   box-shadow: inset 0 0 #fcfcfc,inset 0 -3px theme('colors.accent.dark') !important;
 }
 
 .pdf-download a strong {
   @apply block;
+  @apply font-serif text-lg;
+  @apply pb-2;
 }
 
 .pdf-download a:hover {
@@ -84,7 +88,10 @@
 }
 
 .pdf-download::after {
-  content: url("../assets/icon-pdf-aquamarine.svg");
-  @apply flex-1 h-24 self-center block;
+  content: "";
+  background: url("../assets/icon-pdf-aquamarine.png") no-repeat 0 0;
+  background-size: auto 100%;
+  @apply bg-right bg-contain;
+  @apply flex-1 h-24;
   @apply text-right;
 }
