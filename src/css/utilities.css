@@ -57,3 +57,34 @@
 .bg-offwhite-bottom {
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
 }
+
+
+.pdf-download {
+  @apply block w-full flex;
+  @apply rounded border border-grey-dark;
+  @apply px-4 py-3;
+}
+
+.pdf-download a {
+  @apply flex-[3_1_0%];
+  @apply !pb-2;
+  box-shadow: inset 0 0 #fcfcfc,inset 0 -3px theme('colors.accent.dark') !important;
+}
+
+.pdf-download a strong {
+  @apply block;
+}
+
+.pdf-download a:hover {
+  @apply !pb-2;
+  @apply bg-yellow;
+  box-shadow: inset 0 0 #fcfcfc,inset 0 -3px theme('colors.black') !important;
+  text-shadow: none !important;
+  background-image: none !important;
+}
+
+.pdf-download::after {
+  content: url("../assets/icon-pdf-aquamarine.svg");
+  @apply flex-1 h-24 self-center block;
+  @apply text-right;
+}

@@ -50,8 +50,8 @@
         {%- assign wikiimage_title_ext = wikilink_content[0] | split:'.'  -%} 
         {%- assign lastindex = wikiimage_title_ext.size | minus: 1 -%} 
         {% assign image_exts = image_exts | push: wikiimage_title_ext[lastindex] %}
-
         {% assign image_alts = image_alts | push: wikilink_content[1] %}
+      
         {% assign image_titles = image_titles | push: wikiimage_title %}
         {% comment %}{{wikiimage_title}} - {{alt_text}}<br> {% endcomment %}
         {%- assign file = "" -%}
@@ -73,9 +73,16 @@
 
   {%- if image_url != nil and url != empty -%}
     {%- assign bracket_link = '![[' | append: image_title -%}
-    {%- if image_ext == "pdf"-%}
-      {%- assign link_text = '<a href="'| append: site.baseurl | append: image_url | append: '" >' | append: image_title | append: '</a>'  -%}
-      {%- assign bracket_link = bracket_link | append: ']]' -%}
+    {%- if image_ext == "pdf" -%}
+      {%- assign link_text = link_text | append: '<span class="pdf-download"><a download href="'| append: site.baseurl | append: image_url | append: '" >'  -%}
+      {%- if image_alt %}
+        {%- assign link_text = link_text | append: image_alt  | append: '</a>'  -%}
+        {%- assign bracket_link = bracket_link | append: alt_text_delimiter | append: image_alt | append: ']]' -%}
+      {% else %}
+        {%- assign link_text = link_text | append: image_title | append: '</a>'  -%}
+        {%- assign bracket_link = bracket_link | append: ']]' -%}
+      {% endif %}
+      {%- assign link_text = link_text | append: '</span>' -%}
       {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
     {% else %}
 
