@@ -1,5 +1,5 @@
 ---
-title: 21-22 Winter Semester - BA UX @ LCC - Controversy Mapping
+title: Visualising Controversies - BA UXD (21/22)
 share: true
 homepage: true
 category: _writing
