@@ -1,102 +1,89 @@
 
 .article-card {
-    @apply mb-3 sm:mb-3;
-    @apply flex items-end justify-between gap-x-1;
+  @apply mb-6 sm:mb-3;
+  @apply flex items-end justify-between gap-x-1;
 
-    background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
-    background-position-x: 0;
-    background-position-y: bottom;
-    background-repeat: repeat-x;
-    background-size: 10px 2px;
-  }
-  
-  .article-card__title {
-    @apply text-grey-dark text-lg sm:text-xl leading-6;
-    @apply grow z-10;
-    @apply relative;
-  }
-  
-  .article-card__title:hover {
-    @apply text-black; 
-  }
+  background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
+  background-position-x: 0;
+  background-position-y: bottom;
+  background-repeat: repeat-x;
+  background-size: 10px 2px;
+}
 
-  .article-card__title > a:focus > span,
-  .article-card__title:hover > a > span {
-    box-shadow:
-      inset 0 -2px theme('colors.offwhite'),
-      inset 0 -4px theme('colors.black');
-  }
-  
-  .article-card__title > a:focus {
-    @apply outline-none;
-  }
-  
-  .article-card__title > a:focus > span {
-    @apply bg-yellow;
-    text-shadow: none;
-  }
+.article-card__title {
+  @apply text-grey-dark text-lg sm:text-xl leading-6;
+  @apply grow z-10;
+  @apply relative;
+}
 
-  .article-card__title:focus-within > a > span {
-    background-image: none;
-  }
+.article-card__title:hover {
+  @apply text-black; 
+}
 
-  .article-card__title > a {
-    @apply inline-block w-full;
-    @apply z-10 relative;
-  }
+.article-card__title > a:focus > span,
+.article-card__title:hover > a > span {
+  box-shadow:
+    inset 0 -2px theme('colors.offwhite'),
+    inset 0 -4px theme('colors.black');
+}
 
-  .article-card__title > a > span {
-    box-shadow:
-      inset 0 -2px theme('colors.offwhite'),
-      inset 0 -3px theme('colors.grey.DEFAULT');
-    background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
-  }
+.article-card__title > a:focus {
+  @apply outline-none;
+}
 
-  .article-card__title:after {
-    content: "";
-    @apply w-full h-full;
-    @apply absolute inset-0;
-    @apply opacity-0;
-    transition: opacity 0.1s ease-in-out;
-    background-image: linear-gradient(to right, theme('colors.black') 2px, transparent 2px);
-    background-position-x: 0;
-    background-position-y: bottom;
-    background-repeat: repeat-x;
-    background-size: 10px 2px;
-  }
+.article-card__title > a:focus > span {
+  @apply bg-yellow;
+  text-shadow: none;
+}
 
-  .article-card__title:hover:after {
-    @apply opacity-100;
-  }
+.article-card__title:focus-within > a > span {
+  background-image: none;
+}
 
-  .article-card__metadata {
-    @apply mb-0 text-sm text-right;
-    @apply max-h-5 sm:max-h-none;
-    @apply relative bottom-0 sm:bottom-auto sm:top-0.5;
-    @apply bg-offwhite;
-    @apply whitespace-nowrap;
-  }
-  .article-card__metadata span {
-    @apply bg-offwhite;
-  }
+.article-card__title > a {
+  @apply inline-block w-full;
+  @apply z-10 relative;
+}
 
-  @media screen(sm) {
-    .article-card__metadata {
-      @apply text-base;
-      @apply relative top-2;
-      @apply whitespace-nowrap;
-    }
-  }
+.article-card__title > a > span {
+  box-shadow:
+    inset 0 -2px theme('colors.offwhite'),
+    inset 0 -3px theme('colors.grey.DEFAULT');
+  background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
+}
 
-  .article-card__metadata time {
-    @apply text-grey-dark;
-    @apply inline;
-  }
-  
-  .article-card__metadata time:after {
-    content: "·";
-    @apply inline;
-    @apply pl-0.5 pr-0 sm:pl-2 sm:pr-1 text-xl text-black;
-    @apply relative top-0.5;
-    @apply leading-none;
-  }
+.article-card__title:after {
+  content: "";
+  @apply w-full h-full;
+  @apply absolute inset-0;
+  @apply opacity-0;
+  transition: opacity 0.1s ease-in-out;
+  background-image: linear-gradient(to right, theme('colors.black') 2px, transparent 2px);
+  background-position-x: 0;
+  background-position-y: bottom;
+  background-repeat: repeat-x;
+  background-size: 10px 2px;
+}
+
+.article-card__title:hover:after {
+  @apply opacity-100;
+}
+
+.article-card__metadata {
+  @apply mb-0 text-sm sm:text-base text-right;
+  @apply max-h-5 sm:max-h-none;
+  @apply relative bottom-5 sm:bottom-auto sm:top-2;
+  @apply whitespace-nowrap;
+}
+
+.article-card__metadata time {
+  @apply text-grey-dark;
+  @apply block sm:inline;
+}
+
+.article-card__metadata time:after {
+  content: "·";
+  @apply hidden sm:inline;
+  @apply pl-0.5 pr-0 sm:pl-2 sm:pr-1 text-xl text-black;
+  @apply relative top-0.5;
+}
