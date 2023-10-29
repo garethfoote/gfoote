@@ -1,7 +1,7 @@
 
 .main-col {
   @apply max-w-3xl 2xl:mx-auto 2xl:max-w-4xl;
-  @apply pl-4 md:pl-8 lg:pl-16 pr-4;
+  @apply px-4 md:pl-8 lg:pl-16;
 }
 
 .grey-underline,
@@ -75,7 +75,7 @@
 
 .pdf-download a strong {
   @apply block;
-  @apply font-serif text-lg;
+  @apply font-serif text-lg leading-7;
   @apply pb-2;
 }
 

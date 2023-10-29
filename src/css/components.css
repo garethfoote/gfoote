@@ -59,6 +59,11 @@
 .post-hero__metadata time {
   @apply text-grey-dark;
 }
+
+.post-hero__metadata .tag {
+  @apply mb-1;
+}
+
 .post-hero__metadata time:after {
   content: "·";
   @apply inline;
