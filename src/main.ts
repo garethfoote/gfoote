@@ -7,7 +7,7 @@ const canvas = document.getElementById("squiggle") as HTMLCanvasElement;
 
 window.addEventListener("load", () => {
   canvasContainer.classList.remove("squiggle--hidden");
-  drawSquiggle(canvas, 150, 150);
+  drawSquiggle(canvas, 800, 600, 600);
 })
 
 const tabsEl: HTMLElement | null = document.querySelector(

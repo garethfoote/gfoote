@@ -34,7 +34,12 @@ const squiggle = (r: number, l: number): [number, number][] => {
   return points;
 };
 
-export function drawSquiggle(canvas: HTMLCanvasElement, targetWidth: number=200, targetHeight: number=200): void {
+export function drawSquiggle(
+  canvas: HTMLCanvasElement,
+  iterations: number=1000,
+  targetWidth: number=200, 
+  targetHeight: number=200,
+): void {
   const ctx = canvas.getContext("2d");
   const dpr = Math.max(window.devicePixelRatio, 2);
 
@@ -46,11 +51,10 @@ export function drawSquiggle(canvas: HTMLCanvasElement, targetWidth: number=200,
   if (ctx) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.scale(dpr, dpr);
-    // ctx.scale(0.8, 0.8);
     
     // r = starting radius/magnitude
     // l = amount of increments of the angle/theta.
-    const points = squiggle(0, 1500);
+    const points = squiggle(0, iterations);
     
     ctx.translate((targetWidth) / 2, (targetHeight ) / 2);
     

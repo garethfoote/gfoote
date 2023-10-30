@@ -3,13 +3,21 @@
 }
 
 .squiggle {
-  @apply border border-black;
   @apply p-1.5 mt-4;
+  width: 75px;
+  height: 75px;
 }
+
+.squiggle a {
+  @apply h-full;
+}
+
 .squiggle canvas {
   @apply transition-opacity ease-out duration-500;
-  width: 75px !important;
-  height: 75px !important;
+  @apply relative right-24 bottom-20;
+  width: 250px !important;
+  height: 250px !important;
+  
 }
 
 .squiggle a {
