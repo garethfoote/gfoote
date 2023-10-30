@@ -18,6 +18,11 @@ For the 21/22 winter semester on BA UXD I designed and taught a unit on Interact
 
 ![[Teaching-the-critical-role-of-designers-in-the-data-society-the-Density-Design-approach.pdf@#**Teaching the critical role of designers in the data society: the DensityDesign approach.** Mauri, Michele & Colombo, Gabriele & Briones, Angeles & Ciuccarelli, Paolo. (2019). 10.21606/learnxdesign.2019.12046.]]
 
-At the core is a method created by Bruno Latour called Controversy Mapping as way to help students understand, observe and describe socio-technical debates. It has since been used, mostly in Science and Technology Studies as a framework for exploring and visualising complexity. 
+At the core is a method created by Bruno Latour called Controversy Mapping as a way to help students understand, observe and describe socio-technical debates. It has since been used, mostly in Science and Technology Studies as a framework for exploring and visualising complexity. 
 
 ![[Venturinietal.-2015-DesigningControversiesandtheirPublics.pdf@#**Designing Controversies and Their Publics.** Venturini, Tommaso & Ricci, Donato & Mauri, Michele & Kimbell, Lucy & Meunier, Axel. (2015). Design Issues. 31. 74–87. 10.1162/DESI_a_00340]]
+
+
+We started with a series of mini-briefs that introduced methods for interrogating datasets and sketching out simple visualisation ideas.
+
+[[Mini-briefs - Exploring datasets]]

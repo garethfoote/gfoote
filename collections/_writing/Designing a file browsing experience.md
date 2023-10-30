@@ -13,7 +13,7 @@ This is a case study explaining the context in which the Tree View component was
 - [[Weeknote 01@#different text that links to Weeknote 01]]
 - [[Weeknote 02]]
 - [[Mini-briefs - Exploring datasets]]
-- [[Accessibility]]
+- [[gfoote.me/topics and types/Accessibility]]
 
 ![[Choose a file 1.png@#alt text]]
 
@@ -25,12 +25,12 @@ There are many ways to design an interface to accomplish this. During the prepar
 2) Presenting all the files in a nested 'tree view' with collapsible and expandable folders.
 There are positives and negatives to both options to do with accessibility, efficiency, and complexity.  
 
-## UX Research
+### UX Research
 Both Finder (macOS) and File Explorer (Windows) have been dealing with the UX of file management for a long time. They make multiple options for file exploration available and configurable to the user, including tree, column and single page views. It was useful to assess how the UI design pattern works in an operating system since this is a familiar method for most people to manipulate and explore files and folders. 
 
 ![[attachments/Screenshot 2023-09-12 at 08.54.19.png]]Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
 
-## User needs & decisions
+#### User needs & decisions
 User research led us to believe that users could often be browsing deeply nested folder structures. The 'one page per folder' option would make this challenging for a number of reasons. This narrow window on the files would make it challenging to locate oneself in the hierarchy and individual page refreshes when navigating in and out of deeply nested structures would become onerous. 
 
 The hierarchical tree view was the UI and interaction pattern that most suited the users' needs, providing a wider or macro view of the folder structure, helping with find-ability and making navigation through directories trivial.
