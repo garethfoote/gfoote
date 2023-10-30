@@ -83,7 +83,7 @@
 .article-card__metadata {
   @apply mb-0 text-sm sm:text-base sm:text-right bg-offwhite;
   @apply max-h-5 sm:max-h-none;
-  @apply relative bottom-1 sm:bottom-auto sm:top-1;
+  @apply relative bottom-1 sm:bottom-auto sm:top-2;
   @apply whitespace-nowrap;
 }
 
