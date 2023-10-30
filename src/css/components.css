@@ -3,9 +3,8 @@
 }
 
 .squiggle {
-  @apply p-1.5 mt-4;
-  width: 75px;
-  height: 75px;
+  @apply p-1.5 mt-4 relative left-[-1rem];
+  @apply w-32 h-32;
 }
 
 .squiggle a {
@@ -14,10 +13,9 @@
 
 .squiggle canvas {
   @apply transition-opacity ease-out duration-500;
-  @apply relative right-24 bottom-20;
-  width: 250px !important;
-  height: 250px !important;
-  
+  @apply absolute pointer-events-none;
+  @apply top-[-4rem] left-[-4rem];
+  @apply !w-64 !h-64;
 }
 
 .squiggle a {
@@ -53,7 +51,7 @@
 
 .post-hero,
 .homepage-hero {
-  @apply mt-14;
+  @apply mt-4;
 }
 
 .post-hero {
@@ -99,8 +97,8 @@
 a.tag:focus,
 a.tag:hover {
   @apply bg-accent-light;
+  @apply outline-none;
   box-shadow: 0 0 0 2px theme('colors.accent.darkest'); 
-  outline: none;
 } 
 
 a.tag:focus {
@@ -113,7 +111,7 @@ a.tag:focus {
 }
 
 .topics-list__item {
-  @apply flex gap-1 mb-1;
+  @apply flex gap-2 mb-1;
   @apply text-base leading-4 sm:text-md sm:leading-8;
 }
 
@@ -128,12 +126,18 @@ a.tag:focus {
 
 .topics-list__item a:after {
   content: "";
-  @apply grow gap-4;
+  @apply grow;
   background-image: linear-gradient(to right, theme('colors.grey.DEFAULT') 2px, transparent 2px);
   background-position-x: 0;
-  background-position-y: 21px;
+  background-position-y: 15px;
   background-repeat: repeat-x;
   background-size: 10px 2px;
+}
+
+@media screen(sm) {
+  .topics-list__item a:after {
+    background-position-y: 21px;
+  }
 }
 
 .topics-list__item a:hover:after {
@@ -142,7 +146,7 @@ a.tag:focus {
 
 .topics-list__item-count {
   @apply text-base text-grey-dark;
-  @apply relative top-1.5;
+  @apply relative top-0 sm:top-1.5;
 }
 
 .section-header {
@@ -163,7 +167,6 @@ a.tag:focus {
   background: url("../assets/wiggle-grey.svg") repeat-x 0 0;
   @apply block absolute top-0;
   @apply border-none;
+  @apply h-6 w-full;
   background-position-y: 16px;
-  height: 24px;
-	width: 100%;
 }

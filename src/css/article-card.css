@@ -94,6 +94,6 @@
 
 .article-card__metadata time:after {
   content: "·";
-  @apply pl-0.5 pr-0 sm:pl-1 sm:pr-1 text-xl text-black;
+  @apply text-xl text-black;
   @apply relative top-0.5;
 }
