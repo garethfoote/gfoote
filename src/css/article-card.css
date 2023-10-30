@@ -16,7 +16,6 @@
   }
 }
 
-
 .article-card__title {
   @apply text-grey-dark text-lg leading-6;
   @apply grow z-10;
@@ -57,6 +56,11 @@
     inset 0 -2px theme('colors.offwhite'),
     inset 0 -3px theme('colors.grey.DEFAULT');
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
+  
+  text-shadow:-2px -2px theme(colors.offwhite),
+    -2px 2px theme(colors.offwhite),
+    2px -2px theme(colors.offwhite),
+    2px 2px theme(colors.offwhite);
 }
 
 .article-card__title:after {
