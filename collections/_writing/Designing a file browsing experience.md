@@ -13,7 +13,7 @@ This is a case study explaining the context in which the Tree View component was
 - [[Weeknote 01@#different text that links to Weeknote 01]]
 - [[Weeknote 02]]
 - [[Mini-briefs - Exploring datasets]]
-- [[gfoote.me/topics and types/Accessibility]]
+- [[Accessibility]]
 
 ![[Choose a file 1.png@#alt text]]
 
