@@ -3,7 +3,8 @@ title: Mini-briefs - Exploring datasets
 share: true
 homepage: true
 category: _writing
-topics: [Teaching]
+types: [Teaching Resources]
+topics: [Data Visualisation]
 date: 2022-09-01
 ---
 
