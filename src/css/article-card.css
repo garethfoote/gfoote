@@ -1,6 +1,6 @@
 
 .article-card {
-  @apply mb-6 sm:mb-3;
+  @apply mb-6 sm:mb-1;
   @apply flex items-end justify-between gap-x-1;
 
   background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
@@ -84,6 +84,6 @@
 .article-card__metadata time:after {
   content: "·";
   @apply hidden sm:inline;
-  @apply pl-0.5 pr-0 sm:pl-2 sm:pr-1 text-xl text-black;
+  @apply pl-0.5 pr-0 sm:pl-1 sm:pr-1 text-xl text-black;
   @apply relative top-0.5;
 }
