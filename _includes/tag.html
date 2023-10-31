@@ -1,25 +1,29 @@
 
-{%-  if type  -%}
+{%-  if type and type != ""  -%}
 {%- assign url = "" -%}
-  {%- for t in site.supersets -%}
-    {%- assign lowType = type|downcase -%}
-    {%- assign lowT = t.title|downcase -%}
-    {%- if lowT == lowType -%}
-      {%- assign url = t.url -%}
-    {%- endif  -%}
-  {%- endfor -%}
- <a href="{{url|absolute_url}}" class="tag whitespace-nowrap">{{type}}</a>
+{% if type == "Writing"%}
+  {%- assign url = "writing" -%}
+{% endif %}
 
-{%-  elsif topic  -%}
+{%- for t in site.supersets -%}
+  {%- assign lowType = type|downcase -%}
+  {%- assign lowT = t.title|downcase -%}
+  {%- if lowT == lowType -%}
+    {%- assign url = t.url -%}
+  {%- endif  -%}
+{%- endfor -%}
+<a href="{{url|absolute_url}}" class="tag whitespace-nowrap">{{type}}</a>
+
+{%-  elsif topic and topic != "" -%}
 
 {%- assign url = "" -%}
-  {%- for t in site.topics -%}
-    {%- assign lowTopic = topic|downcase -%}
-    {%- assign lowT = t.title|downcase -%}
-    {%- if lowT == lowTopic -%}
-      {%- assign url = t.url -%}
-    {%- endif  -%}
-  {%- endfor -%}
- <a href="{{url|absolute_url}}" class="tag whitespace-nowrap">{{topic}}</a>
+{%- for t in site.topics -%}
+  {%- assign lowTopic = topic|downcase -%}
+  {%- assign lowT = t.title|downcase -%}
+  {%- if lowT == lowTopic -%}
+    {%- assign url = t.url -%}
+  {%- endif  -%}
+{%- endfor -%}
+<a href="{{url|absolute_url}}" class="tag whitespace-nowrap">{{topic}}</a>
 
 {%-  endif  -%}
