@@ -6,7 +6,7 @@ const orangeflame = {
   darkest: '#C93E03'
 }
 const aquamarine = {
-  lightest: '#F2F2F2',
+  lightest: '#DDFFF4',
   light: '#B8FEE7',
   DEFAULT: '#1CFCB2',
   dark: '#12C78B',
