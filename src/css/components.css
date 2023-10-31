@@ -62,6 +62,10 @@
   @apply text-xl;
 }
 
+.post-hero__metadata {
+  @apply text-sm sm:text-base;
+}
+
 .post-hero__metadata time {
   @apply text-grey-dark;
 }
