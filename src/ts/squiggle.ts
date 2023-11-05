@@ -61,7 +61,7 @@ export function drawSquiggle(
     ctx.lineWidth = 2;
     ctx.beginPath();
       points.forEach((p) => {
-      ctx.strokeStyle = "#0B0C0C";
+      ctx.strokeStyle = "#2E2C2C";
       ctx.lineTo(p[0], p[1]);
     });
     ctx.stroke();

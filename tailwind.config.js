@@ -12,7 +12,6 @@ const aquamarine = {
   dark: '#12C78B',
   darkest: '#0CAD78'
 }
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -24,7 +23,7 @@ module.exports = {
       'accent': aquamarine,
       'yellow': '#FFFF00', // possibly unused
       'offwhite': '#FCFCFC',
-      'black': '#0B0C0C',
+      'black': '#2E2C2C',
       'grey':  {
         lightest: '#C3C3C3',
         light: '#8E9498',
