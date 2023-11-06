@@ -8,12 +8,14 @@
     {{ post.date |  date: "%b" }} <span class="inline">20</span>{{ post.date |  date: "%y" }}
     </time> 
 
+{% comment %}
     <span class="whitespace-nowrap">in&nbsp;</span>
     {%- assign topic = post.topics[0] -%}
     {% if page.collection == "topics"%}
       {%- assign type = post.types[0] | default: "Writing" -%}
     {% endif %}
     {%- include tag.html -%}
+{% endcomment %}
   </footer>
 </article>
 

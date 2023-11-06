@@ -1,9 +1,9 @@
 
 .article-card {
-  @apply mb-6 sm:mb-1;
-  @apply sm:flex items-end justify-between gap-x-1;
+  @apply mb-4 sm:mb-1;
+  @apply flex items-end justify-between gap-x-1;
 
-  /* background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px); */
+  background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
   background-position-x: 0;
   background-position-y: bottom;
   background-repeat: repeat-x;
@@ -17,9 +17,9 @@
 }
 
 .article-card__title {
-  @apply text-grey-dark text-lg leading-6;
+  @apply text-grey-dark text-md sm:text-lg leading-6;
   @apply grow z-10;
-  @apply relative;
+  @apply relative top-0.5 sm:top-1;
 }
 
 .article-card__title:hover {
@@ -29,8 +29,8 @@
 .article-card__title > a:focus > span,
 .article-card__title:hover > a > span {
   box-shadow:
-    inset 0 -2px theme('colors.offwhite'),
-    inset 0 -4px theme('colors.black');
+    inset 0 -1px theme('colors.offwhite'),
+    inset 0 -3px theme('colors.black');
 }
 
 .article-card__title > a:focus {
@@ -66,8 +66,9 @@
 .article-card__title:after {
   content: "";
   @apply w-full h-full;
-  @apply absolute inset-0;
+  @apply absolute;
   @apply opacity-0;
+  @apply top-[-4px] left-0;
   transition: opacity 0.1s ease-in-out;
   background-image: linear-gradient(to right, theme('colors.black') 2px, transparent 2px);
   background-position-x: 0;
@@ -83,8 +84,9 @@
 .article-card__metadata {
   @apply mb-0 text-sm sm:text-base sm:text-right bg-offwhite;
   @apply max-h-5 sm:max-h-none;
-  @apply relative bottom-0.5 sm:bottom-auto sm:top-2;
+  @apply relative sm:bottom-auto sm:top-2;
   @apply whitespace-nowrap;
+  bottom: -5px;
 }
 
 .article-card__metadata time {

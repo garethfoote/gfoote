@@ -51,15 +51,15 @@ hr {
 }
 
 .content h2 {
-	@apply text-lg mb-8;
+	@apply font-sans font-semibold text-lg mb-8;
 }
 
 .content h3 {
-	@apply text-md font-serif mb-8;
+	@apply font-sans font-semibold text-md mb-6;
 }
 
 .content h4 {
-	@apply text-md font-serif mb-6;
+	@apply font-sans font-semibold text-md mb-6;
 }
 
 .content ul li {
