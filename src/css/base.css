@@ -85,7 +85,6 @@ hr {
 
 .content li a:hover,
 .content p a:hover {
-	
   @apply text-black;
 	background-image: url("../assets/wiggle-green-dark.svg");
 	background-repeat: repeat-x;

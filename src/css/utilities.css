@@ -1,6 +1,7 @@
 
 .main-col {
   @apply max-w-3xl 2xl:mx-auto 2xl:max-w-4xl;
+  @apply sm:mr-48;
   @apply px-4 md:pl-8 lg:pl-16;
 }
 
@@ -14,6 +15,16 @@
   -1px -1px theme('colors.offwhite');
   display: inline;
   @apply pb-px;
+}
+
+.grey-underline:focus,
+.black-underline:focus {
+  @apply outline-none;
+  @apply bg-none;
+  @apply pb-0;
+  @apply bg-yellow;
+  box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+  text-shadow: none;
 }
 
 .black-underline {

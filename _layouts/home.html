@@ -12,10 +12,10 @@ layout: default
 
 {% for type in page.types %}
 <section class="mb-8 sm:mb-6">
-  <h2 class="section-eyebrow"><span>{{type}}<span></h2>
+  <h2 class="eyebrow homepage-eyebrow"><span>{{type}}<span></h2>
   {% for post in posts %}
     {% if post.types[0] == type %}
-      <div class="mb-3">
+      <div class="mb-2">
         {%- include article-card.html -%}
       </div>
     {% endif%}
@@ -25,10 +25,10 @@ layout: default
 
 {% for topic in page.topics %}
 <section class="mb-8 sm:mb-6">
-  <h2 class="section-eyebrow"><span>{{topic}}<span></h2>
+  <h2 class="eyebrow homepage-eyebrow"><span>{{topic}}<span></h2>
   {% for post in posts %}
     {% if post.topics[0] == topic %}
-      <div class="mb-3">
+      <div class="mb-2">
         {%- include article-card.html -%}
       </div>
     {% endif%}
