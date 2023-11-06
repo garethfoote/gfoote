@@ -9,7 +9,7 @@ layout: default
 <section>
 {{ content }}
 {%- assign posts = site.writing | sort: "date" | reverse  -%}
-{%- include post-list.html -%}
+{%- include article-cards.html -%}
 </section>
 
 <section class="mt-16">

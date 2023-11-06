@@ -61,7 +61,7 @@
   {%- for post in site.writing -%}
     {%- if post.url != page.url -%}
       {%- if post.content contains wiki_link_title -%}
-      {%- include post-single.html -%}
+      {%- include article-card.html -%}
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
@@ -73,7 +73,7 @@
   {%- for note in site.notes -%}
   {%- if note.url != page.url -%}
     {%- if note.content contains wiki_link_title -%}
-      {%- include post-single.html -%}
+      {%- include article-card.html -%}
     {%- endif -%}
   {%- endif -%}
   {%- endfor -%}

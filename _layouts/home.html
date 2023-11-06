@@ -10,7 +10,7 @@ layout: default
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
 {%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
 <div class="mb-10">
-{%- include post-list.html -%}
+{%- include article-cards.html -%}
 </div>
 <a class="section-link" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
 
