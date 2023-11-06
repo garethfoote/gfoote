@@ -1,8 +1,12 @@
 
 .main-col {
   @apply max-w-3xl 2xl:mx-auto 2xl:max-w-4xl;
-  @apply sm:mr-48;
   @apply px-4 md:pl-8 lg:pl-16;
+}
+
+.main-col--article {
+  @apply sm:mr-48 relative 2xl:left-[-14rem];
+  @apply 2xl:px-0
 }
 
 .grey-underline,

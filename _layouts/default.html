@@ -5,7 +5,7 @@
 <body class="border-t-2 border-t-accent">
   <div>
     <header class="flex main-col place-content-between">
-      <div class="squiggle squiggle--hidden">
+      <div class="squiggle squiggle--hidden{% if page.layout == "post" %} squiggle--article{%endif%}"">
         <a href="{{site.baseurl}}/">
           <span class="sr-only">Home</span>
           <canvas aria-hidden="true" id="squiggle"></canvas>
@@ -13,7 +13,7 @@
       </div>
       {%- include nav.html -%}
     </header>
-    <main id="main" class="section main-col">
+    <main id="main" class="section main-col{% if page.layout == "post" %} main-col--article{%endif%}">
       {{content}}
     </main>   
   </div>

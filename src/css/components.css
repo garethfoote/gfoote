@@ -7,6 +7,10 @@
   @apply w-24 h-24 sm:w-32 sm:h-32;
 }
 
+.squiggle--article {
+  @apply 2xl:left-[-7rem];
+}
+
 .squiggle a {
   @apply h-full;
 }
@@ -160,7 +164,7 @@
 
 .post-meta {
   @apply text-grey;
-  @apply sm:absolute top-0 max-w-[12rem] right-0;
+  @apply sm:absolute top-0 max-w-[14rem] right-0;
 }
 
 @media screen(sm) {
