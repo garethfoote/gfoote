@@ -59,7 +59,7 @@
 }
 
 .post-hero h1 {
-  @apply text-lg leading-7 sm:text-xl;
+  @apply text-lg leading-7 sm:text-xl 2xl:text-2xl;
   @apply pb-5;
   @apply border-b-[0.5px] border-b-grey-lightest;
 }

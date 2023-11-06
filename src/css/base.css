@@ -13,7 +13,7 @@ body > div {
 }
 
 h1 {
-	@apply text-lg leading-7 sm:text-xl sm:leading-8;
+	@apply text-lg 2xl:text-2xl leading-7 sm:text-xl sm:leading-8;
 	@apply font-serif;
 }
 
@@ -29,7 +29,7 @@ h3 {
 }
 
 p {
-	@apply text-base sm:text-md;
+	@apply text-base sm:text-md 2xl:text-lg;
 	@apply mb-8;
 }
 
@@ -63,7 +63,7 @@ hr {
 }
 
 .content ul li {
-	@apply text-base leading-5 sm:text-md;
+	@apply text-base leading-5 sm:text-md 2xl:text-lg;
 	@apply list-disc;
 	@apply mb-2;
 }

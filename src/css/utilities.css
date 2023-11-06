@@ -97,7 +97,7 @@
 
 .pdf-download a strong {
   @apply block;
-  @apply font-sans font-normal text-md leading-7;
+  @apply font-sans font-normal text-md  2xl:text-lg leading-7;
   @apply pb-2;
 }
 
