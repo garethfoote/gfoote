@@ -20,7 +20,7 @@
   .tabs__list-item {
     @apply min-w-[4rem];
     @apply text-center tracking-wide;
-    @apply border-b border-grey-light;
+    @apply border-b border-grey-lightest;
     @apply rounded-t;
     @apply text-grey;
     @apply relative z-10;
@@ -32,9 +32,9 @@
 
   .tabs__list-item.tabs__list-item--selected {
     @apply bg-offwhite border-b-0;
-    @apply border-r border-grey-light;
-    @apply border-l border-grey-light;
-    @apply border-t border-grey-light;
+    @apply border-r border-grey-lightest;
+    @apply border-l border-grey-lightest;
+    @apply border-t border-grey-lightest;
     @apply text-black;
   }
 

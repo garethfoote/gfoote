@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="homepage-hero">
+<div class="mb-5 sm:mb-6 mt-4">
   <h1><span class="text-accent-darkest">Gareth Foote.</span> {{page.subtitle}}</h1>
 </div>
 <div class="content">
@@ -9,10 +9,34 @@ layout: default
 </div>
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
 {%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
-<div class="mb-10">
-{%- include article-cards.html -%}
-</div>
-<a class="section-link" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
+
+{% for type in page.types %}
+<section class="mb-8 sm:mb-6">
+  <h2 class="section-eyebrow"><span>{{type}}<span></h2>
+  {% for post in posts %}
+    {% if post.types[0] == type %}
+      <div class="mb-3">
+        {%- include article-card.html -%}
+      </div>
+    {% endif%}
+  {% endfor %}
+</section>
+{% endfor %}
+
+{% for topic in page.topics %}
+<section class="mb-8 sm:mb-6">
+  <h2 class="section-eyebrow"><span>{{topic}}<span></h2>
+  {% for post in posts %}
+    {% if post.topics[0] == topic %}
+      <div class="mb-3">
+        {%- include article-card.html -%}
+      </div>
+    {% endif%}
+  {% endfor %}
+</section>
+{% endfor %}
+
+<a class="section-link block mt-8" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
 
 <hr>
 

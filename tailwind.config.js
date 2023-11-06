@@ -25,8 +25,8 @@ module.exports = {
       'offwhite': '#FCFCFC',
       'black': '#2E2C2C',
       'grey':  {
-        lightest: '#C3C3C3',
-        light: '#8E9498',
+        lightest: '#8E9498',
+        light: '#6C787F',
         DEFAULT: '#505A5F',
         dark: '#303639',
       },
@@ -36,7 +36,7 @@ module.exports = {
       serif: ['EB Garamond', 'serif'],
     },
     fontSize: {
-      sm: ['0.875rem', '1.25rem'],
+      sm: ['0.875rem', '1.25rem'], // 13px
       base: ['1rem', '1.625rem'], // 16px, 26px
       md: ['1.125rem', '1.75rem'], // 18px, 28px
       lg: ['1.25rem', '2rem'], // 20px, 32px
