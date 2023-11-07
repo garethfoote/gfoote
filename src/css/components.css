@@ -8,7 +8,7 @@
 }
 
 .squiggle--article {
-  @apply 2xl:left-[-7rem];
+  @apply 2xl:left-[-6rem];
 }
 
 .squiggle a {

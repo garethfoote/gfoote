@@ -5,8 +5,8 @@
 }
 
 .main-col--article {
-  @apply sm:mr-48 relative 2xl:left-[-14rem];
-  @apply 2xl:px-0
+  @apply relative;
+  @apply sm:mr-48 2xl:mr-auto 2xl:px-0;
 }
 
 .grey-underline,
