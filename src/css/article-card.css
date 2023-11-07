@@ -61,7 +61,7 @@
   @apply w-full h-full;
   @apply absolute;
   @apply opacity-0;
-  @apply top-[-4px] left-0;
+  @apply top-[-2px] sm:top-[-4px] left-0;
   transition: opacity 0.25s ease-in-out;
   background-image: linear-gradient(to right, theme('colors.grey.light') 2px, transparent 2px);
   background-position-x: 0;
