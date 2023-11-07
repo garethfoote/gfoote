@@ -36,6 +36,7 @@ module.exports = {
       serif: ['EB Garamond', 'serif'],
     },
     fontSize: {
+      xs: ['0.6875rem', '1.25rem'], // 13px
       sm: ['0.875rem', '1.25rem'], // 13px
       base: ['1rem', '1.625rem'], // 16px, 26px
       md: ['1.125rem', '1.75rem'], // 18px, 28px

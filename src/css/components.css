@@ -154,7 +154,7 @@
 }
 
 .eyebrow {
-  @apply font-sans text-sm tracking-wider leading-[0.975rem] uppercase text-grey-light;
+  @apply font-sans text-xs sm:text-sm tracking-wider leading-[0.975rem] uppercase text-grey-light;
 }
 
 .homepage-eyebrow {
