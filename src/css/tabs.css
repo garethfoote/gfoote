@@ -7,20 +7,20 @@
   .tabs__list:before {
     content: "";
     @apply w-2;
-    @apply border-b border-grey-light;
+    @apply border-b border-grey-4;
   }
 
   .tabs__list:after {
     content: "";
     @apply absolute bottom-0 z-0;
     @apply h-px w-full;
-    @apply bg-grey-lightest;
+    @apply bg-grey-3;
   }
 
   .tabs__list-item {
     @apply min-w-[4rem];
     @apply text-center tracking-wide;
-    @apply border-b border-grey-lightest;
+    @apply border-b border-grey-3;
     @apply rounded-t;
     @apply text-grey;
     @apply relative z-10;
@@ -32,9 +32,9 @@
 
   .tabs__list-item.tabs__list-item--selected {
     @apply bg-offwhite border-b-0;
-    @apply border-r border-grey-lightest;
-    @apply border-l border-grey-lightest;
-    @apply border-t border-grey-lightest;
+    @apply border-r border-grey-3;
+    @apply border-l border-grey-3;
+    @apply border-t border-grey-3;
     @apply text-black;
   }
 

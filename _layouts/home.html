@@ -11,7 +11,7 @@ layout: default
 {%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
 
 {% for type in page.types %}
-<section class="mb-8 sm:mb-6">
+<section class="mb-6 sm:mb-8">
   <h2 class="eyebrow homepage-eyebrow"><span>{{type}}<span></h2>
   {% for post in posts %}
     {% if post.types[0] == type %}
@@ -24,7 +24,7 @@ layout: default
 {% endfor %}
 
 {% for topic in page.topics %}
-<section class="mb-8 sm:mb-6">
+<section class="mb-6 sm:mb-8">
   <h2 class="eyebrow homepage-eyebrow"><span>{{topic}}<span></h2>
   {% for post in posts %}
     {% if post.topics[0] == topic %}

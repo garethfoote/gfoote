@@ -25,10 +25,12 @@ module.exports = {
       'offwhite': '#FCFCFC',
       'black': '#2E2C2C',
       'grey':  {
-        lightest: '#8E9498',
-        light: '#6C787F',
+        "1": '#CBCFD1',
+        "2": '#BCC0C2',
+        "3": '#8E9498', //lightest
+        "4": '#6C787F', //light
         DEFAULT: '#505A5F',
-        dark: '#303639',
+        "6": '#303639',
       },
     },
     fontFamily: {
@@ -41,9 +43,9 @@ module.exports = {
       base: ['1rem', '1.625rem'], // 16px, 26px
       md: ['1.125rem', '1.75rem'], // 18px, 28px
       lg: ['1.25rem', '2rem'], // 20px, 32px
-      xl: ['1.562rem', '2rem'], // 25px, 32px 
-      '2xl': ['1.938rem', '2.25rem'],
-      '3xl': ['2.438rem', '2.75rem'],
+      xl: ['1.562rem', '2.44rem'], // 25px, 32px 
+      '2xl': ['1.938rem', '2.25rem'], // 31px, 36px
+      '3xl': ['2.438rem', '2.75rem'], // 39px, 44px
       '4xl': ['3.062rem', '3.5rem'],
     },
     extend: {},
