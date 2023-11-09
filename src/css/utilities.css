@@ -6,7 +6,7 @@
 
 .main-col--article {
   @apply relative;
-  @apply sm:mr-48;
+  @apply sm:mr-60;
 }
 
 .grey-underline,

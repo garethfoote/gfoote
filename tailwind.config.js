@@ -52,6 +52,7 @@ module.exports = {
       md: ['1.125rem', '1.75rem'], // 18px, 28px
       lg: ['1.25rem', '2rem'], // 20px, 32px
       xl: ['1.562rem', '2.44rem'], // 25px, 32px 
+      '1.5xl': ['1.6875rem', '2.125rem'], // 27px, 34px 
       '2xl': ['1.938rem', '2.25rem'], // 31px, 36px
       '3xl': ['2.438rem', '2.75rem'], // 39px, 44px
       '4xl': ['3.062rem', '3.5rem'],

@@ -1,6 +1,6 @@
 
 .article-card {
-  @apply flex items-end justify-between gap-x-1;
+  @apply flex items-end justify-between gap-x-1 2xl:mb-4;
 
   background-image: linear-gradient(to right, theme('colors.grey.4') 2px, transparent 2px);
   background-position-x: 0;
@@ -10,7 +10,7 @@
 }
 
 .article-card__title {
-  @apply text-md sm:text-lg 2xl:text-xl leading-6;
+  @apply text-md sm:text-lg 2xl:text-1.5xl leading-6;
   @apply grow z-10;
   @apply relative top-0.5 sm:top-1;
 }
