@@ -10,20 +10,24 @@
 }
 
 .article-card__title {
-  @apply text-grey-6 text-md sm:text-lg 2xl:text-xl leading-6;
+  @apply text-md sm:text-lg 2xl:text-xl leading-6;
   @apply grow z-10;
   @apply relative top-0.5 sm:top-1;
 }
 
+.article-card__title a {
+  @apply text-accent-7;
+}
+
 .article-card__title:hover {
-  @apply text-black; 
+  @apply text-accent-6; 
 }
 
 .article-card__title > a:focus > span,
 .article-card__title:hover > a > span {
   box-shadow:
     inset 0 -1px theme('colors.offwhite'),
-    inset 0 -3px theme('colors.black');
+    inset 0 -3px theme('colors.accent.7');
 }
 
 .article-card__title > a:focus {
@@ -47,7 +51,7 @@
 .article-card__title > a > span {
   box-shadow:
     inset 0 -2px theme('colors.offwhite'),
-    inset 0 -3px theme('colors.grey.DEFAULT');
+    inset 0 -3px theme('colors.accent.7');
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
   
   text-shadow:-2px -2px theme(colors.offwhite),

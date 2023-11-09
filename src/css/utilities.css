@@ -1,12 +1,12 @@
 
 .main-col {
-  @apply max-w-3xl 2xl:max-w-5xl;
-  @apply px-4 md:pl-8 lg:pl-16 2xl:mx-auto 2xl:px-0;
+  @apply max-w-3xl 2xl:max-w-6xl;
+  @apply px-4 md:pl-8 lg:pl-16;
 }
 
 .main-col--article {
   @apply relative;
-  @apply sm:mr-48 2xl:mr-auto 2xl:px-0;
+  @apply sm:mr-48;
 }
 
 .grey-underline,
@@ -57,14 +57,25 @@
 }
 
 .section-link {
-  @apply text-grey;
+  @apply 2xl:text-md;
+
+}
+
+.section-link span {
+  text-shadow:
+    1px 1px theme('colors.offwhite'),
+    1px -1px theme('colors.offwhite'),
+    -1px 1px theme('colors.offwhite'),
+    -1px -1px theme('colors.offwhite');
+  box-shadow:
+  inset 0 -3px theme('colors.offwhite'),
+  inset 0 -4px theme('colors.black');
 }
 
 .section-link:hover span {
-  @apply text-grey-6;
   box-shadow:
-    inset 0 0px theme('colors.offwhite'),
-    inset 0 -1px theme('colors.black');
+    inset 0 -2px theme('colors.offwhite'),
+    inset 0 -4px theme('colors.black');
 }
 
 .section-link:after {
@@ -92,7 +103,7 @@
   @apply !pb-2;
   @apply text-base;
   min-width: 3rem;
-  box-shadow: inset 0 0 #fcfcfc,inset 0 -3px theme('colors.accent.dark') !important;
+  box-shadow: inset 0 0 #fcfcfc,inset 0 -3px theme('colors.accent.6') !important;
 }
 
 .pdf-download a strong {

@@ -5,13 +5,21 @@ const orangeflame = {
   dark: '#F14B04',
   darkest: '#C93E03'
 }
-const aquamarine = {
-  lightest: '#DDFFF4',
-  light: '#B8FEE7',
-  DEFAULT: '#1CFCB2',
-  dark: '#12C78B',
-  darkest: '#0CAD78'
+const blue = {
+  "3": '#8BB5E5',
+  "4": '#5C96D8',
+  DEFAULT: '#0059BE',
+  "6": '#004798',
+  "7": '#00244C'
 }
+const aquamarine = {
+  "3": '#B8FEE7',
+  "4": '#1CFCB2',
+  DEFAULT: '#12C78B',
+  "6": '#0CAD78',
+  "7": '#05855B'
+}
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -22,7 +30,7 @@ module.exports = {
     colors: {
       'accent': aquamarine,
       'yellow': '#FFFF00', // possibly unused
-      'offwhite': '#FCFCFC',
+      'offwhite': '#F8FDFC',
       'black': '#2E2C2C',
       'grey':  {
         "1": '#CBCFD1',

@@ -5,7 +5,7 @@ html {
 body {
 	@apply  flex flex-col min-h-screen;
 	@apply font-sans;
-	@apply text-black;
+	@apply text-black bg-offwhite;
 }
 
 body > div {
@@ -31,6 +31,10 @@ h3 {
 p {
 	@apply text-base sm:text-md 2xl:text-xl;
 	@apply mb-8;
+}
+
+a {
+  @apply text-black;
 }
 
 ul {
@@ -62,6 +66,10 @@ hr {
 	@apply font-sans font-semibold text-md mb-6;
 }
 
+.content p {
+	max-width: 40em;
+}
+
 .content ul li {
 	@apply text-base leading-5 sm:text-md 2xl:text-lg;
 	@apply list-disc;
@@ -70,17 +78,16 @@ hr {
 
 .content li a,
 .content p a {
-  @apply text-grey-6;
 	background-size: 1px 1em;
 	box-shadow:
-		inset 0 0px theme('colors.offwhite'),
-		inset 0 -1px theme('colors.accent.dark');
+		inset 0 -2px theme('colors.offwhite'),
+		inset 0 -3px theme('colors.accent.6');
 		text-shadow:
 			1px 1px theme('colors.offwhite'),
 			1px -1px theme('colors.offwhite'),
 			-1px 1px theme('colors.offwhite'),
 			-1px -1px theme('colors.offwhite');
-		display: inline;
+	display: inline;
 }
 
 .content li a:hover,
