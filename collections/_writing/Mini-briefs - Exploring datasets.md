@@ -3,10 +3,13 @@ title: Mini-briefs - Exploring datasets
 share: true
 homepage: true
 category: _writing
-types: [Teaching Resources]
-topics: [Data Visualisation]
+types:
+  - Teaching
+topics:
+  - Data Visualisation
 date: 2022-09-01
 ---
+
 
 An introductory exercise for Data Visualisation students that involves exploring and understanding simple datasets, then proposing  narratives that could be told through visualisation techniques.  
 

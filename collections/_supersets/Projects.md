@@ -1,8 +1,8 @@
 ---
 share: true
 category: _supersets
-title: Weeknotes
-showInIndex: true
+title: Projects
+showInIndex: false
 ---
 
 

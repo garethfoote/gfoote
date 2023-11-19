@@ -1,8 +1,7 @@
 ---
 share: true
-category: _supersets
-title: Weeknotes
+category: _topics
+title: Installation
 showInIndex: true
 ---
-
 
