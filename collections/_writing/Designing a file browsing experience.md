@@ -14,10 +14,11 @@ types:
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-* [different text linking to Weeknote 01](./Weeknote%2001.md)
-* [Weeknote 02](./Weeknote%2002.md)
+* [[Weeknote 01|different text linking to Weeknote 01]]
+* [[Weeknote 02|Weeknote 02]]
 
-![alt text](../../attachments/Choose%20a%20file%201.png)
+![[Choose a file 1.png|alt text]]
+
 
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
@@ -61,7 +62,7 @@ More than in most of my previous work the devil was in the details of fine-grain
 ## Implementation
 The common design pattern for this type of display and interaction is conveniently called the 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. 
 
-See my page of [UX research on the Tree View](UX%20Pattern%20-%20Tree%20view.md).
+See my page of [[UX Pattern - Tree view|UX research on the Tree View]].
 
 
 To achieve something like the Finder screenshot above in a web interface we would need to render all files and folders in a set of nested lists, and progressively enhance this to allow collapsing and expanding of folders. 
