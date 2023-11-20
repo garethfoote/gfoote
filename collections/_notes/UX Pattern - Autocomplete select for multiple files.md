@@ -2,10 +2,12 @@
 share: true
 feed: true
 category: _notes
-topics: [Accessibility]
+topics:
+  - Accessibility
 date: 2023-09-23
 title: Autocomplete select for multiple files
 ---
+
 
 There are various cases when a select element with many options can be quite unweildy to use. Scrolling or tabbing through a list of hundreds of items is time consuming and challenging. 
 
