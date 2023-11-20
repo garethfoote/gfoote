@@ -3,8 +3,10 @@ title: Accessible SVGs
 category: _notes
 share: true
 feed: true
-topics: [Accessibility]
+topics:
+  - Accessibility
 ---
+
 
 - [Accessible SVGs @# CSS-Tricks - CSS-Tricks](https://css-tricks.com/accessible-svgs/)
 - [Accessible SVGs: Perfect Patterns For Screen Reader Users — Smashing Magazine](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/)
