@@ -3,10 +3,12 @@ title: Disabling a button
 category: _notes
 share: true
 feed: true
-topics: [Accessibility]
+topics:
+  - Accessibility
 ---
 
-- [[UX Pattern - Buttons & Links]]
+
+- [[UX Pattern - Buttons & Links@#UX Pattern - Buttons & Links]]
 
 ---
 
