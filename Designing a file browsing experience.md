@@ -10,8 +10,8 @@ types: [Case Study]
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-- [[Weeknote 01|different text linking to Weeknote 01]]
-- [[Weeknote 02]]
+- [[Weeknote 01#@different text linking to Weeknote 01]]
+* [[Weeknote 02]]
 
 ![[Choose a file 1.png#@alt text]]
 
