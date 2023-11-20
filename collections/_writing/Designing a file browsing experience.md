@@ -14,10 +14,10 @@ types:
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
 
-- [[Weeknote 01@@different text linking to Weeknote 01|Weeknote 01@@different text linking to Weeknote 01]]
-* [[Weeknote 02|Weeknote 02]]
+- [[Weeknote 01@@different text linking to Weeknote 01]]
+- [[Weeknote 02@@Weeknote 02]]
 
-![[Choose a file 1.png@@alt text|Choose a file 1.png@@alt text]]
+![[Choose a file 1.png@@alt text]]
 
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
@@ -30,7 +30,7 @@ There are positives and negatives to both options to do with accessibility, effi
 ### UX Research
 Both Finder (macOS) and File Explorer (Windows) have been dealing with the UX of file management for a long time. They make multiple options for file exploration available and configurable to the user, including tree, column and single page views. It was useful to assess how the UI design pattern works in an operating system since this is a familiar method for most people to manipulate and explore files and folders. 
 
-![[attachments/Screenshot 2023-09-12 at 08.54.19.png|attachments/Screenshot 2023-09-12 at 08.54.19.png]]Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
+![[attachments/Screenshot 2023-09-12 at 08.54.19.png@@attachments/Screenshot 2023-09-12 at 08.54.19.png]]Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
 
 #### User needs & decisions
 User research led us to believe that users could often be browsing deeply nested folder structures. The 'one page per folder' option would make this challenging for a number of reasons. This narrow window on the files would make it challenging to locate oneself in the hierarchy and individual page refreshes when navigating in and out of deeply nested structures would become onerous. 
@@ -49,19 +49,19 @@ The UI design leans on GDS styles and compositing existing components such as ra
 - [Storybook single-select example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--expand-select-and-display-selected)
 - [Storybook keyboard controls example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--keyboard-navigate-move-up-with-left-arrow)
 
-![[attachments/tree-view-zoomed-single-select.png|attachments/tree-view-zoomed-single-select.png]]
+![[attachments/tree-view-zoomed-single-select.png@@attachments/tree-view-zoomed-single-select.png]]
 
 Other differentiated visual states included showing relationships between the active child and the parent directories and indeterminate checkbox states, for scenarios when multi-select 
 
 - [Storybook multi-select example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--multiple-select-child-sets-parent-to-indeterminate)
 
-![[attachments/tree-view-zoomed-multi-select 3.png|attachments/tree-view-zoomed-multi-select 3.png]]
+![[attachments/tree-view-zoomed-multi-select 3.png@@attachments/tree-view-zoomed-multi-select 3.png]]
 
 More than in most of my previous work the devil was in the details of fine-grained interactions and visual states supporting accessibility. The relevant WCAG rules were [Non-text Contrast (1.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) and [Focus Appearance (2.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html).
 ## Implementation
 The common design pattern for this type of display and interaction is conveniently called the 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. 
 
-See my page of [[UX Pattern - Tree view@@UX research on the Tree View|UX Pattern - Tree view@@UX research on the Tree View]].
+See my page of [[UX Pattern - Tree view@@UX research on the Tree View]].
 
 
 To achieve something like the Finder screenshot above in a web interface we would need to render all files and folders in a set of nested lists, and progressively enhance this to allow collapsing and expanding of folders. 
