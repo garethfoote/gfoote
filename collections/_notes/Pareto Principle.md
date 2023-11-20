@@ -1,9 +1,11 @@
 ---
 share: true
 category: _notes
-topics: [Trivia]
+topics:
+  - Trivia
 date: 2023-09-26
 ---
+
 
 [Learn the Pareto Principle (The 80/20 Rule) [2023] • Asana](https://asana.com/resources/pareto-principle-80-20-rule)
 
