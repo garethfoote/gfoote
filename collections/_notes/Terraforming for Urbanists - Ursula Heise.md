@@ -13,9 +13,9 @@ date: 2023-09-26
 
 #research/newmaterialism #research/more-than-human  #research/urbanism
 
-[[heise-terraformingforurbanists2016.pdf|heise-terraformingforurbanists2016.pdf]]
+[[heise-terraformingforurbanists2016.pdf@#heise-terraformingforurbanists2016.pdf]]
 
-![[heise-terraformingforurbanists2016.pdf|heise-terraformingforurbanists2016.pdf]]
+![[heise-terraformingforurbanists2016.pdf@#heise-terraformingforurbanists2016.pdf]]
 
 ### Anthropocene
 
@@ -27,7 +27,7 @@ date: 2023-09-26
 2312 shows how humans have created/designed with their landscape (e.g. Mercury) incorporating continuous change/movement. 
 They later return to Earth and find that all land is contested. 
 
-Is [[Terraforming for Urbanists - Ursula Heise|Ursula Heise suggesting]] that we need a reality check in light of unstoppable, increasing urbanisation to the point that we reconsider our role in relation to designing urban green space. That we can consider more utopian idea (e.g. 2312) about human intervention in a positive way? 
+Is [[Terraforming for Urbanists - Ursula Heise@#Ursula Heise suggesting]] that we need a reality check in light of unstoppable, increasing urbanisation to the point that we reconsider our role in relation to designing urban green space. That we can consider more utopian idea (e.g. 2312) about human intervention in a positive way? 
 
 >  terraforming decisions that are easy in environments not naturally hospitable to human life turn out to be very difficult on Earth, where every acre of land is contested territory in terms of ownership rights, historical memories, cultural traditions, and current uses.
 
