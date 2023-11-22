@@ -50,29 +50,61 @@ export class Tabs {
     }
   }
 
+  setSelectedToPreviousTab: (currentTab: HTMLElement) => void = (currentTab) => {
+    var index;
+    const firstTab = this.tabs[0]
+    if (currentTab === firstTab) {
+      this.setSelectedTab(firstTab);
+    } else {
+      index = this.tabs.indexOf(currentTab);
+      this.setSelectedTab(this.tabs[index - 1]);
+    }
+  }
+
+  setSelectedToNextTab: (currentTab: HTMLElement) => void = (currentTab) => {
+    var index;
+    const lastTab = this.tabs.slice(-1)[0]
+    if (currentTab === lastTab) {
+      this.setSelectedTab(lastTab);
+    } else {
+      index = this.tabs.indexOf(currentTab);
+      this.setSelectedTab(this.tabs[index + 1]);
+    }
+  }
+
   onClick: (e: MouseEvent) => void = (e) => {
     this.setSelectedTab(e.currentTarget as HTMLElement)
     e.preventDefault();
   }
 
+  stopEvent: (e: KeyboardEvent) => void = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+
   onKeydown: (e: KeyboardEvent) => void = (e) => {
-    console.log(e.key,  e.currentTarget);
+    const tgt:HTMLElement|null = e.currentTarget as HTMLElement;
 
     switch (e.key) {
       case 'ArrowLeft':
-        // this.setSelectedToPreviousTab(tgt);
+        if(tgt){
+          this.setSelectedToPreviousTab(tgt);
+        }
+        this.stopEvent(e)
         break;
-
       case 'ArrowRight':
-        // this.setSelectedToNextTab(tgt);
+        if(tgt){
+          this.setSelectedToNextTab(tgt);
+        }
+        this.stopEvent(e)
         break;
-
       case 'Home':
-        // this.setSelectedTab(this.firstTab);
+        this.setSelectedTab(this.tabs[0]);
+        this.stopEvent(e);
         break;
-
       case 'End':
-        // this.setSelectedTab(this.lastTab);
+        this.setSelectedTab(this.tabs[this.tabs.length-1]);
+        this.stopEvent(e)
         break;
 
       default:

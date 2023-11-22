@@ -17,6 +17,15 @@
     @apply bg-grey-3;
   }
 
+  .tabs__list-item a:focus {
+    @apply outline-none rounded-t;
+    @apply border-t-accent-6 border-t-4 mt-[-4px]; 
+  }
+  
+  .tabs__list-item a:active {
+    @apply border-t-0 mt-0;
+  }
+
   .tabs__list-item {
     @apply min-w-[4rem];
     @apply text-center tracking-wide;

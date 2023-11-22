@@ -13,7 +13,7 @@
     </li>
   </ul>
 
-  <div class="tabs__panel" id="topics" role="tabpanel" tabindex="0" aria-labelledby="tab-topics">
+  <div class="tabs__panel" id="topics" role="tabpanel" aria-labelledby="tab-topics">
     <ul class="topics-list">
       {% assign topics = site.topics | where_exp: "item", "item.showInIndex == true"  %}
 
@@ -28,7 +28,7 @@
     </ul>
   </div>
 
-  <div class="tabs__panel tabs__panel--hidden" id="types" role="tabpanel" tabindex="0" aria-labelledby="tab-types">
+  <div class="tabs__panel tabs__panel--hidden" id="types" role="tabpanel" aria-labelledby="tab-types">
     <ul class="topics-list">
       {% assign types = site.supersets | where_exp: "item", "item.showInIndex == true"  %}
 
