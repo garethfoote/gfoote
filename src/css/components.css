@@ -52,11 +52,12 @@
 }
 
 .post-hero{
-  @apply mt-4;
+  @apply pt-4;
+  @apply sticky top-0 bg-offwhite z-10;
 }
 
 .post-hero {
-  @apply mb-7 sm:mb-12;
+  @apply mb-7 sm:mb-8;
 }
 
 .post-hero h1 {
@@ -165,13 +166,12 @@
 }
 
 .post-meta {
-  @apply text-grey 2xl:text-md;
-  @apply sm:absolute top-0 sm:max-w-[15rem] right-0;
+  @apply text-grey 2xl:text-lg;
+  @apply lg:absolute top-0 lg:max-w-[15rem] 2xl:max-w-[20rem] right-[-1rem] 2xl:right-[-2rem];
 }
 
-@media screen(sm) {
+@media screen(lg) {
   .post-meta__container {
     transform: translateX(calc(100% + 1rem));
   }  
 }
-

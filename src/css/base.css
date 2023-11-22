@@ -33,6 +33,7 @@ p {
 	@apply mb-8;
 }
 
+
 a {
   @apply text-black;
 }
@@ -45,9 +46,13 @@ ul {
 hr {
 	@apply my-10 mx-auto;
 	height: 6px;
-	background: url("../assets/wiggle-grey.svg") repeat-x 0 0;
+	background: url("../assets/wiggle-grey-light.svg") repeat-x 0 0;
 	border: 0;
 	width: 90%;
+}
+
+hr.full-width {
+	@apply w-full;
 }
 
 .content h1 {
@@ -55,24 +60,25 @@ hr {
 }
 
 .content h2 {
-	@apply font-sans font-semibold text-lg 2xl:text-xl mb-8;
+	@apply font-sans font-semibold text-lg 2xl:text-xl mb-6 pt-2;
 }
 
 .content h3 {
-	@apply font-sans font-semibold text-md 2xl:text-lg mb-6;
+	@apply font-sans font-semibold text-md 2xl:text-xl mb-6 pt-2;
 }
 
 .content h4 {
-	@apply font-sans font-semibold text-md 2xl:text-lg mb-6;
+	@apply font-sans font-semibold text-md 2xl:text-xl mb-6 pt-2;
 }
 
-.content p {
+.content p:not(.hero) {
 	max-width: 40em;
+	@apply mb-6;
 }
 
 .content ul li {
-	@apply text-base leading-5 sm:text-md 2xl:text-xl;
 	@apply list-disc;
+	@apply text-base sm:text-md 2xl:text-xl;
 	@apply mb-2;
 }
 
