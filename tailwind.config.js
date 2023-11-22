@@ -1,9 +1,10 @@
+
 const orangeflame = {
-  lightest: '#FD9C72',
-  light: '#FC804A',
-  DEFAULT: '#FC5F1C',
-  dark: '#F14B04',
-  darkest: '#C93E03'
+  "3": '#FC5F1C',
+  "4": '#DA490B',
+  DEFAULT: '#B83700',
+  "6": '#962D00',
+  "7": '#742300'
 }
 const blue = {
   "3": '#8BB5E5',

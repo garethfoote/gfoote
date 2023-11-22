@@ -10,24 +10,24 @@
 }
 
 .article-card__title {
-  @apply text-md sm:text-lg 2xl:text-1.5xl leading-6;
+  @apply text-md sm:text-lg 2xl:text-1.5xl leading-5 sm:leading-6;
   @apply grow z-10;
-  @apply relative top-0.5 sm:top-1;
+  @apply relative top-0.5;
 }
 
 .article-card__title a {
-  @apply text-accent-7;
+  /* @apply text-accent; */
 }
 
 .article-card__title:hover {
-  @apply text-accent-6; 
+  /* @apply text-accent-7;  */
 }
 
 .article-card__title > a:focus > span,
 .article-card__title:hover > a > span {
   box-shadow:
     inset 0 -1px theme('colors.offwhite'),
-    inset 0 -3px theme('colors.accent.7');
+    inset 0 -3px theme('colors.accent.DEFAULT');
 }
 
 .article-card__title > a:focus {
@@ -51,7 +51,7 @@
 .article-card__title > a > span {
   box-shadow:
     inset 0 -2px theme('colors.offwhite'),
-    inset 0 -3px theme('colors.accent.7');
+    inset 0 -3px theme('colors.accent.DEFAULT');
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
   
   text-shadow:-2px -2px theme(colors.offwhite),
@@ -87,6 +87,6 @@
 }
 
 .article-card__metadata time {
-  @apply text-grey;
+  @apply text-grey 2xl:text-lg;
   @apply inline;
 }

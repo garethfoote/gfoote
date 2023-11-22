@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="mb-5 sm:mb-6 2xl:mb-8">
-  <h1><span class="text-accent">Gareth Foote.</span> {{page.subtitle}}</h1>
+  <h1><span class="text-grey">Gareth Foote.</span> {{page.subtitle}}</h1>
 </div>
 <div class="content">
   {% include content.html %}
@@ -15,7 +15,7 @@ layout: default
   <h2 class="eyebrow homepage-eyebrow"><span>{{type}}<span></h2>
   {% for post in posts %}
     {% if post.types[0] == type %}
-      <div class="mb-2">
+      <div class="mb-4 sm:mb-3">
         {%- include article-card.html -%}
       </div>
     {% endif%}
@@ -28,7 +28,7 @@ layout: default
   <h2 class="eyebrow homepage-eyebrow"><span>{{topic}}<span></h2>
   {% for post in posts %}
     {% if post.topics[0] == topic %}
-      <div class="mb-2">
+      <div class="mb-4 sm:mb-3">
         {%- include article-card.html -%}
       </div>
     {% endif%}
