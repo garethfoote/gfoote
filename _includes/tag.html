@@ -24,6 +24,11 @@
     {%- assign url = t.url -%}
   {%- endif  -%}
 {%- endfor -%}
+
+{%- if url  != '' -%}
 <a class="grey-underline" href="{{url|absolute_url}}">{{topic}}</a>
+{%- else -%}
+<span class="text-black">{{topic}}</span>
+{%- endif -%}
 
 {%-  endif  -%}

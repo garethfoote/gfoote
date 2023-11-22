@@ -24,20 +24,10 @@ layout: default
   </header>
   <div class="content relative">
     {%- include content.html -%}
-    <div class="post-meta">
-      <div class="post-meta__container">
-        <div>Written on <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time></div>
-        {%- assign hasTopic = false -%}
-        {% if page.topics.size > 0 %}
-          {%- assign hasTopic = true -%}
-          {%- assign topic = page.topics[0] -%}
-          <div>Topic:&nbsp; {%- include tag.html -%}</div>
-        {%- endif -%}
-        {%- if page.types.size > 0 -%}
-          {%- assign type = page.types[0] -%}
-          <div>Superset:&nbsp; {%- include tag.html -%}</div>
-        {% endif %}
-      </div>
+    <div class="px-6">
+    <hr class="full-width mb-5 lg:hidden">
+    {%- include post-meta.html -%}
+    <hr class="full-width mt-5 lg:hidden">
     </div>
   </div>
 </article>
