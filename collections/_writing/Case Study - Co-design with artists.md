@@ -20,7 +20,7 @@ This was one of the last projects I worked on as a 'one man band' and therefore 
 
 Self-imposed structure is something I've become accustomed to as a freelancer and that is reasonably well justified in the PDF case study below, which got me my current role at The National Archives 🥳. 
 
-![[July 2022 - National Archive - Senior Interaction Designer Application.pdf@#July 2022 - National Archive - Senior Interaction Designer Application.pdf]]
+![[July 2022 - National Archive - Senior Interaction Designer Application.pdf|July 2022 - National Archive - Senior Interaction Designer Application.pdf]]
 
 The other challenge, **a lack of collaboration with designers**, gave rise to a working relationship with the client and users that was more involved and productive than a typical client and service provider setup. And, in fact, the loss of any specialised, 'professional design' collaboration was more than compensate by the attention paid to collaboration and the co-creation (of knowledge and designed outcomes). 
 
@@ -33,7 +33,7 @@ I have often reflected on why this was such a productive collaboration. I have h
 
 It reminds me of artist and teacher Joseph Beuys' idea of social sculptures. He saw the educational space as something shaped together by the ideas, actions and interactions within it. He would have a semi-prepared structure for his *lecture actions* and document them on a blackboard. 
 
-![[Case Study - Working with artists-20231116100317620.png@#Case Study - Working with artists-20231116100317620.png]]
+![[Case Study - Working with artists-20231116100317620.png|Case Study - Working with artists-20231116100317620.png]]
 
 The classroom is a social space designed for learning where positive outcomes (learning, confidence, excitement) come from a certain amount of instability or uncertainty. Individual learners bring unknown experience and knowledge to these spaces and their participation determines an unknown outcome from the group and individuals. It's chaotic and exciting. 
 
@@ -47,7 +47,7 @@ It is in the nature of artists be more comfortable with the unknown, to trust th
 
 Control and chance is a good description of the collaborative process and also how we learn. 
 
-It has been one of my ambitions in my current role to capture the [[complexity of our service ecosystem@#complexity of our service ecosystem]] but also to open up the creative process to a broader, more inclusive spectrum of people within and beyond the immediate team, as well as users and other stakeholders.  
+It has been one of my ambitions in my current role to capture the [[complexity of our service ecosystem|complexity of our service ecosystem]] but also to open up the creative process to a broader, more inclusive spectrum of people within and beyond the immediate team, as well as users and other stakeholders.  
 
 
 
