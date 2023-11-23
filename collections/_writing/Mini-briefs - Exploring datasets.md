@@ -11,6 +11,8 @@ date: 2022-09-01
 ---
 
 
-An introductory exercise for Data Visualisation students that involves exploring and understanding simple datasets, then proposing  narratives that could be told through visualisation techniques.  
+![[Mini-briefs - Exploring datasets-20231123082402922.png|Mini-briefs - Exploring datasets-20231123082402922.png]]
+
+An introductory exercise for Data Visualisation students that involves exploring and understanding datasets from a range of predefined sources. The challenge was to use simple visualisation techniques and charts but to use a live group presentation or performance to contextualise the narrative.   
 
 [Exploring Datasets](https://gfte.notion.site/Exploring-Datasets-123cc36dcb894096b15220fc0bb6c424)
