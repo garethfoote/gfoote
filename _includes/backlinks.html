@@ -29,9 +29,11 @@
  *
 {%- endcomment -%}
 
+{%- assign alt_text_delimiter = '@#' -%}
+
 <!-- Add backlinks to the current page --> 
 {%- assign link_count = 0 -%}
-{%- assign wiki_link_title = '[' | append: page.slug | append: ']' -%}
+{%- assign wiki_link_title = '[' | append: page.slug | append: alt_text_delimiter -%}
 
 
 {%- comment -%}
@@ -80,7 +82,7 @@
 {% endcomment %}
 
 {% comment %}
-    This code is to show other pages (note under collection) as Backlink. 
+    This code is to show notes as Backlink. 
     Disabled as I don't see a need for this right now. 
 
     {%- for note in site.pages -%}
