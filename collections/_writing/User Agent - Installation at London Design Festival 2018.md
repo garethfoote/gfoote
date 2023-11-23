@@ -23,9 +23,9 @@ We decided to create our own complex system of intrusive adverts and fake eyebal
 
 Below are two photos of the work during the exhibition and below is the official exhibition description. The installation itself was made up of a chaotic set of technical assemblages that battled each other for your attention. They were a website, a browser extension and text-to-speech bot. The display would produce a confusing mix of advert [headlines](https://github.com/garethfoote/LDF18_everything_happens/blob/master/data/headlines/headline_data.csv) and [images](https://github.com/garethfoote/LDF18_everything_happens/blob/master/data/images/images_money_200718.csv) that we are used to seeing forced on us around the web. Multiple browser windows would open, close and move around whilst the text-to-speech bot would try to attract your attention. Attempts to use it would be a game that no-one wins. 
 
-![[30159919717_393b198a98_o.jpg|30159919717_393b198a98_o.jpg]]
+![[30159919717_393b198a98_o.jpg@#30159919717_393b198a98_o.jpg]]
 
-![[44186572305_b4a3b398ae_o.jpg|44186572305_b4a3b398ae_o.jpg]]
+![[44186572305_b4a3b398ae_o.jpg@#44186572305_b4a3b398ae_o.jpg]]
 
 
 **User-Agent** A user agent is software (a software agent) that is acting on behalf of a user.
