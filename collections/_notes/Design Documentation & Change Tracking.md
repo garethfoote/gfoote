@@ -24,11 +24,11 @@ What design, content or interaction elements are at risk of being lost or forgot
 - HTML title of the page
 - Landmarks
 	- Example from [Figma Plugin for accessibility annotations](https://www.figma.com/community/file/984136149483735147)
-	- ![[Screenshot 2022-10-10 at 12.12.16.png|Screenshot 2022-10-10 at 12.12.16.png]]
+	- ![[Screenshot 2022-10-10 at 12.12.16.png@#Screenshot 2022-10-10 at 12.12.16.png]]
 - HTML headings in the page
 - Focus order at page level
 	- Example from [Figma Plugin for accessibility annotations](https://www.figma.com/community/file/984136149483735147)
-	- ![[Screenshot 2022-10-10 at 12.12.28.png|Screenshot 2022-10-10 at 12.12.28.png]]
+	- ![[Screenshot 2022-10-10 at 12.12.28.png@#Screenshot 2022-10-10 at 12.12.28.png]]
 - Documenting Announced Content and Markup
 	- What should assisstive technology announce? 
 	- An example is the green tick being used in TDR metadata to indicate existing metadata
@@ -44,7 +44,7 @@ Thankfully the [Gov Design System](https://design-system.service.gov.uk/) takes 
 	- This should be readable from design files or coded prototype
 
 > [!INFO]
-> See [[#Examples| > Examples]] for how a dropdown component could be documented.
+> See [[#Examples@# > Examples]] for how a dropdown component could be documented.
 
 
 ## User flows and screen flows
