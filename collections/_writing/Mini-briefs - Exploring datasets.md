@@ -11,7 +11,7 @@ date: 2022-09-01
 ---
 
 
-![[Mini-briefs - Exploring datasets-20231123082402922.png|Mini-briefs - Exploring datasets-20231123082402922.png]]
+![[Mini-briefs - Exploring datasets-20231123082402922.png@#Mini-briefs - Exploring datasets-20231123082402922.png]]
 
 An introductory exercise for Data Visualisation students that involves exploring and understanding datasets from a range of predefined sources. The challenge was to use simple visualisation techniques and charts but to use a live group presentation or performance to contextualise the narrative.   
 
