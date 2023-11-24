@@ -43,4 +43,5 @@ I have also written about the (possibly overstretched) analogy of 'social sculpt
 In their early years experimented with live networked performance
 net.art aesthetics but not overly nostalgic. 
 
-![[A UX, design and front-end project to archive 20 years of participatory art-20231124142652565.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124142652565.png]]
+![[A UX, design and front-end project to archive 20 years of participatory art-20231124144315809.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124144315809.png]]
+
