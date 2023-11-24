@@ -15,16 +15,34 @@ const tabsEl: HTMLElement | null = document.querySelector(
 );
 if(tabsEl){
   const tabs: Tabs = new Tabs(tabsEl);
-  console.log(tabs)
   tabs.initialise();
 }
 
-// If first paragraph in content contains an image we
-// assume this is a hero type image and remove the 
-// max-width constraint from the <p>
+/*
+ * If first paragraph in content contains an image we
+ * assume this is a hero type image and remove the 
+ * max-width constraint from the <p>
+ */
 const firstP = document.querySelector(".content p");
-
 if(firstP?.firstElementChild?.tagName == "IMG"){
   firstP.classList.add("hero");
-  console.log('firstP', firstP)
 }
+
+
+/*
+* If in markdown text immediately follows an image then they both get
+* put into a <p>. Using js to find those <p>s and adding class so that
+* the image floats left.
+*/
+const markdownPs: NodeListOf<HTMLParagraphElement> = document.querySelectorAll('.content p')
+Array.from(markdownPs).forEach(p => {
+  console.log("---------")
+  const hasImg:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "IMG").length >= 1
+  Array.from(p.childNodes).filter(node => { console.log(node.nodeName)} ).length > 1
+  const hasText:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "#text").length >= 1
+  
+  if(hasImg && hasText){
+    p.classList.add("float-img-child")
+    p.classList.add("clearfix")
+  }  
+});

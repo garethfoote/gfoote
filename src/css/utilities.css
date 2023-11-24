@@ -128,3 +128,15 @@
   @apply flex-1 h-24;
   @apply text-right;
 }
+
+p.float-img-child img {
+  width: 40%;
+  float: left;
+  padding-right: 1rem;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
