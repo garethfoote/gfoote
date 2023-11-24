@@ -1,5 +1,5 @@
 ---
-title: A UX, design and front-end project to archive 20 years of participatory art
+title: Archiving 20 years of participatory art
 share: true
 homepage: true
 category: _writing
@@ -24,9 +24,7 @@ It was interesting and rewarding to work on a non-commercial project with scope 
 
 ## Working independently
 
-
-![[A UX, design and front-end project to archive 20 years of participatory art-20231124114331494.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124114331494.png]]
-Whilst working as an independent contractor and having to wear many hats I've found it useful to be quite explicit about process. I have over time continued to update a diagram for my personal projects (sometimes during, mostly in retrospect) that helps me reflect on what works and what does not. The intentions is to be critical about my own practice and avoid getting anywhere near [UX Theatre](https://www.spydergrrl.com/2020/05/ux-theatre-poster.html).   
+![[design-process-flow.png@#design-process-flow.png]]Whilst working as an independent contractor and having to wear many hats I've found it useful to be quite explicit about process. I have over time continued to update a diagram for my personal projects (sometimes during, mostly in retrospect) that helps me reflect on what works and what does not. The intentions is to be critical about my own practice and avoid getting anywhere near [UX Theatre](https://www.spydergrrl.com/2020/05/ux-theatre-poster.html).   
 
 
 ## Themes, values and visual identity
@@ -34,6 +32,7 @@ Whilst working as an independent contractor and having to wear many hats I've fo
 From our initial discussions and throughout a light discovery themes emerged. The themes came through in the work itself, which was document in a variety of mediums and at varying quality, as well as discussions with their collaborators and participants. A rewarding part of this work was being able to hear the passion from all parties that are invited into a participatory artwork.  This lead to a set of principles that defined the work as well as the design of the interface and interactions:
 
 ![[A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png]]
+
 I have also written about the (possibly overstretched) analogy of 'social sculpture', which describes working closely and openly with clients and stakeholders. This becomes even more crucial in scenarios where you are a team of one.
 
 
@@ -43,5 +42,7 @@ I have also written about the (possibly overstretched) analogy of 'social sculpt
 In their early years experimented with live networked performance
 net.art aesthetics but not overly nostalgic. 
 
-![[A UX, design and front-end project to archive 20 years of participatory art-20231124144315809.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124144315809.png]]
+![[A UX, design and front-end project to archive 20 years of participatory art-20231124144805606.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124144805606.png]]
+
+
 
