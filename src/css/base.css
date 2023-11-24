@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-	@apply font-serif;
+	@apply font-serif leading-6;
 	@apply text-xl;
 }
 
