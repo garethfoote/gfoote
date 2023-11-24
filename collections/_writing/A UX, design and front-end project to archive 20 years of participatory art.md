@@ -30,11 +30,7 @@ Whilst working as an independent contractor and having to wear many hats I've fo
 
 From our initial discussions and throughout a light discovery themes emerged. The themes came through in the work itself, which was document in a variety of mediums and at varying quality, as well as discussions with their collaborators and participants. A rewarding part of this work was being able to hear the passion from all parties that are invited into a participatory artwork.  This lead to a set of principles that defined the work as well as the design of the interface and interactions:
 
-- Unique, experimental and engaging work
-- Diverse participation and inclusivity
-- Geographically specific (local) work
-
-
+![[A UX, design and front-end project to archive 20 years of participatory art-20231124120944301.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124120944301.png]]
 
 Working performace  work was not consistently visual  
 
