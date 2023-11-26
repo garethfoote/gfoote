@@ -27,7 +27,7 @@
   @apply bg-none;
   @apply pb-0;
   @apply bg-yellow;
-  box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+  box-shadow: 0 -2px theme('colors.yellow.DEFAULT'), 0 4px theme('colors.black');
   text-shadow: none;
 }
 
@@ -129,14 +129,31 @@
   @apply text-right;
 }
 
-p.float-img-child img {
-  width: 40%;
-  float: left;
-  padding-right: 1rem;
+@media screen(sm) {
+  p.float-img-child img {
+    width: 40%;
+    float: left;
+    padding-right: 1rem;
+  }
 }
 
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
+}
+
+.skip-to-content-link {
+  @apply bg-yellow p-4 underline;
+  @apply flex items-center;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content-link:focus {
+  @apply static w-auto h-6 outline-none;
 }

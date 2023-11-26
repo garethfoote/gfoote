@@ -113,7 +113,7 @@ hr.full-width {
 	@apply bg-none;
   @apply pb-0;
 	@apply bg-yellow;
-	box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+	box-shadow: 0 -2px theme('colors.yellow.DEFAULT'), 0 4px theme('colors.black');
 	text-shadow: none;
 }
 

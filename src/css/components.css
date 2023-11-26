@@ -47,7 +47,7 @@
 .site-nav ul li a:focus {
   @apply outline-none;
   @apply bg-yellow;
-  box-shadow: 0 -2px theme('colors.yellow'), 0 4px theme('colors.black');
+  box-shadow: 0 -2px theme('colors.yellow.DEFAULT'), 0 4px theme('colors.black');
 
 }
 
@@ -172,6 +172,8 @@
 
 @media screen(lg) {
   .post-meta__container {
-    transform: translateX(calc(100% + 1rem));
+    transform: translate(calc(100% + 1rem), -2rem);
+    position: sticky;
+    top: 0;
   }  
 }
