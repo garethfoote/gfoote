@@ -1,7 +1,7 @@
 ---
 share: true
 category: _topics
-title: Service Design
-showInIndex: f
+title: Something else
+showInIndex: false
 ---
 
