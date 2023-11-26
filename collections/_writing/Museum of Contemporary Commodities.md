@@ -7,7 +7,7 @@ types:
   - Projects
 topics:
   - Installation
-date: 2015-2017
+date: 2017-10-01
 ---
 
 ![[Museum of Contemporary Commodities-20231126162949020.webp@#Museum of Contemporary Commodities-20231126162949020.webp]]
