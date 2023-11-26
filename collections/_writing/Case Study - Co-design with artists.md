@@ -18,7 +18,7 @@ I had worked with Blind Ditch previously as a technologist on their Museum of Co
 
 This was one of the last projects I worked on as a 'one man band' and therefore one final exercise in doing all the parts of a design and development process individually. The challenges of working this way are mostly that you have to impose your own structure (process, deadline, standards) and that there is little collaboration with other designers. 
 
-Self-imposed structure is something I've become accustomed to as a freelancer and that is reasonably well justified in the PDF case study below, which got me my current role at The National Archives 🥳. 
+Self-imposed structure is something I've become accustomed to as a freelancer and that is reasonably well justified in a UX case study I wrote about that project. It was that project that I presented at my interview for my role at The National Archives 🥳. 
 
 ![[July 2022 - National Archive - Senior Interaction Designer Application.pdf@#July 2022 - National Archive - Senior Interaction Designer Application.pdf]]
 
