@@ -117,6 +117,10 @@ hr.full-width {
 	text-shadow: none;
 }
 
+.content blockquote {
+	@apply border-l-accent-7 border-l-2 pl-4 text-grey;
+}
+
 footer p {
 	@apply text-grey text-sm;
 }
