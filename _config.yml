@@ -74,7 +74,7 @@ collections:
       permalink: /topic/:title
     supersets:
       output: true
-      permalink: /type/:title
+      permalink: /superset/:title
 
 markdown: kramdown
 

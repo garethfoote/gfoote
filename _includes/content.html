@@ -119,6 +119,7 @@
         {%- assign wikilink_alts = wikilink_alts | push: wikilink_content[1] -%}
 
         {% assign topics = site.topics | where: 'slug', wikilink_title_decoded -%}  
+        {% assign supersets = site.supersets | where: 'slug', wikilink_title_decoded -%}  
         {% assign writing = site.writing | where: 'slug', wikilink_title_decoded -%}  
         {% assign posts = site.posts | where: 'slug', wikilink_title_decoded -%}  
         {% assign notes = site.notes | where: 'slug', wikilink_title_decoded -%}
@@ -134,6 +135,7 @@
         {%- endfor -%}
 
         {% if topics.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: topics[0].url  -%}
+        {% elsif supersets.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: supersets[0].url  -%}
         {% elsif writing.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: writing[0].url -%}
         {% elsif posts.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: posts[0].url -%}
         {% elsif pages.size > 0 %}{% assign wikilink_urls = wikilink_urls | push: pages[0].url -%}
