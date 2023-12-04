@@ -156,13 +156,15 @@
 }
 
 .eyebrow {
-  @apply font-sans text-xs sm:text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
-  @apply text-grey;
+  @apply font-sans text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
+  /* @apply text-grey; */
+  @apply text-accent-7;
 }
 
 .homepage-eyebrow {
-  @apply border-b-[0.5px] border-b-grey-3;
-  @apply pb-1 mb-1 lg:mb-2;
+  /* @apply w-fit border-b-[0.5px] border-b-grey-3; */
+  @apply w-fit;
+  @apply pb-1 mb-4;
 }
 
 .post-meta {

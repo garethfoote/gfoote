@@ -57,34 +57,42 @@
 }
 
 .section-link {
-  @apply 2xl:text-md;
+  @apply 2xl:text-lg;
 
 }
 
 .section-link span {
+  @apply mr-1;
   text-shadow:
     1px 1px theme('colors.offwhite'),
     1px -1px theme('colors.offwhite'),
     -1px 1px theme('colors.offwhite'),
     -1px -1px theme('colors.offwhite');
   box-shadow:
-  inset 0 -2px theme('colors.offwhite'),
-  inset 0 -3px theme('colors.accent.DEFAULT');
+  inset 0 0 theme('colors.offwhite'),
+  inset 0 -1px theme('colors.accent.DEFAULT');
 }
 
 .section-link:hover span {
   box-shadow:
-    inset 0 -2px theme('colors.offwhite'),
-    inset 0 -4px theme('colors.accent.DEFAULT');
+  inset 0 0 theme('colors.offwhite'),
+  inset 0 -2px theme('colors.accent.DEFAULT');
 }
 
 .section-link:after {
   content: "";
-  @apply hidden;
-  width: 0.5rem;
-  height: 0.5rem;
+  @apply inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
   border-width: max(1px, 0.0625em) max(1px, 0.0625em) 0 0;
-  transform: rotate(0deg);
+  transform: rotate(45deg);
+}
+
+@media screen(2xl) { 
+  .section-link:after {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
 
 .bg-offwhite-bottom {

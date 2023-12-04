@@ -1,18 +1,18 @@
 
 .article-card {
-  @apply flex items-end justify-between gap-x-1 2xl:mb-4;
-
-  background-image: linear-gradient(to right, theme('colors.grey.4') 2px, transparent 2px);
+  @apply flex items-end justify-between gap-x-1;
+  @apply mb-3 2xl:mb-6;
+  background-image: linear-gradient(to right, theme('colors.grey.2') 2px, transparent 2px);
   background-position-x: 0;
-  background-position-y: bottom;
+  background-position-y: 96%;
   background-repeat: repeat-x;
   background-size: 10px 2px;
 }
 
 .article-card__title {
-  @apply text-md sm:text-lg 2xl:text-1.5xl leading-5 sm:leading-6;
+  @apply text-lg 2xl:text-1.5xl leading-7;
   @apply grow z-10;
-  @apply relative top-0.5;
+  @apply relative top-px;
 }
 
 .article-card__title a {
@@ -25,6 +25,7 @@
 
 .article-card__title > a:focus > span,
 .article-card__title:hover > a > span {
+  @apply pb-[5px];
   box-shadow:
     inset 0 -1px theme('colors.offwhite'),
     inset 0 -3px theme('colors.accent.DEFAULT');
@@ -49,9 +50,10 @@
 }
 
 .article-card__title > a > span {
+  @apply pb-1 pr-1;
   box-shadow:
-    inset 0 -2px theme('colors.offwhite'),
-    inset 0 -3px theme('colors.accent.DEFAULT');
+    inset 0 -1px theme('colors.offwhite'),
+    inset 0 -2px theme('colors.accent.DEFAULT');
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
   
   text-shadow:-2px -2px theme(colors.offwhite),
@@ -66,8 +68,8 @@
   @apply absolute;
   @apply opacity-0;
   @apply top-[-2px] sm:top-[-4px] left-0;
-  transition: opacity 0.25s ease-in-out;
-  background-image: linear-gradient(to right, theme('colors.grey.4') 2px, transparent 2px);
+  transition: opacity 0.1s ease-in-out;
+  background-image: linear-gradient(to right, theme('colors.accent.DEFAULT') 2px, transparent 2px);
   background-position-x: 0;
   background-position-y: bottom;
   background-repeat: repeat-x;
@@ -83,10 +85,10 @@
   @apply max-h-5 sm:max-h-none;
   @apply relative sm:bottom-auto sm:top-2;
   @apply whitespace-nowrap;
-  bottom: -5px;
 }
 
 .article-card__metadata time {
-  @apply text-grey 2xl:text-lg;
+  @apply text-grey text-base 2xl:text-lg;
+  @apply pl-1 bg-offwhite;
   @apply inline;
 }

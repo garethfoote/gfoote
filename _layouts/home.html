@@ -1,42 +1,42 @@
 ---
 layout: default
 ---
-<div class="mb-5 sm:mb-6 2xl:mb-8">
+<div class="mb-7 2xl:mb-9">
   <h1><span class="text-grey">Gareth Foote.</span> {{page.subtitle}}</h1>
 </div>
-<div class="content">
+<div class="content mb-7 2xl:mb-9">
   {% include content.html %}
 </div>
 {%- assign homepageNotes = site.notes | where:"homepage", true  -%}
 {%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
 
 {% for type in page.types %}
-<section class="mb-6 sm:mb-8">
+<section class="mb-9">
   <h2 class="eyebrow homepage-eyebrow"><span>{{type}}<span></h2>
   {% for post in posts %}
     {% if post.types[0] == type %}
-      <div class="mb-4 sm:mb-3">
         {%- include article-card.html -%}
-      </div>
     {% endif%}
   {% endfor %}
 </section>
 {% endfor %}
 
 {% for topic in page.topics %}
-<section class="mb-6 sm:mb-8">
+{% if forloop.last == true%}
+<section class="mb-11 2xl:mb-14">
+{% else %}
+<section class="mb-9">
+{% endif %}
   <h2 class="eyebrow homepage-eyebrow"><span>{{topic}}<span></h2>
   {% for post in posts %}
     {% if post.topics[0] == topic %}
-      <div class="mb-4 sm:mb-3">
         {%- include article-card.html -%}
-      </div>
     {% endif%}
   {% endfor %}
 </section>
 {% endfor %}
 
-<a class="section-link block mt-8" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
+<a class="section-link" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
 
 <hr>
 
