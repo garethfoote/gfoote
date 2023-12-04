@@ -86,8 +86,8 @@ hr.full-width {
 .content p a {
 	background-size: 1px 1em;
 	box-shadow:
-		inset 0 -2px theme('colors.offwhite'),
-		inset 0 -3px theme('colors.accent.DEFAULT');
+		inset 0 0px theme('colors.offwhite'),
+		inset 0 -1px theme('colors.accent.DEFAULT');
 		text-shadow:
 			1px 1px theme('colors.offwhite'),
 			1px -1px theme('colors.offwhite'),
