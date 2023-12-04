@@ -96,7 +96,7 @@
 
 .topics-list__item {
   @apply flex gap-2 mb-1;
-  @apply text-base leading-4 sm:text-md sm:leading-8;
+  @apply text-base sm:text-md 2xl:text-lg leading-4 sm:leading-8 2xl:leading-10;
 }
 
 .topics-list__item a {
@@ -105,13 +105,13 @@
 }
 
 .topics-list__item a:hover {
-  @apply text-accent;
+  @apply text-accent-7;
 }
 
 .topics-list__item a:after {
   content: "";
   @apply grow;
-  background-image: linear-gradient(to right, theme('colors.grey.DEFAULT') 2px, transparent 2px);
+  background-image: linear-gradient(to right, theme('colors.grey.2') 2px, transparent 2px);
   background-position-x: 0;
   background-position-y: 15px;
   background-repeat: repeat-x;
@@ -129,7 +129,7 @@
 }
 
 .topics-list__item-count {
-  @apply text-base text-grey-6;
+  @apply text-base 2xl:text-md text-grey-6;
   @apply relative top-0 sm:top-1.5;
 }
 

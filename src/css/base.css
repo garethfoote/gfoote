@@ -44,7 +44,7 @@ ul {
 }
 
 hr {
-	@apply my-10 2xl:my-14 mx-auto;
+	@apply my-12 2xl:my-14 mx-auto;
 	height: 6px;
 	background: url("../assets/wiggle-grey-light.svg") repeat-x 0 0;
 	border: 0;
