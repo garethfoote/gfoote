@@ -27,7 +27,7 @@
   }
 
   .tabs__list-item {
-    @apply min-w-[4rem];
+    @apply font-serif min-w-[4rem];
     @apply text-center tracking-wide uppercase;
     @apply border-b border-grey-3;
     @apply rounded-t;
