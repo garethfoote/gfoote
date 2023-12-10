@@ -1,5 +1,6 @@
 import "./index.css"
-import { drawSquiggle } from './ts/squiggle.ts'
+// import { drawSquiggle } from './ts/squiggle.ts'
+import { drawContours } from './ts/contours.ts'
 import { Tabs } from './ts/tabs.ts'
 
 const canvasContainer = document.querySelector(".squiggle") as HTMLElement;
@@ -7,7 +8,8 @@ const canvas = document.getElementById("squiggle") as HTMLCanvasElement;
 
 window.addEventListener("load", () => {
   canvasContainer.classList.remove("squiggle--hidden");
-  drawSquiggle(canvas, 800, 600, 600);
+  // drawSquiggle(canvas, 800, 600, 600);
+  drawContours(canvas, 112, 112);
 })
 
 const tabsEl: HTMLElement | null = document.querySelector(
@@ -36,9 +38,9 @@ if(firstP?.firstElementChild?.tagName == "IMG"){
 */
 const markdownPs: NodeListOf<HTMLParagraphElement> = document.querySelectorAll('.content p')
 Array.from(markdownPs).forEach(p => {
-  console.log("---------")
+  // console.log("---------")
   const hasImg:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "IMG").length >= 1
-  Array.from(p.childNodes).filter(node => { console.log(node.nodeName)} ).length > 1
+  // Array.from(p.childNodes).filter(node => { console.log(node.nodeName)} ).length > 1
   const hasText:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "#text").length >= 1
   
   if(hasImg && hasText){
