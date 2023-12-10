@@ -10,17 +10,9 @@
 }
 
 .article-card__title {
-  @apply text-lg 2xl:text-1.5xl leading-7;
+  @apply text-lg sm:text-lg-plus 2xl:text-1.5xl leading-7;
   @apply grow z-10;
   @apply relative top-px;
-}
-
-.article-card__title a {
-  /* @apply text-accent; */
-}
-
-.article-card__title:hover {
-  /* @apply text-accent-7;  */
 }
 
 .article-card__title > a:focus > span,

@@ -55,6 +55,7 @@ module.exports = {
       base: ['1rem', '1.625rem'], // 16px, 26px
       md: ['1.125rem', '1.75rem'], // 18px, 28px
       lg: ['1.25rem', '2rem'], // 20px, 32px
+      'lg-plus': ['1.375rem', '2rem'], // 22px, 32px
       xl: ['1.562rem', '2.44rem'], // 25px, 32px 
       '1.5xl': ['1.6875rem', '2.125rem'], // 27px, 34px 
       '2xl': ['1.938rem', '2.25rem'], // 31px, 36px
