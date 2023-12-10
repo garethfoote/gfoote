@@ -3,8 +3,8 @@
 }
 
 .squiggle {
-  @apply p-1.5 mt-[-1rem] sm:mt-4 relative top-4 sm:top-auto left-[-1rem];
-  @apply w-24 h-24 sm:w-32 sm:h-32;
+  @apply w-28 h-28;
+  @apply relative left-[-1rem] top-4;
 }
 
 .squiggle a {
@@ -14,8 +14,8 @@
 .squiggle canvas {
   @apply transition-opacity ease-out duration-500;
   @apply absolute pointer-events-none;
-  @apply top-[-3rem] left-[-3rem] sm:top-[-4rem] sm:left-[-4rem];
-  @apply !w-48 !h-48 sm:!w-64 sm:!h-64;
+  /* @apply top-[-3rem] left-[-3rem] sm:top-[-4rem] sm:left-[-4rem]; */
+  /* @apply !w-48 !h-48 sm:!w-64 sm:!h-64; */
 }
 
 .squiggle a {
@@ -156,7 +156,7 @@
 }
 
 .eyebrow {
-  @apply font-sans text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
+  @apply font-serif font-bold text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
   /* @apply text-grey; */
   @apply text-accent-7;
 }
