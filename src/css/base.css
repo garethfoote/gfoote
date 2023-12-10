@@ -1,3 +1,10 @@
+::selection {
+	background: theme("colors.yellow.DEFAULT");
+}
+::-moz-selection {
+	background: theme("colors.yellow.DEFAULT");
+}
+
 html {
 	height: 100%;
 }
@@ -94,6 +101,13 @@ hr.full-width {
 			-1px 1px theme('colors.offwhite'),
 			-1px -1px theme('colors.offwhite');
 	display: inline;
+}
+
+.content p a::selection {
+  text-shadow: none;
+}
+.content p a::-moz-selection {
+  text-shadow: none;
 }
 
 .content li a:hover,
