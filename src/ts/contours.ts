@@ -136,7 +136,7 @@ function generateSteepKeyPointElevations(
     const peakSizeY: number = Math.ceil(Math.random() * initPeakSize);
     let x: number = Math.floor(Math.random() * (cols - padding * 2)) + padding;
     let y: number = Math.floor(Math.random() * (rows - padding * 2)) + padding;
-    let peakElevation: number = Math.random() * 0.2 * maxElevation + 0.8 * maxElevation; // Increase peak elevation
+    let peakElevation: number = (Math.random() * 0.2 * maxElevation) + (0.8 * maxElevation); // Increase peak elevation
 
     // Set the peak elevation for the entire peak area
     for (let dx = -peakSizeX; dx <= peakSizeX; dx++) {
@@ -331,9 +331,9 @@ export function drawContours(canvas: HTMLCanvasElement, width:number, height:num
     cols = 1 + canvas.width / rez;
     rows = 1 + canvas.height / rez;
 
-    field = initializeElevationMap(cols, rows, maxElevation*0.2);
+    field = initializeElevationMap(cols, rows, maxElevation*0.25);
     createElevationCircle(field, 800, 0.9);
-    generateSteepKeyPointElevations(field, maxElevation*1.5, 3, 5);
+    generateSteepKeyPointElevations(field, maxElevation*1.25, 3, 5);
     smoothTerrain(field, 10);
 
     field = normaliseField(field);
