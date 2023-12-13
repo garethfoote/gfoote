@@ -156,13 +156,11 @@
 }
 
 .eyebrow {
-  @apply font-serif font-bold text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
-  /* @apply text-grey; */
+  @apply font-serif text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
   @apply text-accent-7;
 }
 
 .homepage-eyebrow {
-  /* @apply w-fit border-b-[0.5px] border-b-grey-3; */
   @apply w-fit;
   @apply pb-1 mb-4;
 }
