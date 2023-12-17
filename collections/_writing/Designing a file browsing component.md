@@ -22,9 +22,10 @@ This is a case study explaining the context in which the Tree View component was
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
 
-There are many ways to design an interface to accomplish this. During the preparation for this design task we discussed and experimented with two:
-1) Presenting the root directory contents. Then loading a new page each time a user requests/clicks a folder showing only that folders content. Therefore we only ever show the content of one folder at a time. 
-2) Presenting all the files in a nested 'tree view' with collapsible and expandable folders.
+There are many ways to design an interface to accomplish this. During the preparation for this design task we discussed and experimented with two:  
+1. Presenting the root directory contents. Then loading a new page each time a user requests/clicks a folder showing only that folders content. Therefore we only ever show the content of one folder at a time. 
+2. Presenting all the files in a nested 'tree view' with collapsible and expandable folders.
+
 There are positives and negatives to both options to do with accessibility, efficiency, and complexity.  
 
 ### UX Research
