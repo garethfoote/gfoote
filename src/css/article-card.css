@@ -10,7 +10,7 @@
 }
 
 .article-card__title {
-  @apply text-lg sm:text-lg-plus 2xl:text-1.5xl leading-7;
+  @apply text-md sm:text-lg-plus 2xl:text-1.5xl leading-7;
   @apply grow z-10;
   @apply relative top-px;
 }
