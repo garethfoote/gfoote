@@ -1,4 +1,5 @@
 ---
+title: Service Design - Resources
 category: _notes
 share: true
 feed: true
