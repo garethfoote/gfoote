@@ -52,8 +52,10 @@ ul {
 
 hr {
 	@apply my-12 2xl:my-14 mx-auto;
-	height: 6px;
-	background: url("../assets/wiggle-grey-light.svg") repeat-x 0 0;
+	height: 1px;
+  background-image: linear-gradient(to right, theme('colors.grey.3') 3px, transparent 3px);
+  background-repeat: repeat-x;
+  background-size: 6px 2px;
 	border: 0;
 	width: 90%;
 }
