@@ -21,8 +21,13 @@ body > div {
 
 h1 {
 	@apply text-xl sm:text-2xl 2xl:text-3xl leading-7 sm:leading-8;
-	@apply font-serif;
+	@apply font-serif font-semibold;
 }
+
+h1 span {
+	@apply font-serif font-normal;
+}
+
 
 h2 {
 	@apply font-serif leading-6;
@@ -69,15 +74,15 @@ hr.full-width {
 }
 
 .content h2 {
-	@apply font-sans font-semibold text-lg 2xl:text-xl mb-6 pt-2;
+	@apply font-serif font-bold text-xl leading-7 2xl:text-2xl 2xl:leading-8 mb-6 pt-2;
 }
 
 .content h3 {
-	@apply font-sans font-semibold text-md 2xl:text-xl mb-6 pt-2;
+	@apply font-serif font-bold text-lg 2xl:text-xl mb-6 pt-2;
 }
 
 .content h4 {
-	@apply font-sans font-semibold text-md 2xl:text-xl mb-6 pt-2;
+	@apply font-serif font-bold text-lg 2xl:text-xl mb-6 pt-2;
 }
 
 .content p:not(.hero) {
@@ -115,7 +120,7 @@ hr.full-width {
 .content li a:hover,
 .content p a:hover {
   @apply text-black;
-	background-image: url("../assets/wiggle-green-dark.svg");
+	background-image: url("../assets/wiggle-blue.svg");
 	background-repeat: repeat-x;
 	background-position: 0 1.15em;
 	background-size: 9px 5px;

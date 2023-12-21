@@ -57,7 +57,16 @@
 }
 
 .post-hero {
-  @apply mb-7 sm:mb-8;
+  @apply mb-5;
+}
+
+.post-hero:after {
+  content: "";
+  @apply block w-full h-[5px];
+  background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.3') 3px);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 6px 1px;
 }
 
 .post-hero:after {
@@ -70,8 +79,8 @@
 }
 
 .post-hero h1 {
-  @apply text-xl leading-7 sm:text-2xl 2xl:text-3xl;
-  @apply pb-5;
+  @apply font-normal text-xl leading-7 sm:text-2xl 2xl:text-3xl;
+  @apply pb-2 sm:pb-4;
   @apply border-b border-b-grey-3;
 }
 
@@ -165,7 +174,7 @@
 }
 
 .eyebrow {
-  @apply font-serif text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
+  @apply font-serif font-semibold text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
   @apply text-accent-7;
 }
 

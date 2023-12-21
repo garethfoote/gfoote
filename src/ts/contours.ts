@@ -251,6 +251,7 @@ function getState(a: number, b: number, c: number, d: number): number {
 
 function draw(ctx: CanvasRenderingContext2D, interval: number = 0.25): void {
   let isThick = true;
+  console.log(window.devicePixelRatio)
   for (let h = -1; h < 1; h += interval) {  
     if(isThick == true) ctx.lineWidth = (window.devicePixelRatio > 2) ? 3 : 1.5;
     else ctx.lineWidth = (window.devicePixelRatio > 2) ? 2 : 1;
