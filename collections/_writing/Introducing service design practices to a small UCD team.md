@@ -62,7 +62,8 @@ As stated in the figure caption above there is a need for more formal modelling 
 * Shared wider with insights 
 * Still work in progress
 
-![[Introducing service design practices to a small UCD team-20231221113826638.png@#Blurred copy of Service Blueprint]]
+![[Introducing service design practices to a small UCD team-20231221114337838.png@#Blurred copy of Service Blueprint]]
+
 
 
 <!--
