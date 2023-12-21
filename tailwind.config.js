@@ -7,11 +7,11 @@ const orangeflame = {
   "7": '#742300'
 }
 const blue = {
-  "3": '#8BB5E5',
-  "4": '#5C96D8',
-  DEFAULT: '#0059BE',
-  "6": '#004798',
-  "7": '#00244C'
+  "3": '#122CAE',
+  "4": '#122CAE',
+  DEFAULT: '#122CAE',
+  "6": '#122CAE',
+  "7": '#122CAE'
 }
 const aquamarine = {
   "3": '#B8FEE7',
@@ -29,12 +29,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'accent': aquamarine,
+      'accent': blue,
       'yellow': {
         light: "#fef08a",
         DEFAULT: '#fef08a',
       },
-      'offwhite': '#F8FDFC',
+      'offwhite': '#F8F5DA',
       'black': '#2E2C2C',
       'grey':  {
         "1": '#CBCFD1',
