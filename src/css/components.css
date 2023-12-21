@@ -60,10 +60,19 @@
   @apply mb-7 sm:mb-8;
 }
 
+.post-hero:after {
+  content: "";
+  @apply block w-full h-[5px];
+  background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.3') 3px);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: 6px 1px;
+}
+
 .post-hero h1 {
   @apply text-xl leading-7 sm:text-2xl 2xl:text-3xl;
   @apply pb-5;
-  @apply border-b-[0.5px] border-b-grey-3;
+  @apply border-b border-b-grey-3;
 }
 
 .post-hero__metadata {
@@ -134,7 +143,7 @@
 }
 
 .section-header {
-  @apply text-lg sm:text-xl mt-16 mb-10 mx-auto;
+  @apply text-lg sm:text-xl mt-16 mb-8 mx-auto;
   @apply relative;
   @apply text-center;
 	width: 90%;

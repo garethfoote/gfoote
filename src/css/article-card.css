@@ -2,11 +2,11 @@
 .article-card {
   @apply flex items-end justify-between gap-x-1;
   @apply mb-3 2xl:mb-6;
-  background-image: linear-gradient(to right, theme('colors.grey.2') 2px, transparent 2px);
+  background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.2') 3px);
   background-position-x: 0;
   background-position-y: 96%;
   background-repeat: repeat-x;
-  background-size: 10px 2px;
+  background-size: 6px 1px;
 }
 
 .article-card__title {
@@ -47,9 +47,7 @@
     inset 0 -5px theme('colors.offwhite'),
     inset 0 -6px theme('colors.accent.DEFAULT');
   background: linear-gradient(to top, theme('colors.offwhite') 8px, theme(colors.offwhite / 0%));
-  
-  /* -1px 0px #fef08a, 1px 0px #fef08a, 0px 1px #fef08a, 0px -1px #fef08a */
-  text-shadow:-1px 0 theme(colors.offwhite), /* Left */
+    text-shadow:-1px 0 theme(colors.offwhite), /* Left */
     1px 0 theme(colors.offwhite), /* Right */
     0 1px theme(colors.offwhite), /* Bottom */
     0 -1px theme(colors.offwhite), /* Top */
@@ -64,11 +62,11 @@
   @apply opacity-0;
   @apply top-[-2px] left-0;
   transition: opacity 0.1s ease-in-out;
-  background-image: linear-gradient(to right, theme('colors.accent.DEFAULT') 2px, transparent 2px);
+  background-image: linear-gradient(to right, transparent 3px, theme('colors.accent.DEFAULT') 3px);
   background-position-x: 0;
   background-position-y: bottom;
   background-repeat: repeat-x;
-  background-size: 10px 2px;
+  background-size: 6px 1px;
 }
 
 .article-card__title:hover:after {
