@@ -43,7 +43,7 @@ Whilst there is an understandable impetus to try to capture and therefore unders
 
 ![[Introducing service design practices to a small UCD team-20231221100700552.png@#Two illustrations of maps, one is too complex, the other too simple]]
 
-The diagram is from a paper called [Designing Controversies and Their Publics](https://hal.science/hal-01672300/document) by Tommaso Venturini, Donato Ricci, Michele Mauri, Lucy Kimbell and Axel Meunier. 
+*The diagram is from a paper called [Designing Controversies and Their Publics](https://hal.science/hal-01672300/document) by Tommaso Venturini, Donato Ricci, Michele Mauri, Lucy Kimbell and Axel Meunier.* 
 
 Another diagram (below) from [James Kalbach's Mapping Experiences](https://www.oreilly.com/library/view/mapping-experiences/9781491923528/) is helpful in understanding the scope and formality of your service mapping ambitions. If you are in a product-focused design team and you are trying to push for time to research and understand user journeys beyond the interface then setting the scope toward the top right of the chart below is important. However, as a pilot activity designed to prove the efficacy of the methods you may need to avoid sprawling scope and ambition. In my case, we had a well targeted and limited ambition to zoom out from the product to look specifically at how **users prepare for a digital transfer**. To do this we moved beyond the individual and team scope and researched more of the organisation (i.e. the backstage), which connects to the defined user activity.   
 
