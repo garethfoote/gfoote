@@ -1,5 +1,5 @@
 ---
-title: Museum of Contemporary Commodities - 2015-2017
+title: Museum of Contemporary Commodities
 share: true
 homepage: false
 category: _writing
