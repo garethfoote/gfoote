@@ -1,5 +1,5 @@
 ---
-title: Evil Media Distribution Center - Transmediale 2013
+title: Evil Media Distribution Center
 share: true
 homepage: false
 category: _writing
