@@ -50,7 +50,7 @@ a {
   @apply text-black;
 }
 
-ul {
+ol, ul {
 	@apply pl-5;
 	@apply mb-8;
 }
@@ -97,10 +97,14 @@ hr.full-width {
 	@apply mb-6;
 }
 
+.content ol li,
 .content ul li {
 	@apply list-disc;
 	@apply text-base sm:text-md 2xl:text-xl;
 	@apply mb-2;
+}
+.content ol li {
+	@apply list-decimal;
 }
 
 .content li a,
