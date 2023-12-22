@@ -1,12 +1,12 @@
 <div class="post-meta">
   <div class="post-meta__container">
-  <div class="mb-2">
-    Written on <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time>
+  <div class="mb-1">
+    Written: <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time>
   </div>
   {%- assign hasTopic = false -%}
   {% if page.topics.size > 0 %}
     {%- assign hasTopic = true -%}
-    <div class="mb-2">Topic:&nbsp;
+    <div class="mb-1">Topic:&nbsp;
       {%- for topic in page.topics -%}
       {%- assign topic = topic -%}
       {%- include tag.html -%}{%- if forloop.last == false -%}, {% endif %}
