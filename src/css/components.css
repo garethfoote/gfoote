@@ -54,10 +54,15 @@
 .post-hero{
   @apply pt-4;
   @apply sticky top-0 bg-offwhite z-20;
+  @apply md:max-w-3xl 2xl:max-w-6xl;
+  @apply md:px-4 md:pl-8 lg:pl-16;
+  @apply mb-5;
 }
 
-.post-hero {
-  @apply mb-5;
+.post-hero__container {
+  @apply max-w-3xl 2xl:max-w-6xl;
+  @apply px-4 md:px-0 md:pl-0;
+  @apply border-b border-b-grey-3;
 }
 
 .post-hero:after {
@@ -80,8 +85,7 @@
 
 .post-hero h1 {
   @apply font-normal text-xl leading-7 sm:text-2xl 2xl:text-3xl;
-  @apply pb-2 sm:pb-4;
-  @apply border-b border-b-grey-3;
+  @apply pb-3 sm:pb-4;
 }
 
 .post-hero__metadata {
@@ -186,6 +190,7 @@
 .post-meta {
   @apply text-grey 2xl:text-lg;
   @apply lg:absolute top-0 lg:max-w-[15rem] 2xl:max-w-[20rem] right-[-1rem] 2xl:right-[-2rem];
+  @apply z-20;
 }
 
 @media screen(lg) {

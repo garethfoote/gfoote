@@ -7,7 +7,7 @@
     Skip to content
   </a>  
   <div>
-    <header class="flex main-col place-content-between mb-12 2xl:mb-16">
+    <header class="flex main-col place-content-between {% if page.layout == "post" %}mb-8 md:{% endif %}mb-12 2xl:mb-16">
       <div class="squiggle squiggle--hidden{% if page.layout == "post" %} squiggle--article{%endif%}"">
         <a href="{{site.baseurl}}/">
           <span class="sr-only">Home</span>
@@ -16,7 +16,7 @@
       </div>
       {%- include nav.html -%}
     </header>
-    <main id="main" class="section main-col{% if page.layout == "post" %} main-col--article{%endif%}">
+    <main id="main" class="section{% if page.layout != "post" %} main-col{%endif%}">
       {{content}}
     </main>   
   </div>

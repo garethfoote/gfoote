@@ -4,25 +4,27 @@ layout: default
 
 <article>
   <header class="post-hero">
-    <span class="eyebrow">{{page.types[0]}}</span>
-    <h1>{{page.title}}</h1>
-    {% comment %}
-    <div class="post-hero__metadata">
-      <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time> 
-      {%- assign hasTopic = false -%}
-      {% if page.topics.size > 0 %}
-        {%- assign hasTopic = true -%}
-        {%- assign topic = page.topics[0] -%}
-        <span class="whitespace-nowrap">in&nbsp;{%- include tag.html -%}</span>
-      {%- endif -%}
-      {%- if page.types.size > 0 -%}
-        {%- assign type = page.types[0] -%}
-        <span>{% if hasTopic %}&nbsp;&amp;{% else %}in{% endif %}&nbsp;{%- include tag.html -%}</span>
-      {% endif %}
+    <div class="post-hero__container">
+      <span class="eyebrow">{{page.types[0]}}</span>
+      <h1>{{page.title}}</h1>
+      {% comment %}
+      <div class="post-hero__metadata">
+        <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %b, %Y" }}</time> 
+        {%- assign hasTopic = false -%}
+        {% if page.topics.size > 0 %}
+          {%- assign hasTopic = true -%}
+          {%- assign topic = page.topics[0] -%}
+          <span class="whitespace-nowrap">in&nbsp;{%- include tag.html -%}</span>
+        {%- endif -%}
+        {%- if page.types.size > 0 -%}
+          {%- assign type = page.types[0] -%}
+          <span>{% if hasTopic %}&nbsp;&amp;{% else %}in{% endif %}&nbsp;{%- include tag.html -%}</span>
+        {% endif %}
+      </div>
+      {% endcomment %}
     </div>
-    {% endcomment %}
   </header>
-  <div class="content relative">
+  <div class="content relative main-col main-col--article">
     {%- include content.html -%}
     <hr class="full-width mb-3 lg:hidden" />
     {%- include post-meta.html -%}
@@ -38,6 +40,6 @@ layout: default
 
 {%- include backlinks.html -%}
 
-<section class="mt-16">
+<section class="mt-16 main-col main-col--article">
   {%- include topics-list.html -%}
 </section>
