@@ -2,19 +2,21 @@
 layout: default
 ---
 
-<div class="post-hero">
-  <h1><span class="text-grey">Topic:</span> {{page.title}}</h1>
-  <div class="post-hero__metadata">
+<header class="post-hero">
+  <div class="post-hero__container">
+    <h1><span class="text-grey">Topic:</span> {{page.title}}</h1>
+    <div class="post-hero__metadata">
+    </div>
   </div>
-</div>
+</header>
 
-<section>
+<section class="main-col">
 {{ content }}
 {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
 {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
 {%- include article-cards.html -%}
 </section>
 
-<section class="mt-16">
+<section class="main-col mt-16">
   {%- include topics-list.html -%}
 </section>

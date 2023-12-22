@@ -62,16 +62,7 @@
 .post-hero__container {
   @apply max-w-3xl 2xl:max-w-6xl;
   @apply px-4 md:px-0 md:pl-0;
-  @apply border-b border-b-grey-3;
-}
-
-.post-hero:after {
-  content: "";
-  @apply block w-full h-[5px];
-  background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.3') 3px);
-  background-repeat: repeat-x;
-  background-position: bottom;
-  background-size: 6px 1px;
+  @apply border-b border-b-grey-4;
 }
 
 .post-hero:after {

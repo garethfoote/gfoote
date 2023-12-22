@@ -16,7 +16,7 @@
       </div>
       {%- include nav.html -%}
     </header>
-    <main id="main" class="section{% if page.layout != "post" %} main-col{%endif%}">
+    <main id="main" class="section{% if page.layout == "home" %} main-col{%endif%}">
       {{content}}
     </main>   
   </div>

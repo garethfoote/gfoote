@@ -2,15 +2,18 @@
 layout: default
 ---
 
-<div class="post-hero">
-  <h1>{{page.title}}</h1>
-</div>
-<div class="content">
+<header class="post-hero">
+  <div class="post-hero__container">
+    <h1>{{page.title}}</h1>
+  </div>
+</header>
+
+<div class="content main-col">
 {%- include content.html -%}
 </div>
 {%- if site.preferences.search.enabled -%}
   <!-- search bar -->
-<div class="search">
+<div class="search main-col">
   <input class="input is-medium" type="text" placeholder="Search notes.." id="search-input" autocomplete="off">
   <div id="search-results" class="search-results"></div>
 </div>
@@ -18,7 +21,7 @@ layout: default
 <script src="{{ site.baseurl }}/assets/js/Search.js"></script>
 {%- endif -%}
 
-<section>
+<section class="main-col">
 {% assign notes = site.notes | sort: "date" | reverse %}
 {%- include notes-list.html -%}
 </section>
