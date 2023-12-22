@@ -191,3 +191,7 @@
     top: 0;
   }  
 }
+
+.content .task-list-item-checkbox {
+  @apply mr-2;
+}

@@ -103,8 +103,13 @@ hr.full-width {
 	@apply text-base sm:text-md 2xl:text-xl;
 	@apply mb-2;
 }
+
 .content ol li {
 	@apply list-decimal;
+}
+
+.content ul li ul {
+	@apply my-2;
 }
 
 .content li a,
