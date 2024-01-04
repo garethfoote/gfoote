@@ -3,7 +3,7 @@ share: true
 layout: home
 permalink: /
 title: Home
-subtitle: Designer, coder & educator.
+subtitle: Designer & educator.
 types:
   - Case Study
   - Weeknotes
