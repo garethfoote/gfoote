@@ -3,9 +3,8 @@ title: Visualising Controversies with BA UXD (21/22)
 share: true
 homepage: true
 category: _writing
-types:
-  - Teaching
 topics:
+  - Teaching
   - Data Visualisation
 date: 2022-09-01
 ---
