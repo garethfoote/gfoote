@@ -65,8 +65,8 @@ topics:
 - [Using Systems Thinking to Design Better Services @# by Mike Laurie @# Medium](https://medium.com/@mikelaurie/using-systems-thinking-to-design-better-services-905b62ca10b7)
 	- ![[SystemsThinkingIceberg.png@#SystemsThinkingIceberg.png]]
 		Source: [Systems Thinking – Quintessential](https://www.quintessential.coach/services/systems-thinking/)  found [here](https://blogs.ed.ac.uk/future-student-experience/service-design-in-government-2022-my-highlights/)
-	- [Introduction to System Dynamics: Overview - YouTube](https://www.youtube.com/watch?v=AnTwZVviXyY)
-	- [Systems Practice](https://acumenacademy.org/course/systems-practice/)  - Free course in Systems Practice from Acumen
+- [Introduction to System Dynamics: Overview - YouTube](https://www.youtube.com/watch?v=AnTwZVviXyY)
+- [Systems Practice](https://acumenacademy.org/course/systems-practice/)  - Free course in Systems Practice from Acumen
 - [Introducing Systems Thinking into Public Sector Institutions: Learning by Doing? @# Systemic Thinking for Policy Making : The Potential of Systems Analysis for Addressing Global Policy Challenges in the 21st Century @# OECD iLibrary](https://www.oecd-ilibrary.org/sites/3a9acaa6-en/index.html?itemId=/content/component/3a9acaa6-en#wrapper)
 
 ### Workshops
@@ -94,8 +94,5 @@ Creating a replicable, modular approach to shape services from start to finish.
 - Example - [Digital Justice Landscape @# A map of the entire criminal jus… @# Flickr](https://www.flickr.com/photos/gdsteam/20351061738/in/dateposted-public/)
 
 ### Systems mapping
-- [Mapping new ideas for the digital justice system - Government Digital Service](https://gds.blog.gov.uk/2015/08/18/mapping-new-ideas-for-the-digital-justice-system-2/)
-> The more you look at this map, and the rest of the (extremely detailed) work the team has done so far, the more you realise that the criminal justice system isn't a system at all. In reality, it's a series of events and processes made of bits of policy from MoJ and the Home Office, interpretation from the Judiciary, implementation from local police forces and the National Offender Management Service (NOMS), the Crown Prosecution Service and much more besides. Each one of those acts as a separate entity. A silo.
 
-- [Systems Mapping - a brief overview of what, why and how (Part 1) - Justice Digital](https://mojdigital.blog.gov.uk/2020/06/02/systems-mapping-a-brief-overview-of-what-why-and-how-part-1/)
-- [Systems Mapping - a brief overview of what, why and how (Part 2) - Justice Digital](https://mojdigital.blog.gov.uk/2020/06/03/systems-mapping-a-brief-overview-of-what-why-and-how-part-2/)
+![[Systems Thinking#Systems Mapping@#Systems Thinking > Systems Mapping]]
