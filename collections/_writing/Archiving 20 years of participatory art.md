@@ -39,6 +39,7 @@ One notable and rewarding insight from the research with former participants and
 > Project Participant 
 
 This lead to a set of principles that helped to steward the work toward an accessible and inclusive website that is explicit about the local and nature of its work. This informed a lot of the UX, interface and interaction design. 
+
 ![[A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png]]
 
 ## Storytelling the work
@@ -49,6 +50,7 @@ I had previous been warned that the quality of the project documentation (i.e. t
 > **Client statement during discovery** 
 
 I conducted a content audit with the help of the stakeholders to see what we had to work with:
+
 ![[Archiving 20 years of participatory art-20240105155952322.png@#Archiving 20 years of participatory art-20240105155952322.png]]
 The conclusions from this were that important parts of the work would need to be represented with limited visual media and a lot of contextual writing. More importantly it became clear that there was no formulaic way of presenting a project. The presentation of each project would need to be narrativised, from a content perspetive, by the artists who conducted the work. As part of some ideation sessions with the stakeholder we also established the importance of unique project stories, amongst other challenges. 
 
@@ -60,9 +62,11 @@ Blind Ditch emerged as an artist group in the early days of the internet. A lot 
 
 ## Design System (lite)
 For a small-scale project, there is no need nor time to create a design system. However, there are some principles around consistency and reusability that are valuable even in the smallest design projects. I try to create a design system (lite) for most projects so that I am beholden to principles of reusability, consistency and accessibility. 
+
 ![[Archiving 20 years of participatory art-20240105171503396.png@#Archiving 20 years of participatory art-20240105171503396.png]]
 
 Another part of the design outcomes was a reusable and modular page structure for the projects, which allowed for a large variety of page configurations defined in a content management system by the artists. Two draft project pages can be seen below side-by-side to illustrate this.
+
 ![[Archiving 20 years of participatory art-20240105164635997.png@#Archiving 20 years of participatory art-20240105164635997.png]]
 
 ## Outcomes
