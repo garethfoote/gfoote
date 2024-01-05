@@ -1,6 +1,7 @@
 ---
 title: Weeknote 01
 share: true
+homepage: true
 category: _writing
 date: 2023-08-25
 topics:
