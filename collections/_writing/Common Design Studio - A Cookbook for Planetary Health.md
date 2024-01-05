@@ -30,6 +30,7 @@ Here is the thematic briefing for this topic created by myself and my colleague,
 ## Recipes for a Planetary Health Cookbook
 
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg@#Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg]]
+
 To avoid the pitfalls of design solutionism when addressing large scale problems we framed the outcomes as 'recipes for action' that had to be documented and tested in each locale before they could be added to an ongoing Planetary Health Cookbook. The recipes could take many forms including field guides, advise, hacks, tips and tricks, tutorials, cautionary tales, coping mechanisms, training exercises, manifestos or collective actions. 
 
 The idea of recipes appealed to us as the project organisers for a number of reasons - recipes should be designed as simple, accessible instructions; they require testing and iteration by the recipe designer; they often (but not always) include locally specific ingredients and cultural or social context; and there is a long history of radical cookbooks used in the arts and social activism.      
@@ -39,25 +40,22 @@ The idea of recipes appealed to us as the project organisers for a number of rea
 The two-week intensive design sprint was fully online with synchronous and asynchronous components. Each day there were two hours of synchronous activities that included briefings, creating teams, icebreakers, introducing the theme and problem, support sessions with visiting domain experts, and sharing and reviewing outcomes. Outside of that time the groups met to work on production and prototyping concepts. Student groups were designed to have a mixture of students from London, Barcelona and Australia so that they benefitted from the diverse perspectives on the theme.  
 
 ## Mapping the problem space
-
-Mapping exercises were a significant part of the process throughout the design sprint. We encouraged students to map the problem domain from a conceptual and research perspective. We also introduced systems mapping techniques to evaluate factors surrounding a given issue and find the leverage points that will affect the overall system behaviour. 
-
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105115756522.png@#Common Design Studio - A Cookbook for Planetary Health-20240105115756522.png]]
-
+Mapping exercises were a significant part of the process throughout the design sprint. We encouraged students to map the problem domain from a conceptual and research perspective. We also introduced systems mapping techniques to evaluate factors surrounding a given issue and find the leverage points that will affect the overall system behaviour. 
 
 ## Design Protocol
 
-For the 2022 edition of CDS, we introduced a 'protocol' that the students could choose to follow. This was way of structuring activities that reflects modifies a traditional design process. 
+For the 2022 edition of CDS, we introduced a 'protocol' that the students could choose to follow. This was way of structuring activities that reflects modifies a traditional design process. The protocol had four stages:
 
-The protocol had four stages 
-- Drift: EXPLORE <br> Follow more than human agents (e.g., a cat, a dog, a pigeon, the sun, an AI) to identify an urban site or condition where nature proliferates.
-- Mapping: UNDERSTAND<br>Devise a shared method of mapping both the drift and the discovered site/s. Take into account the involved bodies, time and scale to further introduce a MTH (more than human) angle.
-- Projection: PROPOSE<br>Make a projective operation on your map, one that proliferates the mapped condition towards a desired, radical goal.
-- Action: ENACT<br>Through an onsite action, using your body/ies and any necessary items (including other bodies), enact a way to transform reality based on that radical desire.
+- **Drift: EXPLORE** <br> Follow more than human agents (e.g., a cat, a dog, a pigeon, the sun, an AI) to identify an urban site or condition where nature proliferates.
+- **Mapping: UNDERSTAND**<br>Devise a shared method of mapping both the drift and the discovered site/s. Take into account the involved bodies, time and scale to further introduce a MTH (more than human) angle.
+- **Projection: PROPOSE**<br>Make a projective operation on your map, one that proliferates the mapped condition towards a desired, radical goal.
+- **Action: ENACT**<br>Through an onsite action, using your body/ies and any necessary items (including other bodies), enact a way to transform reality based on that radical desire.
 
 Each stage heavily relied on mapping and visualising activities that took place in the physical spaces of each student group. These were used to share interpretations of their respective urban spaces from the perspective of a 'more-than-human' agent. This leans on the idea from systems theory that the inanimate elements in an ecosystem can have equal, if not greater affects on the overall behaviour of that system. 
 
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105115541499.png@#Common Design Studio - A Cookbook for Planetary Health-20240105115541499.png]]
+
 The maps were also used to constrain the possible interventions into large scale problems and keep them to a local and situated context.  
 
 ## Barcelona and Melbourne Design Week
@@ -66,6 +64,6 @@ The outcomes of the project were a collection of actionable recipes that were te
 
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png@#Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png]]
 
-The latest student outcomes are available here:
-https://www.commondesignstudio.net/
+The latest student outcomes are available here:  
+[https://www.commondesignstudio.net/](https://www.commondesignstudio.net/)
 
