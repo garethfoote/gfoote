@@ -75,10 +75,10 @@ Formalising the knowledge collected in the workshops and user research is not th
 ![[Introducing service design practices to a small UCD team-20231221114337838.png@#A blurred copy of a service blueprint]]
 <span class="figcaption">Service blueprint (intentionally blurred)</span>
 
-### Informing and narrativising
+## Informing and narrativising
 
 > Narrative is a key means through which people organize and make sense of reality and engage in reasoned argument, particularly when it comes to debating questions of values.
-[Storytelling and evidence-based policy: lessons from the grey literature @# Humanities and Social Sciences Communications](https://www.nature.com/articles/palcomms201793#:~:text=The%20communication%20scholar%20Walter%20Fisher,to%20debating%20questions%20of%20values.)
+[Storytelling and evidence-based policy: lessons from the grey literature](https://www.nature.com/articles/palcomms201793#:~:text=The%20communication%20scholar%20Walter%20Fisher,to%20debating%20questions%20of%20values.)
 
 System maps are only useful for those with the time, motivation and pre-existing knowledge to dive into the details. They are also, for the most part, neutral and can be interpreted in many different ways. 
 
