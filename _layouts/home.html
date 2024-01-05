@@ -7,8 +7,7 @@ layout: default
 <div class="content mb-12 2xl:mb-16">
   {% include content.html %}
 </div>
-{%- assign homepageNotes = site.notes | where:"homepage", true  -%}
-{%- assign posts = site.writing | concat: homepageNotes | sort: "date" | reverse | slice: 0, 10  -%}
+{%- assign posts = site.writing | where:"homepage", true | sort: "date" | reverse | slice: 0, 10  -%}
 
 {% for type in page.types %}
 <section class="mb-9">
