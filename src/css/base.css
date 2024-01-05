@@ -69,6 +69,10 @@ hr.full-width {
 	@apply w-full;
 }
 
+.content p:not(.hero) {
+	@apply mb-6 max-w-[40em];
+}
+
 .content h1 {
 	@apply text-xl mb-8;
 }
@@ -90,11 +94,6 @@ hr.full-width {
 .content h5,
 .content h4 {
 	@apply text-md 2xl:text-lg leading-5 2xl:leading-8;
-}
-
-.content p:not(.hero) {
-	max-width: 40em;
-	@apply mb-6;
 }
 
 .content ol li,

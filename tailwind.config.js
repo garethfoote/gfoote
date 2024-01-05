@@ -63,6 +63,13 @@ module.exports = {
       '4xl': ['3.062rem', '3.5rem'],
     },
     extend: {},
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1736px',
+    }
   },
   plugins: [],
 }

@@ -1,6 +1,6 @@
 
 .main-col {
-  @apply max-w-3xl 2xl:max-w-6xl;
+  @apply max-w-3xl 2xl:max-w-[40em] 2xl:text-xl;
   @apply px-4 md:pl-8 lg:pl-16;
 }
 
