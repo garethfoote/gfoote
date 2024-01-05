@@ -8,7 +8,7 @@ const orangeflame = {
 }
 const blue = {
   "3": '#122CAE',
-  "4": '#122CAE',
+  "4": '#526CED',
   DEFAULT: '#122CAE',
   "6": '#122CAE',
   "7": '#122CAE'

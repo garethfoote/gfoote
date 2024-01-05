@@ -38,12 +38,14 @@ if(firstP?.firstElementChild?.tagName == "IMG"){
 */
 const markdownPs: NodeListOf<HTMLParagraphElement> = document.querySelectorAll('.content p')
 Array.from(markdownPs).forEach(p => {
-  // console.log("---------")
   const hasImg:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "IMG").length >= 1
-  // Array.from(p.childNodes).filter(node => { console.log(node.nodeName)} ).length > 1
   const hasText:boolean = Array.from(p.childNodes).filter(node => node.nodeName === "#text").length >= 1
+  const isFigcaption:boolean = Array.from(p.childNodes).filter(node => {
+    if(node.nodeName === "#text") return false;
+    return (node as HTMLElement).classList.contains("figcaption")
+  }).length >= 1
   
-  if(hasImg && hasText){
+  if(hasImg && hasText && !isFigcaption){
     p.classList.add("float-img-child")
     p.classList.add("clearfix")
   }  

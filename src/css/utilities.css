@@ -142,7 +142,11 @@ p.float-img-child img {
     padding-bottom: 0;
   }
 }
-
+@media screen(2xl) {
+  p.float-img-child img {
+    padding-right: 1.5rem;
+  }
+}
 .clearfix::after {
   content: "";
   clear: both;
@@ -162,4 +166,10 @@ p.float-img-child img {
 
 .skip-to-content-link:focus {
   @apply static w-auto h-6 outline-none;
+}
+
+.figcaption {
+  @apply block w-full;
+  @apply italic text-center;
+  font-size: 85%;
 }

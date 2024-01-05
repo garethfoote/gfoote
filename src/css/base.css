@@ -154,7 +154,11 @@ hr.full-width {
 }
 
 .content blockquote {
-	@apply border-l-accent-7 border-l-2 pl-4 text-grey;
+	@apply border-l-accent-4 border-l-2 pl-4 text-grey-6 italic;
+}
+
+.content iframe {
+	@apply max-w-full mb-8;
 }
 
 footer p {

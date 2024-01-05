@@ -1,7 +1,7 @@
 
 .article-card {
   @apply flex items-end justify-between gap-x-1;
-  @apply mb-3 2xl:mb-6;
+  @apply mb-3 2xl:mb-4;
   background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.2') 3px);
   background-position-x: 0;
   background-position-y: 96%;
