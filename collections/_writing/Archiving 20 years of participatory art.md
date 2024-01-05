@@ -35,8 +35,8 @@ From our kick-off and throughout the early phases of the project some themes eme
 
 One notable and rewarding insight from the research with former participants and audience members was that they were enthusiastic about the accessibility of the work. Blind Ditch projects explicitly reach out to people who do not think art is for or about them, and is often pretentious and inaccessible. They also make work that helps people reflect on their area. Often the work takes place in town squares or shopping centres.  
 
-> It was a great way to think about my role within the city and how it affects her citizens...I also felt a sense of being in the city, a greater affinity than I had. 
-> Project Participant 
+> It was a great way to think about my role within the city and how it affects her citizens...I also felt a sense of being in the city, a greater affinity than I had.  
+> **Project participant** 
 
 This lead to a set of principles that helped to steward the work toward an accessible and inclusive website that is explicit about the local and nature of its work. This informed a lot of the UX, interface and interaction design. 
 
