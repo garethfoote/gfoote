@@ -64,24 +64,21 @@ Despite a lot of scope changes the product has been in development and active us
 
 The most substantial gap in our collective knowledge was from the viewpoint of frontstage staff (those directly communicating with users) and backstage staff (those out of site, but connected to the user experience).  
 
-### Workshopping a rough service map
-
-![[Introducing service design from the ground up-20231222112940836.png@#A slightly blurred picture of a whiteboard with many sticky notes connected by arrows]]
-
-*Service mapping workshop (intenationally blurred)*
+### Workshopping a rough service map  
 A co-creation activity involving a wide range of team disciplines and crucially some of the support staff. Specifically, the front-line staff who are often the glue between the users and organisation, have the widest viewpoint, and will have seen the challenges and failures of the existing system. I could speak a lot about the benefits and nuances of this stage but the most interesting takeaway was that team members from various disciplines who were present and involved in constructing the draft model came away with new and enduring change in perspective on the service as a whole. The key to this was really the rich discussions that revealed many gaps in our knowledge and helped us empathise with the substantial workload of our users and front-line staff.   
 
+![[Introducing service design from the ground up-20231222112940836.png@#A slightly blurred picture of a whiteboard with many sticky notes connected by arrows]]
+<span class="figcaption">Service mapping workshop (intentionally blurred)</span>
+
 ### Drafting, designing, and testing a map
-
-![[Introducing service design practices to a small UCD team-20231221114337838.png@#A blurred copy of a service blueprint]]
-
-*Service blueprint (intentionally blurred)* 
 Formalising the knowledge collected in the workshops and user research is not the most complex task, however creates the most tangible (and perhaps engaging) output of the process. The coherent visual arrangement of these elements on a page is important, as is the collective agreement and single reference point to a system view. However the collaboration with user research to make specific editorial decisions about what to include and exclude took the most effort and time. Even at the scale of the diagram above it is hard for an uninitiated colleague to decide what to focus on and how to interpret it. This brings me to the next challenge, which is communicating outcomes and informing decision-making. 
+![[Introducing service design practices to a small UCD team-20231221114337838.png@#A blurred copy of a service blueprint]]
+<span class="figcaption">Service blueprint (intentionally blurred)</span>
 
-### Informing and narrativising
+## Informing and narrativising
 
 > Narrative is a key means through which people organize and make sense of reality and engage in reasoned argument, particularly when it comes to debating questions of values.
-[Storytelling and evidence-based policy: lessons from the grey literature @# Humanities and Social Sciences Communications](https://www.nature.com/articles/palcomms201793#:~:text=The%20communication%20scholar%20Walter%20Fisher,to%20debating%20questions%20of%20values.)
+[Storytelling and evidence-based policy: lessons from the grey literature](https://www.nature.com/articles/palcomms201793#:~:text=The%20communication%20scholar%20Walter%20Fisher,to%20debating%20questions%20of%20values.)
 
 System maps are only useful for those with the time, motivation and pre-existing knowledge to dive into the details. They are also, for the most part, neutral and can be interpreted in many different ways. 
 
