@@ -6,15 +6,15 @@ category: _writing
 types:
   - Case Study
 topics:
-  - Service Design
   - Teaching
+  - Service Design
 date: 2022-05-10
 ---
 
 
-My role in this project was organiser, facilitator and speaker. I worked closely with designers and educators from London, Barcelona and Melbourne. My colleagues and I have been building relationships with overseas partners for many years that involved exchanges to and from the far corners of the planet for a handful of staff and students. Before the pandemic forced us online, we decided to create an annual design sprint using remote collaborative tools to expand the participation and give our students the chance to regularly work with emerging designers outside of London. The ambitions of the project were to help us and our students understand seemingly intractable, global problems from diverse local perspectives. Each year the theme would change but the overall design sprint framework remained. 
+My role in this project was organiser, facilitator and speaker. I worked closely with designers and educators from London, Barcelona and Melbourne. My colleagues and I have been building relationships with overseas partners for many years that resulted in productive exchanges for a handful of staff and students. Before the pandemic forced us online, we decided to create an annual design sprint using remote collaborative tools to expand the participation and give our students the chance to regularly work with emerging designers outside of London. The ambitions of the project were to help us and our students understand seemingly intractable, global problems from diverse local perspectives. Each year the theme would change but the overall design sprint framework remained. 
 
-This acts as both a case study in running design sprints, the use of service design methodologies in design education and also a loose description of the framework we created, which was designed to be replicated in other contexts. My colleagues Tobias Revell and Dr Eva Verhoeven [wrote a paper that dives into the pedagogic learning from this project](https://ualresearchonline.arts.ac.uk/id/eprint/14432/). 
+This acts as both a case study in running design sprints and also a loose description of the framework we created, which was designed to be replicated in other contexts. My colleagues Tobias Revell and Dr Eva Verhoeven [wrote a paper that dives into the pedagogic learning from this project](https://ualresearchonline.arts.ac.uk/id/eprint/14432/). 
 
 ## Theme: Radical Gardening in Urban Spaces
 
@@ -28,74 +28,44 @@ Here is the thematic briefing for this topic created by myself and my colleague,
 
 
 ## Recipes for a Planetary Health Cookbook
+
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg@#Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg]]
-To avoid the pitfalls of design solutionism when addressing global problems we framed the outcomes as 'recipes for action' that had to be documented and tested in each locale before they could be added to an ongoing Planetary Health Cookbook. The recipes could take many forms including field guides, advise, hacks, tips and tricks, tutorials, cautionary tales, coping mechanisms, training exercises, manifestos or collective actions.
+To avoid the pitfalls of design solutionism when addressing large scale problems we framed the outcomes as 'recipes for action' that had to be documented and tested in each locale before they could be added to an ongoing Planetary Health Cookbook. The recipes could take many forms including field guides, advise, hacks, tips and tricks, tutorials, cautionary tales, coping mechanisms, training exercises, manifestos or collective actions. 
 
 The idea of recipes appealed to us as the project organisers for a number of reasons - recipes should be designed as simple, accessible instructions; they require testing and iteration by the recipe designer; they often (but not always) include locally specific ingredients and cultural or social context; and there is a long history of radical cookbooks used in the arts and social activism.      
 
 ## Structure 
 
-- Time
+The two-week intensive design sprint was fully online with synchronous and asynchronous components. Each day there were two hours of synchronous activities that included briefings, creating teams, icebreakers, introducing the theme and problem, support sessions with visiting domain experts, and sharing and reviewing outcomes. Outside of that time the groups met to work on production and prototyping concepts. Student groups were designed to have a mixture of students from London, Barcelona and Australia so that they benefitted from the diverse perspectives on the theme.  
 
 ## Mapping the problem space
 
-Mapping exercises were a significant part of the process throughout the design sprint. We encouraged students to map the problem domain from a conceptual and research perspective. We encouraged participants to make use systems mapping techniques to evaluate factors surrounding a given issue and find the leverage points that may affect its overall behaviour. 
+Mapping exercises were a significant part of the process throughout the design sprint. We encouraged students to map the problem domain from a conceptual and research perspective. We also introduced systems mapping techniques to evaluate factors surrounding a given issue and find the leverage points that will affect the overall system behaviour. 
 
-![[Common Design Studio - A Cookbook for Planetary Health-20240105111844324.png@#Common Design Studio - A Cookbook for Planetary Health-20240105111844324.png]]
-
-
+![[Common Design Studio - A Cookbook for Planetary Health-20240105115756522.png@#Common Design Studio - A Cookbook for Planetary Health-20240105115756522.png]]
 
 
-## Outcomes
-In this context a recipe is a simple set of reproducible instructions to reach a specific goal, which was related to the theme. The recipes were collected into a cookbook, which took the form of a [website](https://www.commondesignstudio.net/). This was created to contain, present and distribute the recipes, with each recipe consisting of a ‘recipe card’ giving the basic instructions and a video that demonstrates the use or reasoning for its creation.  
+## Design Protocol
 
------
+For the 2022 edition of CDS, we introduced a 'protocol' that the students could choose to follow. This was way of structuring activities that reflects modifies a traditional design process. 
 
+The protocol had four stages 
+- Drift: EXPLORE <br> Follow more than human agents (e.g., a cat, a dog, a pigeon, the sun, an AI) to identify an urban site or condition where nature proliferates.
+- Mapping: UNDERSTAND<br>Devise a shared method of mapping both the drift and the discovered site/s. Take into account the involved bodies, time and scale to further introduce a MTH (more than human) angle.
+- Projection: PROPOSE<br>Make a projective operation on your map, one that proliferates the mapped condition towards a desired, radical goal.
+- Action: ENACT<br>Through an onsite action, using your body/ies and any necessary items (including other bodies), enact a way to transform reality based on that radical desire.
 
+Each stage heavily relied on mapping and visualising activities that took place in the physical spaces of each student group. These were used to share interpretations of their respective urban spaces from the perspective of a 'more-than-human' agent. This leans on the idea from systems theory that the inanimate elements in an ecosystem can have equal, if not greater affects on the overall behaviour of that system. 
 
-History
-* During the previous two iterations of CDS students have been encouraged to create design proposals in the form of ‘recipes’ that can incite positive collective action and encourage creative resistance. The recipes are designed to be oriented toward community-level activations and be accessible, adaptable and transferable across location, language and culture. The student groups are working in various locations on the same issue and therefore benefit from each others’ diverse experience.
-* Students are encouraged to enact proposals in their local communities then bring this highly localised experiential knowledge back to help generate a globally translatable outcome. While the outcomes are quick sketches for innovation, the studio experience itself provides a ‘recipe’ for enabling adaptation-orientated designers.
-*  [[013 - Cumulus Paper@#013 - Cumulus Paper]]
+![[Common Design Studio - A Cookbook for Planetary Health-20240105115541499.png@#Common Design Studio - A Cookbook for Planetary Health-20240105115541499.png]]
+The maps were also used to constrain the possible interventions into large scale problems and keep them to a local and situated context.  
 
-Introduction
-- The Common Design Studio (previously Global Design Studio) is an international collaborative design sprint that explores global and wicked problems and challenges. For several years the studio has engaged students and lecturers from RMIT University, London College of Communication and Elisava (Barcelona), along with industry and research experts.
-- 
+## Barcelona and Melbourne Design Week
 
+The outcomes of the project were a collection of actionable recipes that were tested in each student's location. Each project had a graphical recipe card that was clear and concise, as well as a video documenting its use. Across 2021 and 2022, the outcomes were presented in pop-up installations at the Melbourne and Barcelona Design Weeks. Myself and 3 other colleagues and students also attended a remote talk during the installation.
 
-User Manual - Staff 2022
-https://miro.com/app/board/uXjVOIJFNDc=/
+![[Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png@#Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png]]
 
+The latest student outcomes are available here:
+https://www.commondesignstudio.net/
 
-Structure
-- Overall structure
-- Speakers spread throughout 
-
-
-Methods: 
-- User Manuals for students
-- [x] Recipes and cookbooks
-- Mapping physical spaces
-- [x] Mapping conceptual and research spaces
-
-
-Outcomes
-* Cookbook
-* Exhibition 
-
-
-
-# Content
-
-Hand drawn maps 
-
-Group 2 
-https://miro.com/app/board/uXjVOIiSTM4=/
-
-Group 7
-https://miro.com/app/board/uXjVOIh99qc=/
-
-
-
-Exhibitions
-https://miro.com/app/board/uXjVOIJFNDc=/?moveToWidget=3458764526239646324&cot=14
