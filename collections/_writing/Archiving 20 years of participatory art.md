@@ -51,7 +51,8 @@ I had previous been warned that the quality of the project documentation (i.e. t
 
 I conducted a content audit with the help of the stakeholders to see what we had to work with:
 
-![[Archiving 20 years of participatory art-20240105155952322.png@#Archiving 20 years of participatory art-20240105155952322.png]]
+![[Archiving 20 years of participatory art-20240105172316826.png@#Archiving 20 years of participatory art-20240105172316826.png]]
+
 The conclusions from this were that important parts of the work would need to be represented with limited visual media and a lot of contextual writing. More importantly it became clear that there was no formulaic way of presenting a project. The presentation of each project would need to be narrativised, from a content perspetive, by the artists who conducted the work. As part of some ideation sessions with the stakeholder we also established the importance of unique project stories, amongst other challenges. 
 
 ![[Archiving 20 years of participatory art-20240105160847366.png@#Archiving 20 years of participatory art-20240105160847366.png]]
