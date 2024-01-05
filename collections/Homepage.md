@@ -7,6 +7,7 @@ subtitle: Designer & educator.
 types:
   - Case Study
   - Weeknotes
+  - Teaching
 ---
 
 
