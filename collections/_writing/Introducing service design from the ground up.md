@@ -72,6 +72,7 @@ A co-creation activity involving a wide range of team disciplines and crucially 
 
 ### Drafting, designing, and testing a map
 Formalising the knowledge collected in the workshops and user research is not the most complex task, however creates the most tangible (and perhaps engaging) output of the process. The coherent visual arrangement of these elements on a page is important, as is the collective agreement and single reference point to a system view. However the collaboration with user research to make specific editorial decisions about what to include and exclude took the most effort and time. Even at the scale of the diagram above it is hard for an uninitiated colleague to decide what to focus on and how to interpret it. This brings me to the next challenge, which is communicating outcomes and informing decision-making. 
+
 ![[Introducing service design practices to a small UCD team-20231221114337838.png@#A blurred copy of a service blueprint]]
 <span class="figcaption">Service blueprint (intentionally blurred)</span>
 
