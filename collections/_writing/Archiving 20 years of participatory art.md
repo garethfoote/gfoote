@@ -40,7 +40,7 @@ One notable and rewarding insight from the research with former participants and
 
 This lead to a set of principles that helped to steward the work toward an accessible and inclusive website that is explicit about the local and nature of its work. This informed a lot of the UX, interface and interaction design. 
 
-![[A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png@#A UX, design and front-end project to archive 20 years of participatory art-20231124143238554.png]]
+![[Archiving 20 years of participatory art-20240105172815802.png@#Archiving 20 years of participatory art-20240105172815802.png]]
 
 ## Storytelling the work
 
@@ -55,8 +55,7 @@ I conducted a content audit with the help of the stakeholders to see what we had
 
 The conclusions from this were that important parts of the work would need to be represented with limited visual media and a lot of contextual writing. More importantly it became clear that there was no formulaic way of presenting a project. The presentation of each project would need to be narrativised, from a content perspetive, by the artists who conducted the work. As part of some ideation sessions with the stakeholder we also established the importance of unique project stories, amongst other challenges. 
 
-![[Archiving 20 years of participatory art-20240105160847366.png@#Archiving 20 years of participatory art-20240105160847366.png]]
-
+![[Archiving 20 years of participatory art-20240105172750784.png@#Archiving 20 years of participatory art-20240105172750784.png]]
 
 ## Aesthetics
 Blind Ditch emerged as an artist group in the early days of the internet. A lot of their early work involved networked performances during an age when this was not a trivial technical barrier to overcome. Their work often reflected on [networked](https://www.blindditch.net/projects/make-shift) and contemporary [online](https://www.blindditch.net/projects/show-us-your-selfie) culture. This new archive of their work was intended to reflect some of the ideas that emerged at this time. The hopeful possibility of the internet as a participatory platform, the nostalgic aesthetics of net.art and the functional or brutalist nature of web design. These ideas were an aesthetic lodestar that needed to be balance against the necessary accessibility and inclusivity we needed to achieve. 
