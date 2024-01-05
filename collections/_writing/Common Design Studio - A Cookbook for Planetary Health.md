@@ -29,9 +29,9 @@ Here is the thematic briefing for this topic created by myself and my colleague,
 
 ## Recipes for a Planetary Health Cookbook
 
-![[Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg@#Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg]]
-
 To avoid the pitfalls of design solutionism when addressing large scale problems we framed the outcomes as 'recipes for action' that had to be documented and tested in each locale before they could be added to an ongoing Planetary Health Cookbook. The recipes could take many forms including field guides, advise, hacks, tips and tricks, tutorials, cautionary tales, coping mechanisms, training exercises, manifestos or collective actions. 
+
+![[Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg@#Common Design Studio - A Cookbook for Planetary Health-20240105102216293.jpeg]]
 
 The idea of recipes appealed to us as the project organisers for a number of reasons - recipes should be designed as simple, accessible instructions; they require testing and iteration by the recipe designer; they often (but not always) include locally specific ingredients and cultural or social context; and there is a long history of radical cookbooks used in the arts and social activism.      
 
