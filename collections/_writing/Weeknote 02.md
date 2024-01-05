@@ -1,6 +1,7 @@
 ---
 title: Weeknote 02
 share: true
+homepage: true
 category: _writing
 date: 2023-09-05
 topics:
