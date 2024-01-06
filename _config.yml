@@ -77,7 +77,7 @@ collections:
       permalink: /superset/:title
     hidden:
       output: true
-      permalink: /hidden/:title
+      permalink: /:title
 
 markdown: kramdown
 
