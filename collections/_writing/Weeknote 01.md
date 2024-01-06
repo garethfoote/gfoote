@@ -21,8 +21,8 @@ I'm interested in knowing how they are defined and what the histories are but al
 
 However, I think considering this as a visual design task alone would be a missing the point. The storytelling is as much about the content choices (what is included, left out, emphasised) as it is the decisions on colour, shape and composition. Also, often the process of co-creating the artefact can be the most resonant for everyone involved. Learning about the complexity of the system being mapped happens whilst people are creatively engaged in the task at hand. It's a generative research process. Therefore, it is equally important how we create, discover or generate that information as how it is eventually rendered in a graphical form. 
 
-![[1_0LYGulojrK2SnHo209uJkQ.webp@#1_0LYGulojrK2SnHo209uJkQ.webp]]
-<span class="figcaption">Image from Convivial Toolbox: Generative Research for the Front End of Design by Liz Sanders and Pieter Jan Stappers</span>
+![[1_0LYGulojrK2SnHo209uJkQ.webp@#Diagram describing the benefits of generative research sessions to access latent knowledge]]
+<span class="figcaption">Image from Convivial Toolbox by Liz Sanders and Pieter Jan Stappers</span>
 
 As the next few months progress I'm going to be writing more about the softer skills of service design, for example, facilitation and co-design. 
 
