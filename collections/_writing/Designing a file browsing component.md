@@ -100,7 +100,7 @@ With JavaScript enabled the folders are collapsed by default, all ARIA states ar
 
 ## Accessibility 
 
-There are some concerns about the efficacy of the Tree View pattern from an accessibility standpoint. This has been discussed on the X-Gov Slack. We took this concept forward despite these concerns because we currently have a tiny user base of approximately 15-20 users who we engage with directly during the user of the interface. 
+There are some concerns about the efficacy of the Tree View pattern from an accessibility standpoint. This has been discussed on the X-Gov Slack. We took this concept forward despite these concerns because we currently have a tiny user base of approximately 15-20 users who we engage with before they use of the product. 
 
 This gives us a lot of opportunity to review the use of the Tree View in user and accessibility testing. The component was part of a [DAC](https://digitalaccessibilitycentre.org/) accessibility audit, which recognised that it was a custom component and therefore an accessibility risk. They also acknowledged the esoteric nature of the tasks required in the interface. 
 
