@@ -13,7 +13,7 @@ layout: default
 {{ content }}
 {% assign condition = "item.hidden contains '" | append: page.title | append: "'" %}
 {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
-{%- include article-cards.html -%}
+{%- include article-cards-hidden.html -%}
 </section>
 
 <section class="main-col mt-16">
