@@ -12,7 +12,7 @@ topics:
   - Design Process
 hidden:
   - Case Studies for GDS (Jan 2024)
-date: 2022-08-21
+date: 2021-08-21
 ---
 
 
