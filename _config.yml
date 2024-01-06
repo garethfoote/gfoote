@@ -75,7 +75,7 @@ collections:
     supersets:
       output: true
       permalink: /superset/:title
-    hidden_categories:
+    hidden:
       output: true
       permalink: /hidden/:title
 
@@ -118,6 +118,11 @@ defaults:
       type: supersets
     values:
       layout: type
+  - scope:
+      path: ""
+      type: hidden
+    values:
+      layout: hidden
 
 exclude:
   - src

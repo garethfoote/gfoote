@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<header class="post-hero">
+  <div class="post-hero__container">
+    <h1>{{page.title}}</h1>
+    <div class="post-hero__metadata">
+    </div>
+  </div>
+</header>
+
+<section class="main-col">
+{{ content }}
+{% assign condition = "item.hidden contains '" | append: page.title | append: "'" %}
+{%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
+{%- include article-cards.html -%}
+</section>
+
+<section class="main-col mt-16">
+  {%- include topics-list.html -%}
+</section>
