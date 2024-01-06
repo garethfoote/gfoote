@@ -18,10 +18,11 @@ We have a mini-workshop next week focussing on the backstage of the service. It'
 So, I've been continuing to read about and experiment with different mapping methods that are applicable in a service design context, e.g. experience maps, journey maps and service blueprints. They are familiar in the way that we all know how to read a diagram and, as design practitioners, have certainly made a few similar things in our own vision. Each mapping method has its own established history, often from another discipline such as HCI, business or marketing, and has a defined visual format and an approximate approach to its creation. Interestingly, there is even an [British Standard for service design](https://www.en-standard.eu/bs-7000-3-1994-design-management-systems-guide-to-managing-service-design/), which I'm yet to read because it's behind a paywall.  
 
 I'm interested in knowing how they are defined and what the histories are but also what a design practice brings to them. One of the seemingly obvious competencies offered by designers is visualising unstructured, mostly qualitative information collected throughout discovery or user research. Creating a more finessed version of the raw data, qualitative insights, and system sketches in a form that tells a narrative, or allows one to be explored.     
+
 However, I think considering this as a visual design task alone would be a missing the point. The storytelling is as much about the content choices (what is included, left out, emphasised) as it is the decisions on colour, shape and composition. Also, often the process of co-creating the artefact can be the most resonant for everyone involved. Learning about the complexity of the system being mapped happens whilst people are creatively engaged in the task at hand. It's a generative research process. Therefore, it is equally important how we create, discover or generate that information as how it is eventually rendered in a graphical form. 
 
 ![[1_0LYGulojrK2SnHo209uJkQ.webp@#1_0LYGulojrK2SnHo209uJkQ.webp]]
-*Image from Convivial Toolbox: Generative Research for the Front End of Design by Liz Sanders and Pieter Jan Stappers*
+<span class="figcaption">Image from Convivial Toolbox: Generative Research for the Front End of Design by Liz Sanders and Pieter Jan Stappers</span>
 
 As the next few months progress I'm going to be writing more about the softer skills of service design, for example, facilitation and co-design. 
 
