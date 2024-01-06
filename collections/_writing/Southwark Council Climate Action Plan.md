@@ -1,6 +1,7 @@
 ---
 share: true
 homepage: false
+hidden: true
 category: _writing
 topics:
   - Service Design
