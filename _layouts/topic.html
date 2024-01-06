@@ -11,7 +11,9 @@ layout: default
 </header>
 
 <section class="main-col">
-{{ content }}
+<div class="content sm:mb-8">
+  {%- include content.html -%}
+</div>
 {% assign condition = "item.topics contains '" | append: page.title | append: "'" %}
 {%- assign posts = site.writing | where_exp: "item", condition | sort: date | reverse -%}
 {%- include article-cards.html -%}
