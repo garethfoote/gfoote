@@ -1,10 +1,9 @@
 ---
 share: true
 homepage: false
-hidden: true
-category: _writing
-hidden_categories:
+hidden:
   - Case Studies for GDS (Jan 2024)
+category: _writing
 date: 2023-08-01
 ---
 
