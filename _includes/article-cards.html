@@ -1,3 +1,5 @@
 {% for post in posts %}
+{% if post.hideFromIndex == false or post.hideFromIndex == nil %}
 {%- include article-card.html -%}
+{%- endif -%}
 {%- endfor -%}
