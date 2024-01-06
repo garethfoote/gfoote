@@ -8,6 +8,8 @@ types:
 topics:
   - Teaching
   - Service Design
+hidden:
+  - Case Studies for GDS (Jan 2024)
 date: 2022-05-10
 ---
 
