@@ -1,4 +1,5 @@
 ---
+title: Southwark Council Climate Action Plan
 share: true
 homepage: false
 hideFromIndex: true
