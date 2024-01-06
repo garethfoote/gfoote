@@ -172,4 +172,7 @@ p.float-img-child img {
   @apply block w-full;
   @apply italic text-center;
   font-size: 85%;
+  line-height: 85%;
+  @apply leading-[1rem] sm:leading-[1.5rem] 2xl:leading-[2rem];
+
 }
