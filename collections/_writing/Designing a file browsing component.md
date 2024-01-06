@@ -16,7 +16,10 @@ types:
 
 ![[Choose a file 1.png@#The Tree View component created for The National Archives]]
 
-This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
+This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives. 
+
+## My role
+I designed and facilitated the workshops that involved Jobs to be Done stories which you can see below. I was then responsible for design decisions, UI/Interaction design and front-end build for this component. This was also an opportunity to advocate for the creation of a component library within our product team. I was helped by a colleague in the development team to set up [the component library as per GDS standards](https://github.com/nationalarchives/tdr-components), however I later added [Storybook](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-docs--page). 
 
 ## Background and context
 
@@ -95,3 +98,4 @@ Despite it's complex appearance the HTML for a nested set of folders is a simple
 
 With JavaScript enabled the folders are collapsed by default, all ARIA states are updated during interactions and keyboard controls are enabled.
 
+[See the full Storybook testing suite here](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--default-single) and find the code in the open source [components library](https://github.com/nationalarchives/tdr-components).
