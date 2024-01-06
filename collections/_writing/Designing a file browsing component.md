@@ -7,6 +7,8 @@ topics:
   - Interaction Design
   - Accessibility
   - Gov.uk
+hidden:
+  - Case Studies for GDS (Jan 2024)
 types:
   - Case Study
 ---
@@ -15,9 +17,6 @@ types:
 ![[Choose a file 1.png@#alt text]]
 
 This is a case study explaining the context in which the Tree View component was designed and built, whilst working as a designer for The National Archives.
-
-- [[Weeknote 01@#different text linking to Weeknote 01]]
-- [[Weeknote 02@#Weeknote 02]]
 
 ## Background and context
 In digital archiving there are various scenarios that require the presentation of a hierarchical file structure to the user. For digital records the preservation of the original folder and file structure is one way they are given meaning and made accessible for future use. Therefore, when a consignment of records is transferred to an archive or when they are presented back to interested parties, showing the original folder structure in a web interface is necessary.
