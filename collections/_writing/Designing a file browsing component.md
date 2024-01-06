@@ -100,7 +100,7 @@ With JavaScript enabled the folders are collapsed by default, all ARIA states ar
 
 ## Accessibility 
 
-There are some concerns about the efficacy of the Tree View pattern from an accessibility standpoint. This has been discussed on the X-Gov Slack. We took this concept forward despite these concerns because we currently have a tiny user base of approximately 15-20 users who we engage with directly during the user of the interface. 
+There are some concerns about the efficacy of the Tree View pattern from an accessibility standpoint. This has been discussed on the X-Gov Slack. We took this concept forward despite these concerns because we currently have a tiny user base of approximately 15-20 users who we engage with before they use of the product. 
 
 This gives us a lot of opportunity to review the use of the Tree View in user and accessibility testing. The component was part of a [DAC](https://digitalaccessibilitycentre.org/) accessibility audit, which recognised that it was a custom component and therefore an accessibility risk. They also acknowledged the esoteric nature of the tasks required in the interface. 
 
@@ -110,6 +110,6 @@ We will soon conduct isolated tests on the component again. There is a possibili
 
 So far we have mostly focussed on ensuring Windows screenreader software, primarily NVDA, works most effectively with the tree view - as per the DAC audit. We have also done some testing with JAWS. However, there are some issues within Voiceover on Mac that cause the tree view to be treated incorrectly. This is explained in more detail here:
 
-[Accessibility WTF: Voiceover on Mac announcing a list tree as a table? @# Christian Heilmann](https://christianheilmann.com/2021/07/28/accessibility-wtf-voiceover-on-mac-announcing-a-list-tree-as-a-table/)
+[Accessibility WTF: Voiceover on Mac announcing a list tree as a table? Christian Heilmann](https://christianheilmann.com/2021/07/28/accessibility-wtf-voiceover-on-mac-announcing-a-list-tree-as-a-table/)
 
 Currently, we do not expect many of our Civil Service users to be working on Macs and we also know that screen reader users predominantly use Windows so this will likely not cause many problems. However, we will monitor this situation and also keep in mind that even one of our users being prevented from using the component is too many.
