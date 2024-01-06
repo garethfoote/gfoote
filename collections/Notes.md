@@ -6,5 +6,5 @@ title: Notes
 ---
 
 
-A lot of notes in a grid
+***This section is a work in progress.***
 
