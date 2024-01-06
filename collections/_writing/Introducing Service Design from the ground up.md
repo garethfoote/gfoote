@@ -9,7 +9,7 @@ topics:
   - Service Design
 hidden:
   - Case Studies for GDS (Jan 2024)
-date: 2023-08-01
+date: 2023-11-01
 ---
 
 
