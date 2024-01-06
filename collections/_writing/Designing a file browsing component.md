@@ -65,7 +65,11 @@ Other differentiated visual states included showing relationships between the ac
 More than in most of my previous work the devil was in the details of fine-grained interactions and visual states supporting accessibility. The relevant WCAG rules were [Non-text Contrast (1.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) and [Focus Appearance (2.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html).
 
 ## Tree View pattern
-The common design pattern for this type of display and interaction is conveniently called the 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems. See more [[UX Pattern - Tree view@#UX research on the Tree View]].
+The common design pattern for this type of display and interaction is conveniently called the 'tree view'. This has an equivalent [ARIA role](https://www.w3.org/TR/2017/REC-wai-aria-1.1-20171214/#tree) and implementation guidance from [ARIA Authoring Practices Guide (APG)](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/), [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tree_role) and various design systems.
+
+<!-- See more 
+[[UX Pattern - Tree view@#UX research on the Tree View]].
+-->
 
 The ARIA Authoring Practices Guide contains detailed specifications about ARIA roles, states and properties, which need to be implemented. It also lists a very detailed keyboard control specification, which can be [seen and tested in this Storybook example](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--keyboard-navigate-move-up-with-left-arrow).
 
