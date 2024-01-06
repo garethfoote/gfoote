@@ -26,7 +26,6 @@ Here is the thematic briefing for this topic created by myself and my colleague,
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRk8_jYzC1gftyUtV0sKfkl-0ZIYg70I_avcMu91PaB8itoIEfgu0C_1JATAPVZRfTn9ym7WsVty6kf/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
-
 ## Recipes for a Planetary Health Cookbook
 
 To avoid the pitfalls of design solutionism when addressing large scale problems we framed the outcomes as 'recipes for action' that had to be documented and tested in each locale before they could be added to an ongoing Planetary Health Cookbook. The recipes could take many forms including field guides, advise, hacks, tips and tricks, tutorials, cautionary tales, coping mechanisms, training exercises, manifestos or collective actions. 
@@ -64,6 +63,7 @@ The outcomes of the project were a collection of actionable recipes that were te
 
 ![[Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png@#Common Design Studio - A Cookbook for Planetary Health-20240105121912749.png]]
 
-The latest student outcomes are available here:  
-[https://www.commondesignstudio.net/](https://www.commondesignstudio.net/)
+See the [latest student outcomes](https://www.commondesignstudio.net/) and read an [article written about the project on the UAL website](https://www.arts.ac.uk/colleges/london-college-of-communication/stories/design-school-students-explore-international-collaborations-with-global-design-studio).
+
+
 
