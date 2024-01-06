@@ -10,6 +10,8 @@ topics:
   - UX
   - Interaction Design
   - Design Process
+hidden:
+  - Case Studies for GDS (Jan 2024)
 date: 2022-08-21
 ---
 
