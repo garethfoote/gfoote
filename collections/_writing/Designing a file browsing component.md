@@ -110,6 +110,6 @@ We will soon conduct isolated tests on the component again. There is a possibili
 
 So far we have mostly focussed on ensuring Windows screenreader software, primarily NVDA, works most effectively with the tree view - as per the DAC audit. We have also done some testing with JAWS. However, there are some issues within Voiceover on Mac that cause the tree view to be treated incorrectly. This is explained in more detail here:
 
-[Accessibility WTF: Voiceover on Mac announcing a list tree as a table? @# Christian Heilmann](https://christianheilmann.com/2021/07/28/accessibility-wtf-voiceover-on-mac-announcing-a-list-tree-as-a-table/)
+[Accessibility WTF: Voiceover on Mac announcing a list tree as a table? Christian Heilmann](https://christianheilmann.com/2021/07/28/accessibility-wtf-voiceover-on-mac-announcing-a-list-tree-as-a-table/)
 
 Currently, we do not expect many of our Civil Service users to be working on Macs and we also know that screen reader users predominantly use Windows so this will likely not cause many problems. However, we will monitor this situation and also keep in mind that even one of our users being prevented from using the component is too many.
