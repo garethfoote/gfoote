@@ -3,11 +3,8 @@ share: true
 homepage: false
 hidden: true
 category: _writing
-topics:
-  - Service Design
-  - Prototyping
 hidden_categories:
-  - GDS Application
+  - Case Studies for GDS (Jan 2024)
 date: 2023-08-01
 ---
 
