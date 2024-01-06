@@ -75,7 +75,7 @@
 }
 
 .post-hero h1 {
-  @apply font-normal text-xl leading-7 sm:text-2xl 2xl:text-3xl;
+  @apply text-xl leading-7 sm:text-2xl 2xl:text-3xl;
   @apply pb-3 sm:pb-4;
 }
 
