@@ -1,6 +1,6 @@
 ---
 share: true
-homepage: true
+homepage: false
 category: _writing
 date: 2023-10-06
 topics:
