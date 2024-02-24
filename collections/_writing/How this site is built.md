@@ -6,6 +6,7 @@ title: How this site is built
 topics:
   - Design
   - Code
+homepage: false
 ---
 
 
