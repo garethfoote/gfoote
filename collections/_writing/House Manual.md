@@ -9,6 +9,14 @@ homepage: false
 hideFromIndex: true
 ---
 
+- [[#Wi-Fi@#Wi-Fi]]
+- [[#Tecka the Cat@#Tecka the Cat]]
+- [[#Bin room@#Bin room]]
+- [[#Washing machine@#Washing machine]]
+- [[#The Terrace@#The Terrace]]
+- [[#Using the TV@#Using the TV]]
+- [[#Playing music@#Playing music]]
+- [[#The Neighbourhood@#The Neighbourhood]]
 
 ## Wi-Fi
 Network: **VFAST GF**  
