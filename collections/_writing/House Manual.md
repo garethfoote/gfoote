@@ -1,6 +1,6 @@
 ---
 created: 2024-04-22 21:43:23
-modified: 2024-04-22 22:02:43
+modified: 2024-04-23 21:45:05
 share: true
 category: _writing
 date: 2023-10-09
@@ -8,15 +8,6 @@ title: House Manual
 homepage: false
 hideFromIndex: true
 ---
-
-- [[#Wi-Fi@#Wi-Fi]]
-- [[#Tecka the Cat@#Tecka the Cat]]
-- [[#Bin room@#Bin room]]
-- [[#Washing machine@#Washing machine]]
-- [[#The Terrace@#The Terrace]]
-- [[#Using the TV@#Using the TV]]
-- [[#Playing music@#Playing music]]
-- [[#The Neighbourhood@#The Neighbourhood]]
 
 ## Wi-Fi
 Network: **VFAST GF**  
