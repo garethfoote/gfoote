@@ -1,6 +1,6 @@
 ---
 created: 2024-04-22 21:43:23
-modified: 2024-04-27 18:56:49
+modified: 2024-05-02 11:51:17
 share: true
 category: _writing
 date: 2023-10-09
@@ -20,18 +20,17 @@ Password: **33967059**
  
  She has a cat litter tray and you will notice when that needs scooping into the nearby toilet. Sadly, in her old age, she has given up on burying her 'business'. There will be plenty of fresh cat litter to cover up wee. It starts to get a bit full every 3 or 4 days. If you are staying that long and it needs changing there are replacement litter tray liners/bags and more litter in the utility room where the washing machine is. Ideally, the dirty cat litter goes into the bins in the main bin room. 
 ## Bin room
- If you need to access the bin room, turn right out of the lift/stairwell and go all the way at the end of the corridor through two doors. The second door needs a key which will be by the 
+ If you need to access the bin room, turn right out of the lift or stairwell and go all the way to the end of the corridor through two doors. The second door needs a key, which will be by the door attached to a heavy bike tool.  
 ## Bathrooms
-Feel free to use any shower gel, shampoo/conditioner and toothpaste that you find. There is a button on the outside of the door, next to the light switch that turns on the ventilation. Turn that on at the beginning of a shower and turn it off later on. 
+Feel free to use any shower gel, shampoo/conditioner and toothpaste that you find. There is a button on the outside of the door, next to the light switch that turns on the ventilation. If it's steamy turn that on for a while. 
 ## Washing machine
-Feel free to use the washing machine. There is washing liquid
-
+Feel free to use the washing machine. There is washing liquid on a shelf above the machine.
 ## Kitchen
 
 ### Dishwasher
 You can use the dishwasher for most things but avoid putting the sharp knives in there. The dishwasher tablets are underneath the sink. 
 ### Recycling
-There is food waste recycling to the right of the sink in a brown plastic container and mixed recycling is in the cupboard underneath the food waste. There are 3 separate recycling bins but you can put any glass, paper, and most plastic into them.
+There is food waste recycling to the right of the sink in a brown plastic container and mixed recycling is in the cupboard underneath the food waste. There are 3 separate recycling bins but you can put any glass, paper, and most plastic into any of them. Don't worry about separating them. 
 ## The Terrace
 Help yourself to the use of the terrace. There is a table with a few chairs and a sofa area to sit. The key to the patio door will be in the door. When the bar is pointing all the way up the door is unlocked. It occasionally gets a bit stiff and the bar will only go half way up. If that happens you may need to lock and unlock with the key to make it work.  
 ## Using the TV
