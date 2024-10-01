@@ -1,4 +1,5 @@
 
+const bg = "#FAF7ED";
 const orangeflame = {
   "3": '#FC5F1C',
   "4": '#DA490B',
@@ -29,12 +30,12 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'accent': blue,
+      'accent': orangeflame,
       'yellow': {
         light: "#fef08a",
         DEFAULT: '#fef08a',
       },
-      'offwhite': '#F8F5DA',
+      'offwhite': bg,
       'black': '#2E2C2C',
       'grey':  {
         "1": '#CBCFD1',

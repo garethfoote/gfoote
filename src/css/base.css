@@ -21,7 +21,7 @@ body > div {
 
 h1 {
 	@apply text-xl sm:text-2xl 2xl:text-3xl leading-7 sm:leading-8;
-	@apply font-serif font-semibold;
+	@apply font-serif font-normal;
 }
 
 h1 span {

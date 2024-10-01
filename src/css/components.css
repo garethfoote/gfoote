@@ -3,7 +3,7 @@
 }
 
 .squiggle {
-  @apply w-28 h-28;
+  @apply w-20 h-20;
   @apply relative left-[-1rem] top-4;
 }
 
@@ -62,7 +62,7 @@
 .post-hero__container {
   @apply max-w-3xl 2xl:max-w-6xl;
   @apply px-4 md:px-0 md:pl-0;
-  @apply border-b border-b-grey-4;
+  /* @apply border-b border-b-grey-4; */
 }
 
 .post-hero:after {
@@ -182,6 +182,10 @@
   @apply text-grey 2xl:text-lg;
   @apply lg:absolute top-0 lg:max-w-[15rem] 2xl:max-w-[20rem] right-[-1rem] 2xl:right-[-2rem];
   @apply z-20;
+}
+
+.post-meta time {
+  @apply text-black;
 }
 
 @media screen(lg) {
