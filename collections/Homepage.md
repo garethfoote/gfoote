@@ -6,6 +6,7 @@ title: Home
 subtitle: Designer & educator.
 types:
   - Weeknotes
+  - Writing
 topics:
   - Teaching
 ---
