@@ -5,8 +5,10 @@ permalink: /
 title: Home
 subtitle: Designer & educator.
 types:
-  - Writing
-topics: 
+  - Case Study
+  - Weeknotes
+topics:
+  - Teaching
 ---
 
 
