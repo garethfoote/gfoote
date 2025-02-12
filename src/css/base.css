@@ -25,7 +25,7 @@ h1 {
 }
 
 h1 span {
-	@apply font-serif font-normal;
+	@apply font-serif font-normal text-grey;
 }
 
 
@@ -74,19 +74,19 @@ hr.full-width {
 }
 
 .content h1 {
-	@apply text-xl mb-8;
+	@apply text-lg mb-8;
 }
 
 .content h2 {
-	@apply font-serif font-bold;
-	@apply text-xl leading-7 2xl:text-2xl 2xl:leading-9;
+	@apply font-sans font-bold;
+	@apply text-lg leading-7 2xl:text-2xl 2xl:leading-9;
 	@apply mb-3 sm:mb-4 2xl:mb-6 pt-4;
 }
 
 .content h5,
 .content h4,
 .content h3 {
-	@apply font-serif font-bold;
+	@apply font-sans font-bold;
 	@apply text-lg 2xl:text-xl leading-6 2xl:leading-8;
 	@apply mb-2 sm:mb-3 pt-0 2xl:mb-5;
 }
@@ -113,6 +113,7 @@ hr.full-width {
 
 .content li a,
 .content p a {
+	/* @apply text-accent-7; */
 	background-size: 1px 1em;
 	box-shadow:
 		inset 0 0px theme('colors.offwhite'),
@@ -135,7 +136,7 @@ hr.full-width {
 .content li a:hover,
 .content p a:hover {
   @apply text-black;
-	background-image: url("../assets/wiggle-blue.svg");
+	background-image: url("../assets/wiggle-green-dark.svg");
 	background-repeat: repeat-x;
 	background-position: 0 1.15em;
 	background-size: 9px 5px;

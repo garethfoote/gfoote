@@ -1,7 +1,7 @@
 <div class="post-meta">
   <div class="post-meta__container">
   <div class="mb-2">
-    <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%d %B, %Y" }}</time>
+    <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%B, %Y" }}</time>
   </div>
   {%- assign hasTopic = false -%}
   {% if page.topics.size > 0 %}
