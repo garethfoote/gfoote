@@ -75,7 +75,7 @@
 }
 
 .post-hero h1 {
-  @apply text-xl leading-7 sm:text-2xl 2xl:text-3xl;
+  @apply leading-8 text-2xl 2xl:text-3xl;
   @apply pb-3 sm:pb-4;
 }
 
@@ -108,8 +108,8 @@
 }
 
 .topics-list__item {
-  @apply flex gap-2 mb-1;
-  @apply text-base 2xl:text-md leading-4 2xl:leading-8;
+  @apply flex gap-2 mb-3;
+  @apply text-md 2xl:text-lg leading-4 2xl:leading-8;
 }
 
 .topics-list__item a {
@@ -142,7 +142,7 @@
 }
 
 .topics-list__item-count {
-  @apply text-sm 2xl:text-md text-grey-6;
+  @apply text-base 2xl:text-md text-grey-6;
   @apply relative top-[-2px] 2xl:top-1.5;
 }
 

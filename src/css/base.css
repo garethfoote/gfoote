@@ -20,7 +20,7 @@ body > div {
 }
 
 h1 {
-	@apply text-xl sm:text-2xl 2xl:text-3xl leading-7 sm:leading-8;
+	@apply text-2xl 2xl:text-3xl leading-8;
 	@apply font-serif font-normal;
 }
 
@@ -41,7 +41,7 @@ h3 {
 }
 
 p {
-	@apply text-base sm:text-md 2xl:text-xl;
+	@apply text-md 2xl:text-xl;
 	@apply mb-8;
 }
 

@@ -11,7 +11,7 @@
 }
 
 .article-card__title {
-  @apply text-md sm:text-lg-plus 2xl:text-1.5xl leading-6;
+  @apply text-lg-plus 2xl:text-1.5xl leading-8;
   @apply grow-0 z-10;
   /* @apply grow z-10; */
   @apply relative top-px;
@@ -77,14 +77,15 @@
 
 .article-card__metadata {
   @apply mb-0 bg-offwhite;
-  @apply max-h-5 sm:max-h-none;
+  @apply sm:max-h-none;
   @apply relative;
   /* @apply relative top-[2px] sm:top-[6px]; */
   @apply whitespace-nowrap;
 }
 
 .article-card__metadata time {
-  @apply text-grey text-sm sm:text-base 2xl:text-lg;
+  @apply text-grey text-md 2xl:text-lg;
   @apply pl-1 bg-offwhite;
   @apply inline;
+
 }
