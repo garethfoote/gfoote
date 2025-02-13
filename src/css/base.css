@@ -25,7 +25,7 @@ h1 {
 }
 
 h1 span {
-	@apply font-serif font-normal text-grey;
+	@apply font-serif font-normal;
 }
 
 
@@ -41,7 +41,7 @@ h3 {
 }
 
 p {
-	@apply text-md 2xl:text-xl;
+	@apply text-md md:text-lg 2xl:text-xl;
 	@apply mb-8;
 }
 
@@ -135,13 +135,16 @@ hr.full-width {
 
 .content li a:hover,
 .content p a:hover {
-  @apply text-black;
-	background-image: url("../assets/wiggle-green-dark.svg");
+	@apply text-accent;
+	box-shadow:
+		inset 0 0px theme('colors.offwhite'),
+		inset 0 -2px theme('colors.accent.DEFAULT');
+  	/* background-image: url("../assets/wiggle-green-dark.svg");
 	background-repeat: repeat-x;
 	background-position: 0 1.15em;
-	background-size: 9px 5px;
-	padding-bottom: 10px;
-	box-shadow: none;
+	background-size: 9px 5px; */
+	/* padding-bottom: 10px; */
+	/* box-shadow: none; */
 }
 
 .content li a:focus,
@@ -149,8 +152,8 @@ hr.full-width {
 	@apply outline-none;
 	@apply bg-none;
   @apply pb-0;
-	@apply bg-yellow;
-	box-shadow: 0 -2px theme('colors.yellow.DEFAULT'), 0 4px theme('colors.black');
+	@apply bg-yellow-light;
+	box-shadow: 0 -2px theme('colors.yellow.light'), 0 4px theme('colors.black');
 	text-shadow: none;
 }
 
