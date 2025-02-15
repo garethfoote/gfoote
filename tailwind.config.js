@@ -30,7 +30,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'accent': aquamarine,
+      'accent': blue,
       'yellow': {
         light: "#FFFF5D",
         DEFAULT: '#fef08a',

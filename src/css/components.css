@@ -53,7 +53,7 @@
 }
 
 .post-hero {
-  @apply pt-4;
+  @apply pt-2;
   @apply sticky top-0 bg-offwhite z-20;
   @apply md:max-w-3xl 2xl:max-w-[40em] 2xl:text-xl;
   @apply md:px-4 md:pl-8 lg:pl-16;
