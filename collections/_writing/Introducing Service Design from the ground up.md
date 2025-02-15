@@ -1,8 +1,9 @@
 ---
-title: Introducing Service Design from the ground up
+title: Introducing service mapping at The National Archives
 share: true
 homepage: true
-category: _writing
+category:
+  - _writing
 types:
   - Case Study
 topics:
