@@ -8,15 +8,13 @@ layout: default
   </div>
 </header>
 
-<div class="content main-col">
+<div class="content content--photographs main-col">
 {%- include content.html -%}
 </div>
 
 <script>
-
   document.querySelectorAll("img").forEach((img, i) => {
     if (i > 3) img.setAttribute("loading", "lazy");
     else img.setAttribute("loading", "eager");
   });
-  
 </script>

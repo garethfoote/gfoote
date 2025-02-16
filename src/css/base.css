@@ -170,6 +170,10 @@ hr.full-width {
 	/* border: 1px solid #e1e1e1; */
 }
 
+.content--photographs img {
+	border-radius: 0;
+}
+
 
 .content div.highlight {
 	@apply border-2 border-grey-3;
