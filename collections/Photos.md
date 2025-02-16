@@ -22,7 +22,7 @@ title: Photography
 
 ![[DSCF6025.jpg@#A man dashes away under a young girls bright red heart-shaped balloon]]
 
-![[DSCF5498.jpg@#DSCF5498.jpg]]
+![[DSCF5498.jpg@#A set of wifi antennas attached to the side of a building on a sunny day]]
 
 [[DSCF5867.jpg@#DSCF5867.jpg]]
 
@@ -38,3 +38,6 @@ title: Photography
 
 ![[DSCF4723.jpg@#DSCF4723.jpg]]
 
+![[DSCF4433.jpg@#DSCF4433.jpg]]
+
+![[DSCF4463.jpg@#DSCF4463.jpg]]
