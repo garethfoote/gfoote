@@ -1,8 +1,9 @@
 ---
-title: Visualising Controversies with BA UXD (21/22)
+title: Visualising Controversies with BA UXD
 share: true
 homepage: true
-category: _writing
+category:
+  - _writing
 topics:
   - Teaching
   - Data Visualisation
