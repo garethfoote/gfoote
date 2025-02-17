@@ -24,7 +24,7 @@ title: Photography
 ![[DSCF6025.jpg@#A man dashes away under a young girls bright red heart-shaped balloon]]
 --> 
 
-[[DSCF5867.jpg@#DSCF5867.jpg]]
+[[Istanbul - Man working with metal.jpg@#A man uses his tools to work with metal]]
 
 ![[DSCF5498.jpg@#A set of wifi antennas attached to the side of a building on a sunny day]]
 
