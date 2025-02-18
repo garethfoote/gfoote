@@ -6,51 +6,56 @@ title: Photography
 ---
 
 
-![[DSCF5932.jpg@#A lady wearing a headscarf looks at some Turkish bread being sold by a street seller]]
+![[Istanbul 2025 01.jpg@#Istanbul 2025 01.jpg]]
 
-![[DSCF5973.jpg@#A man walks up some steps towards an entrance to a mosque]]
+![[Istanbul 2025 02.jpg@#Istanbul 2025 02.jpg]]
 
-![[DSCF5977.jpg@#Pigeons fly around in front of the camera, whilst a women behind raises her hands]]
+![[Istanbul 2025 03.jpg@#Istanbul 2025 03.jpg]]
 
-![[DSCF5900.jpg@#A man smoking in front of a market stall of girls dresses]]
+![[Istanbul 2025 04.jpg@#Istanbul 2025 04.jpg]]
 
-![[DSCF5985.jpg@#A man walks in front of the camera looking to the right, in front of a mosque]]
+![[Istanbul 2025 05.jpg@#Istanbul 2025 05.jpg]]
 
-![[DSCF5817.jpg@#DSCF5817.jpg]]
+![[Istanbul 2025 06.jpg@#Istanbul 2025 06.jpg]]
 
-![[DSCF6034.jpg@#DSCF6034.jpg]]
+![[Istanbul 2025 07.jpg@#Istanbul 2025 07.jpg]]
 
-<!-- 
-![[DSCF6025.jpg@#A man dashes away under a young girls bright red heart-shaped balloon]]
---> 
+![[Egypt 2024 02.jpg@#Egypt 2024 02.jpg]]
 
-[[Istanbul - Man working with metal.jpg@#A man uses his tools to work with metal]]
+![[Egypt 2024 03.jpg@#Egypt 2024 03.jpg]]
 
-![[DSCF5498.jpg@#A set of wifi antennas attached to the side of a building on a sunny day]]
+![[Egypt 2024 04.jpg@#Egypt 2024 04.jpg]]
 
-![[DSCF5590.jpg@#DSCF5590.jpg]]
+![[Egypt 2024 05.jpg@#Egypt 2024 05.jpg]]
 
-![[DSCF5681.jpg@#A pile of chairs, stacked and chained up]]
+![[Egypt 2024 06.jpg@#Egypt 2024 06.jpg]]
 
-![[DSCF5893.jpg@#A delicate cup and saucer on an ornate table]]
+![[Egypt 2024 07.jpg@#Egypt 2024 07.jpg]]
 
-![[DSCF5599.jpg@#DSCF5599.jpg]]
+![[Egypt 2024 08.jpg@#Egypt 2024 08.jpg]]
 
-![[DSCF4547.jpg@#DSCF4547.jpg]]
+![[Egypt 2024 09.jpg@#Egypt 2024 09.jpg]]
 
-![[DSCF4723.jpg@#DSCF4723.jpg]]
+![[Istanbul 2025 08.jpg@#Istanbul 2025 08.jpg]]
 
-![[DSCF4433.jpg@#DSCF4433.jpg]]
+![[Egypt 2024 01.jpg@#Egypt 2024 01.jpg]]
 
-![[DSCF4463.jpg@#DSCF4463.jpg]]
+![[Provence 01.jpg@#Provence 01.jpg]]
 
-![[DSCF3451.jpg@#DSCF3451.jpg]]
+![[Provence 02.jpg@#Provence 02.jpg]]
 
-![[DSCF3463.jpg@#DSCF3463.jpg]]
+![[Provence 03.jpg@#Provence 03.jpg]]
 
-![[DSCF3476.jpg@#DSCF3476.jpg]]
+![[Istanbul 2025 09.jpg@#Istanbul 2025 09.jpg]]
 
-![[DSCF5483.jpg@#DSCF5483.jpg]]
+![[Sweden 01.jpg@#Sweden 01.jpg]]
 
-![[DSCF5350.jpg@#DSCF5350.jpg]]
+![[Lola.jpg@#Lola.jpg]]
 
+![[Beach.jpg@#Beach.jpg]]
+
+![[DSCF5498 1.jpg@#DSCF5498 1.jpg]]
+
+![[DSCF5590 1.jpg@#DSCF5590 1.jpg]]
+
+![[Istanbul 2025 10.jpg@#Istanbul 2025 10.jpg]]
