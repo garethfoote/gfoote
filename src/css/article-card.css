@@ -1,6 +1,6 @@
 
 .article-card {
-  @apply flex items-end justify-between sm:justify-normal gap-x-0;
+  @apply block items-end justify-between sm:justify-normal gap-x-0;
   /* @apply flex items-end justify-between gap-x-1; */
   @apply mb-2 2xl:mb-2;
   /* background-image: linear-gradient(to right,transparent 3px, theme('colors.grey.2') 3px); */
@@ -11,7 +11,8 @@
 }
 
 .article-card__title {
-  @apply text-lg-plus md:text-xl 2xl:text-1.5xl leading-7 sm:leading-8;
+  @apply text-lg-plus md:text-xl 2xl:text-1.5xl;
+  @apply leading-7 sm:leading-8;
   @apply grow-0 z-10;
   /* @apply grow z-10; */
   @apply relative top-px;
@@ -42,7 +43,7 @@
 }
 
 .article-card__title > a {
-  @apply inline-block w-full;
+  @apply inline;
   @apply z-10 relative;
 }
 
@@ -75,20 +76,20 @@
 }
 
 .article-card__title:hover:after {
-  @apply opacity-100;
+  /* @apply opacity-100; */
 }
 
 .article-card__metadata {
   @apply mb-0 bg-offwhite;
   @apply sm:max-h-none;
   @apply relative;
-  @apply relative top-[6px] sm:top-0;
+  @apply relative top-[0px] sm:top-0;
   @apply whitespace-nowrap;
 }
 
 .article-card__metadata time {
-  @apply text-grey text-md 2xl:text-lg;
-  @apply pl-1 sm:pl-4 bg-offwhite;
+  @apply text-grey text-base 2xl:text-md;
+  @apply bg-offwhite;
   @apply inline;
 
 }
