@@ -12,7 +12,7 @@ date: 2022-02-02
 
 For the 21/22 winter semester on BA UXD I designed and taught a unit on Interactive Data Visualisation. The topics included Interactive data visualisations, controversy mapping, digital methods and internet health.  
 
-See the [full unit guide](https://gfte.notion.site/Y2-Interactive-Data-Visualisation-Studio-Unit-Guide-21-22-3e9b63dcb6a84e7dad24f8b7a19d7997?pvs=74).
+We started with a series of [[Mini-briefs - Exploring datasets@#mini-briefs]] that introduced methods for interrogating datasets and sketching out simple visualisation ideas. You can also read the [full unit guide](https://gfte.notion.site/Y2-Interactive-Data-Visualisation-Studio-Unit-Guide-21-22-3e9b63dcb6a84e7dad24f8b7a19d7997?pvs=74).
 
 I choose to model this on a unit taught by the [Density Design Lab](https://densitydesign.org/) at Politecnico Di Milano. They wrote an excellent paper called [Teaching the critical role of designers in the data society: the DensityDesign approach](https://www.researchgate.net/publication/339884430_Teaching_the_critical_role_of_designers_in_the_data_society_the_DensityDesign_approach), which laid out the theoretical and practical foundations of the teaching. 
 
@@ -23,6 +23,3 @@ At the core is a method created by Bruno Latour called Controversy Mapping as a 
 ![[Venturinietal.-2015-DesigningControversiesandtheirPublics.pdf@#**Designing Controversies and Their Publics.** Venturini, Tommaso & Ricci, Donato & Mauri, Michele & Kimbell, Lucy & Meunier, Axel. (2015). Design Issues. 31. 74–87. 10.1162/DESI_a_00340]]
 
 
-We started with a series of mini-briefs that introduced methods for interrogating datasets and sketching out simple visualisation ideas.
-
-[[Mini-briefs - Exploring datasets@#Mini-briefs - Exploring datasets]]
