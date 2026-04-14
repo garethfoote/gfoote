@@ -1,23 +1,37 @@
 type ElevationMap = number[][];
-type ColorValue = number & { kind: "ColorValue"; value: number };
+type PeakDefinition = {
+  x: number;
+  y: number;
+  sizeX: number;
+  sizeY: number;
+  elevation: number;
+};
+type ContourScene = {
+  canvas: HTMLCanvasElement;
+  ctx: CanvasRenderingContext2D;
+  seedField: ElevationMap;
+  peaks: PeakDefinition[];
+  motionMask: ElevationMap;
+  animatedField: ElevationMap;
+  rez: number;
+  cols: number;
+  rows: number;
+};
+type AnimateContoursOptions = {
+  amplitude?: number;
+  speed?: number;
+  scale?: number;
+  peakDrift?: number;
+  peakHeightDrift?: number;
+  peakSpeed?: number;
+};
 
-let maxElevation : number = 1000;
-let rez : number = 2.5;
-let field : ElevationMap = [];
-let cols : number;
-let rows : number;
-let ctx : CanvasRenderingContext2D | null;
-
-function isColorValue(value: number): value is ColorValue {
-  return value >= 0 && value <= 255;
-}
-
-function drawRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: number, height: number, strokeWidth: number = 0): void {
-	if (strokeWidth > 0) {
-			ctx.strokeRect(x, y, width, height);
-	}
-	ctx.fillRect(x, y, width, height);
-}
+const maxElevation: number = 1000;
+const BASE_REZ: number = 2.5;
+let field: ElevationMap = [];
+let cols: number;
+let rows: number;
+let ctx: CanvasRenderingContext2D | null;
 
 function drawLine(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number): void {
   ctx.beginPath();
@@ -30,16 +44,20 @@ function ctxStroke(ctx: CanvasRenderingContext2D, clr: string): void {
   ctx.strokeStyle = clr;
 }
 
-function ctxFill(ctx: CanvasRenderingContext2D, clr: string): void {
-  ctx.fillStyle = clr;
-}
-
 function lerp(start: number, end: number, amount: number): number {
   return start + amount * (end - start);
 }
 
 function map(value: number, fromStart: number, fromStop: number, toStart: number, toStop: number): number {
   return toStart + (toStop - toStart) * ((value - fromStart) / (fromStop - fromStart));
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}
+
+function cloneField(source: ElevationMap): ElevationMap {
+  return source.map((row) => [...row]);
 }
 
 function createElevationCircle(
@@ -51,24 +69,15 @@ function createElevationCircle(
   const numCols: number = elevationMap[0].length;
   const centerX: number = Math.floor(numCols / 2);
   const centerY: number = Math.floor(numRows / 2);
-
-  // Radius of the circle
   const radius: number = Math.min(centerX, centerY);
 
   for (let i: number = 0; i < numRows; i++) {
     for (let j: number = 0; j < numCols; j++) {
-      // Calculate distance from the center
       const distance: number = Math.sqrt(Math.pow(centerX - j, 2) + Math.pow(centerY - i, 2));
-      
-      // Calculate the fraction of the distance from the center
       const distanceFraction: number = distance / radius;
 
-      // If the point is within the circle and not too close to the center, decrease the elevation
       if (distanceFraction <= fractionFactor) {
-        // Map effectiveDropStrength between initialDropStrength and 0 based on the diminishing difference
         const mappedDropStrength: number = initialDropStrength * (1 - distanceFraction / fractionFactor);
-
-        // Reduce the elevation based on the mapped drop strength
         elevationMap[i][j] += mappedDropStrength;
       }
     }
@@ -77,39 +86,8 @@ function createElevationCircle(
   return elevationMap;
 }
 
-function drawElevationMap(elevationMap: ElevationMap, canvas : HTMLCanvasElement, ctx: CanvasRenderingContext2D): void {
-  let w: number = canvas.width / cols;
-  let h: number = canvas.height / rows;
-
-  ctxStroke(ctx, "#000");
-
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      let elevation: number = elevationMap[i][j];
-      let colourValue: number = Math.round(map(elevation, -1, 1, 0, 255));
-      ctxFill(ctx, valueToHexColour(colourValue as ColorValue));
-      drawRect(ctx, i * w, j * h, w, h);
-    }
-  }
-}
-
-function valueToHexColour(value: ColorValue): string {
-  // Ensure the input value is within the valid range
-  if (!isColorValue(value)) {
-    throw new Error("Invalid color value. Must be between 0 and 255.");
-  }
-
-  // Convert the decimal value to hexadecimal
-  const hexValue: string = value.toString(16).padStart(2, '0');
-
-  // Construct the hex color string
-  const hexColor: string = `#${hexValue}${hexValue}${hexValue}`;
-
-  return hexColor;
-}
-
-function initializeElevationMap(cols: number, rows: number, maxElevation: number): number[][] {
-  let field: ElevationMap = [];
+function initializeElevationMap(cols: number, rows: number, maxElevation: number): ElevationMap {
+  const field: ElevationMap = [];
 
   for (let i = 0; i < cols; i++) {
     field[i] = [];
@@ -121,69 +99,80 @@ function initializeElevationMap(cols: number, rows: number, maxElevation: number
   return field;
 }
 
-function generateSteepKeyPointElevations(
-  field: number[][],
+function createPeakDefinitions(
+  cols: number,
+  rows: number,
   maxElevation: number,
   numPeaks: number,
   initPeakSize: number = 6
-): ElevationMap {
-  const cols: number = field[0].length;
-  const rows: number = field.length;
+): PeakDefinition[] {
+  const peaks: PeakDefinition[] = [];
   const padding: number = Math.round(cols * 0.3);
 
   for (let i = 0; i < numPeaks; i++) {
-    const peakSizeX: number = Math.ceil(Math.random() * initPeakSize);
-    const peakSizeY: number = Math.ceil(Math.random() * initPeakSize);
-    let x: number = Math.floor(Math.random() * (cols - padding * 2)) + padding;
-    let y: number = Math.floor(Math.random() * (rows - padding * 2)) + padding;
-    let peakElevation: number = (Math.random() * 0.2 * maxElevation) + (0.8 * maxElevation); // Increase peak elevation
+    peaks.push({
+      sizeX: Math.ceil(Math.random() * initPeakSize),
+      sizeY: Math.ceil(Math.random() * initPeakSize),
+      x: Math.floor(Math.random() * (cols - padding * 2)) + padding,
+      y: Math.floor(Math.random() * (rows - padding * 2)) + padding,
+      elevation: (Math.random() * 0.2 * maxElevation) + (0.8 * maxElevation),
+    });
+  }
 
-    // Set the peak elevation for the entire peak area
-    for (let dx = -peakSizeX; dx <= peakSizeX; dx++) {
-      for (let dy = -peakSizeY; dy <= peakSizeY; dy++) {
-        let nx: number = x + dx;
-        let ny: number = y + dy;
+  return peaks;
+}
 
-        // Check if the neighbor is within the bounds of the elevation map
-        if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
-          field[nx][ny] = peakElevation;
+function applyPeakDefinitions(field: ElevationMap, peaks: PeakDefinition[]): ElevationMap {
+  const numCols: number = field.length;
+  const numRows: number = field[0].length;
+
+  for (const peak of peaks) {
+    const minX = Math.max(0, Math.floor(peak.x - peak.sizeX - 2));
+    const maxX = Math.min(numCols - 1, Math.ceil(peak.x + peak.sizeX + 2));
+    const minY = Math.max(0, Math.floor(peak.y - peak.sizeY - 2));
+    const maxY = Math.min(numRows - 1, Math.ceil(peak.y + peak.sizeY + 2));
+
+    for (let nx = minX; nx <= maxX; nx++) {
+      for (let ny = minY; ny <= maxY; ny++) {
+        const dx = nx - peak.x;
+        const dy = ny - peak.y;
+        const ellipseDistance = Math.sqrt(
+          Math.pow(dx / (peak.sizeX + 0.75), 2) +
+          Math.pow(dy / (peak.sizeY + 0.75), 2)
+        );
+
+        if (ellipseDistance > 1.75) continue;
+
+        let influence: number;
+        if (ellipseDistance <= 1) {
+          influence = 1;
+        } else {
+          influence = map(ellipseDistance, 1, 1.75, 1, 0.15);
         }
-      }
-    }
 
-    // Adjust surrounding points for steeper slopes
-    for (let dx = -2; dx <= 2; dx++) {
-      for (let dy = -2; dy <= 2; dy++) {
-        let nx: number = x + dx;
-        let ny: number = y + dy;
-
-        // Check if the neighbor is within the bounds of the elevation map
-        if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
-          let distance: number = Math.sqrt(Math.pow(x - nx, 2) + Math.pow(y - ny, 2));
-          let influence: number = map(distance, 0, 2, 1, 0.2); // Adjust the influence based on distance
-          field[nx][ny] = lerp(field[nx][ny], peakElevation, influence);
-        }
+        field[nx][ny] = lerp(field[nx][ny], peak.elevation, influence);
       }
     }
   }
+
   return field;
 }
 
-function smoothTerrain(field: number[][], numIterations: number = 5): void {
+function smoothTerrain(field: ElevationMap, numIterations: number = 5): void {
   const cols: number = field[0].length;
   const rows: number = field.length;
 
   for (let iteration = 0; iteration < numIterations; iteration++) {
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
-        let average: number = calculateAverage(field, i, j);
+        const average: number = calculateAverage(field, i, j);
         field[i][j] = (field[i][j] + average) / 2;
       }
     }
   }
 }
 
-function calculateAverage(field: number[][], x: number, y: number): number {
+function calculateAverage(field: ElevationMap, x: number, y: number): number {
   const cols: number = field[0].length;
   const rows: number = field.length;
 
@@ -192,10 +181,9 @@ function calculateAverage(field: number[][], x: number, y: number): number {
 
   for (let i = -1; i <= 1; i++) {
     for (let j = -1; j <= 1; j++) {
-      let neighborX: number = x + i;
-      let neighborY: number = y + j;
+      const neighborX: number = x + i;
+      const neighborY: number = y + j;
 
-      // Check if the neighbor is within the bounds of the elevation map
       if (neighborX >= 0 && neighborX < cols && neighborY >= 0 && neighborY < rows) {
         sum += field[neighborX][neighborY];
         count++;
@@ -203,20 +191,108 @@ function calculateAverage(field: number[][], x: number, y: number): number {
     }
   }
 
-  // Calculate the average elevation only if there are valid neighbors
   return count > 0 ? sum / count : field[x][y];
 }
 
-function canvasSetup(canvas: HTMLCanvasElement, width:number, height:number): void {
-  // Adjust canvas size based on pixel ratio
+function createMotionMask(
+  cols: number,
+  rows: number,
+  fullStrengthRadius: number = 0.48,
+  fadeEndRadius: number = 0.8
+): ElevationMap {
+  const centerX: number = (cols - 1) / 2;
+  const centerY: number = (rows - 1) / 2;
+  const maxRadius: number = Math.min(centerX, centerY);
+  const mask: ElevationMap = [];
+
+  for (let i = 0; i < cols; i++) {
+    mask[i] = [];
+    for (let j = 0; j < rows; j++) {
+      const dx: number = i - centerX;
+      const dy: number = j - centerY;
+      const radiusFraction: number = Math.sqrt(dx * dx + dy * dy) / maxRadius;
+
+      if (radiusFraction <= fullStrengthRadius) {
+        mask[i][j] = 1;
+      } else if (radiusFraction >= fadeEndRadius) {
+        mask[i][j] = 0;
+      } else {
+        const progress: number = (radiusFraction - fullStrengthRadius) / (fadeEndRadius - fullStrengthRadius);
+        mask[i][j] = 1 - progress * progress * (3 - 2 * progress);
+      }
+    }
+  }
+
+  return mask;
+}
+
+function fade(t: number): number {
+  return t * t * t * (t * (t * 6 - 15) + 10);
+}
+
+function fract(value: number): number {
+  return value - Math.floor(value);
+}
+
+function hash3(x: number, y: number, z: number): number {
+  const dot = x * 127.1 + y * 311.7 + z * 74.7;
+  return fract(Math.sin(dot) * 43758.5453123);
+}
+
+function gradient3(ix: number, iy: number, iz: number): [number, number, number] {
+  const angleA = hash3(ix, iy, iz) * Math.PI * 2;
+  const angleB = hash3(ix + 19.19, iy + 7.73, iz + 3.11) * Math.PI * 2;
+  const z = Math.cos(angleB);
+  const r = Math.sqrt(Math.max(0, 1 - z * z));
+  return [Math.cos(angleA) * r, Math.sin(angleA) * r, z];
+}
+
+function dotGridGradient(ix: number, iy: number, iz: number, x: number, y: number, z: number): number {
+  const gradient = gradient3(ix, iy, iz);
+  const dx = x - ix;
+  const dy = y - iy;
+  const dz = z - iz;
+  return dx * gradient[0] + dy * gradient[1] + dz * gradient[2];
+}
+
+function perlin3(x: number, y: number, z: number): number {
+  const x0 = Math.floor(x);
+  const x1 = x0 + 1;
+  const y0 = Math.floor(y);
+  const y1 = y0 + 1;
+  const z0 = Math.floor(z);
+  const z1 = z0 + 1;
+
+  const sx = fade(x - x0);
+  const sy = fade(y - y0);
+  const sz = fade(z - z0);
+
+  const n000 = dotGridGradient(x0, y0, z0, x, y, z);
+  const n100 = dotGridGradient(x1, y0, z0, x, y, z);
+  const n010 = dotGridGradient(x0, y1, z0, x, y, z);
+  const n110 = dotGridGradient(x1, y1, z0, x, y, z);
+  const n001 = dotGridGradient(x0, y0, z1, x, y, z);
+  const n101 = dotGridGradient(x1, y0, z1, x, y, z);
+  const n011 = dotGridGradient(x0, y1, z1, x, y, z);
+  const n111 = dotGridGradient(x1, y1, z1, x, y, z);
+
+  const nx00 = lerp(n000, n100, sx);
+  const nx10 = lerp(n010, n110, sx);
+  const nx01 = lerp(n001, n101, sx);
+  const nx11 = lerp(n011, n111, sx);
+
+  const nxy0 = lerp(nx00, nx10, sy);
+  const nxy1 = lerp(nx01, nx11, sy);
+
+  return lerp(nxy0, nxy1, sz);
+}
+
+function canvasSetup(canvas: HTMLCanvasElement, width:number, height:number): number {
   const pixelRatio = window.devicePixelRatio || 1;
-  rez *= pixelRatio;
+  const rez = BASE_REZ * pixelRatio;
 
-  const canvasWidth = width * pixelRatio;
-  const canvasHeight = height * pixelRatio;
-
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
+  canvas.width = width * pixelRatio;
+  canvas.height = height * pixelRatio;
 
   canvas.style.width = `${width}px`;
   canvas.style.height = `${height}px`;
@@ -227,50 +303,50 @@ function canvasSetup(canvas: HTMLCanvasElement, width:number, height:number): vo
     ctx.lineWidth = pixelRatio > 1 ? 2 : 1;
     ctxStroke(ctx, "#2E2C2C");
   }
+
+  return rez;
 }
 
-function normaliseField(field: ElevationMap):ElevationMap {
+function normaliseField(field: ElevationMap): ElevationMap {
+  const flattenField: number[] = ([] as number[]).concat(...field);
+  const fieldMax: number = Math.max(...flattenField);
+  const fieldMin: number = Math.min(...flattenField);
 
-    // Find the global minimum and maximum values
-    const flattenField: number[] = ([] as number[]).concat(...field);
-    const fieldMax: number = Math.max(...flattenField);
-    const fieldMin: number = Math.min(...flattenField);
+  const normalise = (value: number, fieldMin: number, fieldMax: number): number => {
+    return (value - fieldMin) / (fieldMax - fieldMin) * 2 - 1;
+  };
 
-    const normalise = (value: number, fieldMin: number, fieldMax: number): number => {
-      return (value - fieldMin) / (fieldMax - fieldMin) * 2 - 1;
-    };
-    const normaliseRow = (row:number[]) => row.map(value => normalise(value, fieldMin, fieldMax));
-    field = field.map(normaliseRow);
-
-  return field;
+  return field.map((row) => row.map((value) => normalise(value, fieldMin, fieldMax)));
 }
 
 function getState(a: number, b: number, c: number, d: number): number {
   return (a > 0 ? 8 : 0) + (b > 0 ? 4 : 0) + (c > 0 ? 2 : 0) + (d > 0 ? 1 : 0);
 }
 
-function draw(ctx: CanvasRenderingContext2D, interval: number = 0.25): void {
+function draw(ctx: CanvasRenderingContext2D, rez: number, interval: number = 0.25): void {
   let isThick = true;
-  console.log(window.devicePixelRatio)
-  for (let h = -1; h < 1; h += interval) {  
-    if(isThick == true) ctx.lineWidth = (window.devicePixelRatio > 2) ? 3 : 1.5;
-    else ctx.lineWidth = (window.devicePixelRatio > 2) ? 2 : 1;
+
+  for (let h = -1; h < 1; h += interval) {
+    ctx.lineWidth = isThick
+      ? (window.devicePixelRatio > 2 ? 3 : 1.5)
+      : (window.devicePixelRatio > 2 ? 2 : 1);
     isThick = !isThick;
+
     for (let i = 0; i < cols - 1; i++) {
       for (let j = 0; j < rows - 1; j++) {
-        let f0 = field[i][j] - h;
-        let f1 = field[i + 1][j] - h;
-        let f2 = field[i + 1][j + 1] - h;
-        let f3 = field[i][j + 1] - h;
+        const f0 = field[i][j] - h;
+        const f1 = field[i + 1][j] - h;
+        const f2 = field[i + 1][j + 1] - h;
+        const f3 = field[i][j + 1] - h;
 
-        let x = i * rez;
-        let y = j * rez;
-        let a = [x + rez * f0 / (f0 - f1), y];
-        let b = [x + rez, y + rez * f1 / (f1 - f2)];
-        let c = [x + rez * (1 - f2 / (f2 - f3)), y + rez];
-        let d = [x, y + rez * (1 - f3 / (f3 - f0))];
+        const x = i * rez;
+        const y = j * rez;
+        const a = [x + rez * f0 / (f0 - f1), y];
+        const b = [x + rez, y + rez * f1 / (f1 - f2)];
+        const c = [x + rez * (1 - f2 / (f2 - f3)), y + rez];
+        const d = [x, y + rez * (1 - f3 / (f3 - f0))];
 
-        let state = getState(f0, f1, f2, f3);
+        const state = getState(f0, f1, f2, f3);
         switch (state) {
           case 1:
             drawLine(ctx, c[0], c[1], d[0], d[1]);
@@ -322,26 +398,118 @@ function draw(ctx: CanvasRenderingContext2D, interval: number = 0.25): void {
   }
 }
 
+function buildTerrain(seedField: ElevationMap, peaks: PeakDefinition[]): ElevationMap {
+  const terrain = cloneField(seedField);
+  createElevationCircle(terrain, 800, 0.9);
+  applyPeakDefinitions(terrain, peaks);
+  smoothTerrain(terrain, 10);
+  return normaliseField(terrain);
+}
 
-export function drawContours(canvas: HTMLCanvasElement, width:number, height:number): void{
-	
-  canvasSetup(canvas, width, height);
-  const ctx : CanvasRenderingContext2D | null = canvas.getContext("2d");
+function createContourScene(canvas: HTMLCanvasElement, width:number, height:number): ContourScene | null {
+  const rez = canvasSetup(canvas, width, height);
+  const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
 
-  if(canvas && ctx){
+  if (canvas && ctx) {
     cols = 1 + canvas.width / rez;
     rows = 1 + canvas.height / rez;
 
-    field = initializeElevationMap(cols, rows, maxElevation*0.25);
-    createElevationCircle(field, 800, 0.9);
-    generateSteepKeyPointElevations(field, maxElevation*1.25, 3, 5);
-    smoothTerrain(field, 10);
+    const seedField = initializeElevationMap(cols, rows, maxElevation * 0.25);
+    const peaks = createPeakDefinitions(cols, rows, maxElevation * 1.25, 3, 5);
+    const baseField = buildTerrain(seedField, peaks);
 
-    field = normaliseField(field);
-
-    drawElevationMap(field, canvas, ctx);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    draw(ctx, 0.24);
+    return {
+      canvas,
+      ctx,
+      seedField,
+      peaks,
+      motionMask: createMotionMask(cols, rows),
+      animatedField: baseField,
+      rez,
+      cols,
+      rows,
+    };
   }
+
+  return null;
 }
- 
+
+function getAnimatedPeaks(scene: ContourScene, time: number, options: AnimateContoursOptions): PeakDefinition[] {
+  const peakDrift = options.peakDrift ?? 1.6;
+  const peakHeightDrift = options.peakHeightDrift ?? 0.08;
+  const peakSpeed = options.peakSpeed ?? 0.00012;
+  const minPadding = Math.round(scene.cols * 0.3);
+  const maxX = scene.cols - 1 - minPadding;
+  const maxY = scene.rows - 1 - minPadding;
+
+  return scene.peaks.map((peak, index) => {
+    const offsetX = perlin3(index * 17.1, 0.3, time * peakSpeed * 1.1) * peakDrift;
+    const offsetY = perlin3(index * 29.7, 4.6, time * peakSpeed * 0.9) * peakDrift;
+    const heightOffset = perlin3(index * 13.9, 8.2, time * peakSpeed * 0.7) * peakHeightDrift;
+
+    return {
+      ...peak,
+      x: clamp(peak.x + offsetX, minPadding, maxX),
+      y: clamp(peak.y + offsetY, minPadding, maxY),
+      elevation: peak.elevation * (1 + heightOffset),
+    };
+  });
+}
+
+function renderContourScene(scene: ContourScene, time: number = 0, options: AnimateContoursOptions = {}): void {
+  const amplitude = options.amplitude ?? 0.028;
+  const speed = options.speed ?? 0.00012;
+  const scale = options.scale ?? 0.16;
+  const animatedPeaks = getAnimatedPeaks(scene, time, options);
+  const animatedBaseField = buildTerrain(scene.seedField, animatedPeaks);
+
+  for (let i = 0; i < animatedBaseField.length; i++) {
+    for (let j = 0; j < animatedBaseField[i].length; j++) {
+      const motionValue = perlin3(i * scale, j * scale, time * speed);
+      scene.animatedField[i][j] =
+        animatedBaseField[i][j] +
+        motionValue * scene.motionMask[i][j] * amplitude;
+    }
+  }
+
+  field = scene.animatedField;
+  cols = scene.cols;
+  rows = scene.rows;
+
+  scene.ctx.clearRect(0, 0, scene.canvas.width, scene.canvas.height);
+  draw(scene.ctx, scene.rez, 0.24);
+}
+
+export function drawContours(canvas: HTMLCanvasElement, width:number, height:number): void {
+  const scene = createContourScene(canvas, width, height);
+  if (!scene) return;
+
+  renderContourScene(scene);
+}
+
+export function animateContours(
+  canvas: HTMLCanvasElement,
+  width:number,
+  height:number,
+  options: AnimateContoursOptions = {}
+): () => void {
+  const scene = createContourScene(canvas, width, height);
+  if (!scene) return () => {};
+
+  let animationFrameId = 0;
+  let isActive = true;
+
+  const animate = (time: number): void => {
+    if (!isActive) return;
+
+    renderContourScene(scene, time, options);
+    animationFrameId = window.requestAnimationFrame(animate);
+  };
+
+  animationFrameId = window.requestAnimationFrame(animate);
+
+  return () => {
+    isActive = false;
+    window.cancelAnimationFrame(animationFrameId);
+  };
+}

@@ -1,6 +1,6 @@
 import "./index.css"
 // import { drawSquiggle } from './ts/squiggle.ts'
-import { drawContours } from './ts/contours.ts'
+import { animateContours, drawContours } from './ts/contours.ts'
 import { Tabs } from './ts/tabs.ts'
 
 const canvasContainer = document.querySelector(".squiggle") as HTMLElement;
@@ -9,7 +9,21 @@ const canvas = document.getElementById("squiggle") as HTMLCanvasElement;
 window.addEventListener("load", () => {
   canvasContainer.classList.remove("squiggle--hidden");
   // drawSquiggle(canvas, 800, 600, 600);
-  drawContours(canvas, 80, 80);
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    drawContours(canvas, 80, 80);
+    return;
+  }
+
+  animateContours(canvas, 80, 80, {
+    amplitude: 0.16,
+    speed: 0.0003,
+    scale: 0.13,
+    peakDrift: 1.6,
+    peakHeightDrift: 0.08,
+    peakSpeed: 0.00008,
+  });
 })
 
 const tabsEl: HTMLElement | null = document.querySelector(
