@@ -18,8 +18,8 @@
   }
 
   .tabs__list-item a:focus {
-    @apply outline-none rounded-t;
-    @apply border-t-accent-6 border-t-4 mt-[-4px]; 
+    @apply outline-none rounded-t underline;
+    /* @apply border-t-accent-6 border-t-4 mt-[-4px];  */
   }
   
   .tabs__list-item a:active {
@@ -27,8 +27,8 @@
   }
 
   .tabs__list-item {
-    @apply font-serif min-w-[4rem];
-    @apply text-center tracking-wide uppercase;
+    @apply font-sans min-w-[4rem];
+    @apply text-center tracking-wide;
     @apply border-b border-grey-3;
     @apply rounded-t;
     @apply text-sm 2xl:text-base;

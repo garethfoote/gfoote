@@ -36,10 +36,10 @@ There are many ways to design an interface to accomplish this. During the prepar
 
 There are positives and negatives to both options to do with accessibility, efficiency, and complexity.  
 
-## UX Research
+## UI Patterns
 Both Finder (macOS) and File Explorer (Windows) have been dealing with the UX of file management for a long time. They make multiple options for file exploration available and configurable to the user, including tree, column and single page views. It was useful to assess how the UI design pattern works in an operating system since this is a familiar method for most people to manipulate and explore files and folders. 
 
-![[attachments/Screenshot 2023-09-12 at 08.54.19.png@#attachments/Screenshot 2023-09-12 at 08.54.19.png]]
+![[Screenshot 2023-09-12 at 08.54.19.png@#Screenshot 2023-09-12 at 08.54.19.png]]
 
 Other examples where working with files is prevalent is cloud storage services, such as Dropbox and Google Drive. In each of them there is a similar set of configurable options between single page and tree view presentations. 
 
@@ -59,11 +59,11 @@ View and copy the component in this open [Figma file](https://www.figma.com/file
 
 The UI design leans on GDS styles and composites existing components such as radio buttons or checkboxes. The component hover and focus states were adapted, and the visual indicators for focus made much more prominent because of the detailed specifications around keyboard controls. You can see this in the [Single Select Example in Storybook](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--expand-select-and-display-selected) .
 
-![[attachments/tree-view-zoomed-single-select.png@#attachments/tree-view-zoomed-single-select.png]]
+![[tree-view-zoomed-single-select.png@#tree-view-zoomed-single-select.png]]
 
 Other differentiated visual states included showing relationships between the active child and the parent directories and indeterminate checkbox states, for scenarios when multi-select. This can be seen below and in the [Multi-select example in Storybook](https://nationalarchives.github.io/tdr-components/?path=/story/tdr-tree-view--multiple-select-child-sets-parent-to-indeterminate).
 
-![[attachments/tree-view-zoomed-multi-select 3.png@#attachments/tree-view-zoomed-multi-select 3.png]]
+![[tree-view-zoomed-multi-select 3.png@#tree-view-zoomed-multi-select 3.png]]
 
 More than in most of my previous work the devil was in the details of fine-grained interactions and visual states supporting accessibility. The relevant WCAG rules were [Non-text Contrast (1.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html) and [Focus Appearance (2.4.11)](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html).
 
