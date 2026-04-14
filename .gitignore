@@ -1,6 +1,7 @@
 *.code-workspace
 _site
 .jekyll-cache
+.obsidian-build
 pages/.DS_Store
 pages/tags.md
 _notes/.obsidian
@@ -30,3 +31,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+.bundle
+.bundle-wsl
+vendor

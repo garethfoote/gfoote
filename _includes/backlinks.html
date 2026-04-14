@@ -29,70 +29,27 @@
  *
 {%- endcomment -%}
 
-{%- assign alt_text_delimiter = '@#' -%}
-
-<!-- Add backlinks to the current page --> 
-{%- assign link_count = 0 -%}
-{%- assign wiki_link_title = '[' | append: page.slug | append: alt_text_delimiter -%}
-
-
-{%- comment -%}
-{%- for note in site.notes -%}
-	{%- if note.url != page.url -%}
-		{%- if note.content contains wiki_link_title -%}
-			{%- assign link_count = link_count | plus:1 -%}
-		{%- endif -%}
-	{%- endif -%}
-{%- endfor -%}
-{%- endcomment -%}
-
-{%- for writing in site.writing -%}
-	{%- if writing.url != page.url -%}
-		{%- if writing.content contains wiki_link_title -%}
-			{%- assign link_count = link_count | plus:1 -%}
-		{%- endif -%}
-	{%- endif -%}
-{%- endfor -%}
-
-{%- if link_count > 0 -%}
+{%- assign backlinks = site.data.wiki_graph[page.url] -%}
+{%- if backlinks and backlinks.size > 0 -%}
 <section class="main-col main-col--article">
   <h2 class="section-header">
     <span>Links to this article</span>
   </h2>
-{%- assign wiki_link_title = '[[' | append: page.slug -%}
-  {%- for post in site.writing -%}
-    {%- if post.url != page.url -%}
-      {%- if post.content contains wiki_link_title -%}
-      {%- include article-card.html -%}
+  {%- for backlink in backlinks -%}
+    <article class="article-card">
+      <h2 class="article-card__title">
+        <a href="{{ backlink.url | relative_url }}">
+          <span>{{ backlink.title }}</span>
+        </a>
+      </h2>
+      {%- if backlink.date != "" -%}
+      <footer class="article-card__metadata">
+        <time datetime="{{ backlink.date }}">
+          {{ backlink.date | date: "%b" }} <span class="inline">20</span>{{ backlink.date | date: "%y" }}
+        </time>
+      </footer>
       {%- endif -%}
-    {%- endif -%}
+    </article>
   {%- endfor -%}
 </section>
 {%- endif -%}
-
-
-{% comment %}
-  {%- for note in site.notes -%}
-  {%- if note.url != page.url -%}
-    {%- if note.content contains wiki_link_title -%}
-      {%- include article-card.html -%}
-    {%- endif -%}
-  {%- endif -%}
-  {%- endfor -%}
-{% endcomment %}
-
-{% comment %}
-    This code is to show notes as Backlink. 
-    Disabled as I don't see a need for this right now. 
-
-    {%- for note in site.pages -%}
-    {%- if note.url != page.url -%}
-        {%- if note.content contains wiki_link_title -%}
-        <div class="related-group"><a href="{{note.url}}">
-            <h6>{{ note.title }}</h6>
-            <p class="excerpt" style="margin: 0px;">{{ note.content | strip_html | strip | remove: "[[" | remove: "]]" | escape | truncate: 100 }}</p>
-        </a></div>
-        {%- endif -%}
-    {%- endif -%}
-    {%- endfor -%}
-{% endcomment %}
