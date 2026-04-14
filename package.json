@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --ignore _site/ --ignore assets/ -e html,ts,css -x \"npm run build\"",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "build:content": "node scripts/prepare-jekyll-build.mjs",
+    "dev:content": "nodemon --watch collections --watch pages --watch _config.yml --watch _layouts --watch _includes -e md,html,yml -x \"npm run build:content\""
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

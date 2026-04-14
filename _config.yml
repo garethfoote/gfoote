@@ -125,6 +125,10 @@ defaults:
       layout: hidden
 
 exclude:
+  - README.md
+  - .bundle
+  - .bundle-wsl
+  - .obsidian-build
   - src
   - node_modules
   - package.json
@@ -133,4 +137,5 @@ exclude:
   - tsconfig.json
   - tailwind.config.js
   - postcss.config.js
+  - vendor
 
