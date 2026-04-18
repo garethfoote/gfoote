@@ -47,7 +47,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Atkinson Hyperlegible', 'sans-serif'],
+      sans: ['Atkinson Hyperlegible Next', 'sans-serif'],
       serif: ['EB Garamond', 'serif'],
     },
     fontSize: {
