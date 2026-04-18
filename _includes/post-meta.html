@@ -3,19 +3,27 @@
   <div class="mb-2">
     <time class="whitespace-nowrap" datetime="{{page.date}}">{{ page.date |  date: "%B, %Y" }}</time>
   </div>
-  {%- assign hasTopic = false -%}
-  {% if page.topics.size > 0 %}
-    {%- assign hasTopic = true -%}
-    <div class="mb-1">Topics:&nbsp;<br>
-      {%- for topic in page.topics -%}
-      {%- assign topic = topic -%}
-      {%- include tag.html -%}{%- if forloop.last == false -%}, {% endif %}
-      {%- endfor -%}
-    </div>
-  {%- endif -%}
-  {%- if page.types.size > 0 -%}
-    {%- assign type = page.types[0] -%}
-    <div>Superset:&nbsp;<br> {%- include tag.html -%}</div>
-  {% endif %}
+  <dl class="post-meta__list">
+    {%- assign hasTopic = false -%}
+    {% if page.topics.size > 0 %}
+      {%- assign hasTopic = true -%}
+      <div class="post-meta__item mb-1">
+        <dt class="post-meta__label">Topics</dt>
+        <dd class="post-meta__value">
+          {%- for topic in page.topics -%}
+          {%- assign topic = topic -%}
+          {%- include tag.html -%}{%- if forloop.last == false -%}, {% endif %}
+          {%- endfor -%}
+        </dd>
+      </div>
+    {%- endif -%}
+    {%- if page.types.size > 0 -%}
+      {%- assign type = page.types[0] -%}
+      <div class="post-meta__item">
+        <dt class="post-meta__label">Superset</dt>
+        <dd class="post-meta__value">{%- include tag.html -%}</dd>
+      </div>
+    {% endif %}
+  </dl>
   </div>
 </div>
