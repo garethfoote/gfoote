@@ -1,0 +1,9 @@
+.git
+.bundle
+.bundle-wsl
+.github
+.jekyll-cache
+.obsidian-build
+_site
+node_modules
+vendor

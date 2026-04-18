@@ -1,0 +1,24 @@
+services:
+  site:
+    build:
+      context: .
+    working_dir: /workspace
+    command: /usr/local/bin/dev-docker.sh
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    environment:
+      JEKYLL_ENV: development
+      BUNDLE_PATH: /usr/local/bundle
+      BUNDLE_BIN: /usr/local/bundle/bin
+      GEM_HOME: /usr/local/bundle
+      PATH: /usr/local/bundle/bin:/workspace/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - .:/workspace
+      - bundle_cache:/usr/local/bundle
+      - node_modules:/workspace/node_modules
+
+volumes:
+  bundle_cache:
+  node_modules:

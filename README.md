@@ -1,6 +1,6 @@
 # gfoote.me
 
-Local development for this repo is expected to run in WSL rather than native Windows.
+Local development for this repo runs in Docker Desktop with the repo mounted into the container, which keeps editing simple while isolating the Ruby and Node toolchains.
 
 Hat-tip to the [Jekyll Garden project](https://github.com/Jekyll-Garden/jekyll-garden.github.io), which this repo was forked from. My needs were quite different so it has diverged quite substantially. The premise remains that you publish markdown docs to Github, Jekyll converts those to HTML and are presented in Github pages. 
 
@@ -40,46 +40,23 @@ bundle exec jekyll serve --host=0.0.0.0
 npm run dev
 ```
 
-## Local development with WSL
+## Running project with Docker
 
-The most reliable local setup for this repo is to run it in WSL rather than native Windows Ruby.
-
-Recommended working copy:
-`/home/micro/projects/gfoote-linux`
-
-Open that folder in VS Code using the WSL extension, or from Ubuntu run:
+On Windows, install Docker Desktop and make sure it is running. Then from the repo root run:
 
 ```bash
-cd ~/projects/gfoote-linux
-code .
+docker compose up --build
 ```
 
-In the VS Code terminal, start the local environment with:
-
-```bash
-cd ~/projects/gfoote-linux
-PATH=/usr/local/bin:/usr/bin:/bin npm run build
-npm run build:content
-/usr/local/bin/bundle exec jekyll serve --source .obsidian-build --destination .obsidian-build/_site --host 127.0.0.1 --livereload
-```
-
-Or use the helper script from the WSL copy:
-
-```bash
-cd ~/projects/gfoote-linux
-bash scripts/dev-wsl.sh
-```
-
-Then open:
+Open:
 
 ```text
-http://127.0.0.1:4000
+http://localhost:4000
 ```
 
 Notes:
-- `npm run build:content` creates the generated `.obsidian-build/` copy that Jekyll serves from.
-- `npm run dev:content` watches markdown, layouts, includes, and config files and regenerates `.obsidian-build/`.
-- `127.0.0.1:4000` is the site URL. The LiveReload port shown in terminal is not the page URL.
-- `scripts/dev-wsl.sh` does a one-way sync from the Windows repo into the WSL copy before starting the dev environment.
-- Rerunning that script will overwrite overlapping files in the WSL copy with whatever is currently in the Windows repo.
+- The repository is bind-mounted into the container, so local edits are reflected immediately.
+- Docker keeps Ruby gems in a named volume and `node_modules` in a separate named volume, so your Windows checkout stays cleaner and rebuilds are faster.
+- Jekyll runs with polling enabled to make file watching more reliable through Docker Desktop on Windows.
+- Stop the dev environment with `Ctrl+C`.
 
