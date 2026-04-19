@@ -197,6 +197,22 @@
   @apply text-black;
 }
 
+.post-meta__container {
+}
+
+.post-meta__list {
+}
+
+.post-meta__item {
+}
+
+.post-meta__label {
+  @apply uppercase text-xs tracking-[0.08em];
+}
+
+.post-meta__value {
+}
+
 @media screen(lg) {
   .post-meta__container {
     transform: translate(calc(100% + 1rem), -2rem);

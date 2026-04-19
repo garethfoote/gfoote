@@ -31,7 +31,7 @@
     @apply text-center tracking-wide;
     @apply border-b border-grey-3;
     @apply rounded-t;
-    @apply text-sm 2xl:text-base;
+    @apply text-xs 2xl:text-sm uppercase tracking-[0.08em];
     @apply relative z-10;
   }
 
