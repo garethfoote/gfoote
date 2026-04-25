@@ -44,6 +44,19 @@ if(firstP?.firstElementChild?.tagName == "IMG"){
   firstP.classList.add("hero");
 }
 
+document.querySelectorAll(".content a[href]").forEach((link) => {
+  if (!(link instanceof HTMLAnchorElement)) return;
+
+  const href = link.getAttribute("href");
+  if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+    return;
+  }
+
+  const destination = new URL(link.href, window.location.href);
+  if (destination.origin !== window.location.origin) return;
+
+  link.classList.add("content-link--internal");
+});
 
 /*
 * If in markdown text immediately follows an image then they both get

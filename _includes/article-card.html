@@ -1,12 +1,23 @@
-<article class="article-card">
+{%- assign article_label = post.types[0] | default: post.topics[0] | default: "Writing" -%}
+<article class="article-card{% if page.layout == 'home' %} article-card--home{% endif %}">
   <h2 class="article-card__title">
-  <a href="{{post.url|relative_url}}">
-    <span>{{ post.title }}</span>
-  </a></h2>
+    <a href="{{post.url|relative_url}}">
+      <span>{{ post.title }}</span>
+    </a>
+  </h2>
+
+  {% if page.layout == "home" %}
+  <footer class="article-card__metadata article-card__metadata--home">
+    <span class="article-card__pill">{{ article_label }}</span>
+    <time datetime="{{post.date}}">
+      {{ post.date | date: "%b %-d, %Y" }}
+    </time>
+  </footer>
+  {% else %}
   <footer class="article-card__metadata">
-    <time datetime="{{post.date}}"> 
-    {{ post.date |  date: "%b" }} <span class="inline">20</span>{{ post.date |  date: "%y" }}
-    </time> 
+    <time datetime="{{post.date}}">
+      {{ post.date |  date: "%b" }} <span class="inline">20</span>{{ post.date |  date: "%y" }}
+    </time>
 
 {% comment %}
     <span class="whitespace-nowrap">in&nbsp;</span>
@@ -17,5 +28,6 @@
     {%- include tag.html -%}
 {% endcomment %}
   </footer>
+  {% endif %}
 </article>
 

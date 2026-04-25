@@ -133,6 +133,16 @@ hr.full-width {
   text-shadow: none;
 }
 
+.content a.content-link--internal::after {
+	content: "\2192";
+	display: inline-block;
+	margin-left: 0.2em;
+	font-size: 0.8em;
+	line-height: 1;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
 .content li a:hover,
 .content p a:hover {
 	@apply text-accent;

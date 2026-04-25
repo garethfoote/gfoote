@@ -110,7 +110,7 @@
 
 .topics-list__item {
   @apply flex gap-2 mb-3;
-  @apply text-md 2xl:text-lg leading-4 2xl:leading-8;
+  @apply text-sm 2xl:text-md leading-4 2xl:leading-8;
 }
 
 .topics-list__item a {
