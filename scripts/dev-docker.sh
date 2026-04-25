@@ -28,7 +28,7 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 echo "Starting asset watcher..."
-npm run dev -- --legacy-watch &
+npm run dev:assets -- --legacy-watch &
 ASSET_PID=$!
 
 echo "Starting content watcher..."
@@ -41,5 +41,6 @@ bundle exec jekyll serve \
   --destination .obsidian-build/_site \
   --host 0.0.0.0 \
   --force_polling \
+  --incremental \
   --livereload \
   --livereload-port 35729

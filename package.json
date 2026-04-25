@@ -4,9 +4,10 @@
   "description": "A website",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --ignore _site/ --ignore .obsidian-build/ --ignore assets/ -e html,ts,css -x \"npm run build && npm run build:content\"",
-    "build": "tsc && vite build",
+    "dev": "npm run dev:assets",
+    "build": "tsc && vite build && node scripts/sync-built-assets.mjs",
     "build:content": "node scripts/prepare-jekyll-build.mjs",
+    "dev:assets": "nodemon --watch src --watch tailwind.config.js --watch postcss.config.js --watch vite.config.cjs --watch tsconfig.json --watch contour-preview.html --ignore _site/ --ignore .obsidian-build/ --ignore assets/ -e ts,css,html,js -x \"npm run build\"",
     "dev:content": "nodemon --watch collections --watch pages --watch _config.yml --watch _layouts --watch _includes -e md,html,yml -x \"npm run build:content\""
   },
   "devDependencies": {
