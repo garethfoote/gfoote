@@ -1,4 +1,4 @@
-{%- assign article_label = post.types[0] | default: post.topics[0] | default: "Writing" -%}
+{%- assign article_label = post.topics[0] | default: post.types[0] | default: "Writing" -%}
 <article class="article-card{% if page.layout == 'home' %} article-card--home{% endif %}">
   <h2 class="article-card__title">
     <a href="{{post.url|relative_url}}">
@@ -30,4 +30,3 @@
   </footer>
   {% endif %}
 </article>
-

@@ -4,7 +4,7 @@
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 0.5rem;
   row-gap: 0;
-  @apply py-3;
+  @apply py-2;
   @apply mb-0;
   @apply transition-colors duration-150 rounded-sm;
   position: relative;
@@ -81,11 +81,7 @@
   @apply whitespace-nowrap;
 }
 
-.article-card__metadata time {
-  @apply text-grey text-base 2xl:text-md;
-  @apply inline;
-  background-color: var(--article-card-home-bg);
-}
+
 
 .article-card__title {
   @apply text-lg 2xl:text-lg-plus;
@@ -142,7 +138,10 @@
 
 .article-card__metadata time {
   @apply text-grey text-xs uppercase tracking-[0.08em];
+  @apply inline;
+  background-color: var(--article-card-home-bg);
 }
+
 
 .article-card .article-card__title,
 .article-card .article-card__metadata {
