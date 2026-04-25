@@ -11,4 +11,4 @@ topics:
   - Teaching
 ---
 
-I'm Lead UX Designer at the [London Borough of Camden](https://www.camden.gov.uk/) and a associate lecturer at UAL's Creative Computing Institute. Read more [[About|about me]].
+I'm Lead UX Designer at the [London Borough of Camden](https://www.camden.gov.uk/) and a associate lecturer at [UAL's Creative Computing Institute](https://www.arts.ac.uk/creative-computing-institute/about). Read more [[About|about me]].
