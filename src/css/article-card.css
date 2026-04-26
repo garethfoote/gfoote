@@ -9,29 +9,20 @@
   @apply transition-colors duration-150 rounded-sm;
   position: relative;
   --article-card-home-bg: theme('colors.offwhite');
-  --hover-bg: color-mix(in srgb, theme('colors.grey.1') 60%, white);
-}
-
-.article-card:hover,
-.article-card:focus-within {
-  /* --article-card-home-bg: theme('colors.grey.1'); */
-  /* background-color: var(--hover-bg); */
 }
 
 .article-card__title {
-  @apply text-1.5xl 2xl:text-1.5xl;
-  @apply leading-7 sm:leading-8;
-  @apply grow-0 z-10;
-  @apply relative top-px;
+  @apply text-lg 2xl:text-lg-plus;
+  @apply leading-7;
+  @apply mb-0;
+  min-width: 0;
+  grid-column: 1 / 2;
+  grid-row: 1;
+  align-self: end;
 }
 
 .article-card__title > a:hover {
   @apply text-accent;
-}
-
-.article-card__title > a:focus > span,
-.article-card__title:hover > a > span {
-  /* background-color: var(--article-card-home-bg); */
 }
 
 .article-card__title > a:focus {
@@ -40,7 +31,6 @@
 
 .article-card__title > a:focus > span {
   @apply bg-yellow-light text-black;
-  text-shadow: none;
 }
 
 .article-card__title:focus-within > a > span {
@@ -52,42 +42,9 @@
   @apply z-10 relative top-[4px];
 }
 
-.article-card__title > a > span {
-  @apply pb-1 pr-1;
-}
-
-.article-card__title:after {
-  content: "";
-  @apply w-full h-full;
-  @apply absolute;
-  @apply opacity-0;
-  @apply top-[-2px] left-0;
-  transition: opacity 0.1s ease-in-out;
-  background-image: linear-gradient(to right, transparent 3px, theme('colors.grey.3') 3px);
-  background-position-x: 0;
-  background-position-y: bottom;
-  background-repeat: repeat-x;
-  background-size: 6px 1px;
-}
-
 .article-card__metadata {
-  @apply mb-0;
   @apply sm:max-h-none;
-  @apply relative;
-  @apply relative top-[0px] sm:top-0;
   @apply whitespace-nowrap;
-}
-
-
-
-.article-card__title {
-  @apply text-lg 2xl:text-lg-plus;
-  @apply leading-7 md:leading-8 2xl:leading-8;
-  @apply relative top-0 mb-0;
-  min-width: 0;
-  grid-column: 1 / 2;
-  grid-row: 1;
-  align-self: end;
 }
 
 .article-card__title > a > span {
@@ -117,7 +74,6 @@
 
 .article-card__metadata {
   @apply flex items-center gap-2 md:gap-3;
-  @apply top-0;
   @apply shrink-0;
   grid-column: 2 / 3;
   grid-row: 1;
@@ -150,7 +106,7 @@
 @media (max-width: 767px) {
   .article-card {
     grid-template-columns: 1fr;
-    row-gap: 0.75rem;
+    row-gap: 0.5rem;
   }
 
   .article-card .article-card__title {

@@ -34,6 +34,37 @@ if(tabsEl){
   tabs.initialise();
 }
 
+const stickyHeroes = Array.from(
+  document.querySelectorAll<HTMLElement>(".post-hero")
+);
+
+if (stickyHeroes.length > 0) {
+  const heroOffsets = new Map<HTMLElement, number>();
+
+  const measureStickyHeroes = () => {
+    stickyHeroes.forEach((hero) => {
+      hero.classList.remove("is-stuck");
+      heroOffsets.set(hero, hero.getBoundingClientRect().top + window.scrollY);
+    });
+  };
+
+  const updateStickyHeroes = () => {
+    stickyHeroes.forEach((hero) => {
+      const heroTop = heroOffsets.get(hero) ?? 0;
+      hero.classList.toggle("is-stuck", window.scrollY >= heroTop);
+    });
+  };
+
+  measureStickyHeroes();
+  updateStickyHeroes();
+
+  window.addEventListener("scroll", updateStickyHeroes, { passive: true });
+  window.addEventListener("resize", () => {
+    measureStickyHeroes();
+    updateStickyHeroes();
+  });
+}
+
 /*
  * If first paragraph in content contains an image we
  * assume this is a hero type image and remove the 

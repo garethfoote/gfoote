@@ -1,5 +1,7 @@
 
-const bg = "#f5f5f7";
+// const bg = "#f5f5f7";
+const bg = "#ffffff";
+
 const orangeflame = {
   "3": '#FC5F1C',
   "4": '#DA490B',
@@ -55,9 +57,9 @@ module.exports = {
       sm: ['0.875rem', '1.25rem'], // 13px
       base: ['1rem', '1.5rem'], // 16px, 24px
       md: ['1.125rem', '1.85rem'], // 18px, 28px
-      lg: ['1.25rem', '2rem'], // 20px, 32px
+      lg: ['1.25rem', '1.75rem'], // 20px, 28px
       'lg-plus': ['1.375rem', '2rem'], // 22px, 32px
-      xl: ['1.562rem', '2.44rem'], // 25px, 32px 
+      xl: ['1.562rem', '2rem'], // 25px, 32px 
       '1.5xl': ['1.6875rem', '2.125rem'], // 27px, 34px 
       '2xl': ['1.938rem', '2.25rem'], // 31px, 36px
       '3xl': ['2.438rem', '2.75rem'], // 39px, 44px
