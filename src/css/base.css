@@ -41,7 +41,7 @@ h3 {
 }
 
 p {
-	@apply text-md md:text-lg 2xl:text-xl;
+	@apply text-md 2xl:text-lg;
 	@apply mb-8;
 }
 
@@ -78,7 +78,7 @@ hr.full-width {
 }
 
 .content h2 {
-	@apply font-sans font-semibold;
+	@apply font-sans font-medium;
 	@apply text-lg leading-7 2xl:text-2xl 2xl:leading-9;
 	@apply mb-3 sm:mb-4 2xl:mb-6 pt-4;
 }
