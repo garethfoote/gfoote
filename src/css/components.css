@@ -72,7 +72,7 @@
 
 .post-hero h1 {
   @apply text-xl md:text-2xl 2xl:text-3xl;
-  @apply pb-3 sm:pb-4;
+  @apply pb-3;
   transition: font-size 180ms ease, line-height 180ms ease;
 }
 
@@ -174,7 +174,7 @@
 
 .eyebrow {
   @apply font-serif font-normal text-sm 2xl:text-md tracking-wider leading-[0.975rem] uppercase;
-  @apply text-grey-6 bg-yellow-light px-1 rounded-sm;
+  @apply text-grey-6 bg-yellow-lighter px-1 rounded-sm;
 }
 
 .homepage-eyebrow {

@@ -34,6 +34,7 @@ module.exports = {
     colors: {
       'accent': blue,
       'yellow': {
+        lighter: "#ffffbe",
         light: "#FFFF5D",
         DEFAULT: '#fef08a',
       },
