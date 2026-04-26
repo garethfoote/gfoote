@@ -16,6 +16,8 @@ type ContourScene = {
   rez: number;
   cols: number;
   rows: number;
+  offsetX: number;
+  offsetY: number;
 };
 type AnimateContoursOptions = {
   amplitude?: number;
@@ -24,6 +26,7 @@ type AnimateContoursOptions = {
   peakDrift?: number;
   peakHeightDrift?: number;
   peakSpeed?: number;
+  canvasPadding?: number;
 };
 
 const maxElevation: number = 1000;
@@ -287,15 +290,24 @@ function perlin3(x: number, y: number, z: number): number {
   return lerp(nxy0, nxy1, sz);
 }
 
-function canvasSetup(canvas: HTMLCanvasElement, width:number, height:number): number {
+function canvasSetup(
+  canvas: HTMLCanvasElement,
+  width:number,
+  height:number,
+  canvasPadding: number = 0
+): number {
   const pixelRatio = window.devicePixelRatio || 1;
   const rez = BASE_REZ * pixelRatio;
+  const totalWidth = width + canvasPadding * 2;
+  const totalHeight = height + canvasPadding * 2;
 
-  canvas.width = width * pixelRatio;
-  canvas.height = height * pixelRatio;
+  canvas.width = totalWidth * pixelRatio;
+  canvas.height = totalHeight * pixelRatio;
 
-  canvas.style.width = `${width}px`;
-  canvas.style.height = `${height}px`;
+  canvas.style.width = `${totalWidth}px`;
+  canvas.style.height = `${totalHeight}px`;
+  canvas.style.left = `${-canvasPadding}px`;
+  canvas.style.top = `${-canvasPadding}px`;
 
   ctx = canvas.getContext("2d");
 
@@ -323,7 +335,13 @@ function getState(a: number, b: number, c: number, d: number): number {
   return (a > 0 ? 8 : 0) + (b > 0 ? 4 : 0) + (c > 0 ? 2 : 0) + (d > 0 ? 1 : 0);
 }
 
-function draw(ctx: CanvasRenderingContext2D, rez: number, interval: number = 0.25): void {
+function draw(
+  ctx: CanvasRenderingContext2D,
+  rez: number,
+  offsetX: number,
+  offsetY: number,
+  interval: number = 0.25
+): void {
   let isThick = true;
 
   for (let h = -1; h < 1; h += interval) {
@@ -339,8 +357,8 @@ function draw(ctx: CanvasRenderingContext2D, rez: number, interval: number = 0.2
         const f2 = field[i + 1][j + 1] - h;
         const f3 = field[i][j + 1] - h;
 
-        const x = i * rez;
-        const y = j * rez;
+        const x = offsetX + i * rez;
+        const y = offsetY + j * rez;
         const a = [x + rez * f0 / (f0 - f1), y];
         const b = [x + rez, y + rez * f1 / (f1 - f2)];
         const c = [x + rez * (1 - f2 / (f2 - f3)), y + rez];
@@ -406,13 +424,19 @@ function buildTerrain(seedField: ElevationMap, peaks: PeakDefinition[]): Elevati
   return normaliseField(terrain);
 }
 
-function createContourScene(canvas: HTMLCanvasElement, width:number, height:number): ContourScene | null {
-  const rez = canvasSetup(canvas, width, height);
+function createContourScene(
+  canvas: HTMLCanvasElement,
+  width:number,
+  height:number,
+  options: AnimateContoursOptions = {}
+): ContourScene | null {
+  const canvasPadding = options.canvasPadding ?? 0;
+  const rez = canvasSetup(canvas, width, height, canvasPadding);
   const ctx: CanvasRenderingContext2D | null = canvas.getContext("2d");
 
   if (canvas && ctx) {
-    cols = 1 + canvas.width / rez;
-    rows = 1 + canvas.height / rez;
+    cols = 1 + width / BASE_REZ;
+    rows = 1 + height / BASE_REZ;
 
     const seedField = initializeElevationMap(cols, rows, maxElevation * 0.25);
     const peaks = createPeakDefinitions(cols, rows, maxElevation * 1.25, 3, 5);
@@ -428,6 +452,8 @@ function createContourScene(canvas: HTMLCanvasElement, width:number, height:numb
       rez,
       cols,
       rows,
+      offsetX: canvasPadding * (window.devicePixelRatio || 1),
+      offsetY: canvasPadding * (window.devicePixelRatio || 1),
     };
   }
 
@@ -477,14 +503,19 @@ function renderContourScene(scene: ContourScene, time: number = 0, options: Anim
   rows = scene.rows;
 
   scene.ctx.clearRect(0, 0, scene.canvas.width, scene.canvas.height);
-  draw(scene.ctx, scene.rez, 0.24);
+  draw(scene.ctx, scene.rez, scene.offsetX, scene.offsetY, 0.24);
 }
 
-export function drawContours(canvas: HTMLCanvasElement, width:number, height:number): void {
-  const scene = createContourScene(canvas, width, height);
+export function drawContours(
+  canvas: HTMLCanvasElement,
+  width:number,
+  height:number,
+  options: AnimateContoursOptions = {}
+): void {
+  const scene = createContourScene(canvas, width, height, options);
   if (!scene) return;
 
-  renderContourScene(scene);
+  renderContourScene(scene, 0, options);
 }
 
 export function animateContours(
@@ -493,7 +524,7 @@ export function animateContours(
   height:number,
   options: AnimateContoursOptions = {}
 ): () => void {
-  const scene = createContourScene(canvas, width, height);
+  const scene = createContourScene(canvas, width, height, options);
   if (!scene) return () => {};
 
   let animationFrameId = 0;

@@ -99,7 +99,7 @@ hr.full-width {
 .content ol li,
 .content ul li {
 	@apply list-disc;
-	@apply text-base sm:text-md 2xl:text-xl;
+	@apply text-base sm:text-md 2xl:text-xl font-light;
 	@apply mb-2;
 }
 

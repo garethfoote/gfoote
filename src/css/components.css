@@ -3,12 +3,15 @@
 }
 
 .squiggle {
-  @apply w-20 h-20;
+  @apply w-24 h-24;
   @apply relative left-[-1rem] top-4;
+  overflow: visible;
 }
 
 .squiggle a {
-  @apply h-full;
+  @apply block w-full h-full;
+  @apply relative;
+  overflow: visible;
 }
 
 .squiggle canvas {
@@ -183,7 +186,7 @@
 }
 
 .post-meta {
-  @apply text-grey text-md 2xl:text-lg;
+  @apply text-grey text-base 2xl:text-md font-light;
   @apply lg:absolute top-0 lg:max-w-[15rem] 2xl:max-w-[20rem] right-[0] 2xl:right-[-1rem];
   @apply z-20;
 }
