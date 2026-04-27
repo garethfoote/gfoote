@@ -31,13 +31,14 @@ h1 span {
 
 h2 {
 	@apply font-serif;
-	@apply text-xl leading-6;
+	@apply text-xl md:text-1.5xl leading-7;
+	@apply mb-6;
 }
 
 h3, h4, h5 {
 	@apply font-serif;
-	@apply text-lg md:text-lg-plus leading-6;
-	@apply mb-6;
+	@apply text-lg md:text-xl leading-6;
+	@apply mb-4;
 }
 
 p {
@@ -78,9 +79,7 @@ hr.full-width {
 }
 
 .content h2 {
-	@apply font-serif font-medium;
-	@apply text-lg-plus leading-7 2xl:text-2xl 2xl:leading-9;
-	@apply mb-3 sm:mb-4 2xl:mb-6 pt-4;
+
 }
 
 .content h5,
