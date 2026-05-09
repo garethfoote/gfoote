@@ -1,6 +1,6 @@
 
 // const bg = "#f5f5f7";
-const bg = "#ffffff";
+const bg = "#FDFEF6";
 
 const orangeflame = {
   "3": '#FC5F1C',
@@ -16,12 +16,9 @@ const blue = {
   "6": '#122CAE',
   "7": '#122CAE'
 }
-const aquamarine = {
-  "3": '#B8FEE7',
-  "4": '#1CFCB2',
-  DEFAULT: '#12C78B',
-  "6": '#0CAD78',
-  "7": '#05855B'
+const green = {
+  DEFAULT: '#204F3B',
+  "light": '#63AA70'
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -32,7 +29,11 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'accent': blue,
+      'accent': green,
+      'green': {
+        light: "#63AA70",
+        DEFAULT: '#204F3B',
+      },
       'yellow': {
         lighter: "#ffffa0",
         light: "#FFFF5D",

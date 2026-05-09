@@ -10,7 +10,9 @@ layout: default
 {%- assign posts = site.writing | where:"homepage", true | sort: "date" | reverse | slice: 0, 10  -%}
 {%- include article-cards.html -%}
 
-<a class="section-link mt-4" href="{{site.baseurl}}/writing"><span class="">See all writing</span></a>
+<p class="content">
+<a class="section-link mt-4" href="{{site.baseurl}}/writing">See all writing</a>
+</p>
 
 {% comment %} <p class="text-base">Browse all writing by topic or type.</p> {% endcomment %} 
 {%- include topics-list.html -%}
