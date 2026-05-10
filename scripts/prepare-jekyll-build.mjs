@@ -171,10 +171,16 @@ async function buildAssetIndex(searchRoot) {
 
   for (const fullPath of files) {
     const fileName = path.basename(fullPath);
-    const relativeUrl = `/${toPosix(path.relative(searchRoot, fullPath))}`;
+    const relativePath = toPosix(path.relative(searchRoot, fullPath));
+    const relativeUrl = `/${relativePath}`;
+    const record = { fullPath, relativePath, relativeUrl, fileName };
 
-    pushIndexValue(index, fileName, { fullPath, relativeUrl, fileName });
-    pushIndexValue(index, fileName.toLowerCase(), { fullPath, relativeUrl, fileName });
+    pushIndexValue(index, relativePath, record);
+    pushIndexValue(index, `/${relativePath}`, record);
+    pushIndexValue(index, relativePath.toLowerCase(), record);
+    pushIndexValue(index, `/${relativePath.toLowerCase()}`, record);
+    pushIndexValue(index, fileName, record);
+    pushIndexValue(index, fileName.toLowerCase(), record);
   }
 
   return index;
@@ -299,7 +305,7 @@ function transformBody(body, documentIndex, assetIndex) {
   const outboundLinks = [];
   const transformed = maskedBody.replace(WIKI_LINK_RE, (_, isEmbed, rawTarget) => {
     const { target, label } = parseTarget(rawTarget);
-    const assetMatch = resolveIndexValue(assetIndex, target);
+    const assetMatch = resolveAssetIndexValue(assetIndex, target);
     const documentMatch = resolveIndexValue(documentIndex, target);
 
     if (isEmbed) {
@@ -391,6 +397,27 @@ function resolveIndexValue(index, key) {
   }
 
   return null;
+}
+
+function resolveAssetIndexValue(index, key) {
+  const normalized = normalizeAssetTarget(key);
+  const exactMatch = resolveIndexValue(index, normalized);
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  const fileName = path.posix.basename(normalized);
+  if (fileName !== normalized) {
+    return resolveIndexValue(index, fileName);
+  }
+
+  return null;
+}
+
+function normalizeAssetTarget(value) {
+  return toPosix(value.trim())
+    .replace(/^\/+/, "")
+    .replace(/^\.\//, "");
 }
 
 function pushIndexValue(index, key, value) {
