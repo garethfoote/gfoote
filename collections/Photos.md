@@ -6,6 +6,8 @@ title: Photography
 ---
 
 
+![[assets/attachments/Photos/ff6c3a8146f8b3b8282cb3969f557fe1_MD5.jpg|assets/attachments/Photos/ff6c3a8146f8b3b8282cb3969f557fe1_MD5.jpg]]
+
 ![[assets/attachments/Photos/ced0a0fd821c13e9812be5f38f7c006c_MD5.jpg|assets/attachments/Photos/ced0a0fd821c13e9812be5f38f7c006c_MD5.jpg]]
 
 ![[assets/attachments/Photos/02abe99a49676e4618e5fb7fd5f68807_MD5.jpg|assets/attachments/Photos/02abe99a49676e4618e5fb7fd5f68807_MD5.jpg]]
