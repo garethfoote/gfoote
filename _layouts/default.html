@@ -7,7 +7,7 @@
     Skip to content
   </a>  
   <div>
-    <header class="flex main-col place-content-between mb-4">
+    <header class="site-header flex{% if page.layout == "photos" %} site-header--photographs{% else %} main-col{%endif%} place-content-between mb-4">
       <div class="squiggle squiggle--hidden{% if page.layout == "post" %} squiggle--article{%endif%}"">
         <a href="{{site.baseurl}}/">
           <span class="sr-only">Home</span>

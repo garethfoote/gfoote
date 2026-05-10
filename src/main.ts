@@ -80,6 +80,79 @@ if(firstP?.firstElementChild?.tagName == "IMG"){
   firstP.classList.add("hero");
 }
 
+const photographyImages = Array.from(
+  document.querySelectorAll<HTMLImageElement>(".content--photographs img")
+);
+
+if (photographyImages.length > 0) {
+  const visibleImages = new Set<HTMLImageElement>();
+  let pendingFocusUpdate = false;
+
+  const setActiveImage = (activeImage: HTMLImageElement) => {
+    photographyImages.forEach((image) => {
+      image.classList.toggle("is-active", image === activeImage);
+    });
+  };
+
+  const updateFocusedPhotograph = () => {
+    pendingFocusUpdate = false;
+
+    const viewportCentre = window.innerHeight / 2;
+    const candidates = visibleImages.size > 0
+      ? Array.from(visibleImages)
+      : photographyImages;
+
+    let closestImage = candidates[0];
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    candidates.forEach((image) => {
+      const rect = image.getBoundingClientRect();
+      const imageCentre = rect.top + rect.height / 2;
+      const distanceFromCentre = Math.abs(imageCentre - viewportCentre);
+
+      if (distanceFromCentre < closestDistance) {
+        closestDistance = distanceFromCentre;
+        closestImage = image;
+      }
+    });
+
+    if (closestImage) {
+      setActiveImage(closestImage);
+    }
+  };
+
+  const requestFocusUpdate = () => {
+    if (pendingFocusUpdate) return;
+
+    pendingFocusUpdate = true;
+    window.requestAnimationFrame(updateFocusedPhotograph);
+  };
+
+  const photographObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!(entry.target instanceof HTMLImageElement)) return;
+
+      if (entry.isIntersecting) {
+        visibleImages.add(entry.target);
+      } else {
+        visibleImages.delete(entry.target);
+      }
+    });
+
+    requestFocusUpdate();
+  }, {
+    rootMargin: "-20% 0px -20% 0px",
+    threshold: [0, 0.25, 0.5, 0.75, 1],
+  });
+
+  photographyImages.forEach((image) => photographObserver.observe(image));
+  setActiveImage(photographyImages[0]);
+
+  window.addEventListener("scroll", requestFocusUpdate, { passive: true });
+  window.addEventListener("resize", requestFocusUpdate);
+  window.addEventListener("load", requestFocusUpdate);
+}
+
 document.querySelectorAll(".content a[href]").forEach((link) => {
   if (!(link instanceof HTMLAnchorElement)) return;
 
