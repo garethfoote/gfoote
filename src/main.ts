@@ -87,10 +87,21 @@ const photographyImages = Array.from(
 if (photographyImages.length > 0) {
   const visibleImages = new Set<HTMLImageElement>();
   let pendingFocusUpdate = false;
+  let activePhotograph = photographyImages[0];
 
   const setActiveImage = (activeImage: HTMLImageElement) => {
+    activePhotograph = activeImage;
     photographyImages.forEach((image) => {
       image.classList.toggle("is-active", image === activeImage);
+    });
+  };
+
+  const scrollToPhotograph = (image: HTMLImageElement) => {
+    image.scrollIntoView({
+      block: "center",
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
     });
   };
 
@@ -147,6 +158,54 @@ if (photographyImages.length > 0) {
 
   photographyImages.forEach((image) => photographObserver.observe(image));
   setActiveImage(photographyImages[0]);
+
+  const getPreviousPhotograph = () => {
+    const activeIndex = photographyImages.indexOf(activePhotograph);
+    const previousIndex = activeIndex <= 0
+      ? photographyImages.length - 1
+      : activeIndex - 1;
+
+    return photographyImages[previousIndex];
+  };
+
+  const getNextPhotograph = () => {
+    const activeIndex = photographyImages.indexOf(activePhotograph);
+    const nextIndex = activeIndex >= photographyImages.length - 1
+      ? 0
+      : activeIndex + 1;
+
+    return photographyImages[nextIndex];
+  };
+
+  window.addEventListener("keydown", (event) => {
+    const activeElement = document.activeElement;
+    const isFormField = activeElement instanceof HTMLInputElement
+      || activeElement instanceof HTMLTextAreaElement
+      || activeElement instanceof HTMLSelectElement
+      || activeElement instanceof HTMLButtonElement
+      || activeElement?.getAttribute("contenteditable") === "true";
+
+    if (isFormField) return;
+
+    if (
+      event.key === "ArrowUp"
+      || event.key === "ArrowLeft"
+      || (event.key === " " && event.shiftKey)
+    ) {
+      event.preventDefault();
+      scrollToPhotograph(getPreviousPhotograph());
+      return;
+    }
+
+    if (
+      event.key === "ArrowDown"
+      || event.key === "ArrowRight"
+      || event.key === " "
+    ) {
+      event.preventDefault();
+      scrollToPhotograph(getNextPhotograph());
+    }
+  });
 
   window.addEventListener("scroll", requestFocusUpdate, { passive: true });
   window.addEventListener("resize", requestFocusUpdate);
