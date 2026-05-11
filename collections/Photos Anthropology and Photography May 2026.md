@@ -1,7 +1,7 @@
 ---
 share: true
 layout: photos
-permalink: /anthropology-and-Photography
+permalink: /anthropology-and-photography-may-2026
 title: Anthropology and Photography May 2026
 ---
 
