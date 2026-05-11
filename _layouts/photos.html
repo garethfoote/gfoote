@@ -14,7 +14,8 @@ layout: default
 
 <script>
   document.querySelectorAll("img").forEach((img, i) => {
-    if (i > 3) img.setAttribute("loading", "lazy");
+    img.setAttribute("decoding", "async");
+    if (i > 1) img.setAttribute("loading", "lazy");
     else img.setAttribute("loading", "eager");
   });
 </script>

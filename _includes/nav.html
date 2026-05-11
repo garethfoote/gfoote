@@ -1,7 +1,13 @@
 <nav class="site-nav">
   <ul>
     {% for item in site.nav %}
-    <li><a href="{{ item[1]|relative_url }}">{{ item[0] }}</a></li>
+    {% assign nav_path = "/" | append: item[1] %}
+    {% assign nav_path_with_slash = nav_path | append: "/" %}
+    {% assign is_current = false %}
+    {% if page.url == nav_path or page.url == nav_path_with_slash %}
+      {% assign is_current = true %}
+    {% endif %}
+    <li><a href="{{ item[1]|relative_url }}"{% if is_current %} aria-current="page"{% endif %}>{{ item[0] }}</a></li>
     {% endfor %}
   </ul>
 </nav>

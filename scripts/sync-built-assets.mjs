@@ -24,6 +24,10 @@ async function syncDirectory(source, destination) {
   const sourceNames = new Set(sourceEntries.map((entry) => entry.name));
 
   for (const entry of destinationEntries) {
+    if (entry.name === "generated") {
+      continue;
+    }
+
     if (!sourceNames.has(entry.name)) {
       await fs.rm(path.join(destination, entry.name), { recursive: true, force: true });
     }

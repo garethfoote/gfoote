@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
+import sharp from "sharp";
 
 const rootDir = process.cwd();
 const buildDir = path.join(rootDir, ".obsidian-build");
@@ -45,6 +46,10 @@ const IMAGE_EXTENSIONS = new Set([
   ".webp",
 ]);
 
+const RESPONSIVE_PHOTO_WIDTHS = [640, 960, 1280, 1800];
+const RESPONSIVE_PHOTO_OUTPUT_DIR = "assets/generated/photos";
+const responsivePhotoVariantPromises = new Map();
+
 const SKIP_COPY_NAMES = new Set([
   ".bundle",
   ".bundle-wsl",
@@ -78,7 +83,9 @@ for (const document of documents) {
   const original = await fs.readFile(document.fullPath, "utf8");
   const { frontMatter, body } = splitFrontMatter(original);
   const updatedFrontMatter = ensurePermalink(frontMatter, document.url);
-  const { content, outboundLinks } = transformBody(body, documentIndex, assetIndex);
+  const { content, outboundLinks } = await transformBody(body, documentIndex, assetIndex, {
+    responsiveImages: isPhotosLayout(frontMatter),
+  });
   registerBacklinks(document, outboundLinks);
   await fs.writeFile(document.fullPath, `${updatedFrontMatter}${content}`, "utf8");
 }
@@ -123,8 +130,13 @@ async function syncDirectory(sourceDir, destinationDir) {
   const sourceNames = new Set(sourceEntries.map((entry) => entry.name));
 
   for (const entry of destinationEntries) {
+    const destinationPath = path.join(destinationDir, entry.name);
+    if (shouldPreserveGeneratedAsset(destinationPath)) {
+      continue;
+    }
+
     if (!sourceNames.has(entry.name)) {
-      await fs.rm(path.join(destinationDir, entry.name), { recursive: true, force: true });
+      await fs.rm(destinationPath, { recursive: true, force: true });
     }
   }
 
@@ -259,6 +271,15 @@ function readFrontMatterValue(frontMatter, key) {
   return match ? match[1].trim().replace(/^["']|["']$/g, "") : "";
 }
 
+function shouldPreserveGeneratedAsset(entryPath) {
+  const relativePath = toPosix(path.relative(buildDir, entryPath));
+  return relativePath === "assets/generated";
+}
+
+function isPhotosLayout(frontMatter) {
+  return readFrontMatterValue(frontMatter, "layout") === "photos";
+}
+
 function buildDefaultUrl(relativePath, fileBaseName) {
   const segments = relativePath.split("/");
   const collectionName = segments[1];
@@ -294,7 +315,7 @@ function normalizeUrl(url) {
   return url;
 }
 
-function transformBody(body, documentIndex, assetIndex) {
+async function transformBody(body, documentIndex, assetIndex, options = {}) {
   const codeBlocks = [];
   const maskedBody = body.replace(CODE_FENCE_RE, (block) => {
     const token = `@@CODE_BLOCK_${codeBlocks.length}@@`;
@@ -303,25 +324,38 @@ function transformBody(body, documentIndex, assetIndex) {
   });
 
   const outboundLinks = [];
-  const transformed = maskedBody.replace(WIKI_LINK_RE, (_, isEmbed, rawTarget) => {
+  const replacements = [];
+  maskedBody.replace(WIKI_LINK_RE, (match, isEmbed, rawTarget) => {
     const { target, label } = parseTarget(rawTarget);
     const assetMatch = resolveAssetIndexValue(assetIndex, target);
     const documentMatch = resolveIndexValue(documentIndex, target);
 
     if (isEmbed) {
-      return renderEmbed(target, label, assetMatch);
+      replacements.push(renderEmbed(target, label, assetMatch, options));
+      return match;
     }
 
     if (assetMatch) {
-      return `[${escapeMarkdownLabel(label || target)}](${assetMatch.relativeUrl})`;
+      replacements.push(Promise.resolve(`[${escapeMarkdownLabel(label || target)}](${assetMatch.relativeUrl})`));
+      return match;
     }
 
     if (documentMatch) {
       outboundLinks.push(documentMatch);
-      return `[${escapeMarkdownLabel(label || documentMatch.title)}](${documentMatch.url})`;
+      replacements.push(Promise.resolve(`[${escapeMarkdownLabel(label || documentMatch.title)}](${documentMatch.url})`));
+      return match;
     }
 
-    return `<span class="missing-link">${escapeHtml(target)}</span> - <span class="tooltip">This page hasn't been made yet</span>`;
+    replacements.push(Promise.resolve(`<span class="missing-link">${escapeHtml(target)}</span> - <span class="tooltip">This page hasn't been made yet</span>`));
+    return match;
+  });
+
+  const resolvedReplacements = await Promise.all(replacements);
+  let replacementIndex = 0;
+  const transformed = maskedBody.replace(WIKI_LINK_RE, () => {
+    const replacement = resolvedReplacements[replacementIndex];
+    replacementIndex += 1;
+    return replacement;
   });
 
   const restored = transformed.replace(/@@CODE_BLOCK_(\d+)@@/g, (_, index) => {
@@ -344,7 +378,7 @@ function parseTarget(rawTarget) {
   };
 }
 
-function renderEmbed(target, label, assetMatch) {
+async function renderEmbed(target, label, assetMatch, options = {}) {
   if (!assetMatch) {
     return `<span class="missing-link">${escapeHtml(target)}</span> - <span class="tooltip">This page hasn't been made yet</span>`;
   }
@@ -356,6 +390,10 @@ function renderEmbed(target, label, assetMatch) {
   }
 
   if (IMAGE_EXTENSIONS.has(extension)) {
+    if (options.responsiveImages && isResizableImage(extension)) {
+      return renderResponsiveImage(target, label, assetMatch);
+    }
+
     const alt = escapeMarkdownLabel(label || "");
     return `![${alt}](${assetMatch.relativeUrl})`;
   }
@@ -397,6 +435,66 @@ function resolveIndexValue(index, key) {
   }
 
   return null;
+}
+
+function isResizableImage(extension) {
+  return [".jpeg", ".jpg", ".png", ".webp"].includes(extension);
+}
+
+async function renderResponsiveImage(target, label, assetMatch) {
+  const metadata = await sharp(assetMatch.fullPath).metadata();
+  const sourceWidth = metadata.width || RESPONSIVE_PHOTO_WIDTHS.at(-1);
+  const sourceHeight = metadata.height || "";
+  const sourceHash = await hashFile(assetMatch.fullPath);
+  const variantWidths = RESPONSIVE_PHOTO_WIDTHS.filter((width) => width <= sourceWidth);
+  const widths = variantWidths.length > 0 ? variantWidths : [sourceWidth];
+  const variants = await Promise.all(widths.map((width) => ensureResponsivePhotoVariant(assetMatch, width, sourceHash)));
+  const largestVariant = variants.at(-1);
+  const alt = escapeHtml(label || target);
+  const widthAttr = sourceWidth ? ` width="${sourceWidth}"` : "";
+  const heightAttr = sourceHeight ? ` height="${sourceHeight}"` : "";
+
+  return `<img src="${largestVariant.relativeUrl}" srcset="${variants.map((variant) => `${variant.relativeUrl} ${variant.width}w`).join(", ")}" sizes="(max-width: 767px) calc(100vw - 2rem), min(100vw - 4rem, 68rem)" alt="${alt}" loading="lazy" decoding="async"${widthAttr}${heightAttr}>`;
+}
+
+async function ensureResponsivePhotoVariant(assetMatch, width, sourceHash) {
+  const extension = ".webp";
+  const sourceBaseName = path.basename(assetMatch.fileName, path.extname(assetMatch.fileName));
+  const outputFileName = `${slugifyTitle(sourceBaseName)}-${sourceHash.slice(0, 10)}-${width}w${extension}`;
+  const relativePath = toPosix(path.join(RESPONSIVE_PHOTO_OUTPUT_DIR, outputFileName));
+  const outputPath = path.join(buildDir, relativePath);
+  const cacheKey = `${outputPath}:${width}`;
+
+  if (!responsivePhotoVariantPromises.has(cacheKey)) {
+    responsivePhotoVariantPromises.set(cacheKey, writeResponsivePhotoVariant(assetMatch.fullPath, outputPath, width));
+  }
+
+  await responsivePhotoVariantPromises.get(cacheKey);
+
+  return {
+    width,
+    relativeUrl: `/${relativePath}`,
+  };
+}
+
+async function writeResponsivePhotoVariant(sourcePath, outputPath, width) {
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+
+  try {
+    await fs.access(outputPath);
+  } catch {
+    await sharp(sourcePath)
+      .rotate()
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality: 82 })
+      .toFile(outputPath);
+  }
+}
+
+async function hashFile(filePath) {
+  const { createHash } = await import("node:crypto");
+  const buffer = await fs.readFile(filePath);
+  return createHash("sha256").update(buffer).digest("hex");
 }
 
 function resolveAssetIndexValue(index, key) {

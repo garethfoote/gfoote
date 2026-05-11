@@ -34,7 +34,8 @@
   @apply flex gap-x-3;
 }
 
-.site-nav ul li a:hover {
+.site-nav ul li a:hover,
+.site-nav ul li a[aria-current="page"] {
   @apply text-green;
   box-shadow:
   inset 0 0px theme('colors.offwhite'),
