@@ -88,6 +88,15 @@ if (photographyImages.length > 0) {
   const visibleImages = new Set<HTMLImageElement>();
   let pendingFocusUpdate = false;
   let activePhotograph = photographyImages[0];
+  const backToTopLink = document.querySelector<HTMLAnchorElement>(".photographs-back-to-top");
+
+  document.body.classList.add("has-photographs");
+
+  const updatePhotographyFocusState = () => {
+    const isFocused = window.scrollY > 48;
+    document.body.classList.toggle("photographs-is-focused", isFocused);
+    document.body.classList.toggle("photographs-is-gallery-mode", isFocused);
+  };
 
   const setActiveImage = (activeImage: HTMLImageElement) => {
     activePhotograph = activeImage;
@@ -169,6 +178,10 @@ if (photographyImages.length > 0) {
   };
 
   const getNextPhotograph = () => {
+    if (window.scrollY <= 48) {
+      return photographyImages[0];
+    }
+
     const activeIndex = photographyImages.indexOf(activePhotograph);
     const nextIndex = activeIndex >= photographyImages.length - 1
       ? 0
@@ -208,8 +221,24 @@ if (photographyImages.length > 0) {
   });
 
   window.addEventListener("scroll", requestFocusUpdate, { passive: true });
+  window.addEventListener("scroll", updatePhotographyFocusState, { passive: true });
   window.addEventListener("resize", requestFocusUpdate);
-  window.addEventListener("load", requestFocusUpdate);
+  window.addEventListener("load", () => {
+    requestFocusUpdate();
+    updatePhotographyFocusState();
+  });
+
+  backToTopLink?.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
+  });
+
+  updatePhotographyFocusState();
 }
 
 document.querySelectorAll(".content a[href]").forEach((link) => {

@@ -188,16 +188,19 @@ a.content-link--internal::after {
 }
 
 .content.content--photographs p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	max-width: none;
 	margin-inline: auto;
 	margin-bottom: clamp(3.5rem, 10vh, 7rem);
 }
 
 .content--photographs img {
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: min(92vh, 64rem);
 	max-width: 100%;
-	max-height: min(85vh, 52rem);
+	max-height: 92vh;
 	margin-inline: auto;
 	object-fit: contain;
 	opacity: 0.68;
@@ -211,6 +214,77 @@ a.content-link--internal::after {
 .content--photographs img.is-active {
 	opacity: 1;
 	transform: scale(1);
+}
+
+body.has-photographs .site-header--photographs,
+body.has-photographs .post-hero--photographs {
+	transition: opacity 320ms ease;
+}
+
+body.has-photographs {
+	transition:
+		background-color 420ms ease,
+		color 420ms ease;
+}
+
+body.photographs-is-gallery-mode {
+	background-color: #151515;
+	color: theme("colors.offwhite");
+}
+
+body.photographs-is-focused .site-header--photographs,
+body.photographs-is-focused .post-hero--photographs {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.photographs-back-to-top {
+	position: fixed;
+	right: clamp(1rem, 3vw, 2rem);
+	bottom: clamp(1rem, 3vw, 2rem);
+	z-index: 30;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	border-radius: 999px;
+	background-color: rgb(253 254 246 / 0.24);
+	color: theme("colors.black");
+	font-weight: 700;
+	backdrop-filter: blur(8px);
+	opacity: 0;
+	pointer-events: none;
+	transform: translateY(0.5rem);
+	transition:
+		opacity 240ms ease,
+		transform 240ms ease,
+		background-color 160ms ease;
+}
+
+.photographs-back-to-top:hover,
+.photographs-back-to-top:focus {
+	background-color: rgb(253 254 246 / 0.56);
+}
+
+.photographs-back-to-top:focus {
+	@apply outline-none;
+}
+
+body.photographs-is-focused .photographs-back-to-top {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+
+body.photographs-is-gallery-mode .photographs-back-to-top {
+	color: theme("colors.offwhite");
+	background-color: rgb(253 254 246 / 0.12);
+}
+
+body.photographs-is-gallery-mode .photographs-back-to-top:hover,
+body.photographs-is-gallery-mode .photographs-back-to-top:focus {
+	background-color: rgb(253 254 246 / 0.24);
 }
 
 @media (min-width: 768px) {
@@ -227,6 +301,16 @@ a.content-link--internal::after {
 	.content--photographs img {
 		transform: none;
 		transition: opacity 320ms ease;
+	}
+
+	body.photographs-is-focused .site-header--photographs,
+	body.photographs-is-focused .post-hero--photographs,
+	.photographs-back-to-top {
+		transition: none;
+	}
+
+	body.has-photographs {
+		transition: none;
 	}
 }
 

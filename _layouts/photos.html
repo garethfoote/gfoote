@@ -12,6 +12,11 @@ layout: default
 {%- include content.html -%}
 </div>
 
+<a class="photographs-back-to-top" href="#">
+  <span aria-hidden="true">&uarr;</span>
+  <span class="sr-only">Back to top</span>
+</a>
+
 <script>
   document.querySelectorAll("img").forEach((img, i) => {
     img.setAttribute("decoding", "async");
